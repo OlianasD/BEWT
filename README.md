@@ -13,7 +13,9 @@ We developed the test suites for 8 target applications, namely Bludit, Claroline
 For each web application, at least three test suites are available:
 	1. the main test suite: a Java test suite designed using the Page Object pattern and using Selenium WebDriver's implicit waits to handle interactions with the page
 		* includes a Gherkin specification for each test case
+  
 	2. a version of the test suite that uses Selenium WebDriver's explicit waits to handle interactions with the page, instead of the implicit waits
+ 
 	3. a version of the test suite that does not employ the Page Object pattern
 
 Moreover, for 4 applications out of 8 (namely Bludit, Joomla, MantisBT and Prestashop) we included another test suite for a further version of the application, in order to support studies about evolution of the test suites. 
