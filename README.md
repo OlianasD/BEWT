@@ -19,8 +19,12 @@ For each web application, at least three test suites are available:
 Moreover, for 4 applications out of 8 (namely Bludit, Joomla, MantisBT and Prestashop) we included another test suite for a further version of the application, in order to support studies about evolution of the test suites. 
 
 This repository is organized as follows: at the top level there is a directory for each application. The directory of each application contains 4 subdirectories:
-	1. **baseline/**: contains the main test suite for the application
-		* for Bludit, Joomla, MantisBT and Prestashop the directory also contains the test suite for the second version of the application. The version of both applications is specified in the directory's name.
-	2. **explicit_wait/**: contains a version of the test suite using explicit waits instead of implicit waits. For the applications with two baseline test suites for two different versions of the application, the most recent version of the application has been used.
-	3. **no_pageobjects/**: contains a version of the test suite that does not employ the Page Object design pattern. For the applications with two baseline test suites for two different versions of the application, the most recent version of the application has been used.
-	4. **gherkin/**: contains the Gherkin specification for each test case of the test suite. For the applications with two baseline test suites for two different versions of the application, the older version has been used.
+
+1. `baseline/`: contains the main test suite for the application
+	* for Bludit, Joomla, MantisBT and Prestashop the directory also contains the test suite for the second version of the application. The version of both applications is specified in the directory's name.
+
+2. `explicit_wait/`: contains a version of the test suite using explicit waits instead of implicit waits. For the applications with two baseline test suites for two different versions of the application, the most recent version of the application has been used.
+
+3. `no_pageobjects/`: contains a version of the test suite that does not employ the Page Object design pattern. For the applications with two baseline test suites for two different versions of the application, the most recent version of the application has been used.
+
+4. `gherkin/`: contains the Gherkin specification for each test case of the test suite. For the applications with two baseline test suites for two different versions of the application, the older version has been used.
