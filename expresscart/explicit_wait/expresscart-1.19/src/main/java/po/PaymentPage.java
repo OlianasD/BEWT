@@ -1,0 +1,53 @@
+package po;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import utils.Waiter;
+
+public class PaymentPage extends MainNavBar {
+	
+	@FindBy(id = "discountCode")
+	protected WebElement discountCode;
+	
+	@FindBy(id = "addDiscountCode")
+	protected WebElement addDiscountCodeBtn;
+	
+	@FindBy(className = "alert-danger")
+	protected WebElement alert;
+	
+	protected Waiter wait;
+
+	public PaymentPage(WebDriver driver) {
+		super(driver);
+		wait = new Waiter(driver);
+	}
+	
+	public PaymentPage setDiscountCode(String code) {
+		discountCode.sendKeys(code);
+		return this;
+	}
+	
+	public PaymentPage addDiscountCode() {
+		addDiscountCodeBtn.click();		
+		return this;
+	}
+	
+	public boolean containsDiscountText(String discountText) {
+		By locator = By.xpath("/html/body/div[3]/div/div/div/div[2]/div/div/div[2]/div/div/div[2]");
+		wait.waitForTextToBe(locator, discountText);
+		return driver.findElement(locator).getText().contains(discountText);
+	}
+	
+	public String getDangerAlertText() {
+		wait.waitVisibility(alert);
+		return alert.getText();
+	}
+	
+	
+
+}

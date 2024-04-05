@@ -1,0 +1,38 @@
+package tests;
+
+
+import static org.junit.Assert.assertTrue;
+
+import org.junit.Test;
+
+import po.Home;
+import po.PaymentPage;
+
+
+public class UseDiscountCodePercentTest extends BaseTest {
+
+
+	@Test
+	public void testExpressCartUseDiscountCodePercent() throws Exception {
+		goToHome();
+		int item_id = 1;
+		PaymentPage payment = new Home(driver)
+				.account()
+				.setEmail("test@test.com")
+				.setPassword("test")
+				.login()
+				.goHome()
+				.goToProduct(item_id)
+				.addToCart()
+				.openCartLogged()
+				.checkout()
+				.continueToShipping()
+				.goToPayment()
+				.setDiscountCode("discperc000")
+				.addDiscountCode();
+		
+			assertTrue(payment.containsDiscountText("Discount: £7.98"));
+	}
+
+
+}

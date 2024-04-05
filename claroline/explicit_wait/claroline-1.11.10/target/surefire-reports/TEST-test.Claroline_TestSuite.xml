@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuite tests="40" failures="0" name="test.Claroline_TestSuite" time="83.066" errors="0" skipped="0">
+  <properties>
+    <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
+    <property name="java.vm.version" value="11.0.20+8-post-Debian-1deb11u1"/>
+    <property name="sun.boot.library.path" value="/usr/lib/jvm/java-11-openjdk-amd64/lib"/>
+    <property name="maven.multiModuleProjectDirectory" value="/media/sf_winhome/Dropbox/Test Suites Benchmark/explicit_wait/claroline-1.11.10"/>
+    <property name="java.vm.vendor" value="Debian"/>
+    <property name="java.vendor.url" value="https://tracker.debian.org/openjdk-11"/>
+    <property name="guice.disable.misplaced.annotation.check" value="true"/>
+    <property name="path.separator" value=":"/>
+    <property name="java.vm.name" value="OpenJDK 64-Bit Server VM"/>
+    <property name="sun.os.patch.level" value="unknown"/>
+    <property name="user.country" value="US"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="test" value="Claroline_TestSuite"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="user.dir" value="/media/sf_winhome/Dropbox/Test Suites Benchmark/explicit_wait/claroline-1.11.10"/>
+    <property name="java.vm.compressedOopsMode" value="32-bit"/>
+    <property name="java.runtime.version" value="11.0.20+8-post-Debian-1deb11u1"/>
+    <property name="java.awt.graphicsenv" value="sun.awt.X11GraphicsEnvironment"/>
+    <property name="os.arch" value="amd64"/>
+    <property name="java.io.tmpdir" value="/tmp"/>
+    <property name="line.separator" value="
+"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="os.name" value="Linux"/>
+    <property name="classworlds.conf" value="/usr/share/maven/bin/m2.conf"/>
+    <property name="sun.jnu.encoding" value="UTF-8"/>
+    <property name="java.library.path" value="/usr/java/packages/lib:/usr/lib/x86_64-linux-gnu/jni:/lib/x86_64-linux-gnu:/usr/lib/x86_64-linux-gnu:/usr/lib/jni:/lib:/usr/lib"/>
+    <property name="maven.conf" value="/usr/share/maven/conf"/>
+    <property name="jdk.debug" value="release"/>
+    <property name="java.class.version" value="55.0"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="os.version" value="5.10.0-17-amd64"/>
+    <property name="library.jansi.path" value="/usr/share/maven/lib/jansi-native"/>
+    <property name="user.home" value="/home/dario"/>
+    <property name="user.timezone" value="Europe/Rome"/>
+    <property name="java.awt.printerjob" value="sun.print.PSPrinterJob"/>
+    <property name="file.encoding" value="UTF-8"/>
+    <property name="java.specification.version" value="11"/>
+    <property name="user.name" value="dario"/>
+    <property name="java.class.path" value="/usr/share/maven/boot/plexus-classworlds-2.x.jar"/>
+    <property name="java.vm.specification.version" value="11"/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher test -Dtest=Claroline_TestSuite"/>
+    <property name="java.home" value="/usr/lib/jvm/java-11-openjdk-amd64"/>
+    <property name="user.language" value="en"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="awt.toolkit" value="sun.awt.X11.XToolkit"/>
+    <property name="java.vm.info" value="mixed mode, sharing"/>
+    <property name="java.version" value="11.0.20"/>
+    <property name="java.vendor" value="Debian"/>
+    <property name="java.specification.maintenance.version" value="2"/>
+    <property name="maven.home" value="/usr/share/maven"/>
+    <property name="file.separator" value="/"/>
+    <property name="java.version.date" value="2023-07-18"/>
+    <property name="java.vendor.url.bug" value="https://bugs.debian.org/openjdk-11"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="sun.cpu.isalist" value=""/>
+  </properties>
+  <testcase classname="test.Claroline_AddUserTest" name="runTest" time="4.381"/>
+  <testcase classname="test.Claroline_SearchUserTest" name="runTest" time="1.509"/>
+  <testcase classname="test.Claroline_LoginUserTest" name="runTest" time="1.147"/>
+  <testcase classname="test.Claroline_AddCourseTest" name="runTest" time="2.641"/>
+  <testcase classname="test.Claroline_SearchCourseTest" name="runTest" time="1.436"/>
+  <testcase classname="test.Claroline_EnrolUserTest" name="runTest" time="1.452"/>
+  <testcase classname="test.Claroline_AddCourseEventTest" name="runTest" time="2.398"/>
+  <testcase classname="test.Claroline_AddCourseExerciseTest" name="runTest" time="2.04"/>
+  <testcase classname="test.Claroline_MakeCourseExerciseVisibleTest" name="runTest" time="1.685"/>
+  <testcase classname="test.Claroline_AddCourseExerciseQuestionsTest" name="runTest" time="7.108"/>
+  <testcase classname="test.Claroline_DoCourseExerciseQuestionsTest" name="runTest" time="1.818"/>
+  <testcase classname="test.Claroline_ViewProfileStatisticsUserTest" name="runTest" time="1.509"/>
+  <testcase classname="test.Claroline_AddMultipleUsersTest" name="runTest" time="3.26"/>
+  <testcase classname="test.Claroline_SearchMultipleUsersTest" name="runTest" time="1.503"/>
+  <testcase classname="test.Claroline_SearchStudentTest" name="runTest" time="1.497"/>
+  <testcase classname="test.Claroline_SearchTeacherTest" name="runTest" time="1.787"/>
+  <testcase classname="test.Claroline_SearchAdminTest" name="runTest" time="1.598"/>
+  <testcase classname="test.Claroline_EnrolMultipleUsersTest" name="runTest" time="3.765"/>
+  <testcase classname="test.Claroline_DoCourseExerciseQuestionsMultipleUsersTest" name="runTest" time="4.561"/>
+  <testcase classname="test.Claroline_RemoveEnrolMultipleUsersTest" name="runTest" time="2.22"/>
+  <testcase classname="test.Claroline_RemoveMultipleUsersTest" name="runTest" time="1.949"/>
+  <testcase classname="test.Claroline_AddEmptyUserTest" name="runTest" time="1.696"/>
+  <testcase classname="test.Claroline_AddWrongEmailUserTest" name="runTest" time="1.787"/>
+  <testcase classname="test.Claroline_AddTwiceUserTest" name="runTest" time="1.752"/>
+  <testcase classname="test.Claroline_AddWrongPasswordUserTest" name="runTest" time="1.704"/>
+  <testcase classname="test.Claroline_AddEmptyCourseTest" name="addEmptyCourse" time="1.501"/>
+  <testcase classname="test.Claroline_AddDeniedCourseTest" name="addDeniedCourse" time="2.016"/>
+  <testcase classname="test.Claroline_EnrolDeniedCourseTest" name="enrolDeniedCourse" time="1.392"/>
+  <testcase classname="test.Claroline_AddPasswordCourseTest" name="addPasswordCourse" time="2.138"/>
+  <testcase classname="test.Claroline_EnrolPasswordCourseWrongPasswordUserTest" name="enrolPasswordCourseWrongPassword" time="1.522"/>
+  <testcase classname="test.Claroline_EnrolPasswordCourseGoodPasswordUserTest" name="enrolPasswordCourseGoodPassword" time="1.659"/>
+  <testcase classname="test.Claroline_SearchAllowedCourseTest" name="searchAllowedCourse" time="1.687"/>
+  <testcase classname="test.Claroline_SearchAndRemovePasswordCourseTest" name="searchAndRemovePasswordCourse" time="1.65"/>
+  <testcase classname="test.Claroline_SearchAndRemoveDeniedCourseTest" name="searchAndRemoveDeniedCourse" time="1.557"/>
+  <testcase classname="test.Claroline_RemoveCourseExerciseQuestionsTest" name="removeCourseExerciseQuestions" time="2.179"/>
+  <testcase classname="test.Claroline_RemoveCourseEventTest" name="removeCourseEvent" time="1.548"/>
+  <testcase classname="test.Claroline_RemoveCourseExerciseTest" name="removeCourseExerciseTest" time="1.73"/>
+  <testcase classname="test.Claroline_RemoveEnrolUserTest" name="removeEnrolUser" time="1.293"/>
+  <testcase classname="test.Claroline_RemoveUserTest" name="removeUserTest" time="1.553"/>
+  <testcase classname="test.Claroline_RemoveCourseTest" name="removeCourseTest" time="1.438"/>
+</testsuite>
