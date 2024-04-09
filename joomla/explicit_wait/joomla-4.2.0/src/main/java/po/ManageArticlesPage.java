@@ -3,15 +3,15 @@ package po;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
-import utils.Waiter;
+import utils.Wait;
 
 public class ManageArticlesPage extends SiteAdminPageObject {
 	
-	protected Waiter wait;
+	protected Wait wait;
 	
 	public ManageArticlesPage(WebDriver driver) {
 		super(driver);
-		wait = new Waiter(driver);
+		wait = new Wait(driver);
 	}
 	
 	public ManageArticlesPage deleteFirstArticle() {

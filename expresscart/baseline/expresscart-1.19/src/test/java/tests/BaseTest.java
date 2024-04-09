@@ -13,11 +13,11 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 public class BaseTest {
 	
 	public WebDriver driver;
-	public String appUrl = "http://192.168.1.238:3000";
+	public String appUrl = "http://localhost:3000";
 	
 	@Before
 	public void setUp() {
-		WebDriverManager.chromedriver().setup();
+		WebDriverManager.chromedriver().clearDriverCache().setup();
 		ChromeOptions chromeOptions = new ChromeOptions();
 		chromeOptions.addArguments("--no-sandbox", "--headless", "--disable-gpu", "--window-size=1920x1080");
 		driver = new ChromeDriver(chromeOptions);

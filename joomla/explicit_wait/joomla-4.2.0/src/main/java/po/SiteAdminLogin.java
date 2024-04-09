@@ -3,6 +3,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
+import utils.Wait;
+
 public class SiteAdminLogin extends PageObject {
 	
 	@FindBy(id = "mod-login-username")
@@ -23,8 +25,11 @@ public class SiteAdminLogin extends PageObject {
 	@FindBy(xpath = "//*[@id=\"form-login\"]/fieldset/div[2]/label/span")
 	protected WebElement emptyPasswordAlert;
 	
+	protected Wait wait;
+	
 	public SiteAdminLogin(WebDriver driver) {
 		super(driver);
+		wait = new Wait(driver);
 	}
 	
 	public SiteAdminLogin setUsername(String usr) {
@@ -56,6 +61,7 @@ public class SiteAdminLogin extends PageObject {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}*/
+		wait.waitVisibility(alertMsg);
 		return alertMsg.getText();
 	}
 	

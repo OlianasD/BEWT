@@ -17,13 +17,13 @@ public class BaseTest {
 	
 	@Before
 	public void login() {
-		WebDriverManager.chromedriver().setup();
+		WebDriverManager.chromedriver().clearDriverCache().setup();
 		ChromeOptions chromeOptions = new ChromeOptions();
 		chromeOptions.addArguments("--no-sandbox", "--headless", "--disable-gpu", "--window-size=1920x1080");
 		driver = new ChromeDriver(chromeOptions);
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		driver.manage().window().maximize();
-		driver.get("http://192.168.56.101:8989");
+		driver.get("http://localhost:8989");
 		driver.findElement(By.name("username")).clear();
 		driver.findElement(By.name("username")).sendKeys("administrator");
 		driver.findElement(By.className("btn")).click();

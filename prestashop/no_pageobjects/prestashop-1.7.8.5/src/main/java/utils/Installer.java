@@ -18,10 +18,9 @@ public class Installer {
 	
 	@Test
 	public void install() throws InterruptedException {
-		System.setProperty("webdriver.chrome.driver", "src/main/resources/chromedriver.exe");
-		//WebDriverManager.chromedriver().setup();
+		WebDriverManager.chromedriver().clearDriverCache().setup();
 		ChromeOptions chromeOptions = new ChromeOptions();
-		chromeOptions.addArguments("--no-sandbox", /*"--headless",*/ "--disable-gpu", "--window-size=1920x1080");
+		chromeOptions.addArguments("--no-sandbox", "--disable-gpu", "--window-size=1920x1080");
 		driver = new ChromeDriver(chromeOptions);
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		driver.manage().window().maximize();
@@ -49,7 +48,7 @@ public class Installer {
 		Thread.sleep(5000);
 		driver.findElement(By.id("btNext")).click();
 		
-		System.out.println("Setup complete. Now: \n1) access the container using docker exec -it some-prestashop bash\n 2) remove directory \"install\"\n 3) rename \"admin\" directory to \"admin929rtmgmy\" ");
+		System.out.println("Setup complete.");
 	}
 
 }

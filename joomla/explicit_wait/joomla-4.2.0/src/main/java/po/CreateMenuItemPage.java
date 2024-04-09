@@ -6,7 +6,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.Select;
 
-import utils.Waiter;
+import utils.Wait;
 
 public class CreateMenuItemPage extends PageObject {
 	
@@ -29,11 +29,11 @@ public class CreateMenuItemPage extends PageObject {
 	@FindBy(xpath = "//*[@id=\"jform_menutype-lbl\"]/span[2]")
 	public WebElement menuNotSelectedAlert;
 	
-	protected Waiter wait;
+	protected Wait wait;
 	
 	public CreateMenuItemPage(WebDriver driver) {
 		super(driver);
-		wait = new Waiter(driver);
+		wait = new Wait(driver);
 	}
 	
 	public CreateMenuItemPage setTitle(String ttl) {

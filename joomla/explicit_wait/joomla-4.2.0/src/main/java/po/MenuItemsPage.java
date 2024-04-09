@@ -5,14 +5,18 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
+import utils.Wait;
+
 public class MenuItemsPage extends SiteAdminPageObject {
 	
 	@FindBy(className = "button-new")
 	protected WebElement createMenuItem;
 	
+	protected Wait wait;
+	
 	public MenuItemsPage(WebDriver driver) {
 		super(driver);
-		// TODO Auto-generated constructor stub
+		wait = new Wait(driver);
 	}
 	
 	public CreateMenuItemPage createMenuItem() {
@@ -21,6 +25,7 @@ public class MenuItemsPage extends SiteAdminPageObject {
 	}
 	
 	public String getAlertMessage() {
+		wait.waitVisibility(driver.findElement(By.className("alert-message")));
 		return driver.findElement(By.className("alert-message")).getText();
 	}
 	

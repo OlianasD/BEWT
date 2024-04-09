@@ -5,7 +5,6 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-import utils.Properties;
 
 public class ClarolinePage {
 	@FindBy(linkText="Logout")
@@ -21,7 +20,7 @@ public class ClarolinePage {
 	
 	public IndexPage doLogoutAndGoHome(WebDriver driver){
 		logout.click();
-		driver.get(Properties.app_url);
+		driver.get("http://localhost:3000/claroline11110/claroline/index.php");
 		return new IndexPage(driver);
 	}
 	

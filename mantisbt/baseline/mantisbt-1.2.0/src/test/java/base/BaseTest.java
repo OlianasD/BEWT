@@ -17,13 +17,13 @@ public class BaseTest {
 	
 	@Before
 	public void login() {
-		WebDriverManager.chromedriver().setup();
+		WebDriverManager.chromedriver().clearDriverCache().setup();
 		ChromeOptions chromeOptions = new ChromeOptions();
-		chromeOptions.addArguments("--no-sandbox", "--headless", "--disable-gpu", "--window-size=1920x1080");
+		chromeOptions.addArguments("--no-sandbox", "--headless", "--lang=en", "--disable-gpu", "--window-size=1920x1080");
 		driver = new ChromeDriver(chromeOptions);
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		driver.manage().window().maximize();
-		driver.get("http://192.168.1.238:3000/mantisbt");
+		driver.get("http://localhost:3000/mantisbt");
 		new LoginPage(driver).setUsername("administrator").setPassword("root").login();
 	}
 	

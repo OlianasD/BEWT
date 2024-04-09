@@ -17,8 +17,7 @@ public class BaseTest {
 	
 	@Before
 	public void login() {
-		System.setProperty("webdriver.chrome.driver", "src/main/resources/chromedriver.exe");
-		//WebDriverManager.chromedriver().setup();
+		WebDriverManager.chromedriver().clearDriverCache().setup();
 		ChromeOptions chromeOptions = new ChromeOptions();
 		chromeOptions.addArguments("--no-sandbox", "--headless", "--disable-gpu", "--window-size=1920x1080", "--lang=en");
 		driver = new ChromeDriver(chromeOptions);

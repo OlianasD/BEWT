@@ -17,10 +17,9 @@ public class BaseTest {
 	
 	@Before
 	public void login() {
-		//WebDriverManager.chromedriver().setup();
-		System.setProperty("webdriver.chrome.driver", "src/main/resources/chromedriver.exe");
+		WebDriverManager.chromedriver().clearDriverCache().setup();
 		ChromeOptions chromeOptions = new ChromeOptions();
-		chromeOptions.addArguments("--no-sandbox", /*"--headless",*/ "--lang=en", "--disable-gpu", "--window-size=1920x1080");
+		chromeOptions.addArguments("--no-sandbox", "--headless", "--lang=en", "--disable-gpu", "--window-size=1920x1080");
 		driver = new ChromeDriver(chromeOptions);
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		driver.manage().window().maximize();

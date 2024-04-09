@@ -4,7 +4,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-import utils.Waiter;
+import utils.Wait;
 
 public class ContentSidebar extends SiteAdminHome {
 	
@@ -14,11 +14,11 @@ public class ContentSidebar extends SiteAdminHome {
 	@FindBy(xpath = "//*[@id=\"collapse1\"]/li[6]/a/span")
 	protected WebElement fieldGroups;
 	
-	protected Waiter wait;
+	protected Wait wait;
 	
 	public ContentSidebar(WebDriver driver) {
 		super(driver);
-		wait = new Waiter(driver);
+		wait = new Wait(driver);
 	}
 	
 	public ManageFieldsPage fields() {

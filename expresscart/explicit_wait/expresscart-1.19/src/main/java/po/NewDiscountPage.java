@@ -47,13 +47,13 @@ public class NewDiscountPage extends AdminSidebar {
 	}
 	
 	public NewDiscountPage setStart(String start) {
-		driver.findElement(By.id("discountStart")).sendKeys("12/02/2023 00:00");
+		driver.findElement(By.id("discountStart")).sendKeys(start);
 		driver.findElement(By.xpath("/html/body/div[10]/div/div[3]/button[1]")).click();
 		return this;
 	}
 	
 	public NewDiscountPage setEnd(String end) {
-		driver.findElement(By.id("discountEnd")).sendKeys("12/02/2024 00:00");
+		driver.findElement(By.id("discountEnd")).sendKeys(end);
 		driver.findElement(By.xpath("/html/body/div[11]/div/div[3]/button[1]")).click();
 		return this;
 	}

@@ -26,7 +26,7 @@ public class AddDiscountCodePercentTest extends BaseTest {
 			.setType("Percent")
 			.setValue("50")
 			.setStart("12/02/2023 00:00")
-			.setEnd("12/02/2024 00:00")
+			.setEnd("12/02/2030 00:00")
 			.addDiscount()
 			.discountCodes();
 		assertEquals("Code:  discperc000", codes.getIthDiscountCode(6));

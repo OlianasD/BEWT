@@ -5,7 +5,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-import utils.Waiter;
+import utils.Wait;
 
 public class DesktopPage extends ClarolinePage{
 	private WebDriver driver;
@@ -23,12 +23,12 @@ public class DesktopPage extends ClarolinePage{
 	private WebElement nextMonthAgendaLink;
 	@FindBy(linkText="Manage my account")
 	private WebElement userAccountLink;
-	private Waiter wait;
+	private Wait wait;
 	
 	public DesktopPage(WebDriver driver){
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
-		wait = new Waiter(driver);
+		wait = new Wait(driver);
 	}
 	
 	public AdminPage goToAdminPage(){

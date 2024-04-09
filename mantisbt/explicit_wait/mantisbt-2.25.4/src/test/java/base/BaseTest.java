@@ -1,7 +1,5 @@
 package base;
 
-import java.util.concurrent.TimeUnit;
-
 import org.junit.After;
 import org.junit.Before;
 import org.openqa.selenium.WebDriver;
@@ -17,13 +15,12 @@ public class BaseTest {
 	
 	@Before
 	public void login() {
-		WebDriverManager.chromedriver().setup();
+		WebDriverManager.chromedriver().clearDriverCache().setup();
 		ChromeOptions chromeOptions = new ChromeOptions();
-		chromeOptions.addArguments("--no-sandbox", "--headless", "--disable-gpu", "--window-size=1920x1080");
+		chromeOptions.addArguments("--no-sandbox", "--headless", "--lang=en", "--disable-gpu", "--window-size=1920x1080");
 		driver = new ChromeDriver(chromeOptions);
-		//driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		driver.manage().window().maximize();
-		driver.get("http://192.168.1.238:8989");
+		driver.get("http://localhost:8989");
 		new LoginPage(driver).setUsername("administrator").setPassword("root").login();
 	}
 	

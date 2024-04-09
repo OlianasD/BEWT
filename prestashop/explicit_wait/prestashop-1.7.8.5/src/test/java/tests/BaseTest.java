@@ -1,7 +1,5 @@
 package tests;
 
-import java.util.concurrent.TimeUnit;
-
 import org.junit.After;
 import org.junit.Before;
 import org.openqa.selenium.WebDriver;
@@ -18,8 +16,7 @@ public class BaseTest {
 
 	@Before
 	public void setUp() {
-		System.setProperty("webdriver.chrome.driver", "src/main/resources/chromedriver.exe");
-		//WebDriverManager.chromedriver().setup();
+		WebDriverManager.chromedriver().clearDriverCache().setup();
 		ChromeOptions chromeOptions = new ChromeOptions();
 		chromeOptions.addArguments("--no-sandbox", "--headless", "--disable-gpu", "--window-size=1920x1080");
 		driver = new ChromeDriver(chromeOptions);

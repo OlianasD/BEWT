@@ -18,14 +18,13 @@ public class Installer {
 	
 	@Test
 	public void install() throws InterruptedException {
-		//WebDriverManager.chromedriver().setup();
-		System.setProperty("webdriver.chrome.driver", "src/main/resources/chromedriver.exe");
+		WebDriverManager.chromedriver().clearDriverCache().setup();
 		ChromeOptions chromeOptions = new ChromeOptions();
-		chromeOptions.addArguments("--no-sandbox", /*"--headless",*/ "--disable-gpu", "--window-size=1920x1080");
+		chromeOptions.addArguments("--no-sandbox", "--disable-gpu", "--window-size=1920x1080");
 		driver = new ChromeDriver(chromeOptions);
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		driver.manage().window().maximize();
-		driver.get("http://192.168.1.238:8080/install/");
+		driver.get("http://localhost:8080/install/");
 		new Select(driver.findElement(By.id("langList"))).selectByVisibleText("English (English)");
 		driver.findElement(By.id("btNext")).click();
 		driver.findElement(By.id("set_license")).click();

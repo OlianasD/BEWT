@@ -27,7 +27,7 @@ public class AddDiscountCodeAmountTest extends BaseTest {
 			.setCode("discount000")
 			.setValue("3")
 			.setStart("12/02/2023 00:00")
-			.setEnd("12/02/2024 00:00")
+			.setEnd("12/02/2030 00:00")
 			.addDiscount()
 			.discountCodes();
 		assertEquals("Code:  discount000", codes.getIthDiscountCode(5));
