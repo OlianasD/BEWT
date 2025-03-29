@@ -51,11 +51,4 @@ public class CalendarAgendaPage extends ClarolinePage{
 		return new CalendarAgendaPage(driver);
 	}
 	
-	public DesktopPage goToDesktop() throws InterruptedException{
-		desktopLink.click();
-		Thread.sleep(3000);
-		DesktopPage page = new DesktopPage(driver);
-		return page;
-	}
-	
 }

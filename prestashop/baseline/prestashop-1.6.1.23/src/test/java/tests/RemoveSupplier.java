@@ -17,6 +17,8 @@ public class RemoveSupplier extends BaseTest {
 				.goToSuppliers()
 				.removeSupplier();
 		
-		assertTrue(suppliers.getSuccesssMessage().contains("Successful deletion")); 
+		assertTrue(suppliers
+				.getSuccesssMessage()
+				.contains("Successful deletion")); 
 	}
 }

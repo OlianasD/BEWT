@@ -42,5 +42,6 @@ import org.junit.runners.Suite.SuiteClasses;
 	UnlinkMultipleSubprojects.class,
 	LinkMultipleSubprojects.class,
 	DeleteMultipleProjects.class,
+	Logout.class,
 })
 public class TestSuite {}

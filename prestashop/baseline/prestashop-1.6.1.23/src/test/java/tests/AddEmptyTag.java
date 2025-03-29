@@ -17,7 +17,7 @@ public class AddEmptyTag extends BaseTest {
 				.addTag()
 				.addEmptyTag();
 		
-		assertEquals("�\n"
+		assertEquals("×\n"
 		 		+ "The name field is required.", tag.getAlertMessage());
 	}
 }

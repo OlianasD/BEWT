@@ -38,11 +38,6 @@ public class UsersManagementPage extends TopNavBar {
 		remove.click();
 		wait.waitClickability(confirmRemoveBtn);
 		confirmRemoveBtn.click();
-		/*try {
-			Thread.sleep(500);
-		} catch (InterruptedException e) {
-			e.printStackTrace();
-		}*/
 		return new UsersManagementPage(driver);
 	}
 

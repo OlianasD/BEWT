@@ -72,11 +72,6 @@ public class ProjectSidebar extends TopNavBar {
 		By locator = By.id("modal-confirm-button");
 		wait.waitClickability(locator);
 		driver.findElement(locator).click();
-		/*try {
-			Thread.sleep(500);
-		} catch (InterruptedException e) {
-			e.printStackTrace();
-		}*/
 		return new ProjectListPage(driver);
 	}
 

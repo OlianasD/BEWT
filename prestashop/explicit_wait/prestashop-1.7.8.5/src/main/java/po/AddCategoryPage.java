@@ -34,11 +34,6 @@ public class AddCategoryPage {
 
 	public AddCategoryPage submitEmptyCategory() {
 		submitCategory.click();
-		/*try {
-			Thread.sleep(1000);
-		} catch (InterruptedException e) {
-			e.printStackTrace();
-		}*/
 		return new AddCategoryPage(driver);
 	}
 

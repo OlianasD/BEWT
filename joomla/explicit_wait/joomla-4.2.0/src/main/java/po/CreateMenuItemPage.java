@@ -48,12 +48,6 @@ public class CreateMenuItemPage extends PageObject {
 	
 	public CreateMenuItemPage selectArchivedArticleType() {
 		menuItemType.click();
-		/*try {
-			Thread.sleep(1000);
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}*/
 		driver.switchTo().frame(driver.findElement(By.className("iframe")));
 		By locatorBtn = By.xpath("//*[@id=\"collapse0-heading\"]/button");
 		wait.waitClickability(locatorBtn);

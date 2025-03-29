@@ -52,11 +52,6 @@ public class CurrencyRatesPage extends SettingsSidebar {
 	
 	public CurrencyRatesPage save() {
 		saveBtn.click();
-		/*try {
-			Thread.sleep(500);
-		} catch (InterruptedException e) {
-			e.printStackTrace();
-		}*/
 		return new CurrencyRatesPage(driver);
 	}
 	

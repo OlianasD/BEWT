@@ -35,6 +35,7 @@ import org.junit.runners.Suite.SuiteClasses;
 	RegisterEmployee_NoPermission.class,
 	OutOfStockValidity.class,
 	AddTag.class,
+	AddEmptyTag.class,
 	AddLanguageIsoCodeValidity.class,
 	AddCurrency.class,
 	AddEmptyCurrency.class,

@@ -79,7 +79,6 @@ public class WikiPage extends PageObject {
 	}
 	
 	public PageProtectPage protect() {
-		//wait.waitVisibility(more);
 		more.click();
 		By locator = By.linkText("Protect");
 		wait.waitClickability(locator);
@@ -97,12 +96,6 @@ public class WikiPage extends PageObject {
 	
 	public PageCreationPage forceEdit() {
 		driver.get(driver.getCurrentUrl()+"?veaction=edit");
-		/*try {
-			Thread.sleep(1000);
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}*/
 		return new PageCreationPage(driver);
 	}
 	

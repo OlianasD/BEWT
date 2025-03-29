@@ -1,4 +1,4 @@
-Scenario: Tries to login to the site administration area with wrong credentials and fails
+Scenario: Adds a group
 	Given the user is on the home page
 		When the user enters "administrator" in the "Username" field
 		And enters "root" in the "Password" field
@@ -6,6 +6,16 @@ Scenario: Tries to login to the site administration area with wrong credentials 
 	 	And clicks the "Site Administrator" link
 	 	#a new tab opens
 	 	And enters "administrator" in the "Username" field
-		And enters "wrongpassword" in the "Password" field
+		And enters "root" in the "Password" field
 		And clicks the "Log in" button
-	Then "Username and password do not match or you do not have an account yet." is shown in a yellow box
+		And clicks the "Users" link on the sidebar
+		And clicks the "User Groups" link
+		And clicks the "New" button
+		And clicks the "Save & Close" button
+	Then "Invalid field:  Group Title" is shown on the page
+
+
+
+
+
+

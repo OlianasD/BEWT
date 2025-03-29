@@ -29,11 +29,6 @@ public class AddNewProjectPage extends PageObject {
 		wait.waitClickability(newProjectInput);
 		newProjectInput.sendKeys(name);
 		saveBtn.click();
-		/*try {
-			Thread.sleep(1000);
-		} catch (InterruptedException e) {
-			e.printStackTrace();
-		}*/
 		return new ProjectSummaryPage(driver);
 
 	}

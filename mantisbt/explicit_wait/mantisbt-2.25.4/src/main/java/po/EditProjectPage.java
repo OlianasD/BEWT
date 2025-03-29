@@ -115,11 +115,6 @@ public class EditProjectPage extends CreateProjectPage {
 	}
 	
 	public EditProjectPage confirmDeleteCategory() {
-		/*try {
-			Thread.sleep(1000);
-		} catch (InterruptedException e) {
-			e.printStackTrace();
-		}*/
 		driver.findElement(By.xpath("//*[@id=\"main-container\"]/div[2]/div[2]/div/div/div[2]/form/input[5]")).click();
 		driver.findElement(By.linkText(Strings.contin)).click();
 		return new EditProjectPage(driver);

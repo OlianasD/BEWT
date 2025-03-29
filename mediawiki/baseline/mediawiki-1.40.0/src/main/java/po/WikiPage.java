@@ -75,6 +75,12 @@ public class WikiPage extends PageObject {
 	
 	public PageProtectPage changeProtectionLevel() {
 		more.click();
+		try {
+			Thread.sleep(1000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		driver.findElement(By.linkText("Change protection")).click();
 		return new PageProtectPage(driver);
 	}

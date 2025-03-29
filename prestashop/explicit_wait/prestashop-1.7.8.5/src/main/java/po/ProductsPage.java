@@ -1,6 +1,5 @@
 package po;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -30,12 +29,6 @@ public class ProductsPage extends AdminSidebar {
 	
 	public AddProductPage addNewProduct() {
 		addNewProduct.click();
-		/*try {
-			Thread.sleep(2000);
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}*/
 		return new AddProductPage(driver);
 	}
 	
@@ -45,12 +38,6 @@ public class ProductsPage extends AdminSidebar {
 	
 	public AddProductPage editProduct() {
 		editProduct.click();
-		/*try {
-			Thread.sleep(2000);
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}*/
 		return new AddProductPage(driver);
 	}
 	

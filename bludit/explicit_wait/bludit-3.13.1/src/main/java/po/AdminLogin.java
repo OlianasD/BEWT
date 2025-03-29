@@ -45,11 +45,6 @@ public class AdminLogin extends PageObject {
 	
 	public AdminLogin badLogin() {
 		loginBtn.click();
-		/*try {
-			Thread.sleep(2000);
-		} catch (InterruptedException e) {
-			e.printStackTrace();
-		}*/
 		return new AdminLogin(driver);
 	}
 	

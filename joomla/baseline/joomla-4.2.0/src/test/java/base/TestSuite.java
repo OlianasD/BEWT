@@ -40,6 +40,7 @@ import org.junit.runners.Suite.SuiteClasses;
 	DeleteField.class,
 	DeleteFieldGroup.class,
 	DeleteUser.class,
+	DeleteCategory.class,
 	
 })
 public class TestSuite {}

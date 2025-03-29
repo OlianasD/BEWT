@@ -25,11 +25,6 @@ public class EditUserProfilePage extends TopNavBar {
 
 	public UserSummaryPage save() {
 		saveBtn.click();
-		/*try {
-			Thread.sleep(500);
-		} catch (InterruptedException e) {
-			e.printStackTrace();
-		}*/
 		return new UserSummaryPage(driver);
 	}
 

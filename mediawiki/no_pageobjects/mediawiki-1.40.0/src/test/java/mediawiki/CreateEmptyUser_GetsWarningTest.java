@@ -20,7 +20,7 @@ public class CreateEmptyUser_GetsWarningTest extends BaseTest {
 		driver.findElement(By.linkText("Create account")).click();
 		driver.findElement(By.id("wpCreateaccount")).click();
 		
-		assertEquals("Compila questo campo.", driver.findElement(By.id("wpName2")).getAttribute("validationMessage"));
+		assertEquals("Please fill in this field.", driver.findElement(By.id("wpName2")).getAttribute("validationMessage"));
 	}
 	
 }

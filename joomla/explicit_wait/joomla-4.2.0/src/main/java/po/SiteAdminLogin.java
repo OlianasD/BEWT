@@ -55,12 +55,6 @@ public class SiteAdminLogin extends PageObject {
 	}
 	
 	public String getAlertMessage() {
-		/*try {
-			Thread.sleep(500);
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}*/
 		wait.waitVisibility(alertMsg);
 		return alertMsg.getText();
 	}

@@ -25,12 +25,6 @@ public class BoardSettingsPage extends SettingsSidebar {
 	
 	public BoardSettingsPage save() {
 		saveBtn.click();
-		/*try {
-			Thread.sleep(500);
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}*/
 		return new BoardSettingsPage(driver);
 	}
 	

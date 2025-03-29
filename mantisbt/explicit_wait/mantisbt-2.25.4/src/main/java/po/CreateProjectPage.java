@@ -48,21 +48,11 @@ public class CreateProjectPage extends ManageNavBar {
 	}
 	
 	public BaseNavBar createProject() {
-		/*try {
-			Thread.sleep(1000);
-		} catch (InterruptedException e) {
-			e.printStackTrace();
-		}*/
 		driver.findElement(By.xpath("//*[@id=\"manage-project-create-form\"]/div/div[3]/input")).click();
 		return new BaseNavBar(driver);
 	}
 	
 	public CreateProjectPage createProjectFails() {
-		/*try {
-			Thread.sleep(1000);
-		} catch (InterruptedException e) {
-			e.printStackTrace();
-		}*/
 		driver.findElement(By.xpath("//*[@id=\"manage-project-create-form\"]/div/div[3]/input")).click();
 		return new CreateProjectPage(driver);
 	}

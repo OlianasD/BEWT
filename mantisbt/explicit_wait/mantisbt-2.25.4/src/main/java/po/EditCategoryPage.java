@@ -24,11 +24,6 @@ public class EditCategoryPage extends BaseNavBar {
 	
 	public EditProjectPage updateCategory() {
 		updateCategoryBtn.click();
-		/*try {
-			Thread.sleep(2000);
-		} catch (InterruptedException e) {
-			e.printStackTrace();
-		}*/
 		return new EditProjectPage(driver);
 	}
 	

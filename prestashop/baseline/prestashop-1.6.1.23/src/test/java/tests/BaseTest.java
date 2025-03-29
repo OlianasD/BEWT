@@ -22,7 +22,7 @@ public class BaseTest {
 		ChromeOptions chromeOptions = new ChromeOptions();
 		chromeOptions.addArguments("--no-sandbox", "--headless", "--disable-gpu", "--window-size=1920x1080");
 		driver = new ChromeDriver(chromeOptions);
-		driver.get("http://localhost:8080/admin929rtmgmy/");
+		driver.get("http://localhost:8080/administrator/");
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		driver.manage().window().maximize();
 	}

@@ -16,7 +16,7 @@ public class BaseTest {
 	public static WebDriver driver;
 	
 	@Before
-	public void login() {
+	public void setup() {
 		WebDriverManager.chromedriver().clearDriverCache().setup();
 		ChromeOptions chromeOptions = new ChromeOptions();
 		chromeOptions.addArguments("--no-sandbox", "--headless", "--disable-gpu", "--window-size=1920x1080", "--lang=en");

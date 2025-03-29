@@ -23,11 +23,6 @@ public class TaskPage extends TaskSidebar {
 		By locator = By.xpath("//*[@id=\"modal-confirm-button\"]");
 		wait.waitClickability(locator);
 		driver.findElement(locator).click();
-		/*try {
-			Thread.sleep(1000);
-		} catch (InterruptedException e) {
-			e.printStackTrace();
-		}*/
 		return new TaskPage(driver);
 	}
 	
