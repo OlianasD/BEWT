@@ -19,7 +19,7 @@ public class AddReviewTest extends BaseTest {
 		goToHome();
 		ProductPage product = new Home(driver)
 			.account()
-			.setEmail("test000@test.com")
+			.setEmail("test@test.com")
 			.setPassword("e2eW3Bt3s71nGB3nchM4rK")
 			.loginAndGoHome(appUrl)
 			.goToProduct("NewProduct000")
