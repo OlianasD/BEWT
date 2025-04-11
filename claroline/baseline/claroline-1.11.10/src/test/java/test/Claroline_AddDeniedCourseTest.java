@@ -12,7 +12,7 @@ public class Claroline_AddDeniedCourseTest extends BaseTest {
 	@Test
 	public void addDeniedCourse() throws InterruptedException{
 		CourseCreatePage ccp = new IndexPage(driver)
-				.login("admin", "admin")
+				.login("admin", "n0tl34k3dy3t")
 				.goToAdminPage()
 				.addCourse()
 				.addDeniedCourse("Course003", "003", "Humanities");

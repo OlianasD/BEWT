@@ -12,7 +12,7 @@ public class ChangePasswordDontMatch extends BaseTest {
 	@Test
 	public void changePasswordDontMatch() {
 		String username = "tuser01";
-		String password = "newpassword01";
+		String password = "e2eW3Bt3s71nGB3nchM4rK_1";
 		
 		EditProfilePage profile = new BaseNavBar(driver)
 				.authorLogin()

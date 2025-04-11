@@ -12,7 +12,7 @@ public class AddEmptyProductTest extends BaseTest {
 		goToAdminHome();
 		NewProductPage product = new AdminLoginPage(driver)
 				.setEmail("owner@test.com")
-				.setPassword("test")
+				.setPassword("e2eW3Bt3s71nGB3nchM4rK")
 				.doLogin()
 				.newProduct()
 				.addProductError();

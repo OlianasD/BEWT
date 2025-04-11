@@ -26,7 +26,7 @@ The installation wizard can be executed automatically by running `utils.Installe
 * Database password: **example**
 * Wiki name: **E2E Web Testing wiki**
 * Your username: **asmin**
-* Password: **Password001**
+* Password: **e2eW3Bt3s71nGB3nchM4rK**
 * E-mail address: **admin@wiki.example**
 * User rights profile: **Authorized editors only**
 * Uncheck **Enable outbound email**

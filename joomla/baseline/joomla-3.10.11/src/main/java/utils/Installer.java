@@ -20,7 +20,7 @@ public class Installer {
 	public void install() throws InterruptedException {
 		WebDriverManager.chromedriver().clearDriverCache().setup();
 		ChromeOptions chromeOptions = new ChromeOptions();
-		chromeOptions.addArguments("--no-sandbox", "--headless", "--disable-gpu", "--window-size=1920x1080");
+		chromeOptions.addArguments("--no-sandbox", /*"--headless",*/ "--disable-gpu", "--window-size=1920x1080");
 		driver = new ChromeDriver(chromeOptions);
 		driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
 		driver.manage().window().maximize();
@@ -32,8 +32,8 @@ public class Installer {
 		driver.findElement(By.id("jform_site_name")).sendKeys("TestRigor joomla test");
 		driver.findElement(By.id("jform_admin_email")).sendKeys("saul@fake.com");
 		driver.findElement(By.id("jform_admin_user")).sendKeys("administrator");
-		driver.findElement(By.id("jform_admin_password")).sendKeys("root");
-		driver.findElement(By.id("jform_admin_password2")).sendKeys("root");
+		driver.findElement(By.id("jform_admin_password")).sendKeys("e2eW3Bt3s71nGB3nchM4rK");
+		driver.findElement(By.id("jform_admin_password2")).sendKeys("e2eW3Bt3s71nGB3nchM4rK");
 		driver.findElement(By.xpath("//*[@id=\"container-installation\"]/div/div/a")).click();
 		driver.findElement(By.id("jform_db_host")).clear();
 		driver.findElement(By.id("jform_db_host")).sendKeys("joomladb");

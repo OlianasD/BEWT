@@ -26,6 +26,12 @@ public class CreateProjectPage extends ManageNavBar {
 	}
 	
 	public CreateProjectPage setName(String nameStr) {
+		try {
+			Thread.sleep(1000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		name.clear();
 		name.sendKeys(nameStr);
 		return this;

@@ -46,6 +46,11 @@ public class BlockUserPage extends PageObject {
 	}
 	
 	public String getMessage() {
+		try {
+			Thread.sleep(1000);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
 		return driver.findElement(By.xpath("//*[@id=\"mw-content-text\"]/p")).getText();
 	}
 	

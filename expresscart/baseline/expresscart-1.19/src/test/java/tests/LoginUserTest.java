@@ -18,7 +18,7 @@ public class LoginUserTest extends BaseTest {
 			goToAdminHome();
 			AdminDashboardPage dashboard = new AdminLoginPage(driver)
 				.setEmail("test000@test.com")
-				.setPassword("password")
+				.setPassword("e2eW3Bt3s71nGB3nchM4rK")
 				.doLogin();
 			assertEquals(dashboard.getDashboardText(), "  Dashboard");
 			dashboard.logout();		

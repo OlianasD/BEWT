@@ -14,8 +14,8 @@ public class ChangePassword_OKTest extends BaseTest {
 			.specialPages()
 			.changeCredentials()
 			.clickUsername()
-			.setPassword("NewPassword001")
-			.confirmPassword("NewPassword001")
+			.setPassword("e2eW3Bt3s71nGB3nchM4rK_1")
+			.confirmPassword("e2eW3Bt3s71nGB3nchM4rK_1")
 			.change();
 		
 		assertEquals("Your credentials have been changed.", psw.getSuccessMessage());

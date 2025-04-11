@@ -32,6 +32,12 @@ public class AdminSidebar extends PageObject {
 	}
 	
 	public ContentPage content() {
+		try {
+			Thread.sleep(1000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		content.click();
 		return new ContentPage(driver);
 	}

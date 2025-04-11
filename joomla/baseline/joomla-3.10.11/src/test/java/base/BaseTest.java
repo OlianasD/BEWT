@@ -14,7 +14,7 @@ import po.EditProfilePage;
 public class BaseTest {
 
 	protected static final String adminUser = "administrator";
-	protected static final String adminPsw = "root";
+	protected static final String adminPsw = "e2eW3Bt3s71nGB3nchM4rK";
 	protected WebDriver driver;
 
 	@Before

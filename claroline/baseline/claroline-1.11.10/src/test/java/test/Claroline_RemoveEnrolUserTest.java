@@ -12,7 +12,7 @@ public class Claroline_RemoveEnrolUserTest extends BaseTest {
 	@Test
 	public void removeEnrolUser() throws InterruptedException{
 		AuthCoursesPage acp = new IndexPage(driver)
-				.login("user001", "password001")
+				.login("user001", "n0tl34k3dy3t")
 				.removeEnrolFromCourse()
 				.removeEnrol();
 		

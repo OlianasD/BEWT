@@ -12,7 +12,7 @@ public class Claroline_AddEmptyCourseTest extends BaseTest {
 	@Test
 	public void addEmptyCourse() throws InterruptedException{
 		CourseCreatePage ccp = new IndexPage(driver)
-				.login("admin", "admin")
+				.login("admin", "n0tl34k3dy3t")
 				.goToAdminPage()
 				.addCourse()
 				.addEmptyCourse();

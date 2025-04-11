@@ -36,6 +36,12 @@ public class ManageCategoriesPage extends SiteAdminPageObject {
 	}
 	
 	public String getAlertMessage() {
+		try {
+			Thread.sleep(1000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		return driver.findElement(By.className("alert-message")).getText();
 	}
 

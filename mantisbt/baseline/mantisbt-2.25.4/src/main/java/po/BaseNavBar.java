@@ -40,6 +40,12 @@ public class BaseNavBar {
 	}
 	
 	public ViewIssuesPage viewIssues() {
+		try {
+			Thread.sleep(1000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		viewIssues.click();
 		return new ViewIssuesPage(driver);
 	}

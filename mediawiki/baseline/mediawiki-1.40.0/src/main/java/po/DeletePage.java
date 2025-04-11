@@ -16,11 +16,23 @@ public class DeletePage extends PageObject {
 	}
 	
 	public DeletePage delete() {
+		try {
+			Thread.sleep(1000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		deleteBtn.click();
 		return new DeletePage(driver);
 	}
 	
 	public String getSuccessMessage() {
+		try {
+			Thread.sleep(1000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		return driver.findElement(By.xpath("//*[@id=\"mw-content-text\"]/p[1]")).getText();
 	}
 

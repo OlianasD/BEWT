@@ -14,7 +14,7 @@ public class LoginDeletedUserFailsTest extends BaseTest {
 		goToAdminHome();
 		AdminLoginPage login = new AdminLoginPage(driver)
 			.setEmail("test000@test.com")
-			.setPassword("test")
+			.setPassword("e2eW3Bt3s71nGB3nchM4rK")
 			.doBadLogin();
 		assertEquals("A user with that email does not exist.", login.getDangerAlertText());
 	}

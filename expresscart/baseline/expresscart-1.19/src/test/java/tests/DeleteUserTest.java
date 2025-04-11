@@ -18,7 +18,7 @@ public class DeleteUserTest extends BaseTest {
 		goToAdminHome();
 		UsersPage users = new AdminLoginPage(driver)
 			.setEmail("owner@test.com")
-			.setPassword("test")
+			.setPassword("e2eW3Bt3s71nGB3nchM4rK")
 			.doLogin()
 			.users()
 			.deleteThirdUser()

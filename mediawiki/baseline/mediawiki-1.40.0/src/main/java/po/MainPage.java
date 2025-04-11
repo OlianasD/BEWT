@@ -32,6 +32,12 @@ public class MainPage extends PageObject {
 	}
 	
 	public SpecialPagesPage specialPages() {
+		try {
+			Thread.sleep(1000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		specialPages.click();
 		return new SpecialPagesPage(driver);
 	}
@@ -42,12 +48,24 @@ public class MainPage extends PageObject {
 	}
 	
 	public SearchResultsPage searchNonExisting(String query) {
+		try {
+			Thread.sleep(1000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		searchBar.sendKeys(query);
 		searchBar.sendKeys(Keys.ENTER);
 		return new SearchResultsPage(driver, query);
 	}
 	
 	public WikiPage searchExisting(String query) {
+		try {
+			Thread.sleep(1000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		searchBar.sendKeys(query);
 		try {
 			Thread.sleep(500);

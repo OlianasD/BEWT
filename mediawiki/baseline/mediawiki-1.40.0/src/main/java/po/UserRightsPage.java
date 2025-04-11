@@ -49,6 +49,12 @@ public class UserRightsPage extends PageObject {
 	}
 	
 	public boolean isAdminChecked() {
+		try {
+			Thread.sleep(1000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		return adminCheckbox.isSelected();
 	}
 	

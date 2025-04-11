@@ -22,6 +22,12 @@ public class AddManufacturerPage {
 	public ManufacturerPage addManufacturer(String nameStr) {
 		name.clear();
 		name.sendKeys(nameStr);
+		try {
+			Thread.sleep(1000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		submitManufacturer.click();
 		return new ManufacturerPage(driver);
 	}

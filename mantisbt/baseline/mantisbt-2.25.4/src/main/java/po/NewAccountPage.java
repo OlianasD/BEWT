@@ -53,6 +53,12 @@ public class NewAccountPage extends ManageNavBar {
 	
 	public ManageUsersPage createUser() {
 		createUserBtn.click();
+		try {
+			Thread.sleep(1000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		manageUsers.click();
 		return new ManageUsersPage(driver);
 	}

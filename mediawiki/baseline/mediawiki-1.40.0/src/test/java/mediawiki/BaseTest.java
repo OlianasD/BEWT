@@ -30,7 +30,7 @@ public class BaseTest {
 		return new MainPage(driver)
 				.login()
 				.setUsername("admin")
-				.setPassword("Password001")
+				.setPassword("e2eW3Bt3s71nGB3nchM4rK")
 				.login();
 	}
 	
@@ -38,7 +38,7 @@ public class BaseTest {
 		return new MainPage(driver)
 				.login()
 				.setUsername("User001")
-				.setPassword("Password001")
+				.setPassword("e2eW3Bt3s71nGB3nchM4rK")
 				.login();
 	}
 	

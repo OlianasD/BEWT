@@ -41,6 +41,12 @@ public class ManageFieldGroupsPage extends SiteAdminPageObject {
 	
 	public boolean isGroupPresentAtFirstRow(String group) {
 		try {
+			Thread.sleep(1000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		try {
 			return driver.findElement(By.xpath("//*[@id=\"fieldgroupList\"]/tbody/tr[1]/th/div/a")).getText().contains(group);
 		} catch(NoSuchElementException e) {
 			if(driver.findElement(By.xpath("//*[@id=\"j-main-container\"]/div[2]")).getText().contains("No Matching Results")) {

@@ -25,6 +25,12 @@ public class RevisionHistoryPage extends PageObject {
 	}
 	
 	public WikiPage goToLink(String pageName) {
+		try {
+			Thread.sleep(1000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		driver.findElement(By.linkText(pageName)).click();
 		return new WikiPage(driver);
 	}

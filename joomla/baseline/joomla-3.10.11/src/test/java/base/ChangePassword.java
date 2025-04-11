@@ -12,8 +12,8 @@ public class ChangePassword extends BaseTest {
 	@Test
 	public void changePassword() {
 		String username = "tuser01";
-		String oldPassword = "tpassword";
-		String password = "newpassword01";
+		String oldPassword = "e2eW3Bt3s71nGB3nchM4rK";
+		String password = "e2eW3Bt3s71nGB3nchM4rK_1";
 		
 		EditProfilePage profile = new BaseNavBar(driver)
 				.authorLogin()

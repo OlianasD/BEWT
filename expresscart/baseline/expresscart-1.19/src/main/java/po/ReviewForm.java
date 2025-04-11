@@ -11,6 +11,12 @@ public class ReviewForm extends PageObject {
 	}
 	
 	public ReviewForm setTitle(String title) {
+		try {
+			Thread.sleep(1000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		driver.findElement(By.id("review-title")).sendKeys(title);
 		try {
 			Thread.sleep(500);

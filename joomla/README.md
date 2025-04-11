@@ -34,7 +34,7 @@ The installation wizard can be executed automatically by running `utils.Installe
 *	Site name: TestRigor joomla test
 *	Email: saul@fake.com
 *	Username: administrator
-*	Password: root
+*	Password: e2eW3Bt3s71nGB3nchM4rK
 * 	Database type: MySQLi
 *	Host Name: joomladb
 *	Username (database): root

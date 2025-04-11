@@ -43,6 +43,12 @@ public class ManageProjectPage extends ManageNavBar {
 	}
 	
 	public boolean isProjectPresent(String projectName) {
+		try {
+			Thread.sleep(1000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		return driver.findElement(By.tagName("BODY")).getText().contains(projectName);
 	}
 	

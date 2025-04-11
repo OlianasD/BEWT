@@ -13,7 +13,7 @@ public class LoginAsNewUser extends BaseTest {
 	public void loginAsNewUser() {
 		String name ="Test User";
 		String username = "tuser01";
-		String password = "tpassword";
+		String password = "e2eW3Bt3s71nGB3nchM4rK";
 		
 		EditProfilePage profile = new BaseNavBar(driver)
 				.authorLogin()

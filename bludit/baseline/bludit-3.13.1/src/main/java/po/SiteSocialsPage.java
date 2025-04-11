@@ -26,6 +26,12 @@ public class SiteSocialsPage extends GeneralSettingsAbstractPage {
 	}
 	
 	public String getInstagram() {
+		try {
+			Thread.sleep(1000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		return instagram.getAttribute("value");
 	}
 

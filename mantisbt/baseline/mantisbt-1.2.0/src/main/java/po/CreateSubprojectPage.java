@@ -20,6 +20,12 @@ public class CreateSubprojectPage extends ManageNavBar {
 	}
 	
 	public CreateSubprojectPage setName(String name) {
+		try {
+			Thread.sleep(1000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		this.name.sendKeys(name);
 		return this;
 	}

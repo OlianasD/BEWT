@@ -12,7 +12,7 @@ public class Claroline_RemoveCourseTest extends BaseTest {
 	@Test
 	public void removeCourseTest() throws InterruptedException{
 		AdminCoursesPage acp = new IndexPage(driver)
-				.login("admin", "admin")
+				.login("admin", "n0tl34k3dy3t")
 				.goToAdminPage()
 				.searchCourse("Course001")
 				.removeCourse(1);

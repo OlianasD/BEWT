@@ -12,7 +12,7 @@ public class AddUser extends BaseTest {
 	public void addUser() {
 		String name ="Test User";
 		String username = "tuser01";
-		String password = "tpassword";
+		String password = "e2eW3Bt3s71nGB3nchM4rK";
 		String email = "testmail@example.com";
 		
 		ManageUsersPage users = loginAsAdmin()

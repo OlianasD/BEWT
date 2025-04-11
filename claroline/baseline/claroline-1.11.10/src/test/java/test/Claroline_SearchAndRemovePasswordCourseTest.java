@@ -12,7 +12,7 @@ public class Claroline_SearchAndRemovePasswordCourseTest extends BaseTest {
 	@Test
 	public void searchAndRemovePasswordCourse() throws InterruptedException{
 		AdminCoursesPage acp = new IndexPage(driver)
-				.login("admin", "admin")
+				.login("admin", "n0tl34k3dy3t")
 				.goToAdminPage()
 				.advancedCourseSearch()
 				.searchPassword("Course002");

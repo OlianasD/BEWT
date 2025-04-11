@@ -77,6 +77,11 @@ public class PageCreationPage extends PageObject {
 	}
 	
 	public PageCreationPage editText(String text) {
+		try {
+			Thread.sleep(1000);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
 		String keysCtrlEnd = Keys.chord(Keys.CONTROL, Keys.END);
 		editTextArea.sendKeys(keysCtrlEnd);
 		editTextArea.sendKeys(text);

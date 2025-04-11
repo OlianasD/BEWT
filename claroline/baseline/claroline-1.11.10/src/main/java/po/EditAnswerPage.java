@@ -43,6 +43,7 @@ public class EditAnswerPage {
 	}
 	
 	public EditQuestionPage addMCMA(String gr1, String gr2, String gr3) throws InterruptedException{
+		Thread.sleep(1000);
 		addAnswer.click();
 		correct1.click();
 		grade1.clear();

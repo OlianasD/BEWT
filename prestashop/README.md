@@ -34,7 +34,7 @@ The installation wizard can be executed automatically by running `utils.Installe
 * First name: Dario
 * Second name: Olianas
 * E-mail address: admin@prestashop.com
-* Password: password
+* Password: e2eW3Bt3s71nGB3nchM4rK
 * Database server address: some-mysql
 * Database password: admin
 * Click "Test your database connection now!", then "Attempt to create the database automatically"
@@ -46,15 +46,15 @@ Open a shell to the container with the command
 docker exec -it some-prestashop bash
 ```
 
-then remove the `install` directory and rename the `admin` directory to `admin929rtmgmy`
+then remove the `install` directory and rename the `admin` directory to `administrator`
 
 ```bash
 rm -rf install
-mv admin admin929rtmgmy
+mv admin administrator
 ```
 
 ## Post-installation instructions (Prestashop 1.7.8.5 only)
-After completing the installation wizard (either manually or automatically), you need to access to the administration area of the application (http://localhost:8080/admin929rtmgmy), login and close the onboarding tutorial, that otherwise would change the expected layout of the page and make test scripts fail. In detail, you have to follow the steps illustrated in the following screenshots.
+After completing the installation wizard (either manually or automatically), you need to access to the administration area of the application (http://localhost:8080/administrator), login and close the onboarding tutorial, that otherwise would change the expected layout of the page and make test scripts fail. In detail, you have to follow the steps illustrated in the following screenshots.
 
 ![First step](https://i.imgur.com/Y6pWNCD.png "Click START")
 

@@ -58,6 +58,12 @@ public class NewUserPage extends AdminSidebar {
 	
 	public AdminSidebar addUser() {
 		addBtn.click();
+		try {
+			Thread.sleep(1000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		return new AdminSidebar(driver);
 	}
 	

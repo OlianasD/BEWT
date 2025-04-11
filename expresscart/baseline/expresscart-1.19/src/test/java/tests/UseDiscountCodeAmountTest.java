@@ -19,7 +19,7 @@ public class UseDiscountCodeAmountTest extends BaseTest {
 		PaymentPage payment = new Home(driver)
 			.account()
 			.setEmail("test@test.com")
-			.setPassword("test")
+			.setPassword("e2eW3Bt3s71nGB3nchM4rK")
 			.loginAndGoHome(appUrl)
 			.goToProduct(item_id)
 			.addToCart()

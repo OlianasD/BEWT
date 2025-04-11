@@ -36,19 +36,43 @@ public class WikiPage extends PageObject {
 	}
 	
 	public String getTitle() {
+		try {
+			Thread.sleep(1000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		return title.getText();
 	}
 	
 	public String getBody() {
+		try {
+			Thread.sleep(1000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		return body.getText();
 	}
 	
 	public PageCreationPage edit() {
+		try {
+			Thread.sleep(1000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		edit.click();
 		return new PageCreationPage(driver);
 	}
 	
 	public EditSourcePage editSource() {
+		try {
+			Thread.sleep(1000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		editSource.click();
 		return new EditSourcePage(driver);
 	}
@@ -68,17 +92,31 @@ public class WikiPage extends PageObject {
 	}
 	
 	public PageProtectPage protect() {
+		try {
+			Thread.sleep(1000);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
 		more.click();
+		try {
+			Thread.sleep(1000);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
 		driver.findElement(By.linkText("Protect")).click();
 		return new PageProtectPage(driver);
 	}
 	
 	public PageProtectPage changeProtectionLevel() {
+		try {
+			Thread.sleep(1000);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
 		more.click();
 		try {
 			Thread.sleep(1000);
 		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		driver.findElement(By.linkText("Change protection")).click();
@@ -86,23 +124,42 @@ public class WikiPage extends PageObject {
 	}
 	
 	public PageCreationPage forceEdit() {
+		try {
+			Thread.sleep(1000);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
 		driver.get(driver.getCurrentUrl()+"?veaction=edit");
 		try {
 			Thread.sleep(1000);
 		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		return new PageCreationPage(driver);
 	}
 	
 	public RevisionHistoryPage viewHistory() {
+		try {
+			Thread.sleep(1000);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
 		viewHistory.click();
 		return new RevisionHistoryPage(driver);
 	}
 	
 	public DeletePage deletePage() {
+		try {
+			Thread.sleep(1000);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
 		more.click();
+		try {
+			Thread.sleep(1000);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
 		driver.findElement(By.linkText("Delete")).click();
 		return new DeletePage(driver);
 	}

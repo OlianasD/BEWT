@@ -14,8 +14,8 @@ public class CreateUserTest extends BaseTest {
 				.specialPages()
 				.createAccount()
 				.setUsername("User001")
-				.setPassword("Password001")
-				.confirmPassword("Password001")
+				.setPassword("e2eW3Bt3s71nGB3nchM4rK")
+				.confirmPassword("e2eW3Bt3s71nGB3nchM4rK")
 				.setRealName("Real Name 001")
 				.create();
 		

@@ -32,7 +32,7 @@ public class RemoveMultipleUsersTest extends BaseTest {
 		assertTrue(driver.findElement(By.xpath("//*[@id='claroBody']/div[2]/div[1]")).getText()
 				.contains("Deletion of the user was done sucessfully"));
 		assertFalse(driver.findElement(By.xpath("html/body/div[1]/div[2]/table[2]/tbody/tr/td/center")).getText()
-				.contains("No user to diplay"));
+				.contains("No user to display"));
 		driver.findElement(By.linkText("Logout")).click();
 	}
 

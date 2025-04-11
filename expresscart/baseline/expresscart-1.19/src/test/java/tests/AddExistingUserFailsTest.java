@@ -16,13 +16,13 @@ public class AddExistingUserFailsTest extends BaseTest {
 		goToAdminHome();
 		AdminSidebar sidebar = new AdminLoginPage(driver)
 			.setEmail("owner@test.com")
-			.setPassword("test")
+			.setPassword("e2eW3Bt3s71nGB3nchM4rK")
 			.doLogin()
 			.newUser()
 			.setUsername("TestUser000")
 			.setEmail("test000@test.com")
-			.setPassword("password")
-			.setConfirmPassword("password")
+			.setPassword("e2eW3Bt3s71nGB3nchM4rK")
+			.setConfirmPassword("e2eW3Bt3s71nGB3nchM4rK")
 			.addUser();
 			
 		assertEquals("A user with that email address already exists", sidebar.getAlertText());

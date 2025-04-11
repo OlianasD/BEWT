@@ -35,6 +35,12 @@ public class AdvancedSettingsPage extends AdminSidebar {
 	}
 	
 	public String getSelectedHome() {
+		try {
+			Thread.sleep(1000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		return new Select(driver.findElement(By.id("jshomepage"))).getFirstSelectedOption().getText();
 	}
 	

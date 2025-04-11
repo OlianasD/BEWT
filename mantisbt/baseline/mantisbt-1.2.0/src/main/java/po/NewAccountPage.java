@@ -29,6 +29,12 @@ public class NewAccountPage extends ManageNavBar {
 	}
 	
 	public NewAccountPage setUsername(String username) {
+		try {
+			Thread.sleep(1000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		this.username.clear();
 		this.username.sendKeys(username);
 		return this;
@@ -52,6 +58,12 @@ public class NewAccountPage extends ManageNavBar {
 	}
 	
 	public ManageUsersPage createUser() {
+		try {
+			Thread.sleep(1000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		createUserBtn.click();
 		manageUsers.click();
 		return new ManageUsersPage(driver);

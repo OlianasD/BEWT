@@ -32,6 +32,12 @@ public class CreateMenuItemPage extends PageObject {
 	}
 	
 	public CreateMenuItemPage selectMenu() {
+		try {
+			Thread.sleep(1000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		driver.findElement(By.xpath("/html/body/div[2]/section/div/div/form/div[2]/div/div[1]/div/div[2]/fieldset/div[1]/div[2]/div")).click();
 		driver.findElement(By.xpath("/html/body/div[2]/section/div/div/form/div[2]/div/div[1]/div/div[2]/fieldset/div[1]/div[2]/div/div/ul/li[4]")).click();
 		return this;

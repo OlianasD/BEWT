@@ -18,13 +18,13 @@ public class AddUserTest extends BaseTest {
 			goToAdminHome();
 			UsersPage users = new AdminLoginPage(driver)
 				.setEmail("owner@test.com")
-				.setPassword("test")
+				.setPassword("e2eW3Bt3s71nGB3nchM4rK")
 				.doLogin()
 				.newUser()
 				.setUsername("TestUser000")
 				.setEmail("test000@test.com")
-				.setPassword("password")
-				.setConfirmPassword("password")
+				.setPassword("e2eW3Bt3s71nGB3nchM4rK")
+				.setConfirmPassword("e2eW3Bt3s71nGB3nchM4rK")
 				.addUser()
 				.users();
 			Thread.sleep(2000);

@@ -43,5 +43,7 @@ To finalize the installation of MantisBT 2.25.4, go to http://localhost:8989/adm
 2. If the checklist shows that everything is ok, the application is ready. Otherwise, if an error about the impossibility to write the configuration is displayed, you need to copy the PHP code contained in the **Write configuration files** section and save it in a file named `config_inc.php`
     * Copy the file into the container under `/var/www/html/config` with the command `docker cp config_inc.php mantisbt-2254-mantisbt-1:/var/www/html/config`
 
+3.  After the installation, change the administrator password to `e2eW3Bt3s71nGB3nchM4rK`
+
     
 

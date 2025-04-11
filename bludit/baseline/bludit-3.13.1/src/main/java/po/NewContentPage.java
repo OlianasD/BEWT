@@ -56,6 +56,12 @@ public class NewContentPage extends AdminSidebar {
 	}
 	
 	public NewContentPage options() {
+		try {
+			Thread.sleep(1000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		optionsBtn.click();
 		return this;
 	}

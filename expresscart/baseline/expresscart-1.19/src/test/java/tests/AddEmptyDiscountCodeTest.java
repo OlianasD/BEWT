@@ -17,7 +17,7 @@ public class AddEmptyDiscountCodeTest extends BaseTest {
 		goToAdminHome();
 		NewDiscountPage code = new AdminLoginPage(driver)
 			.setEmail("owner@test.com")
-			.setPassword("test")
+			.setPassword("e2eW3Bt3s71nGB3nchM4rK")
 			.doLogin()
 			.discountCodes()
 			.newDiscount()

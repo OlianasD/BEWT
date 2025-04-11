@@ -12,10 +12,10 @@ public class Claroline_EnrolPasswordCourseGoodPasswordUserTest extends BaseTest 
 	@Test
 	public void enrolPasswordCourseGoodPassword() throws InterruptedException{
 		AuthCoursesPage acp = new IndexPage(driver)
-				.login("user001", "password001")
+				.login("user001", "n0tl34k3dy3t")
 				.enrolToCourse()
 				.searchCourse("Course002")
-				.enrolPassword("password");
+				.enrolPassword("n0tl34k3dy3t");
 		
 		assertEquals("You've been enrolled on the course", acp.getMessage());
 		acp.doLogout();
