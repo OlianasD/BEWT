@@ -4,7 +4,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-import utils.Waiter;
+import utils.Wait;
 
 public class NewUserPage extends TopNavBar {
 
@@ -38,11 +38,11 @@ public class NewUserPage extends TopNavBar {
 	@FindBy(xpath = "//*[@id=\"modal-content\"]/form/div[1]/div[1]/fieldset[2]/ul[2]")
 	protected WebElement pswConfirmError;
 	
-	protected Waiter wait;
+	protected Wait wait;
 
 	public NewUserPage(WebDriver driver) {
 		super(driver);
-		wait = new Waiter(driver);
+		wait = new Wait(driver);
 	}
 
 	public NewUserPage setUsername(String usr) {

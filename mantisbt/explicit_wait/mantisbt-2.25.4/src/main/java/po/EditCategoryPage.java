@@ -17,12 +17,14 @@ public class EditCategoryPage extends BaseNavBar {
 	}
 	
 	public EditCategoryPage setCategoryName(String name) {
+		wait.waitClickability(categoryName);
 		categoryName.clear();
 		categoryName.sendKeys(name);
 		return this;
 	}
 	
 	public EditProjectPage updateCategory() {
+		wait.waitClickability(updateCategoryBtn);
 		updateCategoryBtn.click();
 		return new EditProjectPage(driver);
 	}

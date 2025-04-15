@@ -1,6 +1,7 @@
 package po;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -42,7 +43,14 @@ public class WikiPage extends PageObject {
 	}
 	
 	public String getTitle() {
-		return title.getText();
+		String ttl = "";
+		try {
+			ttl = title.getText();
+		} catch (StaleElementReferenceException e) {
+			title = driver.findElement(By.xpath("//*[@id=\"firstHeading\"]"));
+			ttl = title.getText();
+		}
+		return ttl;
 	}
 	
 	public String getBody(String expected) {
@@ -51,6 +59,12 @@ public class WikiPage extends PageObject {
 	}
 	
 	public PageCreationPage edit() {
+		try {
+			Thread.sleep(500);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		edit.click();
 		return new PageCreationPage(driver);
 	}
@@ -87,6 +101,12 @@ public class WikiPage extends PageObject {
 	}
 	
 	public PageProtectPage changeProtectionLevel() {
+		try {
+			Thread.sleep(500);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		more.click();
 		By locator = By.linkText("Change protection");
 		wait.waitClickability(locator);

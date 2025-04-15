@@ -14,6 +14,7 @@ public class ElementManagementPage extends AdminSidebar {
 	}
 	
 	public String getSuccessMessage() {
+		wait.waitVisibility(tagMessage);
 		return tagMessage.getText();
 	}
 

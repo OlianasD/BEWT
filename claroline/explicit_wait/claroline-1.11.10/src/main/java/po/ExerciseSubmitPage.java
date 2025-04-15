@@ -6,6 +6,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import utils.Wait;
+
 public class ExerciseSubmitPage extends ClarolinePage{
 	private WebDriver driver;
 	@FindBy(name="cmdOk")
@@ -13,8 +15,11 @@ public class ExerciseSubmitPage extends ClarolinePage{
 	@FindBy(xpath="html/body/div[1]/div[2]/div[2]/div[3]/div[2]/form/div[1]/div/strong")
 	private WebElement getResultMsg;
 	
+	protected Wait wait;
+	
 	public ExerciseSubmitPage(WebDriver driver){
 		this.driver = driver;
+		wait = new Wait(driver);
 		PageFactory.initElements(driver, this);
 	}
 	
@@ -41,6 +46,7 @@ public class ExerciseSubmitPage extends ClarolinePage{
 	}
 	
 	public String getResult(){
+		wait.waitVisibility(getResultMsg);
 		return getResultMsg.getText();
 	}
 	

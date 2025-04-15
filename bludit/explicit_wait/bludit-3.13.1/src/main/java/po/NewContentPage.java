@@ -16,9 +16,6 @@ public class NewContentPage extends AdminSidebar {
 	@FindBy(id =  "jsbuttonSave")
 	protected WebElement saveBtn;
 	
-	@FindBy(id = "jsoptionsSidebar")
-	protected WebElement optionsBtn;
-	
 	@FindBy(id = "nav-seo-tab")
 	protected WebElement seoTab;
 	
@@ -66,17 +63,32 @@ public class NewContentPage extends AdminSidebar {
 	}
 	
 	public ContentPage saveAndReturnToContentPage() {
+		wait.waitClickability(saveBtn);
 		saveBtn.click();
 		return new ContentPage(driver);
 	}
 	
 	public NewContentPage saveAndStay() {
+		wait.waitClickability(saveBtn);
 		saveBtn.click();
+		try {
+			Thread.sleep(500);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		return new NewContentPage(driver);
 	}
 	
 	public NewContentPage options() {
-		optionsBtn.click();
+		try {
+			Thread.sleep(500);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		wait.waitClickability(driver.findElement(By.id("jsoptionsSidebar")));
+		driver.findElement(By.id("jsoptionsSidebar")).click();
 		return this;
 	}
 	

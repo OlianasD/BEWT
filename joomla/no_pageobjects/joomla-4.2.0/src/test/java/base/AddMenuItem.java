@@ -39,7 +39,7 @@ public class AddMenuItem extends BaseTest {
 		driver.findElement(By.xpath("//*[@id=\"collapse0\"]/div/div/a[1]/div")).click();
 		driver.switchTo().defaultContent();
 		driver.findElement(By.className("button-save")).click();
-		
+		Thread.sleep(1000);
 		assertEquals("Menu item saved.", driver.findElement(By.className("alert-message")).getText());
 		assertTrue(driver.findElement(By.id("menuitemList")).getText().contains(name));
 	}

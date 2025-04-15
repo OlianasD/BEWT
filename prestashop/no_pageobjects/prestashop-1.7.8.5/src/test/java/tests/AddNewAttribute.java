@@ -8,7 +8,7 @@ import org.openqa.selenium.By;
 public class AddNewAttribute extends BaseTest {
 
 	@Test
-	public void test_add_attributes() {
+	public void test_add_attributes() throws InterruptedException {
 		driver.findElement(By.name("email")).sendKeys(adminMail);
 		driver.findElement(By.name("passwd")).sendKeys(adminPsw);
 		driver.findElement(By.name("submitLogin")).click();
@@ -18,7 +18,8 @@ public class AddNewAttribute extends BaseTest {
 		driver.findElement(By.id("name_1")).sendKeys("Quantity");
 		driver.findElement(By.id("public_name_1")).sendKeys("Qnt");
 		driver.findElement(By.id("attribute_group_form_submit_btn")).click();
-
+		Thread.sleep(1000);
+		
 		assertTrue(driver.findElement(By.className("alert-success")).getText().contains("Successful creation"));
 
 	}

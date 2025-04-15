@@ -8,7 +8,7 @@ import org.openqa.selenium.By;
 public class ChangePositionTest extends BaseTest {
 	
 	@Test
-	public void changePosition() {
+	public void changePosition() throws InterruptedException {
 		driver.findElement(By.id("jsusername")).sendKeys(username);
 		driver.findElement(By.id("jspassword")).sendKeys(password);
 		driver.findElement(By.name("save")).click();
@@ -20,6 +20,7 @@ public class ChangePositionTest extends BaseTest {
 		driver.findElement(By.id("jsposition")).sendKeys("30");
 		driver.findElement(By.id("jsoptionsSidebar")).click();
 		driver.findElement(By.id("jsbuttonSave")).click();
+		Thread.sleep(500);
 		driver.findElement(By.id("jsoptionsSidebar")).click();
 		driver.findElement(By.id("nav-advanced-tab")).click();
 		

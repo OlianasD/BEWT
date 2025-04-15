@@ -21,6 +21,12 @@ public class DeletePage extends PageObject {
 	}
 	
 	public String getSuccessMessage() {
+		try {
+			Thread.sleep(500);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		return driver.findElement(By.xpath("//*[@id=\"mw-content-text\"]/p[1]")).getText();
 	}
 

@@ -20,7 +20,7 @@ public class AddEmptyReviewTest extends BaseTest {
 		ReviewForm product = new Home(driver)
 			.account()
 			.setEmail("test@test.com")
-			.setPassword("test")
+			.setPassword("e2eW3Bt3s71nGB3nchM4rK")
 			.login()
 			.goHome()
 			.goToProduct("NewProduct000")

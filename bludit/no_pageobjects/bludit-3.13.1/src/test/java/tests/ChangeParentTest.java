@@ -22,6 +22,7 @@ public class ChangeParentTest extends BaseTest {
 		driver.findElement(By.xpath("//*[@id=\"select2-jsparent-results\"]/li")).click();
 		driver.findElement(By.id("jsoptionsSidebar")).click();
 		driver.findElement(By.id("jsbuttonSave")).click();
+		Thread.sleep(500);
 		driver.findElement(By.id("jsoptionsSidebar")).click();
 		driver.findElement(By.id("nav-advanced-tab")).click();
 		

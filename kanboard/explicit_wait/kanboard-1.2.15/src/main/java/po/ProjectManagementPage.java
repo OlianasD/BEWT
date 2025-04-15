@@ -4,7 +4,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-import utils.Waiter;
+import utils.Wait;
 
 public class ProjectManagementPage extends PageObject {
 	
@@ -26,12 +26,12 @@ public class ProjectManagementPage extends PageObject {
 	@FindBy(className = "form-errors")
 	protected WebElement errorMsg;
 	
-	protected Waiter wait;
+	protected Wait wait;
 
 	
 	public ProjectManagementPage(WebDriver driver) {
 		super(driver);
-		wait = new Waiter(driver);
+		wait = new Wait(driver);
 	}
 	
 	public ProjectManagementPage newTask() {

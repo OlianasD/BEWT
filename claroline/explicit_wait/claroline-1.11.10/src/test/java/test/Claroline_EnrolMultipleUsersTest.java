@@ -13,22 +13,22 @@ public class Claroline_EnrolMultipleUsersTest extends BaseTest {
 	public void runTest() throws InterruptedException{
 
 		UserPage up = new IndexPage(driver)
-				.login("testuser1", "testuser1")
+				.login("testuser1", "n0tl34k3dy3t")
 				.enrolToCourse()
 				.searchCourse("Course001")
 				.enrol()
 				.doLogoutAndGoHome(driver)
-				.login("testuser2", "testuser2")
+				.login("testuser2", "n0tl34k3dy3t")
 				.enrolToCourse()
 				.searchCourse("Course001")
 				.enrol()
 				.doLogoutAndGoHome(driver)
-				.login("testuser3", "testuser3")
+				.login("testuser3", "n0tl34k3dy3t")
 				.enrolToCourse()
 				.searchCourse("Course001")
 				.enrol()
 				.doLogoutAndGoHome(driver)
-				.login("admin", "admin")
+				.login("admin", "n0tl34k3dy3t")
 				.goInsideCourse()
 				.goToUsersPage();
 		

@@ -19,6 +19,12 @@ public class ClarolinePage {
 	}
 	
 	public IndexPage doLogoutAndGoHome(WebDriver driver){
+		try {
+			Thread.sleep(500);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		logout.click();
 		driver.get("http://localhost:3000/claroline11110/claroline/index.php");
 		return new IndexPage(driver);
@@ -30,10 +36,22 @@ public class ClarolinePage {
 	}
 	
 	public String getMessage(){
+		try {
+			Thread.sleep(500);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		return message.getText();
 	}
 	
 	public String getCourseMessage(){
+		try {
+			Thread.sleep(500);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		return courseMessage.getText();
 	}
 	

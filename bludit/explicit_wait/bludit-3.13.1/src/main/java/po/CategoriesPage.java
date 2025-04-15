@@ -30,6 +30,7 @@ public class CategoriesPage extends AdminSidebar {
 	}
 	
 	public String getFirstCategoryName() {
+		wait.waitVisibility(firstCategoryName);
 		return firstCategoryName.getText();
 	}
 	

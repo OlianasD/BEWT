@@ -42,6 +42,12 @@ public class BlockUserPage extends PageObject {
 	
 	public BlockUserPage block() {
 		blockBtn.click();
+		try {
+			Thread.sleep(500);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		return new BlockUserPage(driver);
 	}
 	

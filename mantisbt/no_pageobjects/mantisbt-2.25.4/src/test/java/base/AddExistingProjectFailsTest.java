@@ -20,6 +20,7 @@ public class AddExistingProjectFailsTest extends BaseTest {
 		driver.findElement(By.linkText(Strings.manage)).click();
 		driver.findElement(By.linkText(Strings.manageProjects)).click();
 		driver.findElement(By.xpath("//*[@id=\"main-container\"]/div[2]/div[2]/div/div/div[2]/div[2]/div/div[1]/form/button")).click();
+		Thread.sleep(500);
 		driver.findElement(By.name("name")).clear();
 		driver.findElement(By.name("name")).sendKeys(projectName);
 		new Select(driver.findElement(By.name("status"))).selectByVisibleText(status);

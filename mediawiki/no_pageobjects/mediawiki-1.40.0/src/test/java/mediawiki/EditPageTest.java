@@ -14,11 +14,13 @@ public class EditPageTest extends BaseTest {
 		driver.findElement(By.id("wpName1")).clear();
 		driver.findElement(By.id("wpName1")).sendKeys("admin");
 		driver.findElement(By.id("wpPassword1")).clear();
-		driver.findElement(By.id("wpPassword1")).sendKeys("Password001");
+		driver.findElement(By.id("wpPassword1")).sendKeys("e2eW3Bt3s71nGB3nchM4rK");
 		driver.findElement(By.id("wpLoginAttempt")).click();
+		Thread.sleep(1000);
 		driver.findElement(By.id("searchInput")).sendKeys("Software testing");
 		Thread.sleep(500);
 		driver.findElement(By.id("searchInput")).sendKeys(Keys.ENTER);
+		Thread.sleep(1000);
 		driver.findElement(By.linkText("Edit")).click();
 		driver.findElement(By.xpath("//*[@id=\"bodyContent\"]/div[6]/div[1]/div[1]")).sendKeys(Keys.chord(Keys.CONTROL, Keys.END));
 		driver.findElement(By.xpath("//*[@id=\"bodyContent\"]/div[6]/div[1]/div[1]")).sendKeys(" Testing is performed by running test cases against the system under test (SUT) and collecting their results.");

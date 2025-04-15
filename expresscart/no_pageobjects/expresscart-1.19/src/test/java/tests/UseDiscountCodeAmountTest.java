@@ -13,7 +13,7 @@ public class UseDiscountCodeAmountTest extends BaseTest {
 		driver.get(appUrl);
 		driver.findElement(By.xpath("//*[@id=\"navbarText\"]/ul/li[1]/a")).click();
 		driver.findElement(By.id("email")).sendKeys("test@test.com");
-		driver.findElement(By.id("password")).sendKeys("test");
+		driver.findElement(By.id("password")).sendKeys("e2eW3Bt3s71nGB3nchM4rK");
 		driver.findElement(By.id("customerloginForm")).click();
 		Thread.sleep(1000);
 		driver.get(appUrl);

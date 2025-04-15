@@ -28,7 +28,7 @@ public class BaseTest {
 		driver.findElement(By.name("username")).sendKeys("administrator");
 		driver.findElement(By.className("btn")).click();
 		driver.findElement(By.name("password")).clear();
-		driver.findElement(By.name("password")).sendKeys("root");
+		driver.findElement(By.name("password")).sendKeys("e2eW3Bt3s71nGB3nchM4rK");
 		driver.findElement(By.className("btn")).click();
 	}
 	

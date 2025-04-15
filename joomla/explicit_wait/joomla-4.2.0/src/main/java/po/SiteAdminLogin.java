@@ -33,6 +33,7 @@ public class SiteAdminLogin extends PageObject {
 	}
 	
 	public SiteAdminLogin setUsername(String usr) {
+		wait.waitClickability(username);
 		username.clear();
 		username.sendKeys(usr);
 		return this;

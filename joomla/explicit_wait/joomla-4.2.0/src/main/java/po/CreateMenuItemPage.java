@@ -37,11 +37,13 @@ public class CreateMenuItemPage extends PageObject {
 	}
 	
 	public CreateMenuItemPage setTitle(String ttl) {
+		wait.waitClickability(title);
 		title.sendKeys(ttl);
 		return this;
 	}
 	
 	public CreateMenuItemPage selectMenu(String menu) {
+		wait.waitClickability(By.id("jform_menutype"));
 		new Select(driver.findElement(By.id("jform_menutype"))).selectByVisibleText(menu);
 		return this;
 	}

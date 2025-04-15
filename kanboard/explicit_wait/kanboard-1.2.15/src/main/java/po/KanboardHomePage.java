@@ -5,7 +5,7 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import utils.Waiter;
+import utils.Wait;
 
 public class KanboardHomePage extends TopNavBar {
 	
@@ -27,11 +27,11 @@ public class KanboardHomePage extends TopNavBar {
 	@FindBy(id = "form-search")
 	protected WebElement search;
 	
-	protected Waiter wait;
+	protected Wait wait;
 
 	public KanboardHomePage(WebDriver driver) {
 		super(driver);
-		// TODO Auto-generated constructor stub
+		wait = new Wait(driver);
 	}
 	
 	public AddNewProjectPage newProject() {
@@ -45,6 +45,7 @@ public class KanboardHomePage extends TopNavBar {
 	}
 	
 	public ProjectSummaryPage firstProjectSummary() {
+		wait.waitClickability(option);
 		option.click();
 		configure.click();
 		return new ProjectSummaryPage(driver);

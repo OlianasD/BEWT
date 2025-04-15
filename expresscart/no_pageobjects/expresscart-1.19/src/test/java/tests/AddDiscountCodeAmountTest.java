@@ -12,7 +12,7 @@ public class AddDiscountCodeAmountTest extends BaseTest {
 	public void testExpressCartAddDiscountCodeAmount() throws Exception {
 		driver.get(appUrl+"/admin");
 		driver.findElement(By.id("email")).sendKeys("owner@test.com");
-		driver.findElement(By.id("password")).sendKeys("test");
+		driver.findElement(By.id("password")).sendKeys("e2eW3Bt3s71nGB3nchM4rK");
 		driver.findElement(By.id("loginForm")).click();
 		driver.findElement(By.xpath("//*[@id=\"container\"]/div/nav/div/ul[2]/li[4]/a")).click();
 		driver.findElement(By.xpath("//*[@id=\"container\"]/div/main/div/h2/div/a")).click();

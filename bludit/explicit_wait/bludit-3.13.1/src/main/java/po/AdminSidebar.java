@@ -4,6 +4,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
+import utils.Wait;
+
 public class AdminSidebar extends PageObject {
 	
 	@FindBy(linkText = "New content")
@@ -21,33 +23,40 @@ public class AdminSidebar extends PageObject {
 	@FindBy(linkText = "Categories")
 	protected WebElement categories;
 	
+	protected Wait wait;
+	
 	
 	public AdminSidebar(WebDriver driver) {
 		super(driver);
-		// TODO Auto-generated constructor stub
+		wait = new Wait(driver);
 	}
 	
 	public NewContentPage newContent() {
+		wait.waitClickability(newContent);
 		newContent.click();
 		return new NewContentPage(driver);
 	}
 	
 	public ContentPage content() {
+		wait.waitClickability(content);
 		content.click();
 		return new ContentPage(driver);
 	}
 	
 	public UsersPage users() {
+		wait.waitClickability(users);
 		users.click();
 		return new UsersPage(driver);
 	}
 	
 	public GeneralSettingsPage general() {
+		wait.waitClickability(general);
 		general.click();
 		return new GeneralSettingsPage(driver);
 	}
 	
 	public CategoriesPage categories() {
+		wait.waitClickability(categories);
 		categories.click();
 		return new CategoriesPage(driver);
 	}

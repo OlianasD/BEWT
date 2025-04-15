@@ -5,7 +5,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-import utils.Waiter;
+import utils.Wait;
 
 public class SwimlanesPage extends ProjectSidebar {
 	
@@ -21,11 +21,11 @@ public class SwimlanesPage extends ProjectSidebar {
 	@FindBy(className = "form-errors")
 	protected WebElement errorMsg;
 	
-	protected Waiter wait;
+	protected Wait wait;
 
 	public SwimlanesPage(WebDriver driver) {
 		super(driver);
-		wait = new Waiter(driver);
+		wait = new Wait(driver);
 	}
 	
 	public SwimlanesPage addSwimlane() {

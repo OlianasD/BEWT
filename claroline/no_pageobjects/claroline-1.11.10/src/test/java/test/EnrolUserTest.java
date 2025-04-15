@@ -14,7 +14,7 @@ public class EnrolUserTest extends BaseTest {
 		driver.findElement(By.id("login")).clear();
 		driver.findElement(By.id("login")).sendKeys("user001");
 		driver.findElement(By.id("password")).clear();
-		driver.findElement(By.id("password")).sendKeys("password001");
+		driver.findElement(By.id("password")).sendKeys("n0tl34k3dy3t");
 		driver.findElement(By.xpath("//*[@id='loginBox']/form/fieldset/button")).click();
 		driver.findElement(By.linkText("Enrol on a new course")).click();
 		driver.findElement(By.id("coursesearchbox_keyword")).clear();

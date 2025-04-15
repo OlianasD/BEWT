@@ -16,12 +16,15 @@ public class RevertLastCommitTest extends BaseTest {
 		driver.findElement(By.id("wpName1")).clear();
 		driver.findElement(By.id("wpName1")).sendKeys("admin");
 		driver.findElement(By.id("wpPassword1")).clear();
-		driver.findElement(By.id("wpPassword1")).sendKeys("Password001");
+		driver.findElement(By.id("wpPassword1")).sendKeys("e2eW3Bt3s71nGB3nchM4rK");
 		driver.findElement(By.id("wpLoginAttempt")).click();
+		Thread.sleep(1000);
 		driver.findElement(By.id("searchInput")).sendKeys("Selenium WebDriver");
 		Thread.sleep(500);
 		driver.findElement(By.id("searchInput")).sendKeys(Keys.ENTER);
+		Thread.sleep(500);
 		driver.findElement(By.linkText("View history")).click();
+		Thread.sleep(500);
 		driver.findElement(By.linkText("rollback 1 edit")).click();
 		
 		assertEquals("Reverted edits by User001 (talk | contribs | block); changed back to last revision by Admin (talk | contribs | block).", driver.findElement(By.xpath("//*[@id=\"mw-content-text\"]/p[1]")).getText());

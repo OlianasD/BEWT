@@ -10,7 +10,7 @@ public class AddEmptyProductTest extends BaseTest {
 	public void testExpressCartAddEmptyProduct() throws Exception {
 		driver.get(appUrl+"/admin");
 		driver.findElement(By.id("email")).sendKeys("owner@test.com");
-		driver.findElement(By.id("password")).sendKeys("test");
+		driver.findElement(By.id("password")).sendKeys("e2eW3Bt3s71nGB3nchM4rK");
 		driver.findElement(By.id("loginForm")).click();
 		driver.findElement(By.xpath("//*[@id=\"container\"]/div/nav/div/ul[1]/li[3]/a[2]")).click();
 		driver.findElement(By.id("frm_edit_product_save")).click();

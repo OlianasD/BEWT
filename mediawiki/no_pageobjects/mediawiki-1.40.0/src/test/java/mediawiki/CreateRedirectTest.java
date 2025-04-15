@@ -11,13 +11,14 @@ public class CreateRedirectTest extends BaseTest {
 
 	
 	@Test
-	public void createRedirect() {
+	public void createRedirect() throws InterruptedException {
 		driver.findElement(By.linkText("Log in")).click();
 		driver.findElement(By.id("wpName1")).clear();
 		driver.findElement(By.id("wpName1")).sendKeys("admin");
 		driver.findElement(By.id("wpPassword1")).clear();
-		driver.findElement(By.id("wpPassword1")).sendKeys("Password001");
+		driver.findElement(By.id("wpPassword1")).sendKeys("e2eW3Bt3s71nGB3nchM4rK");
 		driver.findElement(By.id("wpLoginAttempt")).click();
+		Thread.sleep(1000);
 		driver.findElement(By.id("searchInput")).sendKeys("Testing");
 		driver.findElement(By.id("searchInput")).sendKeys(Keys.ENTER);
 		driver.findElement(By.linkText("Testing")).click();

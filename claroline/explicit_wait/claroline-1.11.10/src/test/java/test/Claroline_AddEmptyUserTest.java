@@ -13,7 +13,7 @@ public class Claroline_AddEmptyUserTest extends BaseTest {
 	@Test
 	public void runTest() throws InterruptedException{
 		AdminAddNewUserPage aanup = new IndexPage(driver)
-			.login("admin", "admin")
+			.login("admin", "n0tl34k3dy3t")
 			.goToAdminPage()
 			.addUser()
 			.addNewStudent("", "", "", "", "");

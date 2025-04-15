@@ -5,6 +5,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
+import utils.Wait;
+
 public class UsersPage extends AdminSidebar {
 	
 	@FindBy(xpath = "/html/body/div[3]/div/div[2]/a")
@@ -19,9 +21,11 @@ public class UsersPage extends AdminSidebar {
 	@FindBy(xpath = "/html/body/div[3]/div/div[2]/table/tbody/tr[1]/td[1]/a")
 	protected WebElement firstUserName;
 	
+	protected Wait wait;
+	
 	public UsersPage(WebDriver driver) {
 		super(driver);
-		// TODO Auto-generated constructor stub
+		wait = new Wait(driver);
 	}
 	
 	public AddUserPage addUser() {
@@ -30,6 +34,7 @@ public class UsersPage extends AdminSidebar {
 	}
 	
 	public String getSecondUserName() {
+		wait.waitVisibility(secondUserName);
 		return secondUserName.getText();
 	}
 	
@@ -39,11 +44,13 @@ public class UsersPage extends AdminSidebar {
 	}
 	
 	public EditUserPage editFirstUser() {
+		wait.waitClickability(firstUserName);
 		firstUserName.click();
 		return new EditUserPage(driver);
 	}
 	
 	public String getSecondUserAbilitation() {
+		wait.waitVisibility(secondUserAbilitation);
 		return secondUserAbilitation.getText();
 	}
 	

@@ -17,32 +17,44 @@ public class ManageProjectPage extends ManageNavBar {
 	}
 	
 	public CreateProjectPage createProject() {
+		wait.waitClickability(createProjectBtn);
 		createProjectBtn.click();
 		return new CreateProjectPage(driver);
 	}
 	
 	public String getProjectName() {
+		wait.waitVisibility(By.xpath("//*[@id=\"main-container\"]/div[2]/div[2]/div/div/div[2]/div[2]/div/div[2]/table/tbody/tr/td[1]/a"));
 		return driver.findElement(By.xpath("//*[@id=\"main-container\"]/div[2]/div[2]/div/div/div[2]/div[2]/div/div[2]/table/tbody/tr/td[1]/a")).getText();
 	}
 	
 	public String getProjectStatus() {
+		wait.waitVisibility(By.xpath("//*[@id=\"main-container\"]/div[2]/div[2]/div/div/div[2]/div[2]/div/div[2]/table/tbody/tr/td[2]"));
 		return driver.findElement(By.xpath("//*[@id=\"main-container\"]/div[2]/div[2]/div/div/div[2]/div[2]/div/div[2]/table/tbody/tr/td[2]")).getText();
 	}
 	
 	public String getProjectVisibility() {
+		wait.waitVisibility(By.xpath("//*[@id=\"main-container\"]/div[2]/div[2]/div/div/div[2]/div[2]/div/div[2]/table/tbody/tr/td[4]"));
 		return driver.findElement(By.xpath("//*[@id=\"main-container\"]/div[2]/div[2]/div/div/div[2]/div[2]/div/div[2]/table/tbody/tr/td[4]")).getText();
 	}
 	
 	public String getProjectDescription() {
+		wait.waitVisibility(By.xpath("//*[@id=\"main-container\"]/div[2]/div[2]/div/div/div[2]/div[2]/div/div[2]/table/tbody/tr/td[5]"));
 		return driver.findElement(By.xpath("//*[@id=\"main-container\"]/div[2]/div[2]/div/div/div[2]/div[2]/div/div[2]/table/tbody/tr/td[5]")).getText();
 	}
 	
 	public EditProjectPage goToProject(String projectName) {
+		wait.waitClickability(By.linkText(projectName));
 		driver.findElement(By.linkText(projectName)).click();
 		return new EditProjectPage(driver);
 	}
 	
 	public boolean isProjectPresent(String projectName) {
+		try {
+			Thread.sleep(500);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		return driver.findElement(By.tagName("BODY")).getText().contains(projectName);
 	}
 	

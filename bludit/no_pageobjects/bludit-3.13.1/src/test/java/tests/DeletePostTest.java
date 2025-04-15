@@ -16,6 +16,7 @@ public class DeletePostTest extends BaseTest {
 		driver.findElement(By.xpath("//*[@id=\"pages\"]/table/tbody/tr[3]/td[3]/a[3]")).click();
 		Thread.sleep(500);
 		driver.findElement(By.xpath("//*[@id=\"jsdeletePageModal\"]/div/div/div[2]/button[2]")).click();
+		Thread.sleep(500);
 		
 		assertFalse(driver.findElement(By.id("pages")).getText().contains("Follow Bludit"));
 	}

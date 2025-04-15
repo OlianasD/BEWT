@@ -6,6 +6,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import utils.Wait;
+
 public class AuthCoursesPage extends ClarolinePage{
 	private WebDriver driver;
 	@FindBy(id="coursesearchbox_keyword")
@@ -25,8 +27,11 @@ public class AuthCoursesPage extends ClarolinePage{
 	@FindBy(xpath=".//*[@id='claroBody']/div[1]/div[1]")
 	private WebElement errorMsg;
 	
+	protected Wait wait;
+	
 	public AuthCoursesPage(WebDriver driver){
 		this.driver = driver;
+		wait = new Wait(driver);
 		PageFactory.initElements(driver, this);
 	}
 	
@@ -37,6 +42,7 @@ public class AuthCoursesPage extends ClarolinePage{
 	}
 	
 	public AuthCoursesPage enrol() throws InterruptedException{
+		wait.waitClickability(enrolButton);
 		enrolButton.click();
 		return this;
 	}
@@ -45,11 +51,6 @@ public class AuthCoursesPage extends ClarolinePage{
 		enrolButton.click();
 		coursePsw.sendKeys(password);
 		submitPsw.click();
-		return this;
-	}
-	
-	public AuthCoursesPage enrolDenied() throws InterruptedException{
-		enrolButton.click();
 		return this;
 	}
 	

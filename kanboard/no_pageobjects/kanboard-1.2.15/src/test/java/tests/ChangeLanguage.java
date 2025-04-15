@@ -9,7 +9,7 @@ import org.openqa.selenium.support.ui.Select;
 public class ChangeLanguage extends BaseTest {
 		  
 	@Test
-	public void changeLang() {
+	public void changeLang() throws InterruptedException {
 		driver.findElement(By.id("form-username")).sendKeys("admin");
 		driver.findElement(By.id("form-password")).sendKeys("admin");
 		driver.findElement(By.xpath("/html/body/div/form/div[1]/button")).click();
@@ -18,12 +18,13 @@ public class ChangeLanguage extends BaseTest {
 		driver.findElement(By.linkText("Application settings")).click();
 		new Select(driver.findElement(By.id("form-application_language"))).selectByVisibleText("Italiano");
 		driver.findElement(By.xpath("//*[@id=\"config-section\"]/div[2]/form/div/button")).click();
+		Thread.sleep(500);
 		assertEquals("Italiano", new Select(driver.findElement(By.id("form-application_language"))).getFirstSelectedOption().getText());
 		assertEquals("Lingua", driver.findElement(By.xpath("//*[@id=\"config-section\"]/div[2]/form/fieldset[1]/label[2]")).getText());
 		
 		new Select(driver.findElement(By.id("form-application_language"))).selectByVisibleText("English (US)");
 		driver.findElement(By.xpath("//*[@id=\"config-section\"]/div[2]/form/div/button")).click();
-		
+		Thread.sleep(500);
 		assertEquals("English (US)", new Select(driver.findElement(By.id("form-application_language"))).getFirstSelectedOption().getText());
 		assertEquals("Language", driver.findElement(By.xpath("//*[@id=\"config-section\"]/div[2]/form/fieldset[1]/label[2]")).getText());
 		

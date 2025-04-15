@@ -5,6 +5,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import utils.Wait;
+
 public class EditQuestionPage {
 	private WebDriver driver;
 	@FindBy(id="title")
@@ -21,9 +23,12 @@ public class EditQuestionPage {
 	private WebElement exerciseLink;
 	@FindBy(linkText="New question")
 	private WebElement newQuestionLink;
+	
+	protected Wait wait;
 
 	public EditQuestionPage(WebDriver driver){
 		this.driver = driver;
+		wait = new Wait(driver);
 		PageFactory.initElements(driver, this);
 	}
 	
@@ -58,6 +63,7 @@ public class EditQuestionPage {
 	}
 	
 	public EditQuestionPage newQuestion() throws InterruptedException{
+		wait.waitClickability(newQuestionLink);
 		newQuestionLink.click();
 		return new EditQuestionPage(driver);
 	}

@@ -18,27 +18,33 @@ public class ManageUsersPage extends ManageNavBar {
 	}
 	
 	public NewAccountPage createNewUser() {
+		wait.waitClickability(createUserBtn);
 		createUserBtn.click();
 		return new NewAccountPage(driver);
 	}
 	
 	public String getUsername(int i) {
+		wait.waitVisibility(By.xpath("//*[@id=\"main-container\"]/div[2]/div[2]/div/div/div[4]/div[2]/div[2]/div/table/tbody/tr["+i+"]/td[1]/a"));
 		return driver.findElement(By.xpath("//*[@id=\"main-container\"]/div[2]/div[2]/div/div/div[4]/div[2]/div[2]/div/table/tbody/tr["+i+"]/td[1]/a")).getText();
 	}
 	
 	public String getRealName(int i) {
+		wait.waitVisibility(By.xpath("//*[@id=\"main-container\"]/div[2]/div[2]/div/div/div[4]/div[2]/div[2]/div/table/tbody/tr["+i+"]/td[2]"));
 		return driver.findElement(By.xpath("//*[@id=\"main-container\"]/div[2]/div[2]/div/div/div[4]/div[2]/div[2]/div/table/tbody/tr["+i+"]/td[2]")).getText();
 	}
 	
 	public String getEmail(int i) {
+		wait.waitVisibility(By.xpath("//*[@id=\"main-container\"]/div[2]/div[2]/div/div/div[4]/div[2]/div[2]/div/table/tbody/tr["+i+"]/td[3]"));
 		return driver.findElement(By.xpath("//*[@id=\"main-container\"]/div[2]/div[2]/div/div/div[4]/div[2]/div[2]/div/table/tbody/tr["+i+"]/td[3]")).getText();
 	}
 	
 	public String getAccessLevel(int i) {
+		wait.waitVisibility(By.xpath("//*[@id=\"main-container\"]/div[2]/div[2]/div/div/div[4]/div[2]/div[2]/div/table/tbody/tr["+i+"]/td[4]"));
 		return driver.findElement(By.xpath("//*[@id=\"main-container\"]/div[2]/div[2]/div/div/div[4]/div[2]/div[2]/div/table/tbody/tr["+i+"]/td[4]")).getText();
 	}
 	
 	public EditUserPage goToUser(String user) {
+		wait.waitClickability(By.linkText(user));
 		driver.findElement(By.linkText(user)).click();
 		return new EditUserPage(driver);
 	}

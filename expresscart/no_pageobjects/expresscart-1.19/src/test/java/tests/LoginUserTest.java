@@ -13,7 +13,7 @@ public class LoginUserTest extends BaseTest {
 	public void testExpressCartLoginUser() throws Exception {
 		driver.get(appUrl+"/admin");
 		driver.findElement(By.id("email")).sendKeys("test000@test.com");
-		driver.findElement(By.id("password")).sendKeys("password");
+		driver.findElement(By.id("password")).sendKeys("e2eW3Bt3s71nGB3nchM4rK");
 		driver.findElement(By.id("loginForm")).click();
 		assertEquals(driver.findElement(By.xpath("//*[@id=\"container\"]/div/nav/div/ul[1]/li[2]/a")).getText(), "  Dashboard");
 		driver.findElement(By.xpath("//*[@id=\"container\"]/div/nav/div/ul[3]/li/a")).click();

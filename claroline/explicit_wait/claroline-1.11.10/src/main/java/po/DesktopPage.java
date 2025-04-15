@@ -32,16 +32,19 @@ public class DesktopPage extends ClarolinePage{
 	}
 	
 	public AdminPage goToAdminPage(){
+		wait.waitClickability(platformAdminLink);
 		platformAdminLink.click();
 		AdminPage page = new AdminPage(driver);
 		return page;
 	}
 	
 	public String getUserProfile(){
+		wait.waitVisibility(userProfile);
 		return userProfile.getText();
 	}
 	
 	public AuthCoursesPage enrolToCourse(){
+		wait.waitClickability(enrolLink);
 		enrolLink.click();
 		AuthCoursesPage page = new AuthCoursesPage(driver);
 		return page;

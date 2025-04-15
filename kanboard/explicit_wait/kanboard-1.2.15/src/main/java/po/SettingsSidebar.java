@@ -25,6 +25,7 @@ public class SettingsSidebar extends TopNavBar {
 	}
 	
 	public ApplicationSettingsPage appSettings() {
+		wait.waitClickability(appSettings);
 		appSettings.click();
 		return new ApplicationSettingsPage(driver);
 	}

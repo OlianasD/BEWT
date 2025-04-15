@@ -6,6 +6,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 import utils.JavascriptExecutor;
+import utils.Wait;
 
 public class ManageUsersPage extends SiteAdminPageObject {
 	
@@ -15,9 +16,11 @@ public class ManageUsersPage extends SiteAdminPageObject {
 	@FindBy(xpath = "//*[@id=\"toolbar-delete\"]/button")
 	protected WebElement deleteBtn;
 	
+	protected Wait wait;
+	
 	public ManageUsersPage(WebDriver driver) {
 		super(driver);
-		// TODO Auto-generated constructor stub
+		wait = new Wait(driver);
 	}
 	
 	public AddUserPage addUser() {
@@ -50,7 +53,8 @@ public class ManageUsersPage extends SiteAdminPageObject {
 		return new ManageUsersPage(driver);
 	}
 	
-	public String getAlertMessage() {
+	public String getAlertMessage(String expected) {
+		wait.waitForTextToBe(By.className("alert-message"), expected);
 		return driver.findElement(By.className("alert-message")).getText();
 	}
 	
@@ -59,6 +63,7 @@ public class ManageUsersPage extends SiteAdminPageObject {
 	}
 	
 	public boolean containsGroup(int uid, String group) {
+		wait.waitForTextToBeContained(By.xpath("//*[@id=\"userList\"]/tbody/tr["+uid+"]/td[5]"), group);
 		return driver.findElement(By.xpath("//*[@id=\"userList\"]/tbody/tr["+uid+"]/td[5]")).getText().contains(group);
 	}
 	

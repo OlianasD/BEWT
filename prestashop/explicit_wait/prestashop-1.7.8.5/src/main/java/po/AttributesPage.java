@@ -1,5 +1,6 @@
 package po;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -22,6 +23,7 @@ public class AttributesPage extends AdminSidebar {
     }
 	
 	public String getSuccessMessage() {
+		wait.waitVisibility(By.className("alert-success"));
 		return tagMessage.getText();
 	}
 

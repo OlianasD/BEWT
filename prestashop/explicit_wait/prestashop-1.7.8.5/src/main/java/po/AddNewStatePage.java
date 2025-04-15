@@ -4,6 +4,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import utils.Wait;
 
 public class AddNewStatePage {
 	WebDriver driver;
@@ -25,10 +26,12 @@ public class AddNewStatePage {
 	WebElement add_state_button;
 	@FindBy(xpath = "//*[@id=\"content\"]/div[3]/div")
 	WebElement alertMsg;
-
+	
+	protected Wait wait;
 
 	public AddNewStatePage(WebDriver driver) {
 		this.driver = driver;
+		wait = new Wait(driver);
 		PageFactory.initElements(driver, this);
 	}
 
@@ -47,6 +50,7 @@ public class AddNewStatePage {
 	}
 	
 	public String getAlertMessage() {
+		wait.waitVisibility(alertMsg);
 		return alertMsg.getText();
 	}
 }

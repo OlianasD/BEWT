@@ -31,6 +31,12 @@ public class LanguagePage extends GeneralSettingsAbstractPage {
 	}
 	
 	public String getLanguage() {
+		try {
+			Thread.sleep(500);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		wait.waitVisibility(langSelect);
 		return new Select(langSelect).getFirstSelectedOption().getText();
 	}

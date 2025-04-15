@@ -4,7 +4,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-import utils.Waiter;
+import utils.Wait;
 
 public class UserSummaryPage extends TopNavBar {
 	
@@ -23,11 +23,11 @@ public class UserSummaryPage extends TopNavBar {
 	@FindBy(linkText = "Edit profile")
 	protected WebElement editProfile;
 	
-	protected Waiter wait;
+	protected Wait wait;
 
 	public UserSummaryPage(WebDriver driver) {
 		super(driver);
-		wait = new Waiter(driver);
+		wait = new Wait(driver);
 	}
 	
 	public String getUsername() {

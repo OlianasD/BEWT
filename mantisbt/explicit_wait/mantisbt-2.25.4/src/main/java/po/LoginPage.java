@@ -7,6 +7,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 import utils.Strings;
+import utils.Wait;
 
 public class LoginPage {
 	
@@ -21,21 +22,26 @@ public class LoginPage {
 	@FindBy(className = "btn")
 	public WebElement loginBtn;
 	
+	protected Wait wait;
+	
 	public LoginPage(WebDriver driver) {
 		this.driver = driver;
+		wait = new Wait(driver);
 		PageFactory.initElements(driver, this);
 	}
 	
-	public LoginPage setUsername(String username) {
+	public LoginPage setUsername(String usr) {
+		wait.waitClickability(username);
 		this.username.clear();
-		this.username.sendKeys(username);
+		this.username.sendKeys(usr);
 		login();
 		return this;
 	}
 	
-	public LoginPage setPassword(String password) {
+	public LoginPage setPassword(String psw) {
+		wait.waitClickability(password);
 		this.password.clear();
-		this.password.sendKeys(password);
+		this.password.sendKeys(psw);
 		return this;
 	}
 	
@@ -44,6 +50,7 @@ public class LoginPage {
 	}
 	
 	public boolean isLoginFailed() {
+		wait.waitVisibility(By.xpath("//*[@id=\"main-container\"]/div/div/div/div/div[4]/p"));
 		return driver.findElement(By.xpath("//*[@id=\"main-container\"]/div/div/div/div/div[4]/p")).getText()
 		.contains(Strings.loginFailedError);
 	}

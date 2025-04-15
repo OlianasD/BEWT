@@ -11,7 +11,7 @@ public class SearchAllowedCourseTest extends BaseTest {
 		driver.findElement(By.id("login")).clear();
 		driver.findElement(By.id("login")).sendKeys("admin");
 		driver.findElement(By.id("password")).clear();
-		driver.findElement(By.id("password")).sendKeys("admin");
+		driver.findElement(By.id("password")).sendKeys("n0tl34k3dy3t");
 		driver.findElement(By.xpath("//*[@id='loginBox']/form/fieldset/button")).click();
 		driver.findElement(By.linkText("Platform administration")).click();
 		driver.findElement(By.xpath("//*[@id='claroBody']/ul/li[2]/ul/li[1]/form/small/a")).click();

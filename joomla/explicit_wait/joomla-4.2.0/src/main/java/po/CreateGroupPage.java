@@ -4,6 +4,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
+import utils.Wait;
+
 public class CreateGroupPage extends PageObject {
 	
 	@FindBy(id = "jform_title")
@@ -15,9 +17,11 @@ public class CreateGroupPage extends PageObject {
 	@FindBy(xpath = "//*[@id=\"jform_title-lbl\"]/span[2]")
 	protected WebElement emptyTitleAlert;
 	
+	protected Wait wait;
+	
 	public CreateGroupPage(WebDriver driver) {
 		super(driver);
-		// TODO Auto-generated constructor stub
+		wait = new Wait(driver);
 	}
 	
 	public CreateGroupPage setTitle(String title) {
@@ -31,6 +35,7 @@ public class CreateGroupPage extends PageObject {
 	}
 	
 	public CreateGroupPage saveError() {
+		wait.waitClickability(saveAndCloseBtn);
 		saveAndCloseBtn.click();
 		return new CreateGroupPage(driver);
 	}

@@ -5,6 +5,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import utils.Wait;
+
 public class AddCurrencyPage {
 	WebDriver driver;
 
@@ -37,9 +39,12 @@ public class AddCurrencyPage {
 
 	@FindBy(xpath = "//*[@id=\"currency\"]/div[1]/div/div[2]/div")
 	WebElement emptyIsoAlert;
+	
+	protected Wait wait;
 
 	public AddCurrencyPage(WebDriver driver) {
 		this.driver = driver;
+		wait = new Wait(driver);
 		PageFactory.initElements(driver, this);
 	}
 
@@ -71,6 +76,7 @@ public class AddCurrencyPage {
 	}
 
 	public String getEmptyNameAlert() {
+		wait.waitVisibility(emptyNameAlert);
 		return emptyNameAlert.getText();
 	}
 }

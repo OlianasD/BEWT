@@ -7,6 +7,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
+import utils.Wait;
+
 public class LoggedNavBar extends BaseNavBar {
 	
 	@FindBy(linkText = "Site Administrator")
@@ -18,12 +20,15 @@ public class LoggedNavBar extends BaseNavBar {
 	@FindBy(linkText = "Log out")
 	protected WebElement logout;
 	
+	protected Wait wait;
+	
 	public LoggedNavBar(WebDriver driver) {
 		super(driver);
-		// TODO Auto-generated constructor stub
+		wait = new Wait(driver);
 	}
 	
 	public SiteAdminLogin siteAdmin() {
+		wait.waitClickability(siteAdmin);
 		siteAdmin.click();
 		ArrayList<String> tabs2 = new ArrayList<String> (driver.getWindowHandles());
 	    driver = driver.switchTo().window(tabs2.get(1));
@@ -31,6 +36,7 @@ public class LoggedNavBar extends BaseNavBar {
 	}
 	
 	public CreatePostPage createPost() {
+		wait.waitClickability(createPost);
 		createPost.click();
 		return new CreatePostPage(driver);
 	}

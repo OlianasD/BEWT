@@ -15,7 +15,7 @@ public class CreateEmptyUser_GetsWarningTest extends BaseTest {
 				.createAccount()
 				.create();
 		
-		assertEquals("Compila questo campo.", account.getUsernameValidationMessage());
+		assertEquals("Please fill out this field.", account.getUsernameValidationMessage());
 	}
 	
 }

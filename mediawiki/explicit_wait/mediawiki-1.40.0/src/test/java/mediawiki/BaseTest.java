@@ -17,7 +17,7 @@ public class BaseTest {
 	public void login() {
 		WebDriverManager.chromedriver().clearDriverCache().setup();
 		ChromeOptions chromeOptions = new ChromeOptions();
-		chromeOptions.addArguments("--no-sandbox", "--headless", "--disable-gpu", "--window-size=1920x1080");
+		chromeOptions.addArguments("--no-sandbox", "--headless", "--disable-gpu", "--window-size=1920x1080", "--lang=en");
 		driver = new ChromeDriver(chromeOptions);
 		driver.manage().window().maximize();
 		driver.get("http://localhost:8080");
@@ -27,7 +27,7 @@ public class BaseTest {
 		return new MainPage(driver)
 				.login()
 				.setUsername("admin")
-				.setPassword("Password001")
+				.setPassword("e2eW3Bt3s71nGB3nchM4rK")
 				.login();
 	}
 	
@@ -35,7 +35,7 @@ public class BaseTest {
 		return new MainPage(driver)
 				.login()
 				.setUsername("User001")
-				.setPassword("Password001")
+				.setPassword("e2eW3Bt3s71nGB3nchM4rK")
 				.login();
 	}
 	

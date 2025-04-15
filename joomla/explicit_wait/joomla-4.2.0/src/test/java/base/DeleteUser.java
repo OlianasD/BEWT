@@ -22,7 +22,7 @@ public class DeleteUser extends BaseTest {
 				.selectSecondUser()
 				.deleteSelectedUser();
 		
-		assertEquals(expectedAlert, users.getAlertMessage());
+		assertEquals(expectedAlert, users.getAlertMessage(expectedAlert));
 		assertFalse(users.containsUser(user));
 		users.logout();
 		

@@ -30,6 +30,7 @@ public class ApplicationSettingsPage extends SettingsSidebar {
 	}
 	
 	public String getSelectedLanguage() {
+		wait.waitVisibility(By.id("form-application_language"));
 		return new Select(driver.findElement(By.id("form-application_language"))).getFirstSelectedOption().getText();
 	}
 	

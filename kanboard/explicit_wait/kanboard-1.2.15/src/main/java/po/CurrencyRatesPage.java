@@ -6,7 +6,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.Select;
 
-import utils.Waiter;
+import utils.Wait;
 
 public class CurrencyRatesPage extends SettingsSidebar {
 	
@@ -31,11 +31,11 @@ public class CurrencyRatesPage extends SettingsSidebar {
 	@FindBy(xpath = "//*[@id=\"config-section\"]/div[2]/table/tbody/tr[2]/td[2]")
 	protected WebElement rateValue;
 	
-	protected Waiter wait;
+	protected Wait wait;
 
 	public CurrencyRatesPage(WebDriver driver) {
 		super(driver);
-		wait = new Waiter(driver);
+		wait = new Wait(driver);
 	}
 	
 	public CurrencyRatesPage changeReferenceCurrency() {
@@ -61,7 +61,12 @@ public class CurrencyRatesPage extends SettingsSidebar {
 	}
 	
 	public String getReferenceCurrency() {
-		wait.waitVisibilityRefreshed(referenceCurrency);
+		try {
+			Thread.sleep(500);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		return referenceCurrency.getText();
 	}
 	

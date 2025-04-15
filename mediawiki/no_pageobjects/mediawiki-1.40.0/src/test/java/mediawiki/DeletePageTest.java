@@ -15,15 +15,16 @@ public class DeletePageTest extends BaseTest {
 		driver.findElement(By.id("wpName1")).clear();
 		driver.findElement(By.id("wpName1")).sendKeys("admin");
 		driver.findElement(By.id("wpPassword1")).clear();
-		driver.findElement(By.id("wpPassword1")).sendKeys("Password001");
+		driver.findElement(By.id("wpPassword1")).sendKeys("e2eW3Bt3s71nGB3nchM4rK");
 		driver.findElement(By.id("wpLoginAttempt")).click();
+		Thread.sleep(1000);
 		driver.findElement(By.id("searchInput")).sendKeys("E2E Web Testing");
 		Thread.sleep(500);
 		driver.findElement(By.id("searchInput")).sendKeys(Keys.ENTER);
 		driver.findElement(By.id("p-cactions-checkbox")).click();
 		driver.findElement(By.linkText("Delete")).click();
 		driver.findElement(By.id("wpConfirmB")).click();
-		
+		Thread.sleep(1000);
 		assertEquals("\"E2E Web Testing\" has been deleted. See deletion log for a record of recent deletions.", 
 				driver.findElement(By.xpath("//*[@id=\"mw-content-text\"]/p[1]")).getText());
 

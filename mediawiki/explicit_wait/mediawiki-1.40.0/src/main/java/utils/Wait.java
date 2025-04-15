@@ -50,4 +50,8 @@ public class Wait {
 		wait.until(ExpectedConditions.stalenessOf(element));
 	}
 	
+	public void waitStalenessRefreshed(WebElement element) {
+		wait.until(ExpectedConditions.refreshed(ExpectedConditions.stalenessOf(element)));
+	}
+	
 }

@@ -6,11 +6,11 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class Waiter {
+public class Wait {
 	
 	protected WebDriverWait wait;
 	
-	public Waiter(WebDriver driver) {
+	public Wait(WebDriver driver) {
 		wait = new WebDriverWait(driver, 30);
 	}
 	
@@ -48,6 +48,10 @@ public class Waiter {
 	
 	public void waitStaleness(WebElement element) {
 		wait.until(ExpectedConditions.stalenessOf(element));
+	}
+	
+	public void waitStalenessRefreshed(WebElement element) {
+		wait.until(ExpectedConditions.refreshed(ExpectedConditions.stalenessOf(element)));
 	}
 	
 }

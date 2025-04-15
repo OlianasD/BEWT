@@ -21,7 +21,7 @@ public class BaseTest {
 		driver = new ChromeDriver(chromeOptions);
 		driver.manage().window().maximize();
 		driver.get("http://localhost:8989");
-		new LoginPage(driver).setUsername("administrator").setPassword("root").login();
+		new LoginPage(driver).setUsername("administrator").setPassword("e2eW3Bt3s71nGB3nchM4rK").login();
 	}
 	
 	@After

@@ -7,6 +7,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 import utils.JavascriptExecutor;
+import utils.Wait;
 
 public class ManageFieldsPage extends SiteAdminPageObject {
 	
@@ -16,9 +17,11 @@ public class ManageFieldsPage extends SiteAdminPageObject {
 	@FindBy(xpath = "//*[@id=\"toolbar-status-group\"]/button")
 	protected WebElement actionsBtn;
 	
+	protected Wait wait;
+	
 	public ManageFieldsPage(WebDriver driver) {
 		super(driver);
-		// TODO Auto-generated constructor stub
+		wait = new Wait(driver);
 	}
 	
 	public EditFieldPage createField() {
@@ -28,6 +31,7 @@ public class ManageFieldsPage extends SiteAdminPageObject {
 	
 	public boolean isFieldPresent(String field) {
 		try {
+			wait.waitForTextToBeContained(By.id("fieldList"), field);
 			return driver.findElement(By.id("fieldList")).getText().contains(field);
 		} catch(NoSuchElementException e) {
 			if(driver.findElement(By.xpath("//*[@id=\"j-main-container\"]/div[2]")).getText().contains("No Matching Results")) {
@@ -42,6 +46,12 @@ public class ManageFieldsPage extends SiteAdminPageObject {
 	
 	public boolean isFieldPresentAtFirstRow(String field) {
 		try {
+			try {
+				Thread.sleep(1000);
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 			return driver.findElement(By.xpath("//*[@id=\"fieldList\"]/tbody/tr[1]/th/div/a")).getText().contains(field);
 		} catch(NoSuchElementException e) {
 			if(driver.findElement(By.xpath("//*[@id=\"j-main-container\"]/div[2]")).getText().contains("No Matching Results")) {
@@ -62,6 +72,7 @@ public class ManageFieldsPage extends SiteAdminPageObject {
 	}
 	
 	public boolean fieldHasGroup(int field, String group) {
+		wait.waitForTextToBeContained(By.xpath("//*[@id=\"fieldList\"]/tbody/tr["+field+"]/td[5]"), group);
 		return driver.findElement(By.xpath("//*[@id=\"fieldList\"]/tbody/tr["+field+"]/td[5]")).getText().contains(group);
 	}
 	

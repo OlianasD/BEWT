@@ -11,7 +11,7 @@ public class AddEmptyUserTest extends BaseTest {
 	public void testExpressCartEmptyUser() throws Exception {
 		driver.get(appUrl+"/admin");
 		driver.findElement(By.id("email")).sendKeys("owner@test.com");
-		driver.findElement(By.id("password")).sendKeys("test");
+		driver.findElement(By.id("password")).sendKeys("e2eW3Bt3s71nGB3nchM4rK");
 		driver.findElement(By.id("loginForm")).click();
 		driver.findElement(By.xpath("//*[@id=\"container\"]/div/nav/div/ul[1]/li[6]/a[2]")).click();
 		driver.findElement(By.id("btnUserAdd")).click();

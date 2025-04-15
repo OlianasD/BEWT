@@ -5,7 +5,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-import utils.Waiter;
+import utils.Wait;
 
 public class ProjectSidebar extends TopNavBar {
 	
@@ -30,11 +30,11 @@ public class ProjectSidebar extends TopNavBar {
 	@FindBy(linkText =  "Remove")
 	protected WebElement remove;
 	
-	protected Waiter wait;
+	protected Wait wait;
 
 	public ProjectSidebar(WebDriver driver) {
 		super(driver);
-		wait = new Waiter(driver);
+		wait = new Wait(driver);
 	}
 	
 	public EditProjectPage editProject() {

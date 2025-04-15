@@ -5,6 +5,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
+import utils.Wait;
+
 public class EditProfilePage extends LoggedNavBar {
 	
 	@FindBy(id = "jform_name")
@@ -19,11 +21,11 @@ public class EditProfilePage extends LoggedNavBar {
 	@FindBy(className = "btn-primary")
 	protected WebElement submitBtn;
 	
-	
+	protected Wait wait;
 	
 	public EditProfilePage(WebDriver driver) {
 		super(driver);
-		// TODO Auto-generated constructor stub
+		wait = new Wait(driver);
 	}
 	
 	public String getName() {
@@ -46,6 +48,7 @@ public class EditProfilePage extends LoggedNavBar {
 	}
 	
 	public String getAlertMessage() {
+		wait.waitVisibility(By.className("alert-message"));
 		return driver.findElement(By.className("alert-message")).getText();
 	}
 	

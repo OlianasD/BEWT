@@ -8,7 +8,7 @@ import org.openqa.selenium.By;
 public class ChangePostDateTest extends BaseTest {
 
 	@Test
-	public void changePostDate() {
+	public void changePostDate() throws InterruptedException {
 		driver.findElement(By.id("jsusername")).sendKeys(username);
 		driver.findElement(By.id("jspassword")).sendKeys(password);
 		driver.findElement(By.name("save")).click();
@@ -20,6 +20,7 @@ public class ChangePostDateTest extends BaseTest {
 		driver.findElement(By.id("jsdate")).sendKeys("2022-08-03 14:42:26");
 		driver.findElement(By.id("jsoptionsSidebar")).click();
 		driver.findElement(By.id("jsbuttonSave")).click();
+		Thread.sleep(500);
 		driver.findElement(By.id("jsoptionsSidebar")).click();
 		driver.findElement(By.id("nav-advanced-tab")).click();
 		

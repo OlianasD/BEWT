@@ -14,7 +14,7 @@ public class AddCourseExerciseQuestionsTest extends BaseTest {
 		driver.findElement(By.id("login")).clear();
 		driver.findElement(By.id("login")).sendKeys("admin");
 		driver.findElement(By.id("password")).clear();
-		driver.findElement(By.id("password")).sendKeys("admin");
+		driver.findElement(By.id("password")).sendKeys("n0tl34k3dy3t");
 		driver.findElement(By.xpath("//*[@id='loginBox']/form/fieldset/button")).click();
 		driver.findElement(By.linkText("001 - Course001")).click();
 		driver.findElement(By.id("CLQWZ")).click();
@@ -46,7 +46,9 @@ public class AddCourseExerciseQuestionsTest extends BaseTest {
 		driver.findElement(By.id("title")).sendKeys("Question 3");
 		driver.findElement(By.id("MCMA")).click();
 		driver.findElement(By.xpath("//*[@id='courseRightContent']/form/div[2]/input")).click();
-		 driver.findElement(By.name("cmdAddAnsw")).click(); 
+		Thread.sleep(1000);
+		driver.findElement(By.name("cmdAddAnsw")).click(); 
+		Thread.sleep(1000);
 		driver.findElement(By.id("correct_1")).click();
 		driver.findElement(By.name("grade_1")).clear();
 		driver.findElement(By.name("grade_1")).sendKeys("3");
@@ -55,6 +57,7 @@ public class AddCourseExerciseQuestionsTest extends BaseTest {
 		driver.findElement(By.name("grade_3")).clear();
 		driver.findElement(By.name("grade_3")).sendKeys("-3");
 		driver.findElement(By.name("cmdOk")).click(); 
+		Thread.sleep(1000);
 		driver.findElement(By.linkText("Exercise 001")).click();		
 		assertTrue(driver.findElement(By.xpath("//*[@id='courseRightContent']/table/tbody/tr[1]/td[2]")).getText().contains("Question 1"));
 		assertTrue(driver.findElement(By.xpath("//*[@id='courseRightContent']/table/tbody/tr[1]/td[4]")).getText().contains("Multiple choice (Unique answer)"));

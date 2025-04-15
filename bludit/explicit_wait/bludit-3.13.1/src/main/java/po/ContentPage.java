@@ -41,6 +41,7 @@ public class ContentPage extends AdminSidebar {
 	}
 	
 	public String getFirstContentTitle() {
+		wait.waitVisibility(firstContentTitle);
 		return firstContentTitle.getText();
 	}
 	

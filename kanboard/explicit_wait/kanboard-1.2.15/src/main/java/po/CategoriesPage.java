@@ -5,7 +5,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-import utils.Waiter;
+import utils.Wait;
 
 public class CategoriesPage extends ProjectSidebar {
 	
@@ -21,11 +21,11 @@ public class CategoriesPage extends ProjectSidebar {
 	@FindBy(className = "form-errors")
 	protected WebElement errorMsg;
 	
-	protected Waiter wait;
+	protected Wait wait;
 
 	public CategoriesPage(WebDriver driver) {
 		super(driver);
-		wait = new Waiter(driver);
+		wait = new Wait(driver);
 	}
 	
 	public CategoriesPage addCategory() {

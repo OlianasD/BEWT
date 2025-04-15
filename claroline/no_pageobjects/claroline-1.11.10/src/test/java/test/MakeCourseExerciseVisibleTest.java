@@ -12,7 +12,7 @@ public class MakeCourseExerciseVisibleTest extends BaseTest {
 		driver.findElement(By.id("login")).clear();
 		driver.findElement(By.id("login")).sendKeys("admin");
 		driver.findElement(By.id("password")).clear();
-		driver.findElement(By.id("password")).sendKeys("admin");
+		driver.findElement(By.id("password")).sendKeys("n0tl34k3dy3t");
 		driver.findElement(By.xpath("//*[@id='loginBox']/form/fieldset/button")).click();
 		driver.findElement(By.linkText("001 - Course001")).click();
 		driver.findElement(By.id("CLQWZ")).click();

@@ -10,7 +10,7 @@ import utils.Strings;
 public class AddIssueTest extends BaseTest {
 	
 	@Test
-	public void addIssue() {
+	public void addIssue() throws InterruptedException {
 		String category = "Category001";
 		String severity = "crash";
 		String summary = "Summary001";
@@ -26,6 +26,7 @@ public class AddIssueTest extends BaseTest {
 		driver.findElement(By.id("description")).clear();
 		driver.findElement(By.id("description")).sendKeys(description);
 		driver.findElement(By.xpath("//*[@id=\"report_bug_form\"]/div/div[2]/div[2]/input")).click();
+		Thread.sleep(500);
 		driver.findElement(By.linkText(Strings.viewIssues)).click();
 		
 		assertEquals(category, driver.findElement(By.xpath("//*[@id=\"buglist\"]/tbody/tr/td[7]/div")).getText());

@@ -14,7 +14,7 @@ public class DeleteUserTest extends BaseTest {
 	public void testExpressCartDeleteUser() throws Exception {
 		driver.get(appUrl+"/admin");
 		driver.findElement(By.id("email")).sendKeys("owner@test.com");
-		driver.findElement(By.id("password")).sendKeys("test");
+		driver.findElement(By.id("password")).sendKeys("e2eW3Bt3s71nGB3nchM4rK");
 		driver.findElement(By.id("loginForm")).click();
 		driver.findElement(By.xpath("//*[@id=\"container\"]/div/nav/div/ul[1]/li[6]/a[1]")).click();
 		driver.findElement(By.xpath("/html/body/div[2]/div/main/div[2]/ul/li[3]/span/a[2]")).click();

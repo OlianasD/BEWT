@@ -14,6 +14,7 @@ public class DeleteProjectConfirmPage extends BaseNavBar {
 	}
 	
 	public ManageProjectPage confirmDelete() {
+		wait.waitClickability(deleteConfirmBtn);
 		deleteConfirmBtn.click();
 		return new ManageProjectPage(driver);
 	}

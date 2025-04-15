@@ -12,7 +12,7 @@ public class AddTwiceUserTest extends BaseTest {
 		driver.findElement(By.id("login")).clear();
 		driver.findElement(By.id("login")).sendKeys("admin");
 		driver.findElement(By.id("password")).clear();
-		driver.findElement(By.id("password")).sendKeys("admin");
+		driver.findElement(By.id("password")).sendKeys("n0tl34k3dy3t");
 		driver.findElement(By.xpath("//*[@id='loginBox']/form/fieldset/button")).click();
 		driver.findElement(By.linkText("Platform administration")).click();
 		driver.findElement(By.linkText("Create user")).click();
@@ -23,11 +23,12 @@ public class AddTwiceUserTest extends BaseTest {
 		driver.findElement(By.id("username")).clear();
 		driver.findElement(By.id("username")).sendKeys("user001");
 		driver.findElement(By.id("password")).clear();
-		driver.findElement(By.id("password")).sendKeys("password001");
+		driver.findElement(By.id("password")).sendKeys("n0tl34k3dy3t");
 		driver.findElement(By.id("password_conf")).clear();
-		driver.findElement(By.id("password_conf")).sendKeys("password001");
+		driver.findElement(By.id("password_conf")).sendKeys("n0tl34k3dy3t");
 		driver.findElement(By.id("student")).click();
 		driver.findElement(By.id("applyChange")).click();
+		Thread.sleep(1000);
 		assertTrue(driver.findElement(By.xpath("//*[@id='claroBody']/div[2]/div[1]")).getText()
 				.contains("This username is already taken"));
 		driver.findElement(By.linkText("Logout")).click();

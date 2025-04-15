@@ -5,6 +5,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import utils.Wait;
+
 public class AdminAddNewUserPage extends ClarolinePage{
 	private WebDriver driver;
 	@FindBy(id="lastname")
@@ -32,8 +34,11 @@ public class AdminAddNewUserPage extends ClarolinePage{
 	@FindBy(linkText="Back to admin page")
 	private WebElement backToAdminLink;
 	
+	protected Wait wait;
+	
 	public AdminAddNewUserPage(WebDriver driver){
 		this.driver = driver;
+		wait = new Wait(driver);
 		PageFactory.initElements(driver, this);
 	}
 	
@@ -91,11 +96,13 @@ public class AdminAddNewUserPage extends ClarolinePage{
 	}
 	
 	public AdminAddNewUserPage addNewUser() throws InterruptedException{
+		wait.waitClickability(addNewUserLink);
 		addNewUserLink.click();
 		return new AdminAddNewUserPage(driver);
 	}
 	
 	public AdminPage backToAdmin(){
+		wait.waitClickability(backToAdminLink);
 		backToAdminLink.click();
 		AdminPage page = new AdminPage(driver);
 		return page;

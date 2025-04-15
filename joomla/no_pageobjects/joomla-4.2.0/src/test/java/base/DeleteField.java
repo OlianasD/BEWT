@@ -47,6 +47,12 @@ public class DeleteField extends BaseTest {
 	
 	public boolean isFieldPresentAtFirstRow(String field) {
 		try {
+			try {
+				Thread.sleep(1000);
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 			return driver.findElement(By.xpath("//*[@id=\"fieldList\"]/tbody/tr[1]/th/div/a")).getText().contains(field);
 		} catch(NoSuchElementException e) {
 			if(driver.findElement(By.xpath("//*[@id=\"j-main-container\"]/div[2]")).getText().contains("No Matching Results")) {

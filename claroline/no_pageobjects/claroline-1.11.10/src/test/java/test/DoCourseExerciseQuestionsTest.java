@@ -15,7 +15,7 @@ public class DoCourseExerciseQuestionsTest extends BaseTest {
 		driver.findElement(By.id("login")).clear();
 		driver.findElement(By.id("login")).sendKeys("user001");
 		driver.findElement(By.id("password")).clear();
-		driver.findElement(By.id("password")).sendKeys("password001");
+		driver.findElement(By.id("password")).sendKeys("n0tl34k3dy3t");
 		driver.findElement(By.xpath("//*[@id='loginBox']/form/fieldset/button")).click();
 		driver.findElement(By.linkText("001 - Course001")).click();
 		driver.findElement(By.id("CLQWZ")).click();
@@ -27,6 +27,7 @@ public class DoCourseExerciseQuestionsTest extends BaseTest {
 		driver.findElement(By.xpath("html/body/div[1]/div[2]/div[2]/div[3]/div[2]/form/table/tbody[3]/tr/td/table/tbody/tr[1]/td[1]/input"))
 				.click();
 		driver.findElement(By.name("cmdOk")).click();
+		Thread.sleep(1000);
 		assertTrue(driver.findElement(By.xpath("html/body/div[1]/div[2]/div[2]/div[3]/div[2]/form/div[1]/div/strong")).getText()
 				.contains("Your total score is 9/9"));
 		driver.findElement(By.linkText("Logout")).click();

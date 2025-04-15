@@ -19,6 +19,7 @@ public class ChangeHomeTest extends BaseTest {
 		Thread.sleep(1000);
 		driver.findElement(By.xpath("//*[@id=\"select2-jshomepage-results\"]/li")).click();
 		driver.findElement(By.xpath("//*[@id=\"jsform\"]/div[1]/div/button")).click();
+		Thread.sleep(500);
 		
 		assertEquals("Create your own content", driver.findElement(By.id("select2-jshomepage-container")).getAttribute("title"));
 	}

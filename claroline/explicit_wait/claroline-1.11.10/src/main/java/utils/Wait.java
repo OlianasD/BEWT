@@ -18,6 +18,10 @@ public class Wait {
 		wait.until(ExpectedConditions.visibilityOf(element));
 	}
 	
+	public void waitVisibility(By locator) {
+		wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
+	}
+	
 	public void waitClickability(WebElement element) {
 		wait.until(ExpectedConditions.elementToBeClickable(element));
 	}

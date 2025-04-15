@@ -28,21 +28,25 @@ public class EditIssuePage extends BaseNavBar {
 	}
 	
 	public EditIssuePage setPriority(String prior) {
+		wait.waitClickability(priority);
 		new Select(priority).selectByVisibleText(prior);
 		return this;
 	}
 	
 	public EditIssuePage setSeverity(String sev) {
+		wait.waitClickability(severity);
 		new Select(severity).selectByVisibleText(sev);
 		return this;
 	}
 	
 	public EditIssuePage setStatus(String st) {
+		wait.waitClickability(status);
 		new Select(status).selectByVisibleText(st);
 		return this;
 	}
 	
 	public EditIssuePage setSummary(String summ) {
+		wait.waitClickability(summary);
 		summary.clear();
 		summary.sendKeys(summ);
 		return this;

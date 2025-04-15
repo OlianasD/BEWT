@@ -16,7 +16,7 @@ public class DeleteProductTagTest extends BaseTest {
 		goToAdminHome();
 		EditProductPage product = new AdminLoginPage(driver)
 			.setEmail("owner@test.com")
-			.setPassword("test")
+			.setPassword("e2eW3Bt3s71nGB3nchM4rK")
 			.doLogin()
 			.products()
 			.goToProduct("NewProduct000")

@@ -7,6 +7,8 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
 
+import utils.Wait;
+
 public class CourseCreatePage extends ClarolinePage {
 	private WebDriver driver;
 	@FindBy(id="course_title")
@@ -32,8 +34,11 @@ public class CourseCreatePage extends ClarolinePage {
 	@FindBy(id="course_registrationKey")
 	private WebElement password;
 	
+	protected Wait wait;
+	
 	public CourseCreatePage(WebDriver driver){
 		this.driver = driver;
+		wait = new Wait(driver);
 		PageFactory.initElements(driver, this);
 	}
 	
@@ -84,6 +89,7 @@ public class CourseCreatePage extends ClarolinePage {
 	}
 	
 	public String getErrorMsg(int i){
+		wait.waitVisibility(By.xpath(".//*[@id='claroBody']/div[2]/div/span["+i+"]"));
 		WebElement msg = driver.findElement(By.xpath(".//*[@id='claroBody']/div[2]/div/span["+i+"]"));
 		return msg.getText();		
 	}

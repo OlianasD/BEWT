@@ -15,12 +15,14 @@ public class EditProtectedPage_NewAdmin_SuccessTest extends BaseTest {
 		driver.findElement(By.id("wpName1")).clear();
 		driver.findElement(By.id("wpName1")).sendKeys("User001");
 		driver.findElement(By.id("wpPassword1")).clear();
-		driver.findElement(By.id("wpPassword1")).sendKeys("Password001");
+		driver.findElement(By.id("wpPassword1")).sendKeys("e2eW3Bt3s71nGB3nchM4rK");
 		driver.findElement(By.id("wpLoginAttempt")).click();
+		Thread.sleep(1000);
 		driver.findElement(By.id("searchInput")).sendKeys("Selenium WebDriver");
 		Thread.sleep(500);
 		driver.findElement(By.id("searchInput")).sendKeys(Keys.ENTER);
 		driver.findElement(By.linkText("Edit")).click();
+		Thread.sleep(1000);
 		driver.findElement(By.xpath("//*[@id=\"bodyContent\"]/div[6]/div[1]/div[1]")).sendKeys(Keys.chord(Keys.CONTROL, Keys.END));
 		driver.findElement(By.xpath("//*[@id=\"bodyContent\"]/div[6]/div[1]/div[1]")).sendKeys(" Selenium WebDriver accepts commands (sent in Selenese, or via a Client API) and sends them to a browser.");
 		Thread.sleep(500);

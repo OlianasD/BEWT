@@ -20,12 +20,19 @@ public class CreateSubprojectPage extends ManageNavBar {
 	}
 	
 	public CreateSubprojectPage setName(String name) {
+		try {
+			Thread.sleep(500);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
 		this.name.sendKeys(name);
 		return this;
 	}
 	
 	public ManageProjectPage createSubproject() {
+		wait.waitClickability(createBtn);
 		createBtn.click();
+		wait.waitClickability(By.linkText(Strings.contin));
 		driver.findElement(By.linkText(Strings.contin)).click();
 		return new ManageProjectPage(driver);
 	}

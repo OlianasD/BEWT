@@ -10,7 +10,7 @@ import utils.Strings;
 public class AddUserTest extends BaseTest {
 	
 	@Test
-	public void addUser() {
+	public void addUser() throws InterruptedException {
 		String username = "username001";
 		String realname = "username001";
 		String email = "username@username.it";
@@ -26,6 +26,7 @@ public class AddUserTest extends BaseTest {
 		driver.findElement(By.name("email")).sendKeys(email);
 		new Select(driver.findElement(By.name("access_level"))).selectByVisibleText(Strings.updater);
 		driver.findElement(By.xpath("//*[@id=\"manage-user-create-form\"]/div/div[3]/input")).click();
+		Thread.sleep(500);
 		driver.findElement(By.linkText(Strings.manageUsers)).click();
 		
 		assertEquals(username, driver.findElement(By.xpath("//*[@id=\"main-container\"]/div[2]/div[2]/div/div/div[4]/div[2]/div[2]/div/table/tbody/tr[2]/td[1]/a")).getText());

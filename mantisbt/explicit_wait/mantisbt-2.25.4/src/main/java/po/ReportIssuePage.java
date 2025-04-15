@@ -34,38 +34,45 @@ public class ReportIssuePage extends BaseNavBar {
 	}
 	
 	public ReportIssuePage setCategory(String cat) {
+		wait.waitClickability(category);
 		new Select(category).selectByVisibleText(cat);
 		return this;
 	}
 	
 	public ReportIssuePage setReproducibility(String repr) {
+		wait.waitClickability(reproducibility);
 		new Select(reproducibility).selectByVisibleText(repr);
 		return this;
 	}
 	
 	public ReportIssuePage setSeverity(String sev) {
+		wait.waitClickability(severity);
 		new Select(severity).selectByVisibleText(sev);
 		return this;
 	}
 	
 	public ReportIssuePage setPriority(String prior) {
+		wait.waitClickability(priority);
 		new Select(priority).selectByVisibleText(prior);
 		return this;
 	}
 	
 	public ReportIssuePage setSummary(String summ) {
+		wait.waitClickability(summary);
 		summary.clear();
 		summary.sendKeys(summ);
 		return this;
 	}
 	
 	public ReportIssuePage setDescription(String descr) {
+		wait.waitClickability(description);
 		description.clear();
 		description.sendKeys(descr);
 		return this;
 	}
 	
 	public ReportIssuePage submitIssue() {
+		wait.waitClickability(submitIssueBtn);
 		submitIssueBtn.click();
 		return this;
 	}

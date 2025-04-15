@@ -15,7 +15,7 @@ public class BlockedUser_CantEditTest extends BaseTest {
 		driver.findElement(By.id("wpName1")).clear();
 		driver.findElement(By.id("wpName1")).sendKeys("User001");
 		driver.findElement(By.id("wpPassword1")).clear();
-		driver.findElement(By.id("wpPassword1")).sendKeys("Password001");
+		driver.findElement(By.id("wpPassword1")).sendKeys("e2eW3Bt3s71nGB3nchM4rK");
 		driver.findElement(By.id("wpLoginAttempt")).click();
 		driver.findElement(By.linkText("User001")).click();
 		driver.findElement(By.linkText("Edit")).click();

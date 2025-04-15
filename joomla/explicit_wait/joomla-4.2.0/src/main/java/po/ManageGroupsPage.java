@@ -6,6 +6,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 import utils.JavascriptExecutor;
+import utils.Wait;
 
 public class ManageGroupsPage extends SiteAdminPageObject {
 	
@@ -15,9 +16,11 @@ public class ManageGroupsPage extends SiteAdminPageObject {
 	@FindBy(xpath = "//*[@id=\"toolbar-delete\"]/button")
 	protected WebElement deleteBtn;
 	
+	protected Wait wait;
+	
 	public ManageGroupsPage(WebDriver driver) {
 		super(driver);
-		// TODO Auto-generated constructor stub
+		wait = new Wait(driver);
 	}
 	
 	public CreateGroupPage createGroup() {
@@ -26,6 +29,7 @@ public class ManageGroupsPage extends SiteAdminPageObject {
 	}
 	
 	public String getIthGroupName(int i) {
+		wait.waitVisibility(By.xpath("//*[@id=\"groupList\"]/tbody/tr["+i+"]/th/a"));
 		return driver.findElement(By.xpath("//*[@id=\"groupList\"]/tbody/tr["+i+"]/th/a")).getText();
 	}
 	

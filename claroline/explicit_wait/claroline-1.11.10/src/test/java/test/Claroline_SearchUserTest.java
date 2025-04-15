@@ -12,7 +12,7 @@ public class Claroline_SearchUserTest extends BaseTest {
 	@Test
 	public void runTest() throws InterruptedException{
 		AdminUsersPage aup = new IndexPage(driver)
-				.login("admin", "admin")
+				.login("admin", "n0tl34k3dy3t")
 				.goToAdminPage()
 				.searchUser("user001");
 		

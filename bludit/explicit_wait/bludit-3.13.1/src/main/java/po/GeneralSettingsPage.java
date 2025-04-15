@@ -26,6 +26,13 @@ public class GeneralSettingsPage extends GeneralSettingsAbstractPage {
 	}
 	
 	public String getFooter() {
+		try {
+			Thread.sleep(500);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		wait.waitVisibility(footer);
 		return footer.getAttribute("value");
 	}
 	

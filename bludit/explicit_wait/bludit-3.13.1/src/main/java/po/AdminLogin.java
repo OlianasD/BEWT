@@ -49,12 +49,19 @@ public class AdminLogin extends PageObject {
 	}
 	
 	public boolean isAlertVisible() {
-		wait.waitVisibility(alert);
-		return alert.isDisplayed();
+		try {
+			Thread.sleep(500);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		wait.waitVisibility(driver.findElement(By.id("alert")));
+		return driver.findElement(By.id("alert")).isDisplayed();
 	}
 	
 	public String getAlertText() {
-		return alert.getText();
+		wait.waitVisibility(driver.findElement(By.id("alert")));
+		return driver.findElement(By.id("alert")).getText();
 	}
 
 }

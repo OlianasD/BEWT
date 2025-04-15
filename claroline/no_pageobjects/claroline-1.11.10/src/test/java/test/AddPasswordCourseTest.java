@@ -14,7 +14,7 @@ public class AddPasswordCourseTest extends BaseTest {
 		driver.findElement(By.id("login")).clear();
 		driver.findElement(By.id("login")).sendKeys("admin");
 		driver.findElement(By.id("password")).clear();
-		driver.findElement(By.id("password")).sendKeys("admin");
+		driver.findElement(By.id("password")).sendKeys("n0tl34k3dy3t");
 		driver.findElement(By.xpath("//*[@id='loginBox']/form/fieldset/button")).click();
 		driver.findElement(By.linkText("Platform administration")).click();
 		driver.findElement(By.linkText("Create course")).click();
@@ -27,7 +27,7 @@ public class AddPasswordCourseTest extends BaseTest {
 		driver.findElement(By.id("access_public")).click();
 		driver.findElement(By.id("registration_key")).click();
 		driver.findElement(By.id("course_registrationKey")).clear();
-		driver.findElement(By.id("course_registrationKey")).sendKeys("password");
+		driver.findElement(By.id("course_registrationKey")).sendKeys("n0tl34k3dy3t");
 		driver.findElement(By.name("changeProperties")).click();
 		assertTrue(driver.findElement(By.xpath("//*[@id='claroBody']/div[2]/div")).getText()
 				.contains("You have just created the course website : 002"));

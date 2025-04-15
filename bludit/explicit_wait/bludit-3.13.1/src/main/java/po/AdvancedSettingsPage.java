@@ -52,11 +52,24 @@ public class AdvancedSettingsPage extends GeneralSettingsAbstractPage {
 	}
 	
 	public String getPostsOrder() {
+		try {
+			Thread.sleep(500);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		wait.waitClickability(orderSelect);
 		return new Select(orderSelect).getFirstSelectedOption().getText();
 	}
 	
 	public String getSelectedHome() {
+		try {
+			Thread.sleep(500);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		wait.waitVisibility(driver.findElement(By.id("select2-jshomepage-container")));
 		return driver.findElement(By.id("select2-jshomepage-container")).getAttribute("title");
 	}
 	

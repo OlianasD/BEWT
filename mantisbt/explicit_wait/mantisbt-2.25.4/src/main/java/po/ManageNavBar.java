@@ -21,11 +21,13 @@ public class ManageNavBar extends BaseNavBar {
 	}
 	
 	public ManageUsersPage manageUsers() {
+		wait.waitClickability(manageUsers);
 		manageUsers.click();
 		return new ManageUsersPage(driver);
 	}
 	
 	public ManageProjectPage manageProjects() {
+		wait.waitClickability(manageProjects);
 		manageProjects.click();
 		return new ManageProjectPage(driver);
 	}

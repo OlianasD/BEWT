@@ -12,10 +12,11 @@ public class ViewProfileStatisticsUserTest extends BaseTest {
 		driver.findElement(By.id("login")).clear();
 		driver.findElement(By.id("login")).sendKeys("user001");
 		driver.findElement(By.id("password")).clear();
-		driver.findElement(By.id("password")).sendKeys("password001");
+		driver.findElement(By.id("password")).sendKeys("n0tl34k3dy3t");
 		driver.findElement(By.xpath("//*[@id='loginBox']/form/fieldset/button")).click();
 		driver.findElement(By.linkText("Manage my account")).click();
 		driver.findElement(By.linkText("View my statistics")).click();
+		Thread.sleep(1000);
 		new Select(driver.findElement(By.id("cidReq"))).selectByVisibleText("Course001");
 		assertTrue(driver.findElement(By.linkText("Exercise 001"))
 				.getText().contains("Exercise 001"));

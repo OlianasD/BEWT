@@ -14,6 +14,7 @@ public class DeleteIssuePage extends BaseNavBar {
 	}
 	
 	public ViewIssuesPage deleteIssue() {
+		wait.waitClickability(deleteIssueBtn);
 		deleteIssueBtn.click();
 		return new ViewIssuesPage(driver);
 	}

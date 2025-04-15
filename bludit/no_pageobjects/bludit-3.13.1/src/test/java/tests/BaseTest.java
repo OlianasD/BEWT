@@ -13,7 +13,7 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 public class BaseTest {
 	
 	public WebDriver driver;
-	protected static final String password = "password";
+	protected static final String password = "e2eW3Bt3s71nGB3nchM4rK";
 	protected static final String username = "admin";
 	
 	@Before

@@ -13,7 +13,7 @@ public class Claroline_RemoveMultipleUsersTest extends BaseTest {
 	@Test
 	public void runTest() throws InterruptedException{
 		AdminUsersPage aup = new IndexPage(driver)
-				.login("admin", "admin")
+				.login("admin", "n0tl34k3dy3t")
 				.goToAdminPage()
 				.searchUser("testuser")
 				.removeUser()

@@ -5,7 +5,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-import utils.Waiter;
+import utils.Wait;
 
 public class ProjectSummaryPage extends ProjectSidebar {
 
@@ -24,11 +24,11 @@ public class ProjectSummaryPage extends ProjectSidebar {
 	@FindBy(xpath = "//*[@id=\"main\"]/section/div[2]/ul/li[4]")
 	protected WebElement publicAccess;
 	
-	protected Waiter wait;
+	protected Wait wait;
 
 	public ProjectSummaryPage(WebDriver driver) {
 		super(driver);
-		wait = new Waiter(driver);
+		wait = new Wait(driver);
 	}
 
 	public String getTitle(String expectedTitle) {

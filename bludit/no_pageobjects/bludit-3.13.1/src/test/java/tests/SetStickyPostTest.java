@@ -20,6 +20,7 @@ public class SetStickyPostTest extends BaseTest {
 		new Select(driver.findElement(By.id("jstypeSelector"))).selectByVisibleText("Sticky");
 		driver.findElement(By.id("jsoptionsSidebar")).click();
 		driver.findElement(By.id("jsbuttonSave")).click();
+		Thread.sleep(500);
 		driver.findElement(By.linkText("Content")).click();
 		driver.findElement(By.id("sticky-tab")).click();
 		assertEquals("Set up your new site", driver.findElement(By.xpath("//*[@id=\"sticky\"]/table/tbody/tr/td[1]/div[1]/a")).getText());

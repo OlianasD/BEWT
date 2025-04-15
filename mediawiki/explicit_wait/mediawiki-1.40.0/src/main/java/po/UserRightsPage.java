@@ -5,6 +5,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
+import utils.Wait;
+
 public class UserRightsPage extends PageObject {
 	
 	@FindBy(id = "username")
@@ -21,10 +23,12 @@ public class UserRightsPage extends PageObject {
 	
 	@FindBy(name = "saveusergroups")
 	protected WebElement saveBtn;
+	
+	protected Wait wait;
 
 	public UserRightsPage(WebDriver driver) {
 		super(driver);
-		// TODO Auto-generated constructor stub
+		wait = new Wait(driver);
 	}
 	
 	public UserRightsPage findUser(String user) {
@@ -34,6 +38,7 @@ public class UserRightsPage extends PageObject {
 	}
 	
 	public UserRightsPage checkAdmin() {
+		wait.waitClickability(adminCheckbox);
 		adminCheckbox.click();
 		return this;
 	}

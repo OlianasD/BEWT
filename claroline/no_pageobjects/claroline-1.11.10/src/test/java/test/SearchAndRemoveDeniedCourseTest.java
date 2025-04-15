@@ -13,23 +13,14 @@ import java.util.concurrent.TimeUnit;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
-public class SearchAndRemoveDeniedCourseTest {
-
-	private WebDriver driver;
-
-	@Before
-	public void setUp() throws Exception {
-		driver = DriverProvider.getInstance().getDriver();
-		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-		driver.get(Properties.app_url);
-	}
+public class SearchAndRemoveDeniedCourseTest extends BaseTest {
 
 	@Test
 	public void testClarolineSearchAndRemoveDeniedCourse() throws Exception {
 		driver.findElement(By.id("login")).clear();
 		driver.findElement(By.id("login")).sendKeys("admin");
 		driver.findElement(By.id("password")).clear();
-		driver.findElement(By.id("password")).sendKeys("admin");
+		driver.findElement(By.id("password")).sendKeys("n0tl34k3dy3t");
 		driver.findElement(By.xpath("//*[@id='loginBox']/form/fieldset/button")).click();
 		driver.findElement(By.linkText("Platform administration")).click();
 		driver.findElement(By.xpath("//*[@id='claroBody']/ul/li[2]/ul/li[1]/form/small/a")).click();
@@ -46,8 +37,4 @@ public class SearchAndRemoveDeniedCourseTest {
 		driver.findElement(By.linkText("Logout")).click();
 	}
 
-	@After
-	public void tearDown() throws Exception {
-		driver.quit();
-	}
 }

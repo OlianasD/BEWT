@@ -12,7 +12,7 @@ public class Claroline_MakeCourseExerciseVisibleTest extends BaseTest {
 	@Test
 	public void runTest() throws InterruptedException{
 		ExercisePage ep = new IndexPage(driver)
-				.login("admin", "admin")
+				.login("admin", "n0tl34k3dy3t")
 				.goInsideCourse()
 				.goToExercisePage();
 		

@@ -6,7 +6,9 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
-import utils.Waiter;
+
+import utils.Strings;
+import utils.Wait;
 
 public class NewAccountPage extends ManageNavBar {
 	@FindBy(name = "username")
@@ -24,50 +26,57 @@ public class NewAccountPage extends ManageNavBar {
 	@FindBy(xpath = "//*[@id=\"manage-user-create-form\"]/div/div[3]/input")
 	public WebElement createUserBtn;
 	
-	protected Waiter wait;
+	protected Wait wait;
 	
 	public NewAccountPage(WebDriver driver) {
 		super(driver);
 		PageFactory.initElements(driver, this);
-		wait = new Waiter(driver);
+		wait = new Wait(driver);
 	}
 	
-	public NewAccountPage setUsername(String username) {
+	public NewAccountPage setUsername(String usr) {
+		wait.waitClickability(username);
 		this.username.clear();
-		this.username.sendKeys(username);
+		this.username.sendKeys(usr);
 		return this;
 	}
 	
-	public NewAccountPage setRealname(String realname) {
+	public NewAccountPage setRealname(String rn) {
+		wait.waitClickability(realname);
 		this.realname.clear();
-		this.realname.sendKeys(realname);
+		this.realname.sendKeys(rn);
 		return this;
 	}
 	
-	public NewAccountPage setEmail(String email) {
+	public NewAccountPage setEmail(String eml) {
+		wait.waitClickability(email);
 		this.email.clear();
-		this.email.sendKeys(email);
+		this.email.sendKeys(eml);
 		return this;
 	}
 	
 	public NewAccountPage setAccessLevel(String level) {
+		wait.waitClickability(accessLevel);
 		new Select(accessLevel).selectByVisibleText(level);
 		return this;
 	}
 	
 	public ManageUsersPage createUser() {
+		wait.waitClickability(createUserBtn);
 		createUserBtn.click();
-		wait.waitClickability(manageUsers);
-		manageUsers.click();
+		wait.waitClickability(By.linkText(Strings.manageUsers));
+		driver.findElement(By.linkText(Strings.manageUsers)).click();
 		return new ManageUsersPage(driver);
 	}
 	
 	public NewAccountPage createUserFails() {
+		wait.waitClickability(createUserBtn);
 		createUserBtn.click();
 		return new NewAccountPage(driver);
 	}
 	
 	public String getError() {
+		wait.waitVisibility(By.xpath("//*[@id=\"main-container\"]/div[2]/div[2]/div/div/div[2]/p[2]"));
 		return driver.findElement(By.xpath("//*[@id=\"main-container\"]/div[2]/div[2]/div/div/div[2]/p[2]")).getText();
 	}
 	

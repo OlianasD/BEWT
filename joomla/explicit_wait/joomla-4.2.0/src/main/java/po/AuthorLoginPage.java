@@ -49,6 +49,7 @@ public class AuthorLoginPage extends BaseNavBar {
 	}
 	
 	public String getAlertMessage() {
+		wait.waitVisibility(alertMsg);
 		return alertMsg.getText();
 	}
 	

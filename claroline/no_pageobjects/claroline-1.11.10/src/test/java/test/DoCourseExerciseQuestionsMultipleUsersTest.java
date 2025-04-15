@@ -17,7 +17,7 @@ public class DoCourseExerciseQuestionsMultipleUsersTest extends BaseTest {
 		driver.findElement(By.id("login")).clear();
 		driver.findElement(By.id("login")).sendKeys("testuser1");
 		driver.findElement(By.id("password")).clear();
-		driver.findElement(By.id("password")).sendKeys("testuser1");
+		driver.findElement(By.id("password")).sendKeys("n0tl34k3dy3t");
 		driver.findElement(By.xpath("//*[@id='loginBox']/form/fieldset/button")).click();
 		driver.findElement(By.linkText("001 - Course001")).click();
 		driver.findElement(By.id("CLQWZ")).click();
@@ -29,12 +29,13 @@ public class DoCourseExerciseQuestionsMultipleUsersTest extends BaseTest {
 		driver.findElement(By.xpath("html/body/div[1]/div[2]/div[2]/div[3]/div[2]/form/table/tbody[3]/tr/td/table/tbody/tr[3]/td[1]/input"))
 				.click();
 		driver.findElement(By.name("cmdOk")).click();
+		Thread.sleep(1000);
 		driver.findElement(By.linkText("Logout")).click();
 		driver.get(Properties.app_url);
 		driver.findElement(By.id("login")).clear();
 		driver.findElement(By.id("login")).sendKeys("testuser2");
 		driver.findElement(By.id("password")).clear();
-		driver.findElement(By.id("password")).sendKeys("testuser2");
+		driver.findElement(By.id("password")).sendKeys("n0tl34k3dy3t");
 		driver.findElement(By.xpath("//*[@id='loginBox']/form/fieldset/button")).click();
 		driver.findElement(By.linkText("001 - Course001")).click();
 		driver.findElement(By.id("CLQWZ")).click();
@@ -46,12 +47,13 @@ public class DoCourseExerciseQuestionsMultipleUsersTest extends BaseTest {
 		driver.findElement(By.xpath("html/body/div[1]/div[2]/div[2]/div[3]/div[2]/form/table/tbody[3]/tr/td/table/tbody/tr[3]/td[1]/input"))
 				.click();
 		driver.findElement(By.name("cmdOk")).click();
+		Thread.sleep(1000);
 		driver.findElement(By.linkText("Logout")).click();
 		driver.get(Properties.app_url);
 		driver.findElement(By.id("login")).clear();
 		driver.findElement(By.id("login")).sendKeys("testuser3");
 		driver.findElement(By.id("password")).clear();
-		driver.findElement(By.id("password")).sendKeys("testuser3");
+		driver.findElement(By.id("password")).sendKeys("n0tl34k3dy3t");
 		driver.findElement(By.xpath("//*[@id='loginBox']/form/fieldset/button")).click();
 		driver.findElement(By.linkText("001 - Course001")).click();
 		driver.findElement(By.id("CLQWZ")).click();
@@ -63,12 +65,13 @@ public class DoCourseExerciseQuestionsMultipleUsersTest extends BaseTest {
 		driver.findElement(By.xpath("html/body/div[1]/div[2]/div[2]/div[3]/div[2]/form/table/tbody[3]/tr/td/table/tbody/tr[2]/td[1]/input"))
 				.click();
 		driver.findElement(By.name("cmdOk")).click();
+		Thread.sleep(1000);
 		driver.findElement(By.linkText("Logout")).click();
 		driver.get(Properties.app_url);
 		driver.findElement(By.id("login")).clear();
 		driver.findElement(By.id("login")).sendKeys("admin");
 		driver.findElement(By.id("password")).clear();
-		driver.findElement(By.id("password")).sendKeys("admin");
+		driver.findElement(By.id("password")).sendKeys("n0tl34k3dy3t");
 		driver.findElement(By.xpath("//*[@id='loginBox']/form/fieldset/button")).click();
 		driver.findElement(By.linkText("001 - Course001")).click();
 		driver.findElement(By.id("CLQWZ")).click();

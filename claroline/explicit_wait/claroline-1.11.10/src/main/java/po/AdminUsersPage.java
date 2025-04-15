@@ -8,6 +8,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import utils.Wait;
+
 public class AdminUsersPage extends ClarolinePage{
 	private WebDriver driver;
 	@FindBy(xpath=".//*[@id='L0']")
@@ -21,12 +23,16 @@ public class AdminUsersPage extends ClarolinePage{
 	@FindBy(linkText="No.")
 	private WebElement orderLink;
 	
+	protected Wait wait;
+	
 	public AdminUsersPage(WebDriver driver){
 		this.driver = driver;
+		wait = new Wait(driver);
 		PageFactory.initElements(driver, this);
 	}
 	
 	public String getLastName(){
+		wait.waitVisibility(lastName);
 		return lastName.getText();
 	}
 	
@@ -39,6 +45,7 @@ public class AdminUsersPage extends ClarolinePage{
 	}
 	
 	public AdminUsersPage removeUser() throws InterruptedException{
+		wait.waitClickability(removeUserButton);
 		removeUserButton.click();
 		Alert alert = driver.switchTo().alert();
 		alert.accept();

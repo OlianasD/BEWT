@@ -5,6 +5,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import utils.Wait;
+
 public class EditAnswerPage {
 	private WebDriver driver;
 	@FindBy(name="cmdOk")
@@ -25,13 +27,17 @@ public class EditAnswerPage {
 	private WebElement falseGrade;
 	@FindBy(name="cmdAddAnsw")
 	private WebElement addAnswer;	
+	
+	protected Wait wait;
 
 	public EditAnswerPage(WebDriver driver){
 		this.driver = driver;
+		wait = new Wait(driver);
 		PageFactory.initElements(driver, this);
 	}
 	
 	public EditQuestionPage addMCUA(String gr1, String gr2) throws InterruptedException{
+		wait.waitClickability(correct1);
 		correct1.click();
 		grade1.clear();
 		grade1.sendKeys(gr1);
@@ -43,7 +49,9 @@ public class EditAnswerPage {
 	}
 	
 	public EditQuestionPage addMCMA(String gr1, String gr2, String gr3) throws InterruptedException{
+		wait.waitClickability(addAnswer);
 		addAnswer.click();
+		Thread.sleep(500);
 		correct1.click();
 		grade1.clear();
 		grade1.sendKeys(gr1);
@@ -57,6 +65,7 @@ public class EditAnswerPage {
 	}
 	
 	public EditQuestionPage addTFA(String gr1, String gr2) throws InterruptedException{
+		wait.waitClickability(correctTF);
 		correctTF.click();
 		trueGrade.clear();
 		trueGrade.sendKeys(gr1);

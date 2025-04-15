@@ -5,7 +5,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-import utils.Waiter;
+import utils.Wait;
 
 public class UsersManagementPage extends TopNavBar {
 
@@ -21,11 +21,11 @@ public class UsersManagementPage extends TopNavBar {
 	@FindBy(xpath = "//*[@id=\"modal-confirm-button\"]")
 	protected WebElement confirmRemoveBtn;
 	
-	protected Waiter wait;
+	protected Wait wait;
 
 	public UsersManagementPage(WebDriver driver) {
 		super(driver);
-		wait = new Waiter(driver);
+		wait = new Wait(driver);
 	}
 
 	public NewUserPage newUser() {

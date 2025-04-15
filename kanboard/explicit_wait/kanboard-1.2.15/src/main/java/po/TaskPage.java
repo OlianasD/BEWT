@@ -5,18 +5,18 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-import utils.Waiter;
+import utils.Wait;
 
 public class TaskPage extends TaskSidebar {
 	
 	@FindBy(xpath = "//*[@id=\"task-summary\"]/div/div/div[1]/ul/li[1]/span")
 	protected WebElement status;
 	
-	protected Waiter wait;
+	protected Wait wait;
 
 	public TaskPage(WebDriver driver) {
 		super(driver);
-		wait = new Waiter(driver);
+		wait = new Wait(driver);
 	}
 	
 	public TaskPage confirmCloseTask() {

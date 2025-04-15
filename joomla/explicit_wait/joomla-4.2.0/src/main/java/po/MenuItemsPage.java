@@ -25,7 +25,7 @@ public class MenuItemsPage extends SiteAdminPageObject {
 	}
 	
 	public String getAlertMessage() {
-		wait.waitVisibility(driver.findElement(By.className("alert-message")));
+		wait.waitVisibility(By.className("alert-message"));
 		return driver.findElement(By.className("alert-message")).getText();
 	}
 	

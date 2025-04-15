@@ -10,7 +10,7 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class BaseTest {
 
-	protected static final String adminPsw = "password";
+	protected static final String adminPsw = "e2eW3Bt3s71nGB3nchM4rK";
 	protected static final String adminMail = "admin@prestashop.com";
 	protected WebDriver driver;
 

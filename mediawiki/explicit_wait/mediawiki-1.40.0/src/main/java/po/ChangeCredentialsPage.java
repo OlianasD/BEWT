@@ -42,10 +42,22 @@ public class ChangeCredentialsPage extends PageObject {
 	}
 	
 	public String getSuccessMessage() {
+		try {
+			Thread.sleep(500);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		return driver.findElement(By.xpath("//*[@id=\"mw-content-text\"]/div[1]")).getText();
 	}
 	
 	public String getErrorMessage() {
+		try {
+			Thread.sleep(500);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		return driver.findElement(By.xpath("//*[@id=\"mw-content-text\"]/div[1]/form/div[1]/div[2]/div/span[2]")).getText();
 	}
 	
