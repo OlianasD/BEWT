@@ -41,27 +41,6 @@
 			<artifactId>selenium-support</artifactId>
 			<version>${selenium.version}</version>
 		</dependency>
-		<dependency>
-			<groupId>mysql</groupId>
-			<artifactId>mysql-connector-java</artifactId>
-			<version>6.0.5</version>
-		</dependency>
-		<dependency>
-			<groupId>org.testng</groupId>
-			<artifactId>testng</artifactId>
-			<version>7.1.0</version>
-		</dependency>
-
-		<dependency>
-			<groupId>org.uncommons</groupId>
-			<artifactId>reportng</artifactId>
-			<version>1.1.4</version>
-		</dependency>
-		<dependency>
-			<groupId>velocity</groupId>
-			<artifactId>velocity-dep</artifactId>
-			<version>1.4</version>
-		</dependency>
 
 	</dependencies>
 
