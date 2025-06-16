@@ -2,7 +2,7 @@ Scenario: Closes the pop-up that is shown the first time the editor is opened. R
 	Given the user is on the home page
 	When the user clicks the "Log in" link
         And enters "admin" in the "Username" field
-        And enters "Password001" in the "Password" field
+        And enters "e2eW3Bt3s71nGB3nchM4rK" in the "Password" field
         And clicks the "Log in" button
         And enters "Software testing" in the search bar
         And presses Enter

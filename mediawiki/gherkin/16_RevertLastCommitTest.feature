@@ -2,7 +2,7 @@ Scenario: The last edit made to a page is reverted
 	Given the user is on the home page
 	When the user clicks the "Log in" link
         And enters "User001" in the "Username" field
-        And enters "Password001" in the "Password" field
+        And enters "e2eW3Bt3s71nGB3nchM4rK" in the "Password" field
         And clicks the "Log in" button
         And enters "Selenium WebDriver" in the search bar
         And presses Enter
