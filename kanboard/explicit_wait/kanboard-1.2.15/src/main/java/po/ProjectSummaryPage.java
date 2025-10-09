@@ -23,12 +23,9 @@ public class ProjectSummaryPage extends ProjectSidebar {
 
 	@FindBy(xpath = "//*[@id=\"main\"]/section/div[2]/ul/li[4]")
 	protected WebElement publicAccess;
-	
-	protected Wait wait;
 
 	public ProjectSummaryPage(WebDriver driver) {
 		super(driver);
-		wait = new Wait(driver);
 	}
 
 	public String getTitle(String expectedTitle) {
@@ -37,18 +34,22 @@ public class ProjectSummaryPage extends ProjectSidebar {
 	}
 
 	public String getStatus() {
+		wait.waitVisibility(status);
 		return status.getText();
 	}
 
 	public String getDescription() {
+		wait.waitVisibility(description);
 		return description.getText();
 	}
 
 	public String getAccessLevel() {
+		wait.waitVisibility(accessLevel);
 		return accessLevel.getText();
 	}
 
 	public String getPublicAccess() {
+		wait.waitVisibility(publicAccess);
 		return publicAccess.getText();
 	}
 

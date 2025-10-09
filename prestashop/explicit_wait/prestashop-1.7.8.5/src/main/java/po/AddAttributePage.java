@@ -1,9 +1,11 @@
 package po;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import utils.Wait;
 
 public class AddAttributePage {
 	WebDriver driver;
@@ -19,9 +21,12 @@ public class AddAttributePage {
 	@FindBy(className = "alert-danger")
 	WebElement alertMsg;
 
+	protected Wait wait;
+
 	public AddAttributePage(WebDriver driver) {
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
+		wait = new Wait(driver);
 	}
 
 	public void clickAddAttribute() {
@@ -50,5 +55,9 @@ public class AddAttributePage {
 
 	public String getAlertMessage() {
 		return alertMsg.getText();
+	}
+
+	public boolean waitForAlertMesssageToBe(String expected) {
+		return wait.waitForTextToBe(By.className("alert-danger"), expected);
 	}
 }

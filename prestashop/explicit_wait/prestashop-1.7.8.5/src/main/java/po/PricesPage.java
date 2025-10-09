@@ -55,4 +55,8 @@ public class PricesPage extends AdminSidebar {
 		return finalPrice.getText();
 	}
 
+	public boolean waitForFinalPriceToBe(String expected) {
+		return wait.waitForTextToBe(By.id("final_retail_price_ti"), expected);
+	}
+
 }

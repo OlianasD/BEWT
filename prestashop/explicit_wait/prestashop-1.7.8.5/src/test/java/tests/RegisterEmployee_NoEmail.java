@@ -20,7 +20,7 @@ public class RegisterEmployee_NoEmail extends BaseTest {
 				.addEmployee()
 				.addEmployeeNoEmail("John", "Smith", "abcd!@#$23");
 		
-		assertEquals("Compila questo campo.", employee.getEmptyMailAlert());
+		assertEquals("Please fill out this field.", employee.getEmptyMailAlert());
 		
 		
 	 }

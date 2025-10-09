@@ -26,20 +26,19 @@ public class KanboardHomePage extends TopNavBar {
 	
 	@FindBy(id = "form-search")
 	protected WebElement search;
-	
-	protected Wait wait;
 
 	public KanboardHomePage(WebDriver driver) {
 		super(driver);
-		wait = new Wait(driver);
 	}
 	
 	public AddNewProjectPage newProject() {
+		wait.waitClickability(newProjectLink);
 		newProjectLink.click();
 		return new AddNewProjectPage(driver);
 	}
 	
 	public ProjectManagementPage goToFirstProject() {
+		wait.waitClickability(firstProjectLink);
 		firstProjectLink.click();
 		return new ProjectManagementPage(driver);
 	}
@@ -47,23 +46,26 @@ public class KanboardHomePage extends TopNavBar {
 	public ProjectSummaryPage firstProjectSummary() {
 		wait.waitClickability(option);
 		option.click();
+		wait.waitClickability(configure);
 		configure.click();
 		return new ProjectSummaryPage(driver);
 	}
 	
 	public AddNewProjectPage newPersonalProject() {
+		wait.waitClickability(newPrivateProjectLink);
 		newPrivateProjectLink.click();
 		return new AddNewProjectPage(driver);
 	}
 	
 	public SearchResultsPage search(String key) {
+		wait.waitClickability(search);
 		search.sendKeys(key);
 		search.sendKeys(Keys.RETURN);
 		return new SearchResultsPage(driver);
 	}
 	
 	public ProjectPage goToProject(String proj) {
-		driver.findElement(By.linkText(proj)).click();
+		wait.waitClickability(By.linkText(proj)).click();
 		return new ProjectPage(driver);
 	}
 	

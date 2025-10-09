@@ -30,8 +30,8 @@ public class AddMenuItem_EmptyMenuType extends BaseTest {
 		driver.findElement(By.linkText("All Menu Items")).click();
 		driver.findElement(By.className("button-new")).click();
 		driver.findElement(By.id("jform_title")).sendKeys(name);
-
 		new Select(driver.findElement(By.id("jform_menutype"))).selectByVisibleText("Main Menu");
+		Thread.sleep(500);
 		driver.findElement(By.className("button-save")).click();
 		
 		assertEquals("Please fill in this field", driver.findElement(By.xpath("//*[@id=\"jform_type-lbl\"]/span[2]")).getText());

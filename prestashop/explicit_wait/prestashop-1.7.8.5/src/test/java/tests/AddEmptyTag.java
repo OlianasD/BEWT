@@ -1,6 +1,8 @@
 package tests;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
+
 import org.junit.Test;
 
 import po.AddTagPage;
@@ -17,7 +19,9 @@ public class AddEmptyTag extends BaseTest {
 				.addTag()
 				.addEmptyTag();
 		
-		assertEquals("×\n"
-		 		+ "The name field is required.", tag.getAlertMessage());
+		/*assertEquals("×\n"
+		 		+ "The name field is required.", tag.getAlertMessage());*/
+		assertTrue(tag.waitForAlertMessageToBe("×\n"
+				+ "The name field is required."));
 	}
 }

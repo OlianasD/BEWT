@@ -32,7 +32,8 @@ public class EditQuestionPage {
 		PageFactory.initElements(driver, this);
 	}
 	
-	public EditAnswerPage addMCUAQuestion(String tit) throws InterruptedException{
+	public EditAnswerPage addMCUAQuestion(String tit) {
+		wait.waitClickability(title);
 		title.sendKeys(tit);
 		multipleCondUniqueAnswer.click();
 		confirm.click();
@@ -40,7 +41,8 @@ public class EditQuestionPage {
 		return page;
 	}
 	
-	public EditAnswerPage addMCMAQuestion(String tit) throws InterruptedException{
+	public EditAnswerPage addMCMAQuestion(String tit) {
+		wait.waitClickability(title);
 		title.sendKeys(tit);
 		multipleCondMultipleAnswer.click();
 		confirm.click();
@@ -48,7 +50,8 @@ public class EditQuestionPage {
 		return page;
 	}
 	
-	public EditAnswerPage addTFQuestion(String tit) throws InterruptedException{
+	public EditAnswerPage addTFQuestion(String tit) {
+		wait.waitClickability(title);
 		title.sendKeys(tit);
 		trueFalse.click();
 		confirm.click();
@@ -57,12 +60,13 @@ public class EditQuestionPage {
 	}
 	
 	public EditExercisePage goToEditExercisePage(){
+		wait.waitClickability(exerciseLink);
 		exerciseLink.click();
 		EditExercisePage page = new EditExercisePage(driver);
 		return page;
 	}
 	
-	public EditQuestionPage newQuestion() throws InterruptedException{
+	public EditQuestionPage newQuestion() {
 		wait.waitClickability(newQuestionLink);
 		newQuestionLink.click();
 		return new EditQuestionPage(driver);

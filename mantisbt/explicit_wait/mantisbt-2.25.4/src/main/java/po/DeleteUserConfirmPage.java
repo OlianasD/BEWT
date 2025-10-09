@@ -21,7 +21,7 @@ public class DeleteUserConfirmPage extends BaseNavBar {
 	public ManageUsersPage confirmDelete() {
 		wait.waitClickability(deleteConfirmBtn);
 		deleteConfirmBtn.click();
-		driver.findElement(By.linkText(Strings.contin)).click();
+		wait.waitClickability(By.linkText(Strings.contin)).click();
 		return new ManageUsersPage(driver);
 	}
 

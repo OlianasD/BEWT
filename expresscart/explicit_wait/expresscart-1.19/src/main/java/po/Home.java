@@ -6,30 +6,21 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 import utils.JavascriptExecutor;
-import utils.Waiter;
+import utils.Wait;
 
 public class Home extends MainNavBar {
-	
-	@FindBy(xpath = "//*[@id=\"pager\"]/ul/li[4]/a")
-	protected WebElement nextPageLink;
-	
+
 	@FindBy(id = "frm_search")
 	protected WebElement searchForm;
 	
 	@FindBy(id = "btn_search")
 	protected WebElement searchBtn;
 	
-	protected Waiter wait;
+	protected Wait wait;
 	
 	public Home(WebDriver driver) {
 		super(driver);
-		wait = new Waiter(driver);
-	}
-	
-	public Home addToCart(int i) {
-		
-		driver.findElement(By.xpath("//*[@id=\"container\"]/div/div[1]/div/div["+i+"]/div/p/a")).click();
-		return new Home(driver);
+		wait = new Wait(driver);
 	}
 	
 	public ProductPage goToProduct(int i) {
@@ -47,18 +38,7 @@ public class Home extends MainNavBar {
 		driver.findElement(By.linkText("Test Menu")).click();
 		return new SearchResultsPage(driver);
 	}
-	
-	public Home nextPage() {
-		nextPageLink.click();
-		return new Home(driver);
-	}
-	
-	public Home goToPage(Integer page) {
-		WebElement pgLink = driver.findElement(By.linkText(page.toString()));
-		new JavascriptExecutor(driver).scrollTo(pgLink);
-		pgLink.click();
-		return new Home(driver);
-	}
+
 	
 	public Home setSearchText(String txt) {
 		searchForm.sendKeys(txt);

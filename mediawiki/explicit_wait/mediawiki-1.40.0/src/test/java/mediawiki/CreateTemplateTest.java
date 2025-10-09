@@ -1,6 +1,7 @@
 package mediawiki;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 import org.junit.Test;
 
@@ -15,8 +16,8 @@ public class CreateTemplateTest extends BaseTest {
 			.createNonExisting()
 			.setSourceText("Developer: {{{dev}}} Latest version: {{{ver}}}")
 			.saveSource();
-		
-		assertEquals(page.getTitle(), "Template:Software");
+
+		assertTrue(page.waitFotTitleToBe("Template:Software"));
 		assertEquals(page.getBody("Developer: {{{dev}}} Latest version: {{{ver}}}"), "Developer: {{{dev}}} Latest version: {{{ver}}}");
 	}
 	

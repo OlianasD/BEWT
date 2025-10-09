@@ -20,15 +20,13 @@ public class SwimlanesPage extends ProjectSidebar {
 	
 	@FindBy(className = "form-errors")
 	protected WebElement errorMsg;
-	
-	protected Wait wait;
 
 	public SwimlanesPage(WebDriver driver) {
 		super(driver);
-		wait = new Wait(driver);
 	}
 	
 	public SwimlanesPage addSwimlane() {
+		wait.waitClickability(addSwimlane);
 		addSwimlane.click();
 		return new SwimlanesPage(driver);
 	}

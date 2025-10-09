@@ -23,25 +23,28 @@ public abstract class GeneralSettingsAbstractPage extends AdminSidebar {
 
 	public GeneralSettingsAbstractPage(WebDriver driver) {
 		super(driver);
-		// TODO Auto-generated constructor stub
 	}
 	
 	public GeneralSettingsPage general() {
+		wait.waitClickability(general);
 		general.click();
 		return new GeneralSettingsPage(driver);
 	}
 	
 	public AdvancedSettingsPage advanced() {
+		wait.waitClickability(advanced);
 		advanced.click();
 		return new AdvancedSettingsPage(driver);
 	}
 	
 	public SiteSocialsPage socials() {
+		wait.waitClickability(socials);
 		socials.click();
 		return new SiteSocialsPage(driver);
 	}
 	
 	public LanguagePage language() {
+		wait.waitClickability(language);
 		language.click();
 		return new LanguagePage(driver);
 	}

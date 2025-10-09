@@ -10,7 +10,7 @@ import org.openqa.selenium.support.PageFactory;
 import utils.Wait;
 
 public class AdminCoursesPage extends ClarolinePage{
-	private WebDriver driver;
+
 	@FindBy(xpath=".//*[@id='claroBody']/table[2]/tbody/tr/td[2]")
 	private WebElement courseName;
 	@FindBy(xpath=".//*[@id='L0']")
@@ -19,7 +19,7 @@ public class AdminCoursesPage extends ClarolinePage{
 	protected Wait wait;
 	
 	public AdminCoursesPage(WebDriver driver){
-		this.driver = driver;
+		super(driver);
 		wait = new Wait(driver);
 		PageFactory.initElements(driver, this);
 	}
@@ -30,12 +30,14 @@ public class AdminCoursesPage extends ClarolinePage{
 	}
 	
 	public String getCourseCode(){
+		wait.waitVisibility(courseCode);
 		return courseCode.getText();
 	}
 		
-	public AdminCoursesPage removeCourse(int i) throws InterruptedException{
-		WebElement removeButton = driver.findElement(By.cssSelector("img[alt='Delete']"));
+	public AdminCoursesPage removeCourse() throws InterruptedException{
+		WebElement removeButton = wait.waitClickability(By.cssSelector("img[alt='Delete']"));
 		removeButton.click();
+		wait.waitAlert();
 		Alert alert = driver.switchTo().alert();
 		alert.accept();
 		return new AdminCoursesPage(driver);

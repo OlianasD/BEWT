@@ -1,6 +1,7 @@
 package test;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 import org.junit.Test;
 
@@ -16,8 +17,8 @@ public class Claroline_AddTwiceUserTest extends BaseTest {
 				.goToAdminPage()
 				.addUser()
 				.addNewStudent("Name001", "Firstname001", "user001", "n0tl34k3dy3t", "n0tl34k3dy3t");
-		
-		assertEquals("This username is already taken",aanup.getMessage());
+
+		assertTrue(aanup.waitForMessageToBe("This username is already taken"));
 		aanup.doLogout();
 	}
 }

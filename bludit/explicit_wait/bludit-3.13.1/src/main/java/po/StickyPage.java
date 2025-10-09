@@ -15,6 +15,7 @@ public class StickyPage extends AdminSidebar {
 	}
 	
 	public String getFirstStickyTitle() {
+		wait.waitVisibility(firstStickyTitle);
 		return firstStickyTitle.getText();
 	}
 

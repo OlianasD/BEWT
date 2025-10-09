@@ -25,11 +25,13 @@ public class CreateGroupPage extends PageObject {
 	}
 	
 	public CreateGroupPage setTitle(String title) {
+		wait.waitClickability(groupTitle);
 		groupTitle.sendKeys(title);
 		return this;
 	}
 	
 	public ManageGroupsPage saveAndClose() {
+		wait.waitClickability(saveAndCloseBtn);
 		saveAndCloseBtn.click();
 		return new ManageGroupsPage(driver);
 	}
@@ -41,6 +43,7 @@ public class CreateGroupPage extends PageObject {
 	}
 	
 	public String getEmptyTitleAlert() {
+		wait.waitVisibility(emptyTitleAlert);
 		return emptyTitleAlert.getText();
 	}
 

@@ -16,7 +16,7 @@ public class AddNewProdToCartTest extends BaseTest {
 				.goToProduct(item_id)
 				.addToCart()
 				.goHome();
-		assertEquals(1, home.getCartCount());
+		assertEquals(1, home.getCartCount("1"));
 		CartSidebar cart = home.openCart();
 		assertEquals("NewProduct000", cart.getIthItem(item_id, "NewProduct000"));
 		

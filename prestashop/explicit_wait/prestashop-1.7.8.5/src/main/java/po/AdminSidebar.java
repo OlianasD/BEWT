@@ -81,6 +81,7 @@ public class AdminSidebar extends PageObject {
 	public ProductsPage goToProducts() {
 		wait.waitClickability(catalog);
    	    catalog.click();
+		wait.waitVisibility(product);
    	    wait.waitClickability(product);
    	    product.click();
    	    return new ProductsPage(driver);
@@ -89,6 +90,7 @@ public class AdminSidebar extends PageObject {
 	public StatesPage goToStates() {
 		wait.waitClickability(international);
 		international.click();
+		wait.waitVisibility(locations);
 		wait.waitClickability(locations);
 		locations.click();
     	return new StatesPage(driver);
@@ -97,6 +99,7 @@ public class AdminSidebar extends PageObject {
 	public FeaturesPage goToFeatures() {
 		wait.waitClickability(catalog);
 		catalog.click();
+		wait.waitVisibility(features);
 		wait.waitClickability(features);
 		features.click();
     	return new FeaturesPage(driver);
@@ -105,6 +108,7 @@ public class AdminSidebar extends PageObject {
 	public AttributesPage goToAttributes() {
 		wait.waitClickability(catalog);
 		catalog.click();
+		wait.waitVisibility(features);
 		wait.waitClickability(features);
 		features.click();
     	return new AttributesPage(driver);
@@ -113,6 +117,7 @@ public class AdminSidebar extends PageObject {
 	public AddressesPage goToAddresses() {
 		wait.waitClickability(customers);
     	customers.click();
+		wait.waitVisibility(address);
     	wait.waitClickability(address);
     	address.click();
     	return new AddressesPage(driver);
@@ -121,6 +126,7 @@ public class AdminSidebar extends PageObject {
 	public CategoriesPage goToCategories() {
 		wait.waitClickability(catalog);
     	catalog.click();
+		wait.waitVisibility(category);
     	wait.waitClickability(category);
     	category.click();
     	return new CategoriesPage(driver);
@@ -129,6 +135,7 @@ public class AdminSidebar extends PageObject {
 	public ManufacturerPage goToManufacturer() {
 		wait.waitClickability(catalog);
     	catalog.click();
+		wait.waitVisibility(manufacturer);
     	wait.waitClickability(manufacturer);
     	manufacturer.click();
     	return new ManufacturerPage(driver);
@@ -137,6 +144,7 @@ public class AdminSidebar extends PageObject {
 	public EmployeesPage goToEmployees() {
 		wait.waitClickability(administration);
     	administration.click();
+		wait.waitVisibility(employees);
     	wait.waitClickability(employees);
     	employees.click();
     	return new EmployeesPage(driver);
@@ -145,6 +153,7 @@ public class AdminSidebar extends PageObject {
 	public OrdersPage goToOrders() {
 		wait.waitClickability(orders);
 		orders.click();
+		wait.waitVisibility(ordersSubtab);
 		wait.waitClickability(ordersSubtab);
 		ordersSubtab.click();
 		return new OrdersPage(driver);
@@ -153,6 +162,7 @@ public class AdminSidebar extends PageObject {
 	public TagsPage goToTags() {
 		wait.waitClickability(shopParams);
 		shopParams.click();
+		wait.waitVisibility(shopParamsSearch);
 		wait.waitClickability(shopParamsSearch);
     	shopParamsSearch.click();
     	tags.click();
@@ -162,6 +172,7 @@ public class AdminSidebar extends PageObject {
 	public CurrencyPage goToCurrency() {
 		wait.waitClickability(international);
 		international.click();
+		wait.waitVisibility(localization);
 		wait.waitClickability(localization);
     	localization.click();
     	currency.click();

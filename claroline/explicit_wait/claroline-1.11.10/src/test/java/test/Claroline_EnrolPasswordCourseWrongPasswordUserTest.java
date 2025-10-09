@@ -1,6 +1,7 @@
 package test;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 import org.junit.Test;
 
@@ -17,7 +18,7 @@ public class Claroline_EnrolPasswordCourseWrongPasswordUserTest extends BaseTest
 				.searchCourse("Course002")
 				.enrolPassword("0v3rtlyC0mpl1c4t3dPsW");
 		
-		assertEquals("Invalid enrolment key given", acp.getMessage());
+		assertTrue(acp.waitForMessageToBe("Invalid enrolment key given"));
 		acp.doLogout();
 	}
 }

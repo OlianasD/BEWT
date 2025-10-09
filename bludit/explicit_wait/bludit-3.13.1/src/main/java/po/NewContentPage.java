@@ -42,10 +42,7 @@ public class NewContentPage extends AdminSidebar {
 	
 	@FindBy(xpath = "//*[@id=\"select2-jsparent-results\"]/li")
 	protected WebElement parentActualItem;
-	
-	@FindBy(xpath = "//*[@id=\"select2-jsparent-container\"]")
-	protected WebElement parentSelectContainer;
-	
+
 	@FindBy(id = "jstypeSelector")
 	protected WebElement selectPostType;
 	
@@ -58,6 +55,7 @@ public class NewContentPage extends AdminSidebar {
 	}
 	
 	public NewContentPage setTitle(String ttl) {
+		wait.waitClickability(title);
 		title.sendKeys(ttl);
 		return this;
 	}
@@ -71,33 +69,23 @@ public class NewContentPage extends AdminSidebar {
 	public NewContentPage saveAndStay() {
 		wait.waitClickability(saveBtn);
 		saveBtn.click();
-		try {
-			Thread.sleep(500);
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
 		return new NewContentPage(driver);
 	}
 	
 	public NewContentPage options() {
-		try {
-			Thread.sleep(500);
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		wait.waitClickability(driver.findElement(By.id("jsoptionsSidebar")));
-		driver.findElement(By.id("jsoptionsSidebar")).click();
+		WebElement optionsSidebar = wait.waitClickability(By.id("jsoptionsSidebar"));
+		optionsSidebar.click();
 		return this;
 	}
 	
 	public NewContentPage seo() {
+		wait.waitClickability(seoTab);
 		seoTab.click();
 		return this;
 	}
 	
 	public NewContentPage advanced() {
+		wait.waitClickability(advancedTab);
 		advancedTab.click();
 		return this;
 	}
@@ -117,6 +105,7 @@ public class NewContentPage extends AdminSidebar {
 	}
 	
 	public NewContentPage setDraft() {
+		wait.waitClickability(draftBtn);
 		draftBtn.click();
 		return this;
 	}
@@ -128,6 +117,7 @@ public class NewContentPage extends AdminSidebar {
 	}
 	
 	public String getPosition() {
+		wait.waitVisibility(positionField);
 		return positionField.getAttribute("value");
 	}
 	
@@ -142,6 +132,7 @@ public class NewContentPage extends AdminSidebar {
 	}
 	
 	public String getSelectedParent() {
+		wait.waitVisibility(driver.findElement(By.xpath("//*[@id=\"select2-jsparent-container\"]")));
 		return driver.findElement(By.xpath("//*[@id=\"select2-jsparent-container\"]")).getAttribute("title");
 	}
 	
@@ -153,15 +144,18 @@ public class NewContentPage extends AdminSidebar {
 	}
 	
 	public String getDate() {
+		wait.waitVisibility(date);
 		return date.getAttribute("value");
 	}
 	
 	public NewContentPage setCategory(String category) {
+		wait.waitClickability(driver.findElement(By.id("jscategory")));
 		new Select(driver.findElement(By.id("jscategory"))).selectByVisibleText(category);
 		return this;
 	}
 	
 	public String getSelectedCategory() {
+		wait.waitVisibility(driver.findElement(By.id("jscategory")));
 		return new Select(driver.findElement(By.id("jscategory"))).getFirstSelectedOption().getText();
 	}
 	

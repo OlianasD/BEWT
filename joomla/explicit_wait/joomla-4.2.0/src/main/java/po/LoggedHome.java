@@ -16,20 +16,21 @@ public class LoggedHome extends LoggedNavBar {
 	}
 	
 	public String getFirstArticleTitle() {
-		return driver.findElement(By.xpath("//*[@id=\"content\"]/div[3]/div[1]/div[1]/div/div/h2/a")).getText();
+		return wait.waitVisibility(By.xpath("//*[@id=\"content\"]/div[3]/div[1]/div[1]/div/div/h2/a")).getText();
 	}
 	
 	public String getFirstArticleBody() {
-		return driver.findElement(By.xpath("//*[@id=\"content\"]/div[3]/div[1]/div[1]/div/p")).getText();
+		return wait.waitVisibility(By.xpath("//*[@id=\"content\"]/div[3]/div[1]/div[1]/div/p")).getText();
 	}
 	
 	public CreatePostPage editFirstArticle() {
+		wait.waitClickability(firstArticleEdit);
 		firstArticleEdit.click();
 		return new CreatePostPage(driver);
 	}
 	
 	public ArchivedArticlesPage testMenuItem() {
-		driver.findElement(By.linkText("Test menu item")).click();
+		wait.waitClickability(By.linkText("Test menu item")).click();
 		return new ArchivedArticlesPage(driver);
 	}
 

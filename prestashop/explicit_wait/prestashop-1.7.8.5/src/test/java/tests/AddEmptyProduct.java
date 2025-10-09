@@ -1,5 +1,6 @@
 package tests;
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 import org.junit.Test;
 
@@ -17,7 +18,8 @@ public class AddEmptyProduct extends BaseTest {
 			.addNewProduct()
 			.submitProduct();
 		
-		assertEquals("This value should not be blank.", product.getAlertMessage());
+		//assertEquals("This value should not be blank.", product.getAlertMessage());
+		assertTrue(product.waitForAlertMessageToBe("This value should not be blank."));
 			
 
 			

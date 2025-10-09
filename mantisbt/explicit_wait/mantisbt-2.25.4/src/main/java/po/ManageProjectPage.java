@@ -2,6 +2,7 @@ package po;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebDriverException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
@@ -49,13 +50,16 @@ public class ManageProjectPage extends ManageNavBar {
 	}
 	
 	public boolean isProjectPresent(String projectName) {
-		try {
-			Thread.sleep(500);
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		return driver.findElement(By.tagName("BODY")).getText().contains(projectName);
+		return wait.waitForTextToBeContained(By.xpath("//*[@id=\"main-container\"]/div[2]/div[2]/div/div/div[2]/div[2]"), projectName);
+	}
+
+	public boolean isProjectAbsent(String projectName) {
+		/*try {
+			return wait.waitForTextToDisappear(By.xpath("//*[@id=\"main-container\"]/div[2]/div[2]/div/div/div[2]/div[2]"), projectName);
+		} catch(WebDriverException e) {
+			return wait.waitForTextToDisappear(By.xpath("//*[@id=\"main-container\"]/div[2]/div[2]/div/div/div[2]/div[2]"), projectName);
+		}*/
+		return wait.waitForTextToDisappear(By.xpath("//*[@id=\"main-container\"]/div[2]/div[2]/div/div/div[2]/div[2]"), projectName);
 	}
 	
 

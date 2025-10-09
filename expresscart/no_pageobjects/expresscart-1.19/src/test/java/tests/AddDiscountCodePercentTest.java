@@ -25,6 +25,7 @@ public class AddDiscountCodePercentTest extends BaseTest {
 		driver.findElement(By.id("discountEnd")).sendKeys("12/02/2030 00:00");
 		driver.findElement(By.xpath("/html/body/div[11]/div/div[3]/button[1]")).click();
 		driver.findElement(By.xpath("//*[@id=\"discountNewForm\"]/div[1]/div/div/button")).click();
+		Thread.sleep(1000);
 		driver.findElement(By.xpath("//*[@id=\"container\"]/div/nav/div/ul[2]/li[4]/a")).click();
 		
 		assertEquals("Code:  discperc000", driver.findElement(By.xpath("//*[@id=\"container\"]/div/main/div/ul/li[6]/div/div[1]/span")).getText());

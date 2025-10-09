@@ -1,6 +1,5 @@
 package test;
 
-import utils.Properties;
 import org.junit.Test;
 import org.openqa.selenium.By;
 import static org.junit.Assert.assertTrue;
@@ -22,7 +21,7 @@ public class EnrolMultipleUsersTest extends BaseTest {
 		Thread.sleep(1000);
 		driver.findElement(By.xpath("//*[@id='claroBody']/dl[1]/dt/a[1]/img")).click();
 		driver.findElement(By.linkText("Logout")).click();
-		driver.get(Properties.app_url);
+		driver.get(app_url);
 		driver.findElement(By.id("login")).clear();
 		driver.findElement(By.id("login")).sendKeys("testuser2");
 		driver.findElement(By.id("password")).clear();
@@ -35,7 +34,7 @@ public class EnrolMultipleUsersTest extends BaseTest {
 		Thread.sleep(1000);
 		driver.findElement(By.xpath("//*[@id='claroBody']/dl[1]/dt/a[1]/img")).click();
 		driver.findElement(By.linkText("Logout")).click();
-		driver.get(Properties.app_url);
+		driver.get(app_url);
 		driver.findElement(By.id("login")).clear();
 		driver.findElement(By.id("login")).sendKeys("testuser3");
 		driver.findElement(By.id("password")).clear();
@@ -48,7 +47,7 @@ public class EnrolMultipleUsersTest extends BaseTest {
 		Thread.sleep(1000);
 		driver.findElement(By.xpath("//*[@id='claroBody']/dl[1]/dt/a[1]/img")).click();
 		driver.findElement(By.linkText("Logout")).click();
-		driver.get(Properties.app_url);
+		driver.get(app_url);
 		driver.findElement(By.id("login")).clear();
 		driver.findElement(By.id("login")).sendKeys("admin");
 		driver.findElement(By.id("password")).clear();

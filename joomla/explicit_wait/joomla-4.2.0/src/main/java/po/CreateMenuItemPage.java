@@ -49,6 +49,7 @@ public class CreateMenuItemPage extends PageObject {
 	}
 	
 	public CreateMenuItemPage selectArchivedArticleType() {
+		wait.waitClickability(menuItemType);
 		menuItemType.click();
 		driver.switchTo().frame(driver.findElement(By.className("iframe")));
 		By locatorBtn = By.xpath("//*[@id=\"collapse0-heading\"]/button");
@@ -62,24 +63,29 @@ public class CreateMenuItemPage extends PageObject {
 	}
 	
 	public MenuItemsPage save() {
+		wait.waitClickability(saveBtn);
 		saveBtn.click();
 		return new MenuItemsPage(driver);
 	}
 	
 	public CreateMenuItemPage saveError() {
+		wait.waitClickability(saveBtn);
 		saveBtn.click();
 		return new CreateMenuItemPage(driver);
 	}
 	
 	public String getEmptyTitleAlert() {
+		wait.waitVisibility(emptyTitleAlert);
 		return emptyTitleAlert.getText();
 	}
 	
 	public String getEmptyMenuTypeAlert() {
+		wait.waitVisibility(emptyMenuTypeAlert);
 		return emptyMenuTypeAlert.getText();
 	}
 	
 	public String getMenuNotSelectedAlert() {
+		wait.waitVisibility(menuNotSelectedAlert);
 		return menuNotSelectedAlert.getText();
 	}
 

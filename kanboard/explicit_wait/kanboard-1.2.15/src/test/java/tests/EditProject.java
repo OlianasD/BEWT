@@ -14,9 +14,9 @@ public class EditProject extends BaseTest {
 
 		  
 	@Test()
-	public void editProduct() {
+	public void editProject() {
 		ProjectSummaryPage project = new LoginPage(driver)
-				.loginToKanboard("admin", "admin")
+				.loginToKanboard("admin", password)
 				.firstProjectSummary()
 				.editProject()
 				.setDescription("This is the new description")

@@ -5,21 +5,21 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-import utils.Waiter;
+import utils.Wait;
 
 public class ReviewForm extends PageObject {
 	
 	@FindBy(id = "review-title")
 	protected WebElement title;
 	
-	protected Waiter wait;
-	
 	@FindBy(id = "addReview")
 	protected WebElement addReviewBtn;
 
+	protected Wait wait;
+
 	public ReviewForm(WebDriver driver) {
 		super(driver);
-		wait = new Waiter(driver);
+		wait = new Wait(driver);
 	}
 	
 	public ReviewForm setTitle(String titleStr) {
@@ -29,16 +29,17 @@ public class ReviewForm extends PageObject {
 	}
 	
 	public ReviewForm setDescr(String descr) {
-		driver.findElement(By.id("review-description")).sendKeys(descr);
+		wait.waitClickability(By.id("review-description")).sendKeys(descr);
 		return this;
 	}
 	
 	public ReviewForm setRating(String rating) {
-		driver.findElement(By.id("review-rating")).sendKeys(rating);
+		wait.waitClickability(By.id("review-rating")).sendKeys(rating);
 		return this;
 	}
 	
 	public ProductPage addReview() {
+		wait.waitClickability(addReviewBtn);
 		addReviewBtn.click();
 		return new ProductPage(driver);
 	}

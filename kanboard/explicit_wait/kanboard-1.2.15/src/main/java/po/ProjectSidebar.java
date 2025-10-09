@@ -9,9 +9,6 @@ import utils.Wait;
 
 public class ProjectSidebar extends TopNavBar {
 	
-	@FindBy(linkText = "Summary")
-	protected WebElement summary;
-	
 	@FindBy(linkText = "Edit project")
 	protected WebElement edit;
 	
@@ -29,49 +26,52 @@ public class ProjectSidebar extends TopNavBar {
 	
 	@FindBy(linkText =  "Remove")
 	protected WebElement remove;
-	
-	protected Wait wait;
 
 	public ProjectSidebar(WebDriver driver) {
 		super(driver);
-		wait = new Wait(driver);
 	}
 	
 	public EditProjectPage editProject() {
+		wait.waitClickability(edit);
 		edit.click();
 		return new EditProjectPage(driver);
 	}
 	
 	public ProjectSummaryPage summary() {
+		WebElement summary = wait.waitClickabilityRefreshed(By.linkText("Summary"));
 		summary.click();
 		return new ProjectSummaryPage(driver);
 	}
 	
 	public ColumnsPage columns() {
+		wait.waitClickability(columns);
 		columns.click();
 		return new ColumnsPage(driver);
 	}
 	
 	public SwimlanesPage swimlanes() {
+		wait.waitClickability(swimlanes);
 		swimlanes.click();
 		return new SwimlanesPage(driver);
 	}
 	
 	public CategoriesPage categories() {
+		wait.waitClickability(categories);
 		categories.click();
 		return new CategoriesPage(driver);
 	}
 	
 	public PermissionsPage permissions() {
+		wait.waitClickability(permissions);
 		permissions.click();
 		return new PermissionsPage(driver);
 	}
 	
 	public ProjectListPage remove() {
+		wait.waitClickability(remove);
 		remove.click();
 		By locator = By.id("modal-confirm-button");
-		wait.waitClickability(locator);
-		driver.findElement(locator).click();
+		wait.waitClickability(locator).click();
 		return new ProjectListPage(driver);
 	}
 

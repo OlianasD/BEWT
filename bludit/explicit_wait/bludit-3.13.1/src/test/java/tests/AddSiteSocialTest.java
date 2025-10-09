@@ -1,6 +1,7 @@
 package tests;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 import org.junit.Test;
 
@@ -20,7 +21,7 @@ public class AddSiteSocialTest extends BaseTest {
 			.setInstagram("https://instagram.com/bludit595159516")
 			.save();
 		
-		assertEquals("https://instagram.com/bludit595159516", socials.getInstagram());
+		assertTrue(socials.isInstagramEqualTo("https://instagram.com/bludit595159516"));
 	}
 	
 }

@@ -15,31 +15,32 @@ public class EditProductPage extends AdminSidebar {
 
 	public EditProductPage(WebDriver driver) {
 		super(driver);
-		// TODO Auto-generated constructor stub
 	}
 	
 	public EditProductPage setTag(String tag) {
+		wait.waitClickability(tagField);
 		tagField.sendKeys(tag+",");
 		return this;
 	}
 	
 	public String getLastTag() {
-		return driver.findElement(By.xpath("//*[@id=\"productEditForm\"]/div/div[9]/div/div/div/span")).getText();
+		return wait.waitVisibility(By.xpath("//*[@id=\"productEditForm\"]/div/div[9]/div/div/div/span")).getText();
 	}
 	
 	
 	public EditProductPage saveProduct() {
+		wait.waitClickability(updateProductBtn);
 		updateProductBtn.click();
 		return this;
 	}
 	
 	public EditProductPage deleteTag() {
-		driver.findElement(By.xpath("//*[@id=\"productEditForm\"]/div/div[9]/div/div/div/a")).click();
+		wait.waitClickability(By.xpath("//*[@id=\"productEditForm\"]/div/div[9]/div/div/div/a")).click();
 		return this;
 	}
 	
 	public boolean productHasNoTags() {
-		return driver.findElement(By.id("productTags-tokenfield")).getAttribute("value").equals("");
+		return wait.waitVisibility(By.id("productTags-tokenfield")).getAttribute("value").equals("");
 	}
 	
 

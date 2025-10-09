@@ -15,15 +15,14 @@ public class ManageFieldGroupsPage extends SiteAdminPageObject {
 	
 	@FindBy(xpath = "//*[@id=\"toolbar-status-group\"]/button")
 	protected WebElement actionsBtn;
-	
-	protected Wait wait;
+
 	
 	public ManageFieldGroupsPage(WebDriver driver) {
 		super(driver);
-		wait = new Wait(driver);
 	}
 	
 	public CreateFieldGroupPage createGroup() {
+		wait.waitClickability(createGroupBtn);
 		createGroupBtn.click();
 		return new CreateFieldGroupPage(driver);
 	}
@@ -62,13 +61,14 @@ public class ManageFieldGroupsPage extends SiteAdminPageObject {
 	}
 	
 	public ManageFieldGroupsPage selectIthFieldGroup(int i) {
-		driver.findElement(By.xpath("/html/body/div[1]/div[2]/section/div/div/main/form/div/div/div/table/tbody/tr["+i+"]/td[1]/input")).click();
+		wait.waitClickability(By.xpath("/html/body/div[1]/div[2]/section/div/div/main/form/div/div/div/table/tbody/tr["+i+"]/td[1]/input")).click();
 		return this;
 	}
 	
 	public ManageFieldGroupsPage deleteSelectedGroup() {
+		wait.waitClickability(actionsBtn);
 		actionsBtn.click();
-		driver.findElement(By.xpath("//*[@id=\"status-group-children-trash\"]/button")).click();
+		wait.waitClickability(By.xpath("//*[@id=\"status-group-children-trash\"]/button")).click();
 		return new ManageFieldGroupsPage(driver);
 	}
 	

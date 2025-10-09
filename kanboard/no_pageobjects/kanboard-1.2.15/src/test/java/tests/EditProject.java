@@ -17,7 +17,7 @@ public class EditProject extends BaseTest {
 		driver.findElement(By.linkText("Edit project")).click();
 		driver.findElement(By.xpath("//*[@id=\"main\"]/section/div[2]/form/fieldset[1]/div/div/div[2]/textarea")).sendKeys("This is the new description");
 		driver.findElement(By.xpath("//*[@id=\"main\"]/section/div[2]/form/div/div/button")).click();
-		Thread.sleep(500);
+		Thread.sleep(1000);
 		driver.findElement(By.linkText("Summary")).click();
 		
 		assertEquals("This is the new description", driver.findElement(By.xpath("//*[@id=\"main\"]/section/div[2]/article/p")).getText());

@@ -21,7 +21,7 @@ public class AddNewState extends BaseTest {
 			.addNewState()
 			.addNewState("Liguria3", "1121", "Italy", "Europe"); 
 			
-		assertTrue(states.getSuccessMessage().contains("Successful creation"));
+		assertTrue(states.waitForAlertToContainText("Successful creation"));
 			 
 	}
 		 

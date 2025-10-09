@@ -7,7 +7,6 @@ public class AdminDashboardPage extends AdminSidebar {
 	
 	public AdminDashboardPage(WebDriver driver) {
 		super(driver);
-		// TODO Auto-generated constructor stub
 	}
 
 }

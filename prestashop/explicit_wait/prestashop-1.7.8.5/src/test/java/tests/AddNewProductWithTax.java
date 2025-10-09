@@ -1,5 +1,6 @@
 package tests;
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 
 import org.junit.Test;
@@ -21,7 +22,8 @@ public class AddNewProductWithTax extends BaseTest
 					.setPretaxRetail("10");
 			 
 			 
-			 assertEquals(prices.getFinalPrice(), "€12.20");
+			// assertEquals(prices.getFinalPrice(), "€12.20");
+			assertTrue(prices.waitForFinalPriceToBe("€12.20"));
 			
 		 }
 	}

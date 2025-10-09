@@ -8,6 +8,7 @@ import org.junit.runners.Suite.SuiteClasses;
 @SuiteClasses({
 	CreateUserTest.class,
 	CloseInitialEditorPopupTest.class,
+		CloseInitialEditorUserPopupTest.class,
 	CreatePageTest.class,
 	CreateAndLinkPageTest.class,
 	SearchPageTest.class,

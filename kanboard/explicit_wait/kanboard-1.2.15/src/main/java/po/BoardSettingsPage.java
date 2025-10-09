@@ -18,17 +18,20 @@ public class BoardSettingsPage extends SettingsSidebar {
 	}
 	
 	public BoardSettingsPage setPublicrefreshIntgerval(String interval) {
+		wait.waitClickability(formInterval);
 		formInterval.clear();
 		formInterval.sendKeys(interval);
 		return this;
 	}
 	
 	public BoardSettingsPage save() {
+		wait.waitClickability(saveBtn);
 		saveBtn.click();
 		return new BoardSettingsPage(driver);
 	}
 	
 	public String getPublicRefreshInterval() {
+		wait.waitVisibility(formInterval);
 		return formInterval.getAttribute("value");
 	}
 

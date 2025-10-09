@@ -5,7 +5,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-import utils.Waiter;
+import utils.Wait;
 
 public class ProductPage extends MainNavBar {
 	
@@ -18,19 +18,18 @@ public class ProductPage extends MainNavBar {
 	@FindBy(linkText = "Recent reviews")
 	protected WebElement recentReviews;
 	
-	protected Waiter wait;
-	
 	public ProductPage(WebDriver driver) {
 		super(driver);
-		wait = new Waiter(driver);
 	}
 	
 	public ProductPage addToCart() {
+		wait.waitClickability(addToCartBtn);
 		addToCartBtn.click();
 		return new ProductPage(driver);
 	}
 	
 	public ReviewForm addReview() {
+		wait.waitClickability(addReviewBtn);
 		addReviewBtn.click();
 		return new ReviewForm(driver);
 		

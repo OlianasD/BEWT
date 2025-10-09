@@ -1,9 +1,6 @@
 package po;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.NoSuchElementException;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.Select;
 
@@ -17,9 +14,6 @@ public class EditProjectPage extends CreateProjectPage {
 	
 	@FindBy(xpath = "//*[@id=\"project-add-category-form\"]/fieldset/input[4]")
 	protected WebElement addCategoryBtn;
-	
-	@FindBy(xpath = "//*[@id=\"categories\"]/div/div[3]/div/div/table/tbody/tr[1]/td[1]")
-	protected WebElement projectCategory;
 	
 	@FindBy(id = "project-status")
 	protected WebElement projectStatus;
@@ -72,14 +66,12 @@ public class EditProjectPage extends CreateProjectPage {
 	}
 	
 	public String getProjectCategory() {
-		try {
-			Thread.sleep(500);
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		wait.waitVisibility(projectCategory);
-		return projectCategory.getText();
+		/*try {
+			return wait.waitVisibilityRefreshed(By.xpath("//*[@id=\"categories\"]/div/div[3]/div/div/table/tbody/tr[1]/td[1]")).getText();
+		} catch(WebDriverException e) {
+			return wait.waitVisibilityRefreshed(By.xpath("//*[@id=\"categories\"]/div/div[3]/div/div/table/tbody/tr[1]/td[1]")).getText();
+		}*/
+		return wait.waitVisibilityRefreshed(By.xpath("//*[@id=\"categories\"]/div/div[3]/div/div/table/tbody/tr[1]/td[1]")).getText();
 	}
 	
 	public EditProjectPage setProjectStatus(String status) {

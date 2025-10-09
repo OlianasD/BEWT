@@ -23,7 +23,7 @@ public class AddAsDraftTest extends BaseTest {
 				.saveAndReturnToContentPage();
 		assertFalse(content.getFirstContentTitle().contains("Draft Content"));
 		DraftPage drafts = content.drafts();
-		assertEquals("Draft Content", drafts.getFirstDraftTitle());
+		assertEquals("Draft Content", drafts.getFirstDraftTitle("Draft Content"));
 		
 	}
 }

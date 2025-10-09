@@ -18,12 +18,14 @@ public class EditUserProfilePage extends TopNavBar {
 	}
 
 	public EditUserProfilePage setEmail(String mail) {
+		wait.waitClickability(formEmail);
 		formEmail.clear();
 		formEmail.sendKeys(mail);
 		return this;
 	}
 
 	public UserSummaryPage save() {
+		wait.waitClickability(saveBtn);
 		saveBtn.click();
 		return new UserSummaryPage(driver);
 	}

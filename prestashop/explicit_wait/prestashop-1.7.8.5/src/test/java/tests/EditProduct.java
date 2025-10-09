@@ -1,5 +1,6 @@
 package tests;
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 
 import org.junit.Test;
@@ -19,7 +20,8 @@ public class EditProduct extends BaseTest {
 					.submitProduct()
 					.backToCatalog();
 						
-			 assertEquals("Deep Blue Jacket", products.getFirstProductName());
+			 //assertEquals("Deep Blue Jacket", products.getFirstProductName());
+			 assertTrue(products.waitForFirstProductToBe("Deep Blue Jacket"));
 			 
 		 }
 		 

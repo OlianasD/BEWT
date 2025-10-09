@@ -40,16 +40,19 @@ public class SiteAdminHome extends PageObject {
 	}
 	
 	public ManageArticlesPage articles() {
+		wait.waitClickability(articles);
 		articles.click();
 		return new ManageArticlesPage(driver);
 	}
 	
 	public ManageCategoriesPage categories() {
+		wait.waitClickability(categories);
 		categories.click();
 		return new ManageCategoriesPage(driver);
 	}
 	
 	public MenuPage menus() {
+		wait.waitClickability(menus);
 		menus.click();
 		return new MenuPage(driver);
 	}

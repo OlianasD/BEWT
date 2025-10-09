@@ -1,6 +1,7 @@
 package base;
 
 import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
 
 import org.junit.Test;
 
@@ -20,7 +21,7 @@ public class DeleteMultipleProjectsTest extends BaseTest {
 			manageProj = manageProj.goToProject(projects[i])
 				.deleteProject()
 				.confirmDelete();
-			assertFalse(manageProj.isProjectPresent(projects[i]));
+			assertTrue(manageProj.isProjectAbsent(projects[i]));
 		}
 	}
 

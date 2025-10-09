@@ -1,5 +1,6 @@
 package tests;
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 import org.junit.Test;
 
@@ -17,9 +18,13 @@ public class AddEmptyAttribute extends BaseTest {
 				.clickAddAttribute()
 				.submitError();
 		
-		assertEquals("×\n"
+		/*assertEquals("×\n"
 				+ "There are 2 errors.\n"
 				+ "The field name is required at least in English (English).\n"
-				+ "The field public_name is required at least in English (English).", attributes.getAlertMessage());
+				+ "The field public_name is required at least in English (English).", attributes.getAlertMessage());*/
+		assertTrue(attributes.waitForAlertMesssageToBe("×\n"
+				+ "There are 2 errors.\n"
+				+ "The field name is required at least in English (English).\n"
+				+ "The field public_name is required at least in English (English)."));
 	}
 }

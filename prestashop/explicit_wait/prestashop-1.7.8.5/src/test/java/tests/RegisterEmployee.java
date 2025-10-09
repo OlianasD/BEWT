@@ -19,6 +19,6 @@ public class RegisterEmployee extends BaseTest {
 				.addEmployee()
 				.addEmployee("John", "Smith", "smith@gmail.com","abcd!@#$23");
 		
-		assertTrue(employees.getSuccessMessage().contains("Successful creation"));
+		assertTrue(employees.waitForAlertToContainText("Successful creation"));
 	 }
 }

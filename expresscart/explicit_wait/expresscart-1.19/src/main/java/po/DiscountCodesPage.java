@@ -14,7 +14,6 @@ public class DiscountCodesPage extends AdminSidebar {
 
 	public DiscountCodesPage(WebDriver driver) {
 		super(driver);
-		// TODO Auto-generated constructor stub
 	}
 	
 	public NewDiscountPage newDiscount() {
@@ -23,7 +22,7 @@ public class DiscountCodesPage extends AdminSidebar {
 	}
 	
 	public String getIthDiscountCode(int i) {
-		return driver.findElement(By.xpath("//*[@id=\"container\"]/div/main/div/ul/li["+i+"]/div/div[1]/span")).getText();
+		return wait.waitVisibility(By.xpath("//*[@id=\"container\"]/div/main/div/ul/li["+i+"]/div/div[1]/span")).getText();
 	}
 	
 	public DiscountCodesPage deleteDiscountCode(String code) {
@@ -31,13 +30,13 @@ public class DiscountCodesPage extends AdminSidebar {
 		WebElement codeElem = driver.findElement(By.xpath("//*[contains(text(), '"+code+"')]"));
 		String codeXpath = xpgen.generateXpath(codeElem, "");
 		codeXpath = codeXpath.replace("div[1]/span[1]", "div[4]/button");
-		driver.findElement(By.xpath(codeXpath)).click();
+		wait.waitClickability(By.xpath(codeXpath)).click();
 		driver.switchTo().alert().accept();
 		driver.switchTo().defaultContent();
 		return this;
 	}
 	
 	public boolean containsCode(String code) {
-		return driver.findElement(By.xpath("//*[@id=\"container\"]/div/main/div/ul")).getText().contains("Code:  "+code);
+		return wait.waitVisibility(By.xpath("//*[@id=\"container\"]/div/main/div/ul")).getText().contains("Code:  "+code);
 	}
 }

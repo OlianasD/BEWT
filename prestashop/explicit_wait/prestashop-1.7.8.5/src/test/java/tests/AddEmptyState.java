@@ -4,6 +4,7 @@ package tests;
 
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 import org.junit.Test;
 
@@ -24,10 +25,14 @@ public class AddEmptyState extends BaseTest {
 			.addNewState()
 			.addEmptyState(); 
 			
-		assertEquals("×\n"
+		/*assertEquals("×\n"
 				+ "There are 2 errors.\n"
 				+ "The iso_code field is required.\n"
-				+ "The name field is required.", state.getAlertMessage());
+				+ "The name field is required.", state.getAlertMessage());*/
+		assertTrue(state.waitForAlertMessageToBe("×\n"
+				+ "There are 2 errors.\n"
+				+ "The iso_code field is required.\n"
+				+ "The name field is required."));
 			 
 	}
 		 

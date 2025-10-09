@@ -29,6 +29,7 @@ public class CategoriesPage extends ProjectSidebar {
 	}
 	
 	public CategoriesPage addCategory() {
+		wait.waitClickability(addCategory);
 		addCategory.click();
 		return new CategoriesPage(driver);
 	}

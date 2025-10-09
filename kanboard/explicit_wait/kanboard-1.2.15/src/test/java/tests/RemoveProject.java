@@ -17,7 +17,7 @@ public class RemoveProject extends BaseTest {
 	@Test
 	public void removeProject() {
 		ProjectListPage projects = new LoginPage(driver)
-				.loginToKanboard("admin", "admin")
+				.loginToKanboard("admin", password)
 				.firstProjectSummary()
 				.remove();
 		

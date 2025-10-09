@@ -29,6 +29,10 @@ public class StatesPage extends AdminSidebar {
 		wait.waitVisibility(By.className("alert-success"));
 		return tagMessage.getText();
 	}
+
+	public boolean waitForAlertToContainText(String expected) {
+		return wait.waitForTextToBeContained(By.className("alert-success"), expected);
+	}
 	
 	public StatesPage goToStatesTab() {
 		statesTab.click();

@@ -42,13 +42,15 @@ public class LoggedNavBar extends BaseNavBar {
 	}
 	
 	public void adminLogout() {
+		wait.waitClickability(logout);
 		logout.click();
-		driver.findElement(By.className("btn-primary")).click();
+		wait.waitClickability(By.className("btn-primary")).click();
 	}
 	
 	public void standardUserLogOut() {
+		wait.waitClickability(authorLogin);
 		authorLogin.click();
-		driver.findElement(By.className("btn-primary")).click();
+		wait.waitClickability(By.className("btn-primary")).click();
 	}
 
 }

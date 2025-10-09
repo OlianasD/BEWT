@@ -19,6 +19,6 @@ public class AddNewManufacturer extends BaseTest {
 				.clickAddManufacturer()
 				.addManufacturer("Smith");
 		
-		assertTrue(manufacturers.getSuccessMessage().contains("Successful creation"));
+		assertTrue(manufacturers.waitForAlertToContainText("Successful creation"));
 	}
 }

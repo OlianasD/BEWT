@@ -35,4 +35,8 @@ public class FeaturesPage extends AdminSidebar {
 		return tagMessage.getText();
 	}
 
+	public boolean waitForAlertToContainText(String expected) {
+		return wait.waitForTextToBeContained(By.className("alert-success"), expected);
+	}
+
 }

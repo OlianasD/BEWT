@@ -2,6 +2,7 @@ package po;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebDriverException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
@@ -19,13 +20,13 @@ public class CreateSubprojectPage extends ManageNavBar {
 		super(driver);
 	}
 	
-	public CreateSubprojectPage setName(String name) {
-		try {
-			Thread.sleep(500);
-		} catch (InterruptedException e) {
-			e.printStackTrace();
-		}
-		this.name.sendKeys(name);
+	public CreateSubprojectPage setName(String nm) {
+		/*try {
+			wait.waitClickabilityRefreshed(By.id("project-name")).sendKeys(nm);
+		} catch(WebDriverException e) {
+			wait.waitClickabilityRefreshed(By.id("project-name")).sendKeys(nm);
+		}*/
+		wait.waitClickabilityRefreshed(By.id("project-name")).sendKeys(nm);
 		return this;
 	}
 	

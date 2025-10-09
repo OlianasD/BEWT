@@ -19,6 +19,6 @@ public class AddNewFeatures extends BaseTest {
 					.clickAddFeature()
 					.addName("Strong")
 					.submitFeature();
-			 assertTrue(features.getSuccessMessage().contains("Successful creation"));
+			 assertTrue(features.waitForAlertToContainText("Successful creation"));
 		 }
 	}

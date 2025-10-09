@@ -27,6 +27,7 @@ public class TopNavBar extends PageObject {
 	public SettingsPage goToSettings() {
 		wait.waitClickability(settingsMenu);
 		settingsMenu.click();
+		wait.waitClickability(settings);
 		settings.click();
 		return new SettingsPage(driver);
 	}
@@ -34,6 +35,7 @@ public class TopNavBar extends PageObject {
 	public UsersManagementPage usersManagement() {
 		wait.waitClickability(settingsMenu);
 		settingsMenu.click();
+		wait.waitClickability(usrMgmt);
 		usrMgmt.click();
 		return new UsersManagementPage(driver);
 	}

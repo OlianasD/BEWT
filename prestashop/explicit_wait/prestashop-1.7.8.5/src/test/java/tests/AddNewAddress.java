@@ -18,6 +18,6 @@ public class AddNewAddress extends BaseTest {
 				.addAddress()
 				.addAddress("anonymous@psgdpr.com","Test","John","DOE","Via Torino","12345","123456789","987654321","Bologna");
 		
-		assertTrue(addresses.getSuccessMessage().contains("Successful creation"));
+		assertTrue(addresses.waitForAlertToContainText("Successful creation"));
 	}
 }

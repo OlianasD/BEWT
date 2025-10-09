@@ -11,27 +11,28 @@ public class NewCategoryPage extends AdminSidebar {
 	
 	@FindBy(id = "jsdescription")
 	protected WebElement description;
-	
-	//@FindBy(xpath = "//*[@id=\"jsform\"]/div[1]/div/button")
+
 	@FindBy(name = "save")
 	protected WebElement saveBtn;
 	
 	public NewCategoryPage(WebDriver driver) {
 		super(driver);
-		// TODO Auto-generated constructor stub
 	}
 	
 	public NewCategoryPage setName(String name) {
+		wait.waitClickability(this.name);
 		this.name.sendKeys(name);
 		return this;
 	}
 	
 	public NewCategoryPage setDescr(String descr) {
+		wait.waitClickability(description);
 		description.sendKeys(descr);
 		return this;
 	}
 	
 	public CategoriesPage save() {
+		wait.waitClickability(saveBtn);
 		saveBtn.click();
 		return new CategoriesPage(driver);
 	}

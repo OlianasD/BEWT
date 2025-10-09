@@ -17,6 +17,6 @@ public class AddTag extends BaseTest {
 				.goToTags()
 				.addTag()
 				.addTag("Hat");
-		assertTrue(tags.getSuccessMessage().contains("Successful creation"));
+		assertTrue(tags.waitForAlertToContainText("Successful creation"));
 	}
 }

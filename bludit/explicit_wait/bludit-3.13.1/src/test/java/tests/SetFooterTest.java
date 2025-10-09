@@ -1,6 +1,7 @@
 package tests;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 import org.junit.Test;
 
@@ -20,7 +21,7 @@ public class SetFooterTest extends BaseTest {
 				.setFooter("E2E Web testing benchmark")
 				.save();
 		
-		assertEquals("E2E Web testing benchmark", general.getFooter());
+		assertTrue(general.footerTextToBe("E2E Web testing benchmark"));
 	}
 	
 }

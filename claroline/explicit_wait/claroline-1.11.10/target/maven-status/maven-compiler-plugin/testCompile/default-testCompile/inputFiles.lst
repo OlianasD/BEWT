@@ -1,42 +1,42 @@
-/media/sf_winhome/Dropbox/Test Suites Benchmark/explicit_wait/claroline-1.11.10/src/test/java/test/Claroline_DoCourseExerciseQuestionsTest.java
-/media/sf_winhome/Dropbox/Test Suites Benchmark/explicit_wait/claroline-1.11.10/src/test/java/test/Claroline_AddTwiceUserTest.java
-/media/sf_winhome/Dropbox/Test Suites Benchmark/explicit_wait/claroline-1.11.10/src/test/java/test/Claroline_AddMultipleUsersTest.java
-/media/sf_winhome/Dropbox/Test Suites Benchmark/explicit_wait/claroline-1.11.10/src/test/java/test/Claroline_SearchAndRemoveDeniedCourseTest.java
-/media/sf_winhome/Dropbox/Test Suites Benchmark/explicit_wait/claroline-1.11.10/src/test/java/test/Claroline_SearchMultipleUsersTest.java
-/media/sf_winhome/Dropbox/Test Suites Benchmark/explicit_wait/claroline-1.11.10/src/test/java/test/Claroline_AddPasswordCourseTest.java
-/media/sf_winhome/Dropbox/Test Suites Benchmark/explicit_wait/claroline-1.11.10/src/test/java/test/Claroline_SearchAdminTest.java
-/media/sf_winhome/Dropbox/Test Suites Benchmark/explicit_wait/claroline-1.11.10/src/test/java/test/Claroline_SearchStudentTest.java
-/media/sf_winhome/Dropbox/Test Suites Benchmark/explicit_wait/claroline-1.11.10/src/test/java/test/Claroline_EnrolUserTest.java
-/media/sf_winhome/Dropbox/Test Suites Benchmark/explicit_wait/claroline-1.11.10/src/test/java/test/Claroline_SearchCourseTest.java
-/media/sf_winhome/Dropbox/Test Suites Benchmark/explicit_wait/claroline-1.11.10/src/test/java/test/Claroline_AddWrongEmailUserTest.java
-/media/sf_winhome/Dropbox/Test Suites Benchmark/explicit_wait/claroline-1.11.10/src/test/java/test/Claroline_TestSuite.java
-/media/sf_winhome/Dropbox/Test Suites Benchmark/explicit_wait/claroline-1.11.10/src/test/java/test/Claroline_AddEmptyCourseTest.java
-/media/sf_winhome/Dropbox/Test Suites Benchmark/explicit_wait/claroline-1.11.10/src/test/java/test/Claroline_EnrolMultipleUsersTest.java
-/media/sf_winhome/Dropbox/Test Suites Benchmark/explicit_wait/claroline-1.11.10/src/test/java/test/Claroline_AddUserTest.java
-/media/sf_winhome/Dropbox/Test Suites Benchmark/explicit_wait/claroline-1.11.10/src/test/java/test/Claroline_EnrolPasswordCourseGoodPasswordUserTest.java
-/media/sf_winhome/Dropbox/Test Suites Benchmark/explicit_wait/claroline-1.11.10/src/test/java/test/Claroline_RemoveMultipleUsersTest.java
-/media/sf_winhome/Dropbox/Test Suites Benchmark/explicit_wait/claroline-1.11.10/src/test/java/test/Claroline_ViewProfileStatisticsUserTest.java
-/media/sf_winhome/Dropbox/Test Suites Benchmark/explicit_wait/claroline-1.11.10/src/test/java/test/Claroline_AddWrongPasswordUserTest.java
-/media/sf_winhome/Dropbox/Test Suites Benchmark/explicit_wait/claroline-1.11.10/src/test/java/test/Claroline_RemoveCourseExerciseQuestionsTest.java
-/media/sf_winhome/Dropbox/Test Suites Benchmark/explicit_wait/claroline-1.11.10/src/test/java/test/Claroline_EnrolDeniedCourseTest.java
-/media/sf_winhome/Dropbox/Test Suites Benchmark/explicit_wait/claroline-1.11.10/src/test/java/test/Claroline_DoCourseExerciseQuestionsMultipleUsersTest.java
-/media/sf_winhome/Dropbox/Test Suites Benchmark/explicit_wait/claroline-1.11.10/src/test/java/test/Claroline_RemoveUserTest.java
-/media/sf_winhome/Dropbox/Test Suites Benchmark/explicit_wait/claroline-1.11.10/src/test/java/test/Claroline_RemoveEnrolUserTest.java
-/media/sf_winhome/Dropbox/Test Suites Benchmark/explicit_wait/claroline-1.11.10/src/test/java/test/Claroline_RemoveCourseTest.java
-/media/sf_winhome/Dropbox/Test Suites Benchmark/explicit_wait/claroline-1.11.10/src/test/java/test/Claroline_EnrolPasswordCourseWrongPasswordUserTest.java
-/media/sf_winhome/Dropbox/Test Suites Benchmark/explicit_wait/claroline-1.11.10/src/test/java/test/Claroline_AddCourseExerciseQuestionsTest.java
-/media/sf_winhome/Dropbox/Test Suites Benchmark/explicit_wait/claroline-1.11.10/src/test/java/test/Claroline_AddCourseTest.java
-/media/sf_winhome/Dropbox/Test Suites Benchmark/explicit_wait/claroline-1.11.10/src/test/java/test/Claroline_RemoveEnrolMultipleUsersTest.java
-/media/sf_winhome/Dropbox/Test Suites Benchmark/explicit_wait/claroline-1.11.10/src/test/java/test/Claroline_AddCourseEventTest.java
-/media/sf_winhome/Dropbox/Test Suites Benchmark/explicit_wait/claroline-1.11.10/src/test/java/test/Claroline_RemoveCourseEventTest.java
-/media/sf_winhome/Dropbox/Test Suites Benchmark/explicit_wait/claroline-1.11.10/src/test/java/test/Claroline_SearchAllowedCourseTest.java
-/media/sf_winhome/Dropbox/Test Suites Benchmark/explicit_wait/claroline-1.11.10/src/test/java/test/Claroline_LoginUserTest.java
-/media/sf_winhome/Dropbox/Test Suites Benchmark/explicit_wait/claroline-1.11.10/src/test/java/test/Claroline_MakeCourseExerciseVisibleTest.java
-/media/sf_winhome/Dropbox/Test Suites Benchmark/explicit_wait/claroline-1.11.10/src/test/java/test/Claroline_SearchAndRemovePasswordCourseTest.java
-/media/sf_winhome/Dropbox/Test Suites Benchmark/explicit_wait/claroline-1.11.10/src/test/java/test/Claroline_AddCourseExerciseTest.java
-/media/sf_winhome/Dropbox/Test Suites Benchmark/explicit_wait/claroline-1.11.10/src/test/java/test/Claroline_AddDeniedCourseTest.java
-/media/sf_winhome/Dropbox/Test Suites Benchmark/explicit_wait/claroline-1.11.10/src/test/java/test/BaseTest.java
-/media/sf_winhome/Dropbox/Test Suites Benchmark/explicit_wait/claroline-1.11.10/src/test/java/test/Claroline_AddEmptyUserTest.java
-/media/sf_winhome/Dropbox/Test Suites Benchmark/explicit_wait/claroline-1.11.10/src/test/java/test/Claroline_RemoveCourseExerciseTest.java
-/media/sf_winhome/Dropbox/Test Suites Benchmark/explicit_wait/claroline-1.11.10/src/test/java/test/Claroline_SearchTeacherTest.java
-/media/sf_winhome/Dropbox/Test Suites Benchmark/explicit_wait/claroline-1.11.10/src/test/java/test/Claroline_SearchUserTest.java
+C:\Users\User\Dropbox\Test Suites Benchmark\github\E2E Web Testing benchmark\claroline\explicit_wait\claroline-1.11.10\src\test\java\test\Claroline_AddUserTest.java
+C:\Users\User\Dropbox\Test Suites Benchmark\github\E2E Web Testing benchmark\claroline\explicit_wait\claroline-1.11.10\src\test\java\test\Claroline_RemoveCourseExerciseQuestionsTest.java
+C:\Users\User\Dropbox\Test Suites Benchmark\github\E2E Web Testing benchmark\claroline\explicit_wait\claroline-1.11.10\src\test\java\test\Claroline_RemoveEnrolUserTest.java
+C:\Users\User\Dropbox\Test Suites Benchmark\github\E2E Web Testing benchmark\claroline\explicit_wait\claroline-1.11.10\src\test\java\test\Claroline_TestSuite.java
+C:\Users\User\Dropbox\Test Suites Benchmark\github\E2E Web Testing benchmark\claroline\explicit_wait\claroline-1.11.10\src\test\java\test\Claroline_AddWrongEmailUserTest.java
+C:\Users\User\Dropbox\Test Suites Benchmark\github\E2E Web Testing benchmark\claroline\explicit_wait\claroline-1.11.10\src\test\java\test\Claroline_SearchStudentTest.java
+C:\Users\User\Dropbox\Test Suites Benchmark\github\E2E Web Testing benchmark\claroline\explicit_wait\claroline-1.11.10\src\test\java\test\Claroline_DoCourseExerciseQuestionsTest.java
+C:\Users\User\Dropbox\Test Suites Benchmark\github\E2E Web Testing benchmark\claroline\explicit_wait\claroline-1.11.10\src\test\java\test\Claroline_AddCourseTest.java
+C:\Users\User\Dropbox\Test Suites Benchmark\github\E2E Web Testing benchmark\claroline\explicit_wait\claroline-1.11.10\src\test\java\test\Claroline_SearchAndRemovePasswordCourseTest.java
+C:\Users\User\Dropbox\Test Suites Benchmark\github\E2E Web Testing benchmark\claroline\explicit_wait\claroline-1.11.10\src\test\java\test\Claroline_RemoveCourseExerciseTest.java
+C:\Users\User\Dropbox\Test Suites Benchmark\github\E2E Web Testing benchmark\claroline\explicit_wait\claroline-1.11.10\src\test\java\test\Claroline_RemoveEnrolMultipleUsersTest.java
+C:\Users\User\Dropbox\Test Suites Benchmark\github\E2E Web Testing benchmark\claroline\explicit_wait\claroline-1.11.10\src\test\java\test\Claroline_AddDeniedCourseTest.java
+C:\Users\User\Dropbox\Test Suites Benchmark\github\E2E Web Testing benchmark\claroline\explicit_wait\claroline-1.11.10\src\test\java\test\Claroline_AddMultipleUsersTest.java
+C:\Users\User\Dropbox\Test Suites Benchmark\github\E2E Web Testing benchmark\claroline\explicit_wait\claroline-1.11.10\src\test\java\test\Claroline_AddCourseExerciseQuestionsTest.java
+C:\Users\User\Dropbox\Test Suites Benchmark\github\E2E Web Testing benchmark\claroline\explicit_wait\claroline-1.11.10\src\test\java\test\Claroline_EnrolPasswordCourseGoodPasswordUserTest.java
+C:\Users\User\Dropbox\Test Suites Benchmark\github\E2E Web Testing benchmark\claroline\explicit_wait\claroline-1.11.10\src\test\java\test\Claroline_SearchCourseTest.java
+C:\Users\User\Dropbox\Test Suites Benchmark\github\E2E Web Testing benchmark\claroline\explicit_wait\claroline-1.11.10\src\test\java\test\Claroline_MakeCourseExerciseVisibleTest.java
+C:\Users\User\Dropbox\Test Suites Benchmark\github\E2E Web Testing benchmark\claroline\explicit_wait\claroline-1.11.10\src\test\java\test\Claroline_SearchAdminTest.java
+C:\Users\User\Dropbox\Test Suites Benchmark\github\E2E Web Testing benchmark\claroline\explicit_wait\claroline-1.11.10\src\test\java\test\Claroline_EnrolUserTest.java
+C:\Users\User\Dropbox\Test Suites Benchmark\github\E2E Web Testing benchmark\claroline\explicit_wait\claroline-1.11.10\src\test\java\test\BaseTest.java
+C:\Users\User\Dropbox\Test Suites Benchmark\github\E2E Web Testing benchmark\claroline\explicit_wait\claroline-1.11.10\src\test\java\test\Claroline_AddTwiceUserTest.java
+C:\Users\User\Dropbox\Test Suites Benchmark\github\E2E Web Testing benchmark\claroline\explicit_wait\claroline-1.11.10\src\test\java\test\Claroline_EnrolPasswordCourseWrongPasswordUserTest.java
+C:\Users\User\Dropbox\Test Suites Benchmark\github\E2E Web Testing benchmark\claroline\explicit_wait\claroline-1.11.10\src\test\java\test\Claroline_SearchTeacherTest.java
+C:\Users\User\Dropbox\Test Suites Benchmark\github\E2E Web Testing benchmark\claroline\explicit_wait\claroline-1.11.10\src\test\java\test\Claroline_DoCourseExerciseQuestionsMultipleUsersTest.java
+C:\Users\User\Dropbox\Test Suites Benchmark\github\E2E Web Testing benchmark\claroline\explicit_wait\claroline-1.11.10\src\test\java\test\Claroline_RemoveUserTest.java
+C:\Users\User\Dropbox\Test Suites Benchmark\github\E2E Web Testing benchmark\claroline\explicit_wait\claroline-1.11.10\src\test\java\test\Claroline_LoginUserTest.java
+C:\Users\User\Dropbox\Test Suites Benchmark\github\E2E Web Testing benchmark\claroline\explicit_wait\claroline-1.11.10\src\test\java\test\Claroline_ViewProfileStatisticsUserTest.java
+C:\Users\User\Dropbox\Test Suites Benchmark\github\E2E Web Testing benchmark\claroline\explicit_wait\claroline-1.11.10\src\test\java\test\Claroline_AddEmptyUserTest.java
+C:\Users\User\Dropbox\Test Suites Benchmark\github\E2E Web Testing benchmark\claroline\explicit_wait\claroline-1.11.10\src\test\java\test\Claroline_RemoveCourseTest.java
+C:\Users\User\Dropbox\Test Suites Benchmark\github\E2E Web Testing benchmark\claroline\explicit_wait\claroline-1.11.10\src\test\java\test\Claroline_RemoveCourseEventTest.java
+C:\Users\User\Dropbox\Test Suites Benchmark\github\E2E Web Testing benchmark\claroline\explicit_wait\claroline-1.11.10\src\test\java\test\Claroline_EnrolMultipleUsersTest.java
+C:\Users\User\Dropbox\Test Suites Benchmark\github\E2E Web Testing benchmark\claroline\explicit_wait\claroline-1.11.10\src\test\java\test\Claroline_RemoveMultipleUsersTest.java
+C:\Users\User\Dropbox\Test Suites Benchmark\github\E2E Web Testing benchmark\claroline\explicit_wait\claroline-1.11.10\src\test\java\test\Claroline_SearchAndRemoveDeniedCourseTest.java
+C:\Users\User\Dropbox\Test Suites Benchmark\github\E2E Web Testing benchmark\claroline\explicit_wait\claroline-1.11.10\src\test\java\test\Claroline_SearchMultipleUsersTest.java
+C:\Users\User\Dropbox\Test Suites Benchmark\github\E2E Web Testing benchmark\claroline\explicit_wait\claroline-1.11.10\src\test\java\test\Claroline_AddCourseExerciseTest.java
+C:\Users\User\Dropbox\Test Suites Benchmark\github\E2E Web Testing benchmark\claroline\explicit_wait\claroline-1.11.10\src\test\java\test\Claroline_AddPasswordCourseTest.java
+C:\Users\User\Dropbox\Test Suites Benchmark\github\E2E Web Testing benchmark\claroline\explicit_wait\claroline-1.11.10\src\test\java\test\Claroline_AddCourseEventTest.java
+C:\Users\User\Dropbox\Test Suites Benchmark\github\E2E Web Testing benchmark\claroline\explicit_wait\claroline-1.11.10\src\test\java\test\Claroline_AddWrongPasswordUserTest.java
+C:\Users\User\Dropbox\Test Suites Benchmark\github\E2E Web Testing benchmark\claroline\explicit_wait\claroline-1.11.10\src\test\java\test\Claroline_EnrolDeniedCourseTest.java
+C:\Users\User\Dropbox\Test Suites Benchmark\github\E2E Web Testing benchmark\claroline\explicit_wait\claroline-1.11.10\src\test\java\test\Claroline_AddEmptyCourseTest.java
+C:\Users\User\Dropbox\Test Suites Benchmark\github\E2E Web Testing benchmark\claroline\explicit_wait\claroline-1.11.10\src\test\java\test\Claroline_SearchAllowedCourseTest.java
+C:\Users\User\Dropbox\Test Suites Benchmark\github\E2E Web Testing benchmark\claroline\explicit_wait\claroline-1.11.10\src\test\java\test\Claroline_SearchUserTest.java

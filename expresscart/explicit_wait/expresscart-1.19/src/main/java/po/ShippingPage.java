@@ -4,18 +4,18 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-import utils.Waiter;
+import utils.Wait;
 
 public class ShippingPage extends MainNavBar {
 	
 	@FindBy(xpath = "//*[@id=\"container\"]/div/div/div/div[1]/a[2]")
 	protected WebElement goToPaymentBtn;
 	
-	protected Waiter wait;
+	protected Wait wait;
 
 	public ShippingPage(WebDriver driver) {
 		super(driver);
-		wait = new Waiter(driver);
+		wait = new Wait(driver);
 	}
 	
 	public PaymentPage goToPayment() {

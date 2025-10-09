@@ -15,6 +15,7 @@ public class TaskSidebar extends TopNavBar {
 	}
 	
 	public TaskPage closeTask() {
+		wait.waitClickability(closeTask);
 		closeTask.click();
 		return new TaskPage(driver);
 	}

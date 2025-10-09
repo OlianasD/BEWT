@@ -29,20 +29,24 @@ public class EditProfilePage extends LoggedNavBar {
 	}
 	
 	public String getName() {
+		wait.waitVisibility(name);
 		return name.getAttribute("value");
 	}
 	
 	public EditProfilePage setPassword(String psw) {
+		wait.waitClickability(password);
 		password.sendKeys(psw);
 		return this;
 	}
 	
 	public EditProfilePage confirmPassword(String psw) {
+		wait.waitClickability(confirmPassword);
 		confirmPassword.sendKeys(psw);
 		return this;
 	}
 	
 	public EditProfilePage submit() {
+		wait.waitClickability(submitBtn);
 		submitBtn.click();
 		return this;
 	}

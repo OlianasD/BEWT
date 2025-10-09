@@ -1,6 +1,7 @@
 package test;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 import org.junit.Test;
 
@@ -15,8 +16,8 @@ public class Claroline_RemoveEnrolUserTest extends BaseTest {
 				.login("user001", "n0tl34k3dy3t")
 				.removeEnrolFromCourse()
 				.removeEnrol();
-		
-		assertEquals("Your enrollment on the course has been removed", acp.getMessage());
+
+		assertTrue(acp.waitForMessageToBe("Your enrollment on the course has been removed"));
 		acp.doLogout();
 	}
 }

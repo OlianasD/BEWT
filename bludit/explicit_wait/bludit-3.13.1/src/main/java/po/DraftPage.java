@@ -1,21 +1,19 @@
 package po;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 public class DraftPage extends AdminSidebar {
-	
-	@FindBy(xpath = "//*[@id=\"draft\"]/table/tbody/tr/td[1]/div[1]/a")
-	protected WebElement firstDraftTitle;
-	
+
 	public DraftPage(WebDriver driver) {
 		super(driver);
-		// TODO Auto-generated constructor stub
 	}
 	
-	public String getFirstDraftTitle() {
-		return firstDraftTitle.getText();
+	public String getFirstDraftTitle(String title) {
+		wait.waitVisibility(By.linkText(title));
+		return driver.findElement(By.linkText(title)).getText();
 	}
 
 }

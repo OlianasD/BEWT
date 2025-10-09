@@ -22,12 +22,9 @@ public class UserSummaryPage extends TopNavBar {
 	
 	@FindBy(linkText = "Edit profile")
 	protected WebElement editProfile;
-	
-	protected Wait wait;
 
 	public UserSummaryPage(WebDriver driver) {
 		super(driver);
-		wait = new Wait(driver);
 	}
 	
 	public String getUsername() {
@@ -36,18 +33,22 @@ public class UserSummaryPage extends TopNavBar {
 	}
 	
 	public String getFullname() {
+		wait.waitVisibility(fullName);
 		return fullName.getText();
 	}
 	
 	public String getEmail() {
+		wait.waitVisibility(email);
 		return email.getText();
 	}
 	
 	public String getAccountType() {
+		wait.waitVisibility(accountType);
 		return accountType.getText();
 	}
 	
 	public EditUserProfilePage editProfile() {
+		wait.waitClickability(editProfile);
 		editProfile.click();
 		return new EditUserProfilePage(driver);
 	}

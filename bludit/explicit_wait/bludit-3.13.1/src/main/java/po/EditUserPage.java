@@ -14,15 +14,16 @@ public class EditUserPage extends AdminSidebar {
 
 	public EditUserPage(WebDriver driver) {
 		super(driver);
-		// TODO Auto-generated constructor stub
 	}
 	
 	public UserSecurityPage security() {
+		wait.waitClickability(securityTab);
 		securityTab.click();
 		return new UserSecurityPage(driver);
 	}
 	
 	public SocialNetworksPage socials() {
+		wait.waitClickability(socials);
 		socials.click();
 		return new SocialNetworksPage(driver);
 	}

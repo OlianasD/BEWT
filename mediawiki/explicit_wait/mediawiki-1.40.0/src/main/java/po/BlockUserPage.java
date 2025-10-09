@@ -4,6 +4,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import utils.Wait;
 
 public class BlockUserPage extends PageObject {
 	
@@ -19,9 +20,11 @@ public class BlockUserPage extends PageObject {
 	@FindBy(xpath = "//*[@id=\"ooui-php-27\"]/button")
 	protected WebElement blockBtn;
 
+	protected Wait wait;
+
 	public BlockUserPage(WebDriver driver) {
 		super(driver);
-		// TODO Auto-generated constructor stub
+		wait = new Wait(driver);
 	}
 	
 	
@@ -42,17 +45,15 @@ public class BlockUserPage extends PageObject {
 	
 	public BlockUserPage block() {
 		blockBtn.click();
-		try {
-			Thread.sleep(500);
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
 		return new BlockUserPage(driver);
 	}
 	
 	public String getMessage() {
 		return driver.findElement(By.xpath("//*[@id=\"mw-content-text\"]/p")).getText();
+	}
+
+	public boolean waitForMessageToContain(String expected) {
+		return wait.waitForTextToBeContained(By.xpath("//*[@id=\"mw-content-text\"]/p"), expected);
 	}
 	
 	

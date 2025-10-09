@@ -20,6 +20,6 @@ public class OutOfStockValidity extends BaseTest {
 				.addQuantity("4")
 				.submitProductAndFail();
 			
-			assertTrue(order.getErrorMessage().contains("There are not enough products in stock."));
+			assertTrue(order.waitForErrorMessageToContain("There are not enough products in stock."));
 	}
 }

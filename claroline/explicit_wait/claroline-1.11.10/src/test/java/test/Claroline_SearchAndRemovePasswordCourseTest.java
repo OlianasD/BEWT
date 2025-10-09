@@ -1,6 +1,7 @@
 package test;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 import org.junit.Test;
 
@@ -18,8 +19,8 @@ public class Claroline_SearchAndRemovePasswordCourseTest extends BaseTest {
 				.searchPassword("Course002");
 		
 		assertEquals("Course002",acp.getCourseName());
-		acp.removeCourse(2);
-		assertEquals("The course has been successfully deleted",acp.getMessage());
+		acp.removeCourse();
+		assertTrue(acp.waitForMessageToBe("The course has been successfully deleted"));
 		acp.doLogout();
 	}
 }

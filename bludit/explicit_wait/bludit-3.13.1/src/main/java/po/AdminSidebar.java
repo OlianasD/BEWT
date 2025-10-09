@@ -1,5 +1,6 @@
 package po;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -10,9 +11,7 @@ public class AdminSidebar extends PageObject {
 	
 	@FindBy(linkText = "New content")
 	protected WebElement newContent;
-	
-	@FindBy(linkText = "Content")
-	protected WebElement content;
+
 	
 	@FindBy(linkText = "Users")
 	protected WebElement users;
@@ -38,8 +37,8 @@ public class AdminSidebar extends PageObject {
 	}
 	
 	public ContentPage content() {
-		wait.waitClickability(content);
-		content.click();
+		WebElement cont = wait.waitClickability(By.linkText("Content"));
+		cont.click();
 		return new ContentPage(driver);
 	}
 	

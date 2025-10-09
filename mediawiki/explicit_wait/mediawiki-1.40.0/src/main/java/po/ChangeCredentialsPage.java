@@ -4,6 +4,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import utils.Wait;
 
 public class ChangeCredentialsPage extends PageObject {
 	
@@ -16,9 +17,11 @@ public class ChangeCredentialsPage extends PageObject {
 	@FindBy(id = "change_credentials_submit")
 	protected WebElement changeBtn;
 
+	protected Wait wait;
+
 	public ChangeCredentialsPage(WebDriver driver) {
 		super(driver);
-		// TODO Auto-generated constructor stub
+		wait = new Wait(driver);
 	}
 	
 	public ChangeCredentialsPage clickUsername() {
@@ -40,25 +43,13 @@ public class ChangeCredentialsPage extends PageObject {
 		changeBtn.click();
 		return new ChangeCredentialsPage(driver);
 	}
-	
-	public String getSuccessMessage() {
-		try {
-			Thread.sleep(500);
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		return driver.findElement(By.xpath("//*[@id=\"mw-content-text\"]/div[1]")).getText();
+
+	public boolean waitForSuccessMessageToBe(String expected) {
+		return wait.waitForTextToBe(By.xpath("//*[@id=\"mw-content-text\"]/div[1]"), expected);
 	}
-	
-	public String getErrorMessage() {
-		try {
-			Thread.sleep(500);
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		return driver.findElement(By.xpath("//*[@id=\"mw-content-text\"]/div[1]/form/div[1]/div[2]/div/span[2]")).getText();
+
+	public boolean waitForErrorMessageToBe(String expected) {
+		return wait.waitForTextToBe(By.xpath("//*[@id=\"mw-content-text\"]/div[1]/form/div[1]/div[2]/div/span[2]"), expected);
 	}
 	
 	

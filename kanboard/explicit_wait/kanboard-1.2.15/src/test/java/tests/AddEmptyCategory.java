@@ -14,7 +14,7 @@ public class AddEmptyCategory extends BaseTest {
 	@Test()
 	public void addEmptyCategory() {
 		CategoriesPage categories = new LoginPage(driver)
-				.loginToKanboard("admin", "admin")
+				.loginToKanboard("admin", password)
 				.firstProjectSummary()
 				.categories()
 				.addCategory()

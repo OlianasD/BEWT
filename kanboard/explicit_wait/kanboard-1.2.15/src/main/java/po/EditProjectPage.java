@@ -6,15 +6,6 @@ import org.openqa.selenium.support.FindBy;
 
 public class EditProjectPage extends ProjectSidebar {
 
-	@FindBy(xpath = "//*[@id=\"dashboard\"]/div[2]/div[2]/div[2]/div[1]/div/a/strong/i")
-	WebElement option;
-
-	@FindBy(linkText = "Configure this project")
-	WebElement configure;
-
-	@FindBy(linkText = "Edit project")
-	WebElement edit;
-
 	@FindBy(xpath = "//*[@id=\"main\"]/section/div[2]/form/fieldset[1]/div/div/div[2]/textarea")
 	WebElement formDesc;
 
@@ -27,11 +18,13 @@ public class EditProjectPage extends ProjectSidebar {
 	}
 
 	public EditProjectPage setDescription(String name) {
+		wait.waitClickability(formDesc);
 		formDesc.sendKeys(name);
 		return this;
 	}
 
 	public EditProjectPage save() {
+		wait.waitClickability(saveBtn);
 		saveBtn.click();
 		return new EditProjectPage(driver);
 	}

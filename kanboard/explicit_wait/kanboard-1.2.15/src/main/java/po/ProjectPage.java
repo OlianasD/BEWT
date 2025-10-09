@@ -10,7 +10,7 @@ public class ProjectPage extends TopNavBar {
 	}
 	
 	public TaskPage goToTask(String task) {
-		driver.findElement(By.linkText(task)).click();
+		wait.waitClickability(By.linkText(task)).click();
 		return new TaskPage(driver);
 	}
 	

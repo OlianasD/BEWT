@@ -16,14 +16,19 @@ public class UsersPage extends AdminSidebar {
 
 	public UsersPage(WebDriver driver) {
 		super(driver);
-		// TODO Auto-generated constructor stub
 	}
 	
 	public String getThirdUserText() {
+		wait.waitVisibility(thirdUserText);
 		return thirdUserText.getText();
+	}
+
+	public boolean waitForThirdUserTextToBe(String expected) {
+		return wait.waitForTextToBe(By.xpath("//*[@id=\"container\"]/div/main/div[2]/ul/li[3]"), expected);
 	}
 	
 	public UsersPage deleteThirdUser() {
+		wait.waitClickability(thirdUserDelBtn);
 		thirdUserDelBtn.click();
 		driver.switchTo().alert().accept();
 		driver.switchTo().defaultContent();

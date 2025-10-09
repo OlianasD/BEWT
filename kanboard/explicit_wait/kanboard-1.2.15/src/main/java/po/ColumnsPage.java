@@ -20,15 +20,14 @@ public class ColumnsPage extends ProjectSidebar {
 
 	@FindBy(className = "form-errors")
 	protected WebElement errorMsg;
-	
-	protected Wait wait;
+
 
 	public ColumnsPage(WebDriver driver) {
 		super(driver);
-		wait = new Wait(driver);
 	}
 
 	public ColumnsPage addColumn() {
+		wait.waitClickability(addColumn);
 		addColumn.click();
 		return new ColumnsPage(driver);
 	}

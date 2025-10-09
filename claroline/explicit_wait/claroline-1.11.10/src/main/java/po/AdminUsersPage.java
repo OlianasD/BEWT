@@ -11,7 +11,6 @@ import org.openqa.selenium.support.PageFactory;
 import utils.Wait;
 
 public class AdminUsersPage extends ClarolinePage{
-	private WebDriver driver;
 	@FindBy(xpath=".//*[@id='L0']")
 	private WebElement lastName;
 	@FindBy(xpath=".//*[@id='claroBody']/table[2]/tbody/tr/td[3]")
@@ -26,7 +25,7 @@ public class AdminUsersPage extends ClarolinePage{
 	protected Wait wait;
 	
 	public AdminUsersPage(WebDriver driver){
-		this.driver = driver;
+		super(driver);
 		wait = new Wait(driver);
 		PageFactory.initElements(driver, this);
 	}
@@ -37,16 +36,19 @@ public class AdminUsersPage extends ClarolinePage{
 	}
 	
 	public String getFirstName(){
+		wait.waitVisibility(firstName);
 		return firstName.getText();
 	}
 	
 	public String getRole(){
+		wait.waitVisibility(role);
 		return role.getText();
 	}
 	
-	public AdminUsersPage removeUser() throws InterruptedException{
+	public AdminUsersPage removeUser() {
 		wait.waitClickability(removeUserButton);
 		removeUserButton.click();
+		wait.waitAlert();
 		Alert alert = driver.switchTo().alert();
 		alert.accept();
 		driver.navigate().refresh();
@@ -54,21 +56,12 @@ public class AdminUsersPage extends ClarolinePage{
 	}
 	
 	public String getLastNameI(int i){
-		WebElement last = driver.findElement(By.xpath(".//*[@id='L"+i+"']"));
+		WebElement last = wait.waitVisibility(By.xpath(".//*[@id='L"+i+"']"));
 		return last.getText();
 	}
 	
-	public boolean isLastNamePresent(){
-		try{
-			driver.findElement(By.xpath(".//*[@id='L0']"));
-			return true;
-		}
-		catch(NoSuchElementException e){
-			return false;
-		}
-	}
-	
-	public AdminUsersPage order() throws InterruptedException{
+	public AdminUsersPage order() {
+		wait.waitClickability(orderLink);
 		orderLink.click();
 		return this;
 	}

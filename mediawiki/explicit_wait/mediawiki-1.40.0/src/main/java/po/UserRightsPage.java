@@ -54,11 +54,11 @@ public class UserRightsPage extends PageObject {
 	}
 	
 	public boolean isAdminChecked() {
-		return adminCheckbox.isSelected();
+		return wait.waitClickabilityRefreshed(By.id("wpGroup-sysop")).isSelected();
 	}
 	
 	public String getLogEntry() {
-		return driver.findElement(By.xpath("//*[@id=\"mw-content-text\"]/ul/li")).getText();
+		return wait.waitVisibility(By.xpath("//*[@id=\"mw-content-text\"]/ul/li")).getText();
 	}
 	
 	

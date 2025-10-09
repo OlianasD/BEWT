@@ -14,6 +14,7 @@ public class SearchResultsPage extends TopNavBar {
 	}
 
 	public String getFirstTask() {
+		wait.waitVisibility(firstTask);
 		return firstTask.getText();
 	}
 

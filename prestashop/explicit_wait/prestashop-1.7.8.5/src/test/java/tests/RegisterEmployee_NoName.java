@@ -20,6 +20,6 @@ public class RegisterEmployee_NoName extends BaseTest {
 				.addEmployee()
 				.addEmployeeNoName("fake@gmail.com","abcd!@#$23");
 		
-		assertEquals("Compila questo campo.", employee.getEmptyNameAlert());
+		assertEquals("Please fill out this field.", employee.getEmptyNameAlert());
 	 }
 }

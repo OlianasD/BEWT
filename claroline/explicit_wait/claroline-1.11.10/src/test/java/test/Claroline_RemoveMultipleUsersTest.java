@@ -19,7 +19,8 @@ public class Claroline_RemoveMultipleUsersTest extends BaseTest {
 				.removeUser()
 				.removeUser()
 				.removeUser();
-		assertEquals("Deletion of the user was done sucessfully",aup.getMessage());
+
+		assertTrue(aup.waitForMessageToBe("Deletion of the user was done sucessfully"));
 		assertTrue(!aup.getBodyText(driver).contains("testuser1"));
 		assertTrue(!aup.getBodyText(driver).contains("testuser2"));
 		assertTrue(!aup.getBodyText(driver).contains("testuser3"));

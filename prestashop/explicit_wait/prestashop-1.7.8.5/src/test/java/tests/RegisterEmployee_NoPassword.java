@@ -21,6 +21,6 @@ public class RegisterEmployee_NoPassword extends BaseTest {
 				.addEmployeeNoPassword("John", "Smith", "smith@gmail.com");
 		
 		
-		assertEquals("Compila questo campo.", employee.getEmptyPasswordAlert());
+		assertEquals("Please fill out this field.", employee.getEmptyPasswordAlert());
 	 }
 }

@@ -30,15 +30,14 @@ public class CurrencyRatesPage extends SettingsSidebar {
 	
 	@FindBy(xpath = "//*[@id=\"config-section\"]/div[2]/table/tbody/tr[2]/td[2]")
 	protected WebElement rateValue;
-	
-	protected Wait wait;
+
 
 	public CurrencyRatesPage(WebDriver driver) {
 		super(driver);
-		wait = new Wait(driver);
 	}
 	
 	public CurrencyRatesPage changeReferenceCurrency() {
+		wait.waitClickability(changeReferenceCurrency);
 		changeReferenceCurrency.click();
 		return new CurrencyRatesPage(driver);
 	}
@@ -51,23 +50,19 @@ public class CurrencyRatesPage extends SettingsSidebar {
 	}
 	
 	public CurrencyRatesPage save() {
+		wait.waitClickability(saveBtn);
 		saveBtn.click();
 		return new CurrencyRatesPage(driver);
 	}
 	
 	public CurrencyRatesPage addCurrencyRate() {
+		wait.waitClickability(addCurrencyRate);
 		addCurrencyRate.click();
 		return new CurrencyRatesPage(driver);
 	}
-	
-	public String getReferenceCurrency() {
-		try {
-			Thread.sleep(500);
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		return referenceCurrency.getText();
+
+	public boolean referenceCurrencyHasText(String expected) {
+		return wait.waitForTextToBe(By.xpath("//*[@id=\"config-section\"]/div[2]/div[2]"), expected);
 	}
 	
 	public CurrencyRatesPage setRate(String rt) {
@@ -82,6 +77,7 @@ public class CurrencyRatesPage extends SettingsSidebar {
 	}
 	
 	public String getRateValue() {
+		wait.waitVisibility(rateValue);
 		return rateValue.getText();
 	}
 	

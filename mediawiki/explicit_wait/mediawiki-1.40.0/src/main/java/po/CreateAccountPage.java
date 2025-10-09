@@ -4,6 +4,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import utils.Wait;
 
 public class CreateAccountPage extends PageObject {
 	
@@ -21,11 +22,13 @@ public class CreateAccountPage extends PageObject {
 	
 	@FindBy(id = "wpCreateaccount")
 	protected WebElement createAccountBtn;
+
+	protected Wait wait;
 	
 	
 	public CreateAccountPage(WebDriver driver) {
 		super(driver);
-		// TODO Auto-generated constructor stub
+		wait = new Wait(driver);
 	}
 	
 	public CreateAccountPage setUsername(String usr) {
@@ -54,7 +57,7 @@ public class CreateAccountPage extends PageObject {
 	}
 	
 	public String getSuccessMessage() {
-		return driver.findElement(By.xpath("//*[@id=\"mw-content-text\"]/p[1]")).getText();
+		return wait.waitVisibility(By.xpath("//*[@id=\"mw-content-text\"]/p[1]")).getText();
 	}
 	
 	public String getUsernameValidationMessage() {

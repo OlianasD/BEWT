@@ -1,6 +1,7 @@
 package tests;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 
 import org.junit.Test;
@@ -19,14 +20,14 @@ public class SetReferenceCurrency extends BaseTest {
 	@Test()
 	public void setReference() {
 		CurrencyRatesPage currencies = new LoginPage(driver)
-				.loginToKanboard("admin", "admin")
+				.loginToKanboard("admin", password)
 				.goToSettings()
 				.currencyRates()
 				.changeReferenceCurrency()
 				.selectCurrency("EUR - Euro")
 				.save();
 		
-		assertEquals("Reference currency: EUR", currencies.getReferenceCurrency());
+		assertTrue(currencies.referenceCurrencyHasText("Reference currency: EUR"));
 			  
 	}
 		  

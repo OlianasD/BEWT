@@ -11,10 +11,10 @@ public class CheckoutPage extends MainNavBar {
 
 	public CheckoutPage(WebDriver driver) {
 		super(driver);
-		// TODO Auto-generated constructor stub
 	}
 	
 	public ShippingPage continueToShipping() {
+		wait.waitClickability(continueToShippingBtn);
 		continueToShippingBtn.click();
 		return new ShippingPage(driver);
 	}

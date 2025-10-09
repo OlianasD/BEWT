@@ -12,14 +12,12 @@ public class MenuItemsPage extends SiteAdminPageObject {
 	@FindBy(className = "button-new")
 	protected WebElement createMenuItem;
 	
-	protected Wait wait;
-	
 	public MenuItemsPage(WebDriver driver) {
 		super(driver);
-		wait = new Wait(driver);
 	}
 	
 	public CreateMenuItemPage createMenuItem() {
+		wait.waitClickability(createMenuItem);
 		createMenuItem.click();
 		return new CreateMenuItemPage(driver);
 	}
@@ -30,7 +28,7 @@ public class MenuItemsPage extends SiteAdminPageObject {
 	}
 	
 	public boolean containsMenuItem(String title) {
-		return driver.findElement(By.id("menuitemList")).getText().contains(title);
+		return wait.waitVisibility(By.id("menuitemList")).getText().contains(title);
 	}
 
 }

@@ -18,9 +18,6 @@ public class AdminLogin extends PageObject {
 	@FindBy(name = "save")
 	protected WebElement loginBtn;
 	
-	@FindBy(id = "alert")
-	protected WebElement alert;
-	
 	protected Wait wait;
 	
 	public AdminLogin(WebDriver driver) {
@@ -29,34 +26,31 @@ public class AdminLogin extends PageObject {
 	}
 	
 	public AdminLogin setUsername(String usr) {
+		wait.waitClickability(username);
 		username.sendKeys(usr);
 		return this;
 	}
 	
 	public AdminLogin setPassword(String psw) {
+		wait.waitClickability(password);
 		password.sendKeys(psw);
 		return this;
 	}
 	
 	public AdminHome login() {
+		wait.waitClickability(loginBtn);
 		loginBtn.click();
 		return new AdminHome(driver);
 	}
 	
 	public AdminLogin badLogin() {
+		wait.waitClickability(loginBtn);
 		loginBtn.click();
 		return new AdminLogin(driver);
 	}
 	
 	public boolean isAlertVisible() {
-		try {
-			Thread.sleep(500);
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		wait.waitVisibility(driver.findElement(By.id("alert")));
-		return driver.findElement(By.id("alert")).isDisplayed();
+		return wait.waitClickabilityRefreshed(By.id("alert")).isDisplayed();
 	}
 	
 	public String getAlertText() {

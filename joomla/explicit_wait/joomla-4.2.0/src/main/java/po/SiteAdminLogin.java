@@ -40,17 +40,20 @@ public class SiteAdminLogin extends PageObject {
 	}
 	
 	public SiteAdminLogin setPassword(String psw) {
+		wait.waitClickability(password);
 		password.clear();
 		password.sendKeys(psw);
 		return this;
 	}
 	
 	public SiteAdminHome login() {
+		wait.waitClickability(loginBtn);
 		loginBtn.click();
 		return new SiteAdminHome(driver);
 	}
 	
 	public SiteAdminLogin badLogin() {
+		wait.waitClickability(loginBtn);
 		loginBtn.click();
 		return new SiteAdminLogin(driver);
 	}
@@ -61,10 +64,12 @@ public class SiteAdminLogin extends PageObject {
 	}
 	
 	public String getEmptyLoginAlert() {
+		wait.waitVisibility(emptyLoginAlert);
 		return emptyLoginAlert.getText();
 	}
 	
 	public String getEmptyPasswordAlert() {
+		wait.waitVisibility(emptyPasswordAlert);
 		return emptyPasswordAlert.getText();
 	}
 	

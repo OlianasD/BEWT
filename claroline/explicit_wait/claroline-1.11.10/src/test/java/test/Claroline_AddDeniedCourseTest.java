@@ -1,6 +1,7 @@
 package test;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 import org.junit.Test;
 
@@ -16,8 +17,8 @@ public class Claroline_AddDeniedCourseTest extends BaseTest {
 				.goToAdminPage()
 				.addCourse()
 				.addDeniedCourse("Course003", "003", "Humanities");
-		
-		assertEquals("You have just created the course website : 003", ccp.getMessage());
+
+		assertTrue(ccp.waitForMessageToBe("You have just created the course website : 003"));
 		ccp.goToAdminPage().doLogout();
 	}
 }

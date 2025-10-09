@@ -12,19 +12,19 @@ public class ProductsPage extends AdminSidebar {
 
 	public ProductsPage(WebDriver driver) {
 		super(driver);
-		// TODO Auto-generated constructor stub
 	}
 	
 	public String getFirstProductName() {
-		return driver.findElement(By.xpath("//*[@id=\"container\"]/div/main/div[3]/ul/li[2]/div/a")).getText();
+		return wait.waitVisibility(By.xpath("//*[@id=\"container\"]/div/main/div[3]/ul/li[2]/div/a")).getText();
 	}
 	
 	public EditProductPage goToProduct(String product) {
-		driver.findElement(By.linkText(product)).click();
+		wait.waitClickability(By.linkText(product)).click();
 		return new EditProductPage(driver);
 	}
 	
 	public ProductsPage deleteFirstProduct() {
+		wait.waitClickability(deleteFirstProdBtn);
 		deleteFirstProdBtn.click();
 		driver.switchTo().alert().accept();
 		driver.switchTo().defaultContent();
@@ -32,7 +32,7 @@ public class ProductsPage extends AdminSidebar {
 	}
 	
 	public boolean containsProduct(String product) {
-		return driver.findElement(By.xpath("/html/body/div[2]/div/main/div[3]/ul/li[2]/div/a")).getText().contains("NewProduct000");
+		return wait.waitVisibility(By.xpath("/html/body/div[2]/div/main/div[3]/ul/li[2]/div/a")).getText().contains(product);
 	}
 
 }

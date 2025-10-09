@@ -1,6 +1,7 @@
 package tests;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 
 import org.junit.Test;
@@ -18,7 +19,9 @@ public class AddEmptyFeature extends BaseTest {
 					.goToFeaturesTab()
 					.clickAddFeature()
 					.submitError();
-			 assertEquals("×\n"
-			 		+ "The field name is required at least in English (English).", feature.getAlertMessage());
+			 /*assertEquals("×\n"
+			 		+ "The field name is required at least in English (English).", feature.getAlertMessage());*/
+			 assertTrue(feature.waitForAlertMessageToBe("×\n"
+					 + "The field name is required at least in English (English)."));
 		 }
 	}

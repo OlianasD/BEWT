@@ -1,6 +1,7 @@
 package test;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 import org.junit.Test;
 
@@ -16,8 +17,8 @@ public class Claroline_AddWrongEmailUserTest extends BaseTest {
 				.goToAdminPage()
 				.addUser()
 				.addNewEmailStudent("user", "user", "user", "n0tl34k3dy3t", "n0tl34k3dy3t", "email");
-		
-		assertEquals("The email address is not valid",aanup.getMessage());
+
+		assertTrue(aanup.waitForMessageToBe("The email address is not valid"));
 		aanup.doLogout();
 	}
 }

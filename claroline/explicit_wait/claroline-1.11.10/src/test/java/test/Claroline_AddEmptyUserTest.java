@@ -1,6 +1,7 @@
 package test;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 import org.junit.Test;
 
@@ -17,8 +18,7 @@ public class Claroline_AddEmptyUserTest extends BaseTest {
 			.goToAdminPage()
 			.addUser()
 			.addNewStudent("", "", "", "", "");
-		
-		assertEquals("You left some required fields empty",aanup.getMessage());
+		assertTrue(aanup.waitForMessageToBe("You left some required fields empty"));
 		aanup.doLogout();
 	}
 }

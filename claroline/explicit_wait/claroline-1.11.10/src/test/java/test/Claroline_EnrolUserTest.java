@@ -1,6 +1,7 @@
 package test;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 import org.junit.Test;
 
@@ -17,8 +18,8 @@ public class Claroline_EnrolUserTest extends BaseTest {
 				.enrolToCourse()
 				.searchCourse("Course001")
 				.enrol();
-		
-		assertEquals("You've been enrolled on the course", acp.getMessage());
+
+		assertTrue(acp.waitForMessageToBe("You've been enrolled on the course"));
 		acp.doLogout();
 
 	}

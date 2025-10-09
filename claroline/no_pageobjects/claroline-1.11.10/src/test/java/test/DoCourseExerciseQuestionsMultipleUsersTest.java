@@ -7,8 +7,6 @@ import org.openqa.selenium.By;
 
 import static org.junit.Assert.assertTrue;
 
-import utils.Properties;
-
 public class DoCourseExerciseQuestionsMultipleUsersTest extends BaseTest {
 
 
@@ -31,7 +29,7 @@ public class DoCourseExerciseQuestionsMultipleUsersTest extends BaseTest {
 		driver.findElement(By.name("cmdOk")).click();
 		Thread.sleep(1000);
 		driver.findElement(By.linkText("Logout")).click();
-		driver.get(Properties.app_url);
+		driver.get(app_url);
 		driver.findElement(By.id("login")).clear();
 		driver.findElement(By.id("login")).sendKeys("testuser2");
 		driver.findElement(By.id("password")).clear();
@@ -49,7 +47,7 @@ public class DoCourseExerciseQuestionsMultipleUsersTest extends BaseTest {
 		driver.findElement(By.name("cmdOk")).click();
 		Thread.sleep(1000);
 		driver.findElement(By.linkText("Logout")).click();
-		driver.get(Properties.app_url);
+		driver.get(app_url);
 		driver.findElement(By.id("login")).clear();
 		driver.findElement(By.id("login")).sendKeys("testuser3");
 		driver.findElement(By.id("password")).clear();
@@ -67,7 +65,7 @@ public class DoCourseExerciseQuestionsMultipleUsersTest extends BaseTest {
 		driver.findElement(By.name("cmdOk")).click();
 		Thread.sleep(1000);
 		driver.findElement(By.linkText("Logout")).click();
-		driver.get(Properties.app_url);
+		driver.get(app_url);
 		driver.findElement(By.id("login")).clear();
 		driver.findElement(By.id("login")).sendKeys("admin");
 		driver.findElement(By.id("password")).clear();

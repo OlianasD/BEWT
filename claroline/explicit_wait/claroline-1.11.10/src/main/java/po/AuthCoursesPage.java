@@ -9,7 +9,6 @@ import org.openqa.selenium.support.PageFactory;
 import utils.Wait;
 
 public class AuthCoursesPage extends ClarolinePage{
-	private WebDriver driver;
 	@FindBy(id="coursesearchbox_keyword")
 	private WebElement searchBox;
 	@FindBy(css="button[type='submit']")
@@ -30,38 +29,46 @@ public class AuthCoursesPage extends ClarolinePage{
 	protected Wait wait;
 	
 	public AuthCoursesPage(WebDriver driver){
-		this.driver = driver;
+		super(driver);
 		wait = new Wait(driver);
 		PageFactory.initElements(driver, this);
 	}
 	
-	public AuthCoursesPage searchCourse(String course) throws InterruptedException{
+	public AuthCoursesPage searchCourse(String course)  {
+		wait.waitClickability(searchBox);
 		searchBox.sendKeys(course);
+		wait.waitClickability(searchButton);
 		searchButton.click();
 		return this;
 	}
 	
-	public AuthCoursesPage enrol() throws InterruptedException{
+	public AuthCoursesPage enrol() {
 		wait.waitClickability(enrolButton);
 		enrolButton.click();
 		return this;
 	}
 	
-	public AuthCoursesPage enrolPassword(String password) throws InterruptedException{
+	public AuthCoursesPage enrolPassword(String password) {
+		wait.waitClickability(enrolButton);
 		enrolButton.click();
+		wait.waitClickability(coursePsw);
 		coursePsw.sendKeys(password);
+		wait.waitClickability(submitPsw);
 		submitPsw.click();
 		return this;
 	}
 	
-	public AuthCoursesPage removeEnrol() throws InterruptedException{
+	public AuthCoursesPage removeEnrol() {
+		wait.waitClickability(removeEnrolButton);
 		removeEnrolButton.click();
+		wait.waitAlert();
 		Alert alert = driver.switchTo().alert();
 		alert.accept();
 		return this;
 	}
 	
 	public String getErrorMsg(){
+		wait.waitVisibility(errorMsg);
 		return errorMsg.getText();
 	}
 	

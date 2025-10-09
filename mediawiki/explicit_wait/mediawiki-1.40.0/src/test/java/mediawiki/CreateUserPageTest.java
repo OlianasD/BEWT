@@ -1,6 +1,7 @@
 package mediawiki;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 import org.junit.Test;
 
@@ -15,8 +16,8 @@ public class CreateUserPageTest extends BaseTest {
 				.createSource()
 				.setSourceText("This is my user page")
 				.saveSource();
-		
-		assertEquals(page.getTitle(), "User:User001");
+
+		assertTrue(page.waitFotTitleToBe("User:User001"));
 		assertEquals(page.getBody("This is my user page"), "This is my user page");
 	}
 	

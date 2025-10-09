@@ -16,7 +16,7 @@ public class ApplyTemplateTest extends BaseTest {
 			.editSource()
 			.editStart("{{Software|dev=Selenium|ver=3.141.59}}")
 			.saveSource();
-		assertEquals(page.getTitle(), "Selenium WebDriver");
+		assertTrue(page.waitFotTitleToBe("Selenium WebDriver"));
 		assertTrue(page.getBody("Developer: Selenium Latest version: 3.141.59").contains("Developer: Selenium Latest version: 3.141.59"));
 	}
 	

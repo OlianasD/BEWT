@@ -1,11 +1,10 @@
 package po;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-import utils.Waiter;
+import utils.Wait;
 
 public class AdminLoginPage extends TopNavBar {
 	
@@ -21,11 +20,11 @@ public class AdminLoginPage extends TopNavBar {
 	@FindBy(className = "alert-danger")
 	protected WebElement alert;
 	
-	protected Waiter wait;
+	protected Wait wait;
 
 	public AdminLoginPage(WebDriver driver) {
 		super(driver);
-		wait = new Waiter(driver);
+		wait = new Wait(driver);
 	}
 	
 	public AdminLoginPage setEmail(String mail) {

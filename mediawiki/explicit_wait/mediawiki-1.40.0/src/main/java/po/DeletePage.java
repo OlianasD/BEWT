@@ -4,30 +4,27 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import utils.Wait;
 
 public class DeletePage extends PageObject {
 	
 	@FindBy(id = "wpConfirmB")
 	protected WebElement deleteBtn;
 
+	protected Wait wait;
+
 	public DeletePage(WebDriver driver) {
 		super(driver);
-		// TODO Auto-generated constructor stub
+		wait = new Wait(driver);
 	}
 	
 	public DeletePage delete() {
 		deleteBtn.click();
 		return new DeletePage(driver);
 	}
-	
-	public String getSuccessMessage() {
-		try {
-			Thread.sleep(500);
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		return driver.findElement(By.xpath("//*[@id=\"mw-content-text\"]/p[1]")).getText();
+
+	public boolean waitForSuccessMessageToBe(String expected) {
+		return wait.waitForTextToBe(By.xpath("//*[@id=\"mw-content-text\"]/p[1]"), expected);
 	}
 
 }

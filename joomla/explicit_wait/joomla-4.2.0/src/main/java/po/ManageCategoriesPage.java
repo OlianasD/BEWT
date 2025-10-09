@@ -16,27 +16,28 @@ public class ManageCategoriesPage extends SiteAdminPageObject {
 	}
 	
 	public CreateCategoryPage addCategory() {
+		wait.waitClickability(addCategoryBtn);
 		addCategoryBtn.click();
 		return new CreateCategoryPage(driver);
 	}
 	
 	public boolean containsCategory(String title) {
-		return driver.findElement(By.id("categoryList")).getText().contains(title);
+		return wait.waitClickability(By.id("categoryList")).getText().contains(title);
 	}
 	
 	public ManageCategoriesPage selectThirdCategory() {
-		driver.findElement(By.id("cb2")).click();
+		wait.waitClickability(By.id("cb2")).click();
 		return this;
 	}
 	
 	public ManageCategoriesPage deleteSelectedCategory() {
-		driver.findElement(By.xpath("//*[@id=\"toolbar-status-group\"]/button")).click();
-		driver.findElement(By.xpath("//*[@id=\"status-group-children-trash\"]/button")).click();
+		wait.waitClickability(By.xpath("//*[@id=\"toolbar-status-group\"]/button")).click();
+		wait.waitClickability(By.xpath("//*[@id=\"status-group-children-trash\"]/button")).click();
 		return new ManageCategoriesPage(driver);
 	}
 	
 	public String getAlertMessage() {
-		return driver.findElement(By.className("alert-message")).getText();
+		return wait.waitVisibility(By.className("alert-message")).getText();
 	}
 
 }

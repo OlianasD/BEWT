@@ -1,6 +1,7 @@
 package mediawiki;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 import org.junit.Test;
 
@@ -21,7 +22,7 @@ public class AddCategoryTest extends BaseTest {
 			.setChangeDescription("Added category")
 			.confirmSave();
 		
-		assertEquals(page.getTitle(), "Selenium WebDriver");
+		assertTrue(page.waitForTitleToBe("Selenium WebDriver"));
 		assertEquals(page.getCategory(), "Browser automation tools");
 		
 	}

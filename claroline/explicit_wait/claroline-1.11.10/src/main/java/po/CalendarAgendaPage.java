@@ -6,9 +6,9 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
+import utils.Wait;
 
 public class CalendarAgendaPage extends ClarolinePage{
-	private WebDriver driver;
 	@FindBy(linkText="Add an event")
 	private WebElement add;
 	@FindBy(id="title")
@@ -27,25 +27,37 @@ public class CalendarAgendaPage extends ClarolinePage{
 	private WebElement removeEventLink;
 	@FindBy(linkText="My desktop")
 	private WebElement desktopLink;
+
+	protected Wait wait;
 	
 	public CalendarAgendaPage(WebDriver driver){
-		this.driver = driver;
+		super(driver);
 		PageFactory.initElements(driver, this);
+		wait = new Wait(driver);
 	}
 	
-	public CalendarAgendaPage addEvent(String tit, String dd, String mm, String yy, String loc) throws InterruptedException{
+	public CalendarAgendaPage addEvent(String tit, String dd, String mm, String yy, String loc) {
+		wait.waitClickability(add);
 		add.click();
+		wait.waitClickability(title);
 		title.sendKeys(tit);
+		wait.waitClickability(day);
 		new Select(day).selectByVisibleText(dd);
+		wait.waitClickability(month);
 		new Select(month).selectByVisibleText(mm);
+		wait.waitClickability(year);
 		new Select(year).selectByVisibleText(yy);
+		wait.waitClickability(location);
 		location.sendKeys(loc);
+		wait.waitClickability(confirm);
 		confirm.click();
 		return new CalendarAgendaPage(driver);
 	}
 	
-	public CalendarAgendaPage removeEvent() throws InterruptedException{
+	public CalendarAgendaPage removeEvent() {
+		wait.waitClickability(removeEventLink);
 		removeEventLink.click();
+		wait.waitAlert();
 		Alert alert = driver.switchTo().alert();
 		alert.accept();
 		return new CalendarAgendaPage(driver);

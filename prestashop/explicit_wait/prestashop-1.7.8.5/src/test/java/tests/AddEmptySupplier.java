@@ -18,6 +18,6 @@ public class AddEmptySupplier extends BaseTest {
 				.clickAddSupplier()
 				.addEmptySupplier();
 		
-		assertEquals("Compila questo campo.", suppliers.getEmptyNameAlert());
+		assertEquals("Please fill out this field.", suppliers.getEmptyNameAlert());
 	}
 }

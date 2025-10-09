@@ -1,9 +1,11 @@
 package po;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import utils.Wait;
 
 public class AddTagPage {
 	WebDriver driver;
@@ -17,10 +19,13 @@ public class AddTagPage {
 	WebElement remove;
 	@FindBy(xpath = "//*[@id=\"content\"]/div[3]/div")
 	WebElement alertMsg;
+
+	protected Wait wait;
 	
 	public AddTagPage(WebDriver driver) {
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
+		wait = new Wait(driver);
 	}
 
 	public TagsPage addTag(String nameStr) {
@@ -35,7 +40,12 @@ public class AddTagPage {
 	}
 	
 	public String getAlertMessage() {
+		wait.waitVisibility(alertMsg);
 		return alertMsg.getText();
+	}
+
+	public boolean waitForAlertMessageToBe(String expected) {
+		return wait.waitForTextToBe(By.xpath("//*[@id=\"content\"]/div[3]/div"), expected);
 	}
 
 }

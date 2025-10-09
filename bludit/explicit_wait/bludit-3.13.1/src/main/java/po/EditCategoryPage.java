@@ -17,20 +17,19 @@ public class EditCategoryPage extends NewCategoryPage {
 	@FindBy(xpath = "//*[@id=\"jsdeleteModal\"]/div/div/div[2]/button[2]")
 	protected WebElement confirmDeleteBtn;
 	
-	protected Wait wait;
-	
 	public EditCategoryPage(WebDriver driver) {
 		super(driver);
-		wait = new Wait(driver);
 	}
 	
 	public EditCategoryPage setUrl(String url) {
+		wait.waitClickability(this.url);
 		this.url.clear();
 		this.url.sendKeys(url);
 		return this;
 	}
 	
 	public EditCategoryPage delete() {
+		wait.waitClickability(deleteBtn);
 		deleteBtn.click();
 		return new EditCategoryPage(driver);
 	}

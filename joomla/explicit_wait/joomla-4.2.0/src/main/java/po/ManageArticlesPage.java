@@ -15,9 +15,9 @@ public class ManageArticlesPage extends SiteAdminPageObject {
 	}
 	
 	public ManageArticlesPage deleteFirstArticle() {
-		driver.findElement(By.id("cb0")).click();
-		driver.findElement(By.xpath("//*[@id=\"toolbar-status-group\"]/button")).click();
-		driver.findElement(By.xpath("//*[@id=\"status-group-children-trash\"]/button")).click();
+		wait.waitClickability(By.id("cb0")).click();
+		wait.waitClickability(By.xpath("//*[@id=\"toolbar-status-group\"]/button")).click();
+		wait.waitClickability(By.xpath("//*[@id=\"status-group-children-trash\"]/button")).click();
 		return this;
 	}
 	
@@ -28,22 +28,22 @@ public class ManageArticlesPage extends SiteAdminPageObject {
 	}
 	
 	public boolean containsArticle(String title) {
-		return driver.findElement(By.id("articleList")).getText().contains(title);
+		return wait.waitVisibility(By.id("articleList")).getText().contains(title);
 	}
 	
 	public EditArticleSiteAdminPage goToArticle(String article) {
-		driver.findElement(By.linkText(article)).click();
+		wait.waitClickability(By.linkText(article)).click();
 		return new EditArticleSiteAdminPage(driver);
 	}
 	
 	public String getFirstArticleCategory() {
-		return driver.findElement(By.xpath("//*[@id=\"articleList\"]/tbody/tr[1]/th/div/div[2]/a")).getText();
+		return wait.waitVisibility(By.xpath("//*[@id=\"articleList\"]/tbody/tr[1]/th/div/div[2]/a")).getText();
 	}
 	
 	public ManageArticlesPage archiveSecondArticle() {
-		driver.findElement(By.id("cb1")).click();
-		driver.findElement(By.xpath("//*[@id=\"toolbar-status-group\"]/button")).click();
-		driver.findElement(By.xpath("//*[@id=\"status-group-children-archive\"]/button")).click();
+		wait.waitClickability(By.id("cb1")).click();
+		wait.waitClickability(By.xpath("//*[@id=\"toolbar-status-group\"]/button")).click();
+		wait.waitClickability(By.xpath("//*[@id=\"status-group-children-archive\"]/button")).click();
 		return this;
 	}
 

@@ -8,13 +8,14 @@ import org.openqa.selenium.By;
 public class EditArticle extends BaseTest {
 	
 	@Test
-	public void editArticle() {
+	public void editArticle() throws Exception {
 		String expectedBody = "This is the body of the first article for testing the platformEDITED";
 		
 		driver.findElement(By.linkText("Author Login")).click();
 		driver.findElement(By.id("username")).sendKeys("administrator");
 		driver.findElement(By.id("password")).sendKeys(rootPassword);
 		driver.findElement(By.className("btn-primary")).click();
+		Thread.sleep(1000);
 		driver.findElement(By.linkText("Home")).click();
 		driver.findElement(By.xpath("/html/body/div/div/div/main/div[3]/div[1]/div[1]/div/div[2]/div/div/a/div")).click();
 		driver.switchTo().frame(driver.findElement(By.id("jform_articletext_ifr")));

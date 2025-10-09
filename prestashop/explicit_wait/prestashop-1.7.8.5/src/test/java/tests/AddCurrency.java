@@ -16,6 +16,7 @@ public class AddCurrency extends BaseTest {
 				.goToCurrency()
 				.clickAddCurrency()
 				.addCurrency("Something", "STH", "10");
-		assertTrue(currency.getSuccessMessage().contains("Successful creation"));
+		//assertTrue(currency.getSuccessMessage().contains("Successful creation"));
+		assertTrue(currency.waitForAlertToContainText("Successful creation"));
 	}
 }

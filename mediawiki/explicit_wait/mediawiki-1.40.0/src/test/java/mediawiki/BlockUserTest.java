@@ -18,7 +18,7 @@ public class BlockUserTest extends BaseTest {
 				.selectExpiry("indefinite")
 				.block();
 		
-		assertTrue(block.getMessage().contains("User001 has been blocked."));
+		assertTrue(block.waitForMessageToContain("User001 has been blocked."));
 	}
 	
 }

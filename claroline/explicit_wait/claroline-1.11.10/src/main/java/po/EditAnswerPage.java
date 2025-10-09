@@ -1,5 +1,6 @@
 package po;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -51,8 +52,9 @@ public class EditAnswerPage {
 	public EditQuestionPage addMCMA(String gr1, String gr2, String gr3) throws InterruptedException{
 		wait.waitClickability(addAnswer);
 		addAnswer.click();
-		Thread.sleep(500);
-		correct1.click();
+		//Thread.sleep(500);
+		WebElement correct1reloaded = wait.waitClickability(By.id("correct_1"));
+		correct1reloaded.click();
 		grade1.clear();
 		grade1.sendKeys(gr1);
 		grade2.clear();

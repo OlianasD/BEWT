@@ -16,6 +16,6 @@ public class AddNewCategory extends BaseTest {
 				.goToCategories()
 				.clickAddCategory()
 				.submitCategory("Winters Collection");
-		assertTrue(categories.getSuccessMessage().contains("Successful creation"));
+		assertTrue(categories.waitForAlertToContainText("Successful creation"));
 	}
 }

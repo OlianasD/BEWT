@@ -1,5 +1,7 @@
 package tests;
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
+
 import org.junit.Test;
 
 import po.AddCurrencyPage;
@@ -15,7 +17,9 @@ public class AddEmptyCurrency extends BaseTest {
 				.clickAddCurrency()
 				.addEmptyCurrency();
 		
-		assertEquals("The field names is required at least in your default language.", currency.getEmptyNameAlert());
-		assertEquals("The \"ISO code\" field is required.", currency.getEmptyIsoAlert());
+		//assertEquals("The field names is required at least in your default language.", currency.getEmptyNameAlert());
+		assertTrue(currency.waitForEmptyNameAlertToBe("The field names is required at least in your default language."));
+		//assertEquals("The \"ISO code\" field is required.", currency.getEmptyIsoAlert());
+		assertTrue(currency.waitForIsoAlertToBe("The \"ISO code\" field is required."));
 	}
 }

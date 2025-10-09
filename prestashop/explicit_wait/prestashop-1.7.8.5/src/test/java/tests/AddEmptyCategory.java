@@ -1,5 +1,5 @@
 package tests;
-import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 import org.junit.Test;
 
@@ -16,6 +16,7 @@ public class AddEmptyCategory extends BaseTest {
 				.goToCategories()
 				.clickAddCategory()
 				.submitEmptyCategory();
-		assertEquals("The field name is required at least in your default language.", category.getAlertMessage());
+		//assertEquals("The field name is required at least in your default language.", category.getAlertMessage());
+		assertTrue(category.waitForAlertTextToBe("The field name is required at least in your default language."));
 	}
 }

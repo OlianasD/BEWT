@@ -1,5 +1,6 @@
 package po;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -44,6 +45,10 @@ public class ProductsPage extends AdminSidebar {
 	public String getFirstProductName() {
 		wait.waitVisibility(firstProduct);
 		return firstProduct.getText();
+	}
+
+	public boolean waitForFirstProductToBe(String expected) {
+		return wait.waitForTextToBe(By.xpath("//*[@id=\"product_catalog_list\"]/div[2]/div/div/table/tbody/tr/td[4]/a"), expected);
 	}
 
 }

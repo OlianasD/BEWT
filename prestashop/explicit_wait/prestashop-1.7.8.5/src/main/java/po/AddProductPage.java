@@ -1,5 +1,6 @@
 package po;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -77,6 +78,10 @@ public class AddProductPage {
 	public String getAlertMessage() {
 		wait.waitVisibility(alertMsg);
 		return alertMsg.getText();
+	}
+
+	public boolean waitForAlertMessageToBe(String expected) {
+		return wait.waitForTextToBe(By.xpath("//*[@id=\"form_step1_name\"]/div/div[1]/ul"), expected);
 	}
 
 	public ProductsPage backToCatalog() {

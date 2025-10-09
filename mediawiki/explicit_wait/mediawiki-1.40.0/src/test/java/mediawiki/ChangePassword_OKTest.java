@@ -1,6 +1,7 @@
 package mediawiki;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 import org.junit.Test;
 
@@ -18,7 +19,7 @@ public class ChangePassword_OKTest extends BaseTest {
 			.confirmPassword("NewPassword001")
 			.change();
 		
-		assertEquals("Your credentials have been changed.", psw.getSuccessMessage());
+		assertTrue(psw.waitForSuccessMessageToBe("Your credentials have been changed."));
 		
 	}
 	

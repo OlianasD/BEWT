@@ -10,7 +10,6 @@ import org.openqa.selenium.support.ui.Select;
 import utils.Wait;
 
 public class CourseCreatePage extends ClarolinePage {
-	private WebDriver driver;
 	@FindBy(id="course_title")
 	private WebElement courseTitle;
 	@FindBy(id="course_officialCode")
@@ -37,52 +36,77 @@ public class CourseCreatePage extends ClarolinePage {
 	protected Wait wait;
 	
 	public CourseCreatePage(WebDriver driver){
-		this.driver = driver;
+		super(driver);
 		wait = new Wait(driver);
 		PageFactory.initElements(driver, this);
 	}
 	
 	public CourseCreatePage addAllowedCourse(String title, String code, String cat1, String cat2) throws InterruptedException{
+		wait.waitClickability(courseTitle);
 		courseTitle.sendKeys(title);
+		wait.waitClickability(courseCode);
 		courseCode.sendKeys(code);
+		wait.waitClickability(addCategoryList);
 		new Select(addCategoryList).selectByVisibleText(cat1);
+		wait.waitClickability(addCategoryButton);
 		addCategoryButton.click();
+		wait.waitClickability(addCategoryList);
 		new Select(addCategoryList).selectByVisibleText(cat2);
+		wait.waitClickability(addCategoryButton);
 		addCategoryButton.click();
+		wait.waitClickability(allowed);
 		allowed.click();
+		wait.waitClickability(public_access);
 		public_access.click();
+		wait.waitClickability(confirm);
 		confirm.click();
 		return new CourseCreatePage(driver);
 	}
 	
-	public CourseCreatePage addPasswordCourse(String title, String code, String cat1, String pass) throws InterruptedException{
+	public CourseCreatePage addPasswordCourse(String title, String code, String cat1, String pass) {
+		wait.waitClickability(courseTitle);
 		courseTitle.sendKeys(title);
+		wait.waitClickability(courseCode);
 		courseCode.sendKeys(code);
+		wait.waitClickability(addCategoryList);
 		new Select(addCategoryList).selectByVisibleText(cat1);
+		wait.waitClickability(addCategoryButton);
 		addCategoryButton.click();
+		wait.waitClickability(reserved);
 		reserved.click();
+		wait.waitClickability(password);
 		password.sendKeys(pass);
+		wait.waitClickability(public_access);
 		public_access.click();
+		wait.waitClickability(confirm);
 		confirm.click();
 		return new CourseCreatePage(driver);
 	}
 	
-	public CourseCreatePage addDeniedCourse(String title, String code, String cat1) throws InterruptedException{
+	public CourseCreatePage addDeniedCourse(String title, String code, String cat1) {
+		wait.waitClickability(courseTitle);
 		courseTitle.sendKeys(title);
+		wait.waitClickability(courseCode);
 		courseCode.sendKeys(code);
+		wait.waitClickability(addCategoryList);
 		new Select(addCategoryList).selectByVisibleText(cat1);
+		wait.waitClickability(addCategoryButton);
 		addCategoryButton.click();
+		wait.waitClickability(denied);
 		denied.click();
+		wait.waitClickability(confirm);
 		confirm.click();
 		return new CourseCreatePage(driver);
 	}
 	
-	public CourseCreatePage addEmptyCourse() throws InterruptedException{
+	public CourseCreatePage addEmptyCourse() {
+		wait.waitClickability(confirm);
 		confirm.click();
 		return new CourseCreatePage(driver);
 	}
 	
 	public AdminPage goToAdminPage(){
+		wait.waitClickability(continueLink);
 		continueLink.click();
 		AdminPage page = new AdminPage(driver);
 		return page;

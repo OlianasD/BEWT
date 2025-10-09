@@ -20,46 +20,50 @@ public class NewProductPage extends AdminSidebar {
 	
 	@FindBy(xpath = "//*[@id=\"productNewForm\"]/div[2]/div")
 	protected WebElement productTitleError;
-	
-	@FindBy(xpath = "//*[@id=\"productNewForm\"]/div[3]/div[1]/div")
-	protected WebElement productPriceError;
+
 
 	public NewProductPage(WebDriver driver) {
 		super(driver);
-		// TODO Auto-generated constructor stub
 	}
 	
 	public NewProductPage setTitle(String title) {
+		wait.waitClickability(productTitle);
 		productTitle.sendKeys(title);
 		return this;
 	}
 	
 	public NewProductPage setPrice(String price) {
+		wait.waitClickability(productPrice);
 		productPrice.sendKeys(price);
 		return this;
 	}
 	
 	public NewProductPage setDescr(String descr) {
+		wait.waitClickability(productDescr);
 		productDescr.sendKeys(descr);
 		return this;
 	}
 	
 	public AdminSidebar addProduct() {
+		wait.waitClickability(saveBtn);
 		saveBtn.click();
 		return new AdminSidebar(driver);
 	}
 	
 	public NewProductPage addProductError() {
+		wait.waitClickability(saveBtn);
 		saveBtn.click();
 		return new NewProductPage(driver);
 	}
 	
 	
 	public boolean productTitleHasError() {
+		wait.waitVisibility(productTitleError);
 		return productTitleError.getAttribute("class").contains("has-error has-danger");
 	}
 	
 	public boolean productPriceHasError() {
+		wait.waitVisibility(productTitleError);
 		return productTitleError.getAttribute("class").contains("has-error has-danger");
 	}
 

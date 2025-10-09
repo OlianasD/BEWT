@@ -1,6 +1,7 @@
 package mediawiki;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 import org.junit.Test;
 
@@ -15,7 +16,7 @@ public class DeletePageTest extends BaseTest {
 				.deletePage()
 				.delete();
 		
-		assertEquals("\"E2E Web Testing\" has been deleted. See deletion log for a record of recent deletions.", delete.getSuccessMessage());
+		assertTrue(delete.waitForSuccessMessageToBe("\"E2E Web Testing\" has been deleted. See deletion log for a record of recent deletions."));
 	}
 	
 }

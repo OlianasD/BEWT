@@ -5,7 +5,7 @@ import po.AdminLoginPage;
 import po.UsersPage;
 
 import static org.junit.Assert.assertEquals;
-
+import static org.junit.Assert.assertTrue;
 
 
 import org.junit.Test;
@@ -28,7 +28,8 @@ public class AddUserTest extends BaseTest {
 				.addUser()
 				.users();
 			
-			assertEquals(users.getThirdUserText(), "User: TestUser000 - (test000@test.com)\nRole: User");
+			//assertEquals(users.getThirdUserText(), "User: TestUser000 - (test000@test.com)\nRole: User");
+			assertTrue(users.waitForThirdUserTextToBe("User: TestUser000 - (test000@test.com)\nRole: User"));
 			users.logout();
 		
 	}

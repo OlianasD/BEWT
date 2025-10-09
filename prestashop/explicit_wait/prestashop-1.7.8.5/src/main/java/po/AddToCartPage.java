@@ -1,5 +1,6 @@
 package po;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -66,5 +67,9 @@ public class AddToCartPage {
 	public String getErrorMessage() {
 		wait.waitVisibility(tagMessage);
 		return tagMessage.getText();
+	}
+
+	public boolean waitForErrorMessageToContain(String expected) {
+		return wait.waitForTextToBeContained(By.id("js-cart-error-block"), expected);
 	}
 }

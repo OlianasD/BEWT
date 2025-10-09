@@ -14,6 +14,7 @@ public class PermissionsPage extends ProjectSidebar {
 	}
 	
 	public String getFirstAllowedUser() {
+		wait.waitVisibility(firstAllowed);
 		return firstAllowed.getText();
 	}
 

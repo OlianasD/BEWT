@@ -12,19 +12,19 @@ public class SearchResultsPage extends Home {
 
 	public SearchResultsPage(WebDriver driver) {
 		super(driver);
-		// TODO Auto-generated constructor stub
 	}
 	
 	
 	public String getFirstItemName() {
-		return driver.findElement(By.xpath("//*[@id=\"container\"]/div/div[1]/div[2]/div/div/div/a/h3")).getText();
+		return wait.waitVisibility(By.xpath("//*[@id=\"container\"]/div/div[1]/div[2]/div/div/div/a/h3")).getText();
 	}
 	
 	public String getSearchKey() {
+		wait.waitVisibility(searchKey);
 		return searchKey.getText();
 	}
 	
 	public String getDangerAlertText() {
-		return driver.findElement(By.className("text-danger")).getText();
+		return wait.waitVisibility(By.className("text-danger")).getText();
 	}
 }

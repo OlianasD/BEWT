@@ -1,6 +1,7 @@
 package test;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 import org.junit.Test;
 
@@ -17,7 +18,7 @@ public class Claroline_EnrolPasswordCourseGoodPasswordUserTest extends BaseTest 
 				.searchCourse("Course002")
 				.enrolPassword("n0tl34k3dy3t");
 		
-		assertEquals("You've been enrolled on the course", acp.getMessage());
+		assertTrue(acp.waitForMessageToBe("You've been enrolled on the course"));
 		acp.doLogout();
 	}
 }

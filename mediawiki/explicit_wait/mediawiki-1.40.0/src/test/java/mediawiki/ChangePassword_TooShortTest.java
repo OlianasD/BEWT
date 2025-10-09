@@ -1,6 +1,7 @@
 package mediawiki;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 import org.junit.Test;
 
@@ -18,7 +19,7 @@ public class ChangePassword_TooShortTest extends BaseTest {
 			.confirmPassword("vznb")
 			.change();
 		
-		assertEquals("Passwords must be at least 10 characters.", psw.getErrorMessage());
+		assertTrue(psw.waitForErrorMessageToBe("Passwords must be at least 10 characters."));
 		
 	}
 	

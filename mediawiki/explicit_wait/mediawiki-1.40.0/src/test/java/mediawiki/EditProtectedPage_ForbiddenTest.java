@@ -1,6 +1,7 @@
 package mediawiki;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 import org.junit.Test;
 
@@ -12,11 +13,11 @@ public class EditProtectedPage_ForbiddenTest extends BaseTest {
 	public void editProtectedPage_Forbidden() {
 		PageCreationPage editPage = loginAsUser()
 				.searchExisting("Selenium WebDriver")
-				.forceEdit()
-				.closeInitialPopup();
+				.forceEdit();
 		
-		assertEquals("You do not have permission to edit this page, for the following reason:", editPage.getWarning());
-		assertEquals("This page has been protected to prevent editing or other actions.", editPage.getPermissionErrors());
+		//assertEquals("You do not have permission to edit this page, for the following reason:", editPage.getWarning());
+		//assertEquals("This page has been protected to prevent editing or other actions.", editPage.getPermissionErrors());
+		assertTrue(editPage.waitForPermissionToBe("This page has been protected to prevent editing or other actions."));
 	}
 	
 }

@@ -19,6 +19,6 @@ public class EditAddress extends BaseTest {
 				.editAddress()
 				.editName("Bob");
 		
-		assertTrue(addresses.getSuccessMessage().contains("Update successful"));
+		assertTrue(addresses.waitForAlertToContainText("Update successful"));
 	}
 }

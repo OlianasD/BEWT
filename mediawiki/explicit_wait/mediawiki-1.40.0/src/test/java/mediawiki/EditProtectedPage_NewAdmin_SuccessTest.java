@@ -1,6 +1,7 @@
 package mediawiki;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 import org.junit.Test;
 
@@ -17,7 +18,7 @@ public class EditProtectedPage_NewAdmin_SuccessTest extends BaseTest {
 			.save()
 			.setChangeDescription("Page expanded")
 			.confirmSave();
-		assertEquals(page.getTitle(), "Selenium WebDriver");
+		assertTrue(page.waitFotTitleToBe("Selenium WebDriver"));
 		assertEquals(page.getBody("Developer: Selenium Latest version: 3.141.59Selenium is an open source umbrella project for a range of tools and libraries aimed at supporting browser automation. It provides a playback tool for authoring functional tests across most modern web browsers, without the need to learn a test scripting language (Selenium IDE). Selenium WebDriver accepts commands (sent in Selenese, or via a Client API) and sends them to a browser."), 
 				"Developer: Selenium Latest version: 3.141.59Selenium is an open source umbrella project for a range of tools and libraries aimed at supporting browser automation. It provides a playback tool for authoring functional tests across most modern web browsers, without the need to learn a test scripting language (Selenium IDE). Selenium WebDriver accepts commands (sent in Selenese, or via a Client API) and sends them to a browser.");
 	}

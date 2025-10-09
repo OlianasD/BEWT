@@ -17,6 +17,7 @@ public class EditManufacturer extends BaseTest {
 				.editManufacturer()
 				.addManufacturer("Smith Co");
 		
-		assertTrue(manufacturers.getSuccessMessage().contains("Successful update"));
+		//assertTrue(manufacturers.getSuccessMessage().contains("Successful update"));
+		assertTrue(manufacturers.waitForAlertToContainText("Successful update"));
 	}	 
 }

@@ -29,16 +29,19 @@ public class EditFieldPage extends PageObject {
 	}
 	
 	public EditFieldPage setTitle(String ttl) {
+		wait.waitClickability(title);
 		title.sendKeys(ttl);
 		return this;
 	}
 	
 	public EditFieldPage selectGroup(String group) {
+		wait.waitClickability(groupSelect);
 		new Select(groupSelect).selectByVisibleText(group);
 		return this;
 	}
 	
 	public ManageFieldsPage saveAndClose() {
+		wait.waitClickability(saveAndCloseBtn);
 		saveAndCloseBtn.click();
 		return new ManageFieldsPage(driver);
 	}
@@ -50,6 +53,7 @@ public class EditFieldPage extends PageObject {
 	}
 	
 	public String getEmptyTitleAlert() {
+		wait.waitVisibility(emptyTitleAlert);
 		return emptyTitleAlert.getText();
 	}
 	

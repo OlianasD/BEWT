@@ -2,6 +2,7 @@ package po;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebDriverException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -12,12 +13,6 @@ import utils.Wait;
 public class BaseNavBar {
 	
 	public WebDriver driver;
-	
-	@FindBy(linkText = Strings.viewIssues)
-	protected WebElement viewIssues;
-	
-	@FindBy(linkText = Strings.manage)
-	protected WebElement manage;
 	
 	@FindBy(className = "user-info")
 	protected WebElement logout;
@@ -34,13 +29,12 @@ public class BaseNavBar {
 	}
 	
 	public ManageNavBar manage() {
-		try {
-			Thread.sleep(500);
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		manage.click();
+		/*try {
+			wait.waitClickabilityRefreshed(By.linkText(Strings.manage)).click();
+		} catch(WebDriverException e) {
+			wait.waitClickabilityRefreshed(By.linkText(Strings.manage)).click();
+		}*/
+		wait.waitClickabilityRefreshed(By.linkText(Strings.manage)).click();
 		return new ManageNavBar(driver);
 	}
 	
@@ -51,13 +45,12 @@ public class BaseNavBar {
 	}
 	
 	public ViewIssuesPage viewIssues() {
-		try {
-			Thread.sleep(500);
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		viewIssues.click();
+		/*try {
+			wait.waitClickabilityRefreshed(By.linkText(Strings.viewIssues)).click();
+		} catch(WebDriverException e) {
+			wait.waitClickabilityRefreshed(By.linkText(Strings.viewIssues)).click();
+		}*/
+		wait.waitClickabilityRefreshed(By.linkText(Strings.viewIssues)).click();
 		return new ViewIssuesPage(driver);
 	}
 	

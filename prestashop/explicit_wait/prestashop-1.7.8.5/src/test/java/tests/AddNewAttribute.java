@@ -20,6 +20,6 @@ public class AddNewAttribute extends BaseTest {
 				.setPublicName("Qnt")
 				.submitAttribute();
 		
-		assertTrue(attributes.getSuccessMessage().contains("Successful creation"));
+		assertTrue(attributes.waitForAlertToContainText("Successful creation"));
 	}
 }

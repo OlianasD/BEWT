@@ -1,6 +1,7 @@
 package test;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 import org.junit.Test;
 
@@ -17,8 +18,8 @@ public class Claroline_SearchAndRemoveDeniedCourseTest extends BaseTest {
 				.advancedCourseSearch()
 				.searchDenied("Course003");
 		assertEquals("Course003",acp.getCourseName());
-		acp.removeCourse(3);
-		assertEquals("The course has been successfully deleted",acp.getMessage());
+		acp.removeCourse();
+		assertTrue(acp.waitForMessageToBe("The course has been successfully deleted"));
 		acp.doLogout();
 	}
 }

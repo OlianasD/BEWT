@@ -1,6 +1,7 @@
 package mediawiki;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 import org.junit.Test;
 
@@ -18,7 +19,7 @@ public class ChangePassword_TooCommonTest extends BaseTest {
 			.confirmPassword("password123")
 			.change();
 		
-		assertEquals("The password entered is in a list of very commonly used passwords. Please choose a more unique password.", psw.getErrorMessage());
+		assertTrue(psw.waitForErrorMessageToBe("The password entered is in a list of very commonly used passwords. Please choose a more unique password."));
 		
 	}
 	

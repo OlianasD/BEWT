@@ -8,7 +8,6 @@ import org.openqa.selenium.support.PageFactory;
 import utils.Wait;
 
 public class DesktopPage extends ClarolinePage{
-	private WebDriver driver;
 	@FindBy(linkText="Platform administration")
 	private WebElement platformAdminLink;
 	@FindBy(xpath=".//*[@id='userProfileBox']/h3/span")
@@ -26,7 +25,7 @@ public class DesktopPage extends ClarolinePage{
 	private Wait wait;
 	
 	public DesktopPage(WebDriver driver){
-		this.driver = driver;
+		super(driver);
 		PageFactory.initElements(driver, this);
 		wait = new Wait(driver);
 	}
@@ -51,6 +50,7 @@ public class DesktopPage extends ClarolinePage{
 	}
 	
 	public AuthCoursesPage removeEnrolFromCourse(){
+		wait.waitClickability(removeEnrolLink);
 		removeEnrolLink.click();
 		AuthCoursesPage page = new AuthCoursesPage(driver);
 		return page;
@@ -62,12 +62,10 @@ public class DesktopPage extends ClarolinePage{
 		CourseIndexPage page = new CourseIndexPage(driver);
 		return page;
 	}
-	
-	public void nextMonthAgenda() throws InterruptedException{
-		nextMonthAgendaLink.click();
-	}
+
 	
 	public ProfilePage goToMyUserAccount(){
+		wait.waitClickability(userAccountLink);
 		userAccountLink.click();
 		ProfilePage page = new ProfilePage(driver);
 		return page;

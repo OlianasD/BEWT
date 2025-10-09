@@ -1,24 +1,23 @@
-/media/sf_winhome/Dropbox/Test Suites Benchmark/explicit_wait/claroline-1.11.10/src/main/java/utils/Waiter.java
-/media/sf_winhome/Dropbox/Test Suites Benchmark/explicit_wait/claroline-1.11.10/src/main/java/po/AdvancedUserSearchPage.java
-/media/sf_winhome/Dropbox/Test Suites Benchmark/explicit_wait/claroline-1.11.10/src/main/java/po/EditQuestionPage.java
-/media/sf_winhome/Dropbox/Test Suites Benchmark/explicit_wait/claroline-1.11.10/src/main/java/po/EditExercisePage.java
-/media/sf_winhome/Dropbox/Test Suites Benchmark/explicit_wait/claroline-1.11.10/src/main/java/po/ProfilePage.java
-/media/sf_winhome/Dropbox/Test Suites Benchmark/explicit_wait/claroline-1.11.10/src/main/java/po/ClarolinePage.java
-/media/sf_winhome/Dropbox/Test Suites Benchmark/explicit_wait/claroline-1.11.10/src/main/java/po/DesktopPage.java
-/media/sf_winhome/Dropbox/Test Suites Benchmark/explicit_wait/claroline-1.11.10/src/main/java/po/CourseIndexPage.java
-/media/sf_winhome/Dropbox/Test Suites Benchmark/explicit_wait/claroline-1.11.10/src/main/java/po/AuthCoursesPage.java
-/media/sf_winhome/Dropbox/Test Suites Benchmark/explicit_wait/claroline-1.11.10/src/main/java/po/AdminAddNewUserPage.java
-/media/sf_winhome/Dropbox/Test Suites Benchmark/explicit_wait/claroline-1.11.10/src/main/java/po/AdminCoursesPage.java
-/media/sf_winhome/Dropbox/Test Suites Benchmark/explicit_wait/claroline-1.11.10/src/main/java/utils/Properties.java
-/media/sf_winhome/Dropbox/Test Suites Benchmark/explicit_wait/claroline-1.11.10/src/main/java/po/TrackExercisePage.java
-/media/sf_winhome/Dropbox/Test Suites Benchmark/explicit_wait/claroline-1.11.10/src/main/java/po/AdvancedCourseSearchPage.java
-/media/sf_winhome/Dropbox/Test Suites Benchmark/explicit_wait/claroline-1.11.10/src/main/java/po/CalendarAgendaPage.java
-/media/sf_winhome/Dropbox/Test Suites Benchmark/explicit_wait/claroline-1.11.10/src/main/java/po/EditAnswerPage.java
-/media/sf_winhome/Dropbox/Test Suites Benchmark/explicit_wait/claroline-1.11.10/src/main/java/po/ExercisePage.java
-/media/sf_winhome/Dropbox/Test Suites Benchmark/explicit_wait/claroline-1.11.10/src/main/java/po/TrackUserReportPage.java
-/media/sf_winhome/Dropbox/Test Suites Benchmark/explicit_wait/claroline-1.11.10/src/main/java/po/AdminPage.java
-/media/sf_winhome/Dropbox/Test Suites Benchmark/explicit_wait/claroline-1.11.10/src/main/java/po/ExerciseSubmitPage.java
-/media/sf_winhome/Dropbox/Test Suites Benchmark/explicit_wait/claroline-1.11.10/src/main/java/po/AdminUsersPage.java
-/media/sf_winhome/Dropbox/Test Suites Benchmark/explicit_wait/claroline-1.11.10/src/main/java/po/CourseCreatePage.java
-/media/sf_winhome/Dropbox/Test Suites Benchmark/explicit_wait/claroline-1.11.10/src/main/java/po/IndexPage.java
-/media/sf_winhome/Dropbox/Test Suites Benchmark/explicit_wait/claroline-1.11.10/src/main/java/po/UserPage.java
+C:\Users\User\Dropbox\Test Suites Benchmark\github\E2E Web Testing benchmark\claroline\explicit_wait\claroline-1.11.10\src\main\java\po\AdminUsersPage.java
+C:\Users\User\Dropbox\Test Suites Benchmark\github\E2E Web Testing benchmark\claroline\explicit_wait\claroline-1.11.10\src\main\java\utils\Wait.java
+C:\Users\User\Dropbox\Test Suites Benchmark\github\E2E Web Testing benchmark\claroline\explicit_wait\claroline-1.11.10\src\main\java\po\AdminCoursesPage.java
+C:\Users\User\Dropbox\Test Suites Benchmark\github\E2E Web Testing benchmark\claroline\explicit_wait\claroline-1.11.10\src\main\java\po\AuthCoursesPage.java
+C:\Users\User\Dropbox\Test Suites Benchmark\github\E2E Web Testing benchmark\claroline\explicit_wait\claroline-1.11.10\src\main\java\po\CourseIndexPage.java
+C:\Users\User\Dropbox\Test Suites Benchmark\github\E2E Web Testing benchmark\claroline\explicit_wait\claroline-1.11.10\src\main\java\po\ClarolinePage.java
+C:\Users\User\Dropbox\Test Suites Benchmark\github\E2E Web Testing benchmark\claroline\explicit_wait\claroline-1.11.10\src\main\java\po\EditQuestionPage.java
+C:\Users\User\Dropbox\Test Suites Benchmark\github\E2E Web Testing benchmark\claroline\explicit_wait\claroline-1.11.10\src\main\java\po\AdminAddNewUserPage.java
+C:\Users\User\Dropbox\Test Suites Benchmark\github\E2E Web Testing benchmark\claroline\explicit_wait\claroline-1.11.10\src\main\java\po\AdvancedCourseSearchPage.java
+C:\Users\User\Dropbox\Test Suites Benchmark\github\E2E Web Testing benchmark\claroline\explicit_wait\claroline-1.11.10\src\main\java\po\TrackExercisePage.java
+C:\Users\User\Dropbox\Test Suites Benchmark\github\E2E Web Testing benchmark\claroline\explicit_wait\claroline-1.11.10\src\main\java\po\DesktopPage.java
+C:\Users\User\Dropbox\Test Suites Benchmark\github\E2E Web Testing benchmark\claroline\explicit_wait\claroline-1.11.10\src\main\java\po\AdvancedUserSearchPage.java
+C:\Users\User\Dropbox\Test Suites Benchmark\github\E2E Web Testing benchmark\claroline\explicit_wait\claroline-1.11.10\src\main\java\po\UserPage.java
+C:\Users\User\Dropbox\Test Suites Benchmark\github\E2E Web Testing benchmark\claroline\explicit_wait\claroline-1.11.10\src\main\java\po\ExercisePage.java
+C:\Users\User\Dropbox\Test Suites Benchmark\github\E2E Web Testing benchmark\claroline\explicit_wait\claroline-1.11.10\src\main\java\po\ProfilePage.java
+C:\Users\User\Dropbox\Test Suites Benchmark\github\E2E Web Testing benchmark\claroline\explicit_wait\claroline-1.11.10\src\main\java\po\IndexPage.java
+C:\Users\User\Dropbox\Test Suites Benchmark\github\E2E Web Testing benchmark\claroline\explicit_wait\claroline-1.11.10\src\main\java\po\CourseCreatePage.java
+C:\Users\User\Dropbox\Test Suites Benchmark\github\E2E Web Testing benchmark\claroline\explicit_wait\claroline-1.11.10\src\main\java\po\AdminPage.java
+C:\Users\User\Dropbox\Test Suites Benchmark\github\E2E Web Testing benchmark\claroline\explicit_wait\claroline-1.11.10\src\main\java\po\EditAnswerPage.java
+C:\Users\User\Dropbox\Test Suites Benchmark\github\E2E Web Testing benchmark\claroline\explicit_wait\claroline-1.11.10\src\main\java\po\ExerciseSubmitPage.java
+C:\Users\User\Dropbox\Test Suites Benchmark\github\E2E Web Testing benchmark\claroline\explicit_wait\claroline-1.11.10\src\main\java\po\EditExercisePage.java
+C:\Users\User\Dropbox\Test Suites Benchmark\github\E2E Web Testing benchmark\claroline\explicit_wait\claroline-1.11.10\src\main\java\po\TrackUserReportPage.java
+C:\Users\User\Dropbox\Test Suites Benchmark\github\E2E Web Testing benchmark\claroline\explicit_wait\claroline-1.11.10\src\main\java\po\CalendarAgendaPage.java

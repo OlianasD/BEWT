@@ -16,12 +16,10 @@ public class SocialNetworksPage extends EditUserPage {
 	
 	@FindBy(xpath = "//*[@id=\"jsform\"]/div[1]/div/button")
 	protected WebElement saveBtn;
-	
-	protected Wait wait;
+
 
 	public SocialNetworksPage(WebDriver driver) {
 		super(driver);
-		wait = new Wait(driver);
 	}
 	
 	public SocialNetworksPage setFb(String fb) {
@@ -31,20 +29,24 @@ public class SocialNetworksPage extends EditUserPage {
 	}
 	
 	public SocialNetworksPage setIg(String ig) {
+		wait.waitClickability(instagram);
 		instagram.sendKeys(ig);
 		return this;
 	}
 	
 	public UsersPage save() {
+		wait.waitClickability(saveBtn);
 		saveBtn.click();
 		return new UsersPage(driver);
 	}
 	
 	public String getFb() {
+		wait.waitVisibility(facebook);
 		return facebook.getAttribute("value");
 	}
 	
 	public String getIg() {
+		wait.waitVisibility(instagram);
 		return instagram.getAttribute("value");
 	}
 	

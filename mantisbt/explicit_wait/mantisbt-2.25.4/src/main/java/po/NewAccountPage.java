@@ -2,6 +2,7 @@ package po;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebDriverException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -64,8 +65,12 @@ public class NewAccountPage extends ManageNavBar {
 	public ManageUsersPage createUser() {
 		wait.waitClickability(createUserBtn);
 		createUserBtn.click();
-		wait.waitClickability(By.linkText(Strings.manageUsers));
-		driver.findElement(By.linkText(Strings.manageUsers)).click();
+		/*try {
+			wait.waitClickabilityRefreshed(By.linkText(Strings.manageUsers)).click();
+		} catch(WebDriverException e) {
+			wait.waitClickabilityRefreshed(By.linkText(Strings.manageUsers)).click();
+		}*/
+		wait.waitClickabilityRefreshed(By.linkText(Strings.manageUsers)).click();
 		return new ManageUsersPage(driver);
 	}
 	

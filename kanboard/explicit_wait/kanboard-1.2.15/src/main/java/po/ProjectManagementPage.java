@@ -35,7 +35,9 @@ public class ProjectManagementPage extends PageObject {
 	}
 	
 	public ProjectManagementPage newTask() {
+		wait.waitClickability(projectDropDown);
 		projectDropDown.click();
+		wait.waitClickability(newTask);
 		newTask.click();
 		return new ProjectManagementPage(driver);
 	}
@@ -47,6 +49,7 @@ public class ProjectManagementPage extends PageObject {
 	}
 	
 	public ProjectManagementPage saveNewTask() {
+		wait.waitClickability(saveBtn);
 		saveBtn.click();
 		return new ProjectManagementPage(driver);
 	}

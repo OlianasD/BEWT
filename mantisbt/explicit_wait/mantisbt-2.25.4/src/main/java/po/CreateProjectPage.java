@@ -2,6 +2,7 @@ package po;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebDriverException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.Select;
@@ -9,10 +10,7 @@ import org.openqa.selenium.support.ui.Select;
 import utils.Wait;
 
 public class CreateProjectPage extends ManageNavBar {
-	
-	@FindBy(name = "name")
-	protected WebElement name;
-	
+
 	@FindBy(name = "status")
 	protected WebElement status;
 	
@@ -31,14 +29,12 @@ public class CreateProjectPage extends ManageNavBar {
 	}
 	
 	public CreateProjectPage setName(String nameStr) {
-		try {
-			Thread.sleep(500);
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		name.clear();
-		name.sendKeys(nameStr);
+		/*try {
+			wait.waitClickabilityRefreshed(By.name("name")).sendKeys(nameStr);
+		} catch(WebDriverException e) {
+			wait.waitClickabilityRefreshed(By.name("name")).sendKeys(nameStr);
+		}*/
+		wait.waitClickabilityRefreshed(By.name("name")).sendKeys(nameStr);
 		return this;
 	}
 	

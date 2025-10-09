@@ -37,12 +37,9 @@ public class NewUserPage extends TopNavBar {
 
 	@FindBy(xpath = "//*[@id=\"modal-content\"]/form/div[1]/div[1]/fieldset[2]/ul[2]")
 	protected WebElement pswConfirmError;
-	
-	protected Wait wait;
 
 	public NewUserPage(WebDriver driver) {
 		super(driver);
-		wait = new Wait(driver);
 	}
 
 	public NewUserPage setUsername(String usr) {
@@ -58,31 +55,37 @@ public class NewUserPage extends TopNavBar {
 	}
 
 	public NewUserPage setEmail(String mail) {
+		wait.waitClickability(formEmail);
 		formEmail.sendKeys(mail);
 		return this;
 	}
 
 	public NewUserPage setPassword(String psw) {
+		wait.waitClickability(formPassword);
 		formPassword.sendKeys(psw);
 		return this;
 	}
 
 	public NewUserPage confirmPassword(String psw) {
+		wait.waitClickability(formConfirm);
 		formConfirm.sendKeys(psw);
 		return this;
 	}
 
 	public NewUserPage setRemote() {
+		wait.waitClickability(remoteUser);
 		remoteUser.click();
 		return this;
 	}
 
 	public UserSummaryPage save() {
+		wait.waitClickability(saveBtn);
 		saveBtn.click();
 		return new UserSummaryPage(driver);
 	}
 
 	public NewUserPage saveError() {
+		wait.waitClickability(saveBtn);
 		saveBtn.click();
 		return new NewUserPage(driver);
 	}

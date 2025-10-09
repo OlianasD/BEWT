@@ -15,13 +15,7 @@ public class MainPage extends PageObject {
 	
 	@FindBy(linkText = "Create account")
 	protected WebElement createAccount;
-	
-	@FindBy(linkText = "Special pages")
-	protected WebElement specialPages;
-	
-	@FindBy(id = "searchInput")
-	protected WebElement searchBar;
-	
+
 	protected Wait wait;
 	
 
@@ -36,13 +30,7 @@ public class MainPage extends PageObject {
 	}
 	
 	public SpecialPagesPage specialPages() {
-		try {
-			Thread.sleep(500);
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		specialPages.click();
+		wait.waitClickability(By.linkText("Special pages")).click();
 		return new SpecialPagesPage(driver);
 	}
 	
@@ -52,24 +40,14 @@ public class MainPage extends PageObject {
 	}
 	
 	public SearchResultsPage searchNonExisting(String query) {
-		try {
-			Thread.sleep(500);
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		WebElement searchBar = wait.waitClickabilityRefreshed(By.id("searchInput"));
 		searchBar.sendKeys(query);
 		searchBar.sendKeys(Keys.ENTER);
 		return new SearchResultsPage(driver, query);
 	}
 	
 	public WikiPage searchExisting(String query) {
-		try {
-			Thread.sleep(500);
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		WebElement searchBar = wait.waitClickabilityRefreshed(By.id("searchInput"));
 		searchBar.sendKeys(query);
 		wait.waitClickability(By.className("highlight"));
 		searchBar.sendKeys(Keys.ENTER);
@@ -77,7 +55,7 @@ public class MainPage extends PageObject {
 	}
 	
 	public WikiPage goToUserPage(String user) {
-		driver.findElement(By.linkText(user)).click();
+		wait.waitClickability(By.linkText(user)).click();
 		return new WikiPage(driver);
 	}
 	

@@ -33,52 +33,60 @@ public class NewUserPage extends AdminSidebar {
 
 	public NewUserPage(WebDriver driver) {
 		super(driver);
-		// TODO Auto-generated constructor stub
 	}
 
 	public NewUserPage setUsername(String name) {
+		wait.waitClickability(userName);
 		userName.sendKeys(name);
 		return this;
 	}
 	
 	public NewUserPage setEmail(String mail) {
+		wait.waitClickability(email);
 		email.sendKeys(mail);
 		return this;
 	}
 	
 	public NewUserPage setPassword(String psw) {
+		wait.waitClickability(password);
 		password.sendKeys(psw);
 		return this;
 	}
 	
 	public NewUserPage setConfirmPassword(String psw) {
-		driver.findElement(By.xpath("//*[@id=\"userNewForm\"]/div[4]/input")).sendKeys(psw);
+		wait.waitClickability(By.xpath("//*[@id=\"userNewForm\"]/div[4]/input")).sendKeys(psw);
 		return this;
 	}
 	
 	public AdminSidebar addUser() {
+		wait.waitClickability(addBtn);
 		addBtn.click();
 		return new AdminSidebar(driver);
 	}
 	
 	public NewUserPage addUserError() {
+		wait.waitClickability(addBtn);
 		addBtn.click();
 		return new NewUserPage(driver);
 	}
 	
 	public boolean usernameFieldHasError() {
+		wait.waitVisibility(userNameError);
 		return userNameError.getAttribute("class").contains("has-error has-danger");
 	}
 	
 	public boolean emailFieldHasError() {
+		wait.waitVisibility(emailError);
 		return emailError.getAttribute("class").contains("has-error has-danger");
 	}
 	
 	public boolean passwordFieldHasError() {
+		wait.waitVisibility(passwordError);
 		return passwordError.getAttribute("class").contains("has-error has-danger");
 	}
 	
 	public boolean passwordConfirmFieldHasError() {
+		wait.waitVisibility(passwordConfirmError);
 		return passwordConfirmError.getAttribute("class").contains("has-error has-danger");
 	}
 }

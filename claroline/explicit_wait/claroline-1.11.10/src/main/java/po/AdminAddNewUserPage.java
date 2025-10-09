@@ -8,7 +8,7 @@ import org.openqa.selenium.support.PageFactory;
 import utils.Wait;
 
 public class AdminAddNewUserPage extends ClarolinePage{
-	private WebDriver driver;
+
 	@FindBy(id="lastname")
 	private WebElement lastName;
 	@FindBy(id="firstname")
@@ -37,13 +37,13 @@ public class AdminAddNewUserPage extends ClarolinePage{
 	protected Wait wait;
 	
 	public AdminAddNewUserPage(WebDriver driver){
-		this.driver = driver;
+		super(driver);
 		wait = new Wait(driver);
 		PageFactory.initElements(driver, this);
 	}
 	
 	public AdminAddNewUserPage addNewStudent(String last, String first, String user, String pass, String passConf) throws InterruptedException{
-		
+		wait.waitClickability(lastName);
 		lastName.sendKeys(last);
 		firstName.sendKeys(first);
 		userName.sendKeys(user);
@@ -56,7 +56,7 @@ public class AdminAddNewUserPage extends ClarolinePage{
 	}
 	
 	public AdminAddNewUserPage addNewEmailStudent(String last, String first, String user, String pass, String passConf, String mail) throws InterruptedException{
-		
+		wait.waitClickability(lastName);
 		lastName.sendKeys(last);
 		firstName.sendKeys(first);
 		userName.sendKeys(user);
@@ -70,7 +70,7 @@ public class AdminAddNewUserPage extends ClarolinePage{
 	}
 	
 	public AdminAddNewUserPage addNewTeacher(String last, String first, String user, String pass, String passConf) throws InterruptedException{
-		
+		wait.waitClickability(lastName);
 		lastName.sendKeys(last);
 		firstName.sendKeys(first);
 		userName.sendKeys(user);
@@ -83,7 +83,7 @@ public class AdminAddNewUserPage extends ClarolinePage{
 	}
 	
 	public AdminAddNewUserPage addNewAdmin(String last, String first, String user, String pass, String passConf) throws InterruptedException{
-		
+		wait.waitClickability(lastName);
 		lastName.sendKeys(last);
 		firstName.sendKeys(first);
 		userName.sendKeys(user);

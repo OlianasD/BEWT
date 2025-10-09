@@ -27,12 +27,10 @@ public class UserSecurityPage extends EditUserPage {
 	
 	@FindBy(id = "jsdeleteUserAndDeleteContent")
 	protected WebElement deleteBtn;
-	
-	protected Wait wait;
+
 
 	public UserSecurityPage(WebDriver driver) {
 		super(driver);
-		wait = new Wait(driver);
 	}
 	
 	
@@ -43,16 +41,19 @@ public class UserSecurityPage extends EditUserPage {
 	}
 	
 	public UserSecurityPage setPassword(String psw) {
+		wait.waitClickability(newPassword);
 		newPassword.sendKeys(psw);
 		return this;
 	}
 	
 	public UserSecurityPage confirmPassword(String psw) {
+		wait.waitClickability(confirmPassword);
 		confirmPassword.sendKeys(psw);
 		return this;
 	}
 	
 	public UsersPage save() {
+		wait.waitClickability(saveBtn);
 		saveBtn.click();
 		return new UsersPage(driver);
 	}

@@ -1,11 +1,10 @@
 package po;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-import utils.Waiter;
+import utils.Wait;
 
 public class MenuPage extends AdminSidebar {
 	
@@ -21,11 +20,11 @@ public class MenuPage extends AdminSidebar {
 	@FindBy(className = "alert-success")
 	protected WebElement alertSuccess;
 	
-	protected Waiter wait;
+	protected Wait wait;
 
 	public MenuPage(WebDriver driver) {
 		super(driver);
-		wait = new Waiter(driver);
+		wait = new Wait(driver);
 	}
 	
 	public MenuPage setName(String mName) {

@@ -11,10 +11,10 @@ public class MainNavBar extends TopNavBar {
 	
 	public MainNavBar(WebDriver driver) {
 		super(driver);
-		// TODO Auto-generated constructor stub
 	}
 	
 	public Home goHome() {
+		wait.waitClickability(homeBtn);
 		homeBtn.click();
 		return new Home(driver);
 	}

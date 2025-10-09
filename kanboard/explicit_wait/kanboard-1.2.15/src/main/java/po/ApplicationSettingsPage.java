@@ -2,6 +2,7 @@ package po;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebDriverException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.Select;
@@ -20,21 +21,28 @@ public class ApplicationSettingsPage extends SettingsSidebar {
 	
 	
 	public ApplicationSettingsPage selectLanguage(String lang) {
-		new Select(driver.findElement(By.id("form-application_language"))).selectByVisibleText(lang);
+		new Select(wait.waitClickability(By.id("form-application_language"))).selectByVisibleText(lang);
 		return this;
 	}
 	
 	public ApplicationSettingsPage save() {
+		wait.waitClickability(saveBtn);
 		saveBtn.click();
 		return new ApplicationSettingsPage(driver);
 	}
 	
 	public String getSelectedLanguage() {
-		wait.waitVisibility(By.id("form-application_language"));
-		return new Select(driver.findElement(By.id("form-application_language"))).getFirstSelectedOption().getText();
+		return new Select(wait.waitClickabilityRefreshed(By.id("form-application_language"))).getFirstSelectedOption().getText();
+		/*try {
+			return new Select(wait.waitClickabilityRefreshed(By.id("form-application_language"))).getFirstSelectedOption().getText();
+		} catch(WebDriverException e) {
+			return new Select(wait.waitClickabilityRefreshed(By.id("form-application_language"))).getFirstSelectedOption().getText();
+		}*/
+
 	}
 	
 	public String getLanguageLabel() {
+		wait.waitVisibility(languageLabel);
 		return languageLabel.getText();
 	}
 	

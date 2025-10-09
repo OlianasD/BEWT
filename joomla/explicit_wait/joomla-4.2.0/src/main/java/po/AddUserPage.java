@@ -3,6 +3,7 @@ package po;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import utils.Wait;
 
 public class AddUserPage extends PageObject {
 	
@@ -23,43 +24,51 @@ public class AddUserPage extends PageObject {
 	
 	@FindBy(className = "button-save")
 	protected WebElement saveAndClose;
+
+	protected Wait wait;
 	
 	public AddUserPage(WebDriver driver) {
 		super(driver);
-		// TODO Auto-generated constructor stub
+		wait = new Wait(driver);
 	}
 	
 	public AddUserPage setName(String nm) {
+		wait.waitClickability(name);
 		name.clear();
 		name.sendKeys(nm);
 		return this;
 	}
 	
 	public AddUserPage setLoginName(String user) {
+		wait.waitClickability(loginName);
 		loginName.clear();
 		loginName.sendKeys(user);
 		return this;
 	}
 	
 	public AddUserPage setPassword(String psw) {
+		wait.waitClickability(password);
 		password.clear();
 		password.sendKeys(psw);
 		return this;
 	}
 	
 	public AddUserPage confirmPassword(String psw) {
+		wait.waitClickability(confirmPassword);
 		confirmPassword.clear();
 		confirmPassword.sendKeys(psw);
 		return this;
 	}
 	
 	public AddUserPage setEmail(String mail) {
+		wait.waitClickability(email);
 		email.clear();
 		email.sendKeys(mail);
 		return this;
 	}
 	
 	public ManageUsersPage saveAndClose() {
+		wait.waitClickability(saveAndClose);
 		saveAndClose.click();
 		return new ManageUsersPage(driver);
 	}

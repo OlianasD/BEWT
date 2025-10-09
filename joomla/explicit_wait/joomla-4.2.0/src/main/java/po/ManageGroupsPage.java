@@ -16,14 +16,12 @@ public class ManageGroupsPage extends SiteAdminPageObject {
 	@FindBy(xpath = "//*[@id=\"toolbar-delete\"]/button")
 	protected WebElement deleteBtn;
 	
-	protected Wait wait;
-	
 	public ManageGroupsPage(WebDriver driver) {
 		super(driver);
-		wait = new Wait(driver);
 	}
 	
 	public CreateGroupPage createGroup() {
+		wait.waitClickability(newGroupBtn);
 		newGroupBtn.click();
 		return new CreateGroupPage(driver);
 	}
@@ -36,11 +34,13 @@ public class ManageGroupsPage extends SiteAdminPageObject {
 	public ManageGroupsPage selectIthGroup(int i) {
 		WebElement selector = driver.findElement(By.xpath("/html/body/div[1]/div[2]/section/div/div/main/form/div/div/div/table/tbody/tr["+i+"]/td[1]/input"));
 		new JavascriptExecutor(driver).scrollTo(selector);
+		wait.waitClickability(selector);
 		selector.click();
 		return this;
 	}
 	
 	public ManageGroupsPage deleteGroup() {
+		wait.waitClickability(deleteBtn);
 		deleteBtn.click();
 		driver.switchTo().alert().accept();
 		driver.switchTo().alert().accept();
@@ -49,7 +49,7 @@ public class ManageGroupsPage extends SiteAdminPageObject {
 	}
 	
 	public boolean isGroupPresent(String group) {
-		return driver.findElement(By.id("groupList")).getText().contains(group);
+		return wait.waitVisibility(By.id("groupList")).getText().contains(group);
 	}
 	
 

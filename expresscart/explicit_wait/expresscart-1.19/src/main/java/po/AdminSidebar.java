@@ -1,11 +1,10 @@
 package po;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-import utils.Waiter;
+import utils.Wait;
 
 public class AdminSidebar extends PageObject {
 	
@@ -39,12 +38,12 @@ public class AdminSidebar extends PageObject {
 	@FindBy(className = "alert-danger")
 	protected WebElement alert;
 	
-	protected Waiter wait;
+	protected Wait wait;
 
 	
 	public AdminSidebar(WebDriver driver) {
 		super(driver);
-		wait = new Waiter(driver);
+		wait = new Wait(driver);
 	}
 	
 	public NewUserPage newUser() {
@@ -60,6 +59,7 @@ public class AdminSidebar extends PageObject {
 	}
 	
 	public AdminLoginPage logout() {
+		wait.waitClickability(logout);
 		logout.click();
 		return new AdminLoginPage(driver);
 	}

@@ -21,10 +21,10 @@ public class CategoriesPage extends AdminSidebar {
 
 	public CategoriesPage(WebDriver driver) {
 		super(driver);
-		// TODO Auto-generated constructor stub
 	}
 	
 	public NewCategoryPage addCategory() {
+		wait.waitClickability(addCategory);
 		addCategory.click();
 		return new NewCategoryPage(driver);
 	}
@@ -35,20 +35,24 @@ public class CategoriesPage extends AdminSidebar {
 	}
 	
 	public String getFirstCategoryUrl() {
+		wait.waitVisibility(firstCategoryUrl);
 		return firstCategoryUrl.getText();
 	}
 	
 	public EditCategoryPage editCategory(String cat) {
+		wait.waitClickability(driver.findElement(By.linkText(cat)));
 		driver.findElement(By.linkText(cat)).click();
 		return new EditCategoryPage(driver);
 	}
 	
 	public SiteCategoryPage seeCategoryArticles(String catUrl) {
+		wait.waitClickability(driver.findElement(By.linkText("/category/"+catUrl)));
 		driver.findElement(By.linkText("/category/"+catUrl)).click();
 		return new SiteCategoryPage(driver);
 	}
 	
 	public boolean containsCategory(String cat) {
+		wait.waitVisibility(categoriesTable);
 		return categoriesTable.getText().contains(cat);
 	}
 

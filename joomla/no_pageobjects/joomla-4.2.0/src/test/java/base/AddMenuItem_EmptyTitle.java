@@ -35,6 +35,7 @@ public class AddMenuItem_EmptyTitle extends BaseTest {
 		driver.findElement(By.xpath("//*[@id=\"collapse0-heading\"]/button")).click();
 		driver.findElement(By.xpath("//*[@id=\"collapse0\"]/div/div/a[1]/div")).click();
 		driver.switchTo().defaultContent();
+		Thread.sleep(500);
 		driver.findElement(By.className("button-save")).click();
 		
 		assertEquals("Please fill in this field", driver.findElement(By.xpath("//*[@id=\"jform_title-lbl\"]/span[2]")).getText());

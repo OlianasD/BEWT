@@ -20,15 +20,14 @@ public class UsersPage extends AdminSidebar {
 	
 	@FindBy(xpath = "/html/body/div[3]/div/div[2]/table/tbody/tr[1]/td[1]/a")
 	protected WebElement firstUserName;
-	
-	protected Wait wait;
+
 	
 	public UsersPage(WebDriver driver) {
 		super(driver);
-		wait = new Wait(driver);
 	}
 	
 	public AddUserPage addUser() {
+		wait.waitClickability(addUser);
 		addUser.click();
 		return new AddUserPage(driver);
 	}
@@ -39,6 +38,7 @@ public class UsersPage extends AdminSidebar {
 	}
 	
 	public EditUserPage editSecondUser() {
+		wait.waitClickability(secondUserName);
 		secondUserName.click();
 		return new EditUserPage(driver);
 	}
@@ -55,6 +55,11 @@ public class UsersPage extends AdminSidebar {
 	}
 	
 	public boolean containsUser(String usr) {
+		/*try {
+			Thread.sleep(500);
+		} catch (InterruptedException e) {
+			throw new RuntimeException(e);
+		}*/
 		return driver.findElement(By.tagName("body")).getText().contains(usr);
 	}
 	

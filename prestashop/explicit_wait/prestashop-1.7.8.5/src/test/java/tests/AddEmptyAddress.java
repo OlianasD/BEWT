@@ -17,6 +17,6 @@ public class AddEmptyAddress extends BaseTest {
 				.addAddress()
 				.addEmptyAddress();
 		
-		assertEquals("Compila questo campo.", address.getEmailEmptyAlert());
+		assertEquals("Please fill out this field.", address.getEmailEmptyAlert());
 	}
 }

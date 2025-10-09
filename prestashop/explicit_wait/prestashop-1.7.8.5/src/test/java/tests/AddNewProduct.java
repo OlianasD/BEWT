@@ -1,5 +1,7 @@
 package tests;
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
+
 import org.junit.Test;
 
 import po.PrestaLogin;
@@ -18,7 +20,8 @@ public class AddNewProduct extends BaseTest {
 			.submitProduct()
 			.backToCatalog();
 			
-		assertEquals("Blue Jacket3", products.getFirstProductName());
+		//assertEquals("Blue Jacket3", products.getFirstProductName());
+		assertTrue(products.waitForFirstProductToBe("Blue Jacket3"));
 			
 	}
 		 

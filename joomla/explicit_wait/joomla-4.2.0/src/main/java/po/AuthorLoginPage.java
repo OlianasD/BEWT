@@ -23,27 +23,30 @@ public class AuthorLoginPage extends BaseNavBar {
 	
 	public AuthorLoginPage(WebDriver driver) {
 		super(driver);
-		// TODO Auto-generated constructor stub
 	}
 	
 	public AuthorLoginPage setUsername(String usr) {
+		wait.waitClickability(username);
 		username.clear();
 		username.sendKeys(usr);
 		return this;
 	}
 	
 	public AuthorLoginPage setPassword(String psw) {
+		wait.waitClickability(password);
 		password.clear();
 		password.sendKeys(psw);
 		return this;
 	}
 	
 	public ProfilePageInfo login() {
+		wait.waitClickability(loginBtn);
 		loginBtn.click();
 		return new ProfilePageInfo(driver);
 	}
 	
 	public AuthorLoginPage badLogin() {
+		wait.waitClickability(loginBtn);
 		loginBtn.click();
 		return new AuthorLoginPage(driver);
 	}
@@ -54,6 +57,7 @@ public class AuthorLoginPage extends BaseNavBar {
 	}
 	
 	public String getEmptyLoginAlert() {
+		wait.waitVisibility(emptyLoginAlert);
 		return emptyLoginAlert.getText();
 	}
 

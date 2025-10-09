@@ -1,9 +1,7 @@
 package po;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.StaleElementReferenceException;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 
 import utils.Wait;
@@ -15,13 +13,7 @@ public class WikiPage extends PageObject {
 	
 	@FindBy(xpath = "//*[@id=\"mw-content-text\"]")
 	protected WebElement body;
-	
-	@FindBy(linkText = "Edit")
-	protected WebElement edit;
-	
-	@FindBy(linkText = "Edit source")
-	protected WebElement editSource;
-	
+
 	@FindBy(linkText = "Create source")
 	protected WebElement createSource;
 	
@@ -29,11 +21,8 @@ public class WikiPage extends PageObject {
 	protected WebElement category;
 	
 	//@FindBy(id = "p-cactions-checkbox")
-	@FindBy(xpath = "//*[@id=\"p-cactions-checkbox\"]")
-	protected WebElement more;
-	
-	@FindBy(linkText = "View history")
-	protected WebElement viewHistory;
+	/*@FindBy(xpath = "//*[@id=\"p-cactions-checkbox\"]")
+	protected WebElement more;*/
 	
 	protected Wait wait;
 
@@ -41,16 +30,13 @@ public class WikiPage extends PageObject {
 		super(driver);
 		wait = new Wait(driver);
 	}
-	
-	public String getTitle() {
-		String ttl = "";
-		try {
-			ttl = title.getText();
-		} catch (StaleElementReferenceException e) {
-			title = driver.findElement(By.xpath("//*[@id=\"firstHeading\"]"));
-			ttl = title.getText();
-		}
-		return ttl;
+
+	public boolean waitFotTitleToBe(String expected) {
+		return wait.waitForTextToBe(By.id("firstHeading"), expected);
+	}
+
+	public boolean waitForTitleToBe(String expected) {
+		return wait.waitForTextToBe(By.xpath("//*[@id=\"firstHeading\"]"), expected);
 	}
 	
 	public String getBody(String expected) {
@@ -59,18 +45,12 @@ public class WikiPage extends PageObject {
 	}
 	
 	public PageCreationPage edit() {
-		try {
-			Thread.sleep(500);
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		edit.click();
+		wait.waitClickability(By.linkText("Edit")).click();
 		return new PageCreationPage(driver);
 	}
 	
 	public EditSourcePage editSource() {
-		editSource.click();
+		wait.waitClickabilityRefreshed(By.linkText("Edit source")).click();
 		return new EditSourcePage(driver);
 	}
 	
@@ -82,8 +62,7 @@ public class WikiPage extends PageObject {
 	public WikiPage goToLink(String link) {
 		By locator = By.linkText(link);
 		wait.waitStaleness(driver.findElement(locator));
-		wait.waitClickability(locator);
-		driver.findElement(locator).click();
+		wait.waitClickability(locator).click();
 		return new WikiPage(driver);
 	}
 	
@@ -93,24 +72,58 @@ public class WikiPage extends PageObject {
 	}
 	
 	public PageProtectPage protect() {
-		more.click();
-		By locator = By.linkText("Protect");
-		wait.waitClickability(locator);
-		driver.findElement(locator).click();
+		/*try {
+			Thread.sleep(1000);
+		} catch (InterruptedException e) {
+			throw new RuntimeException(e);
+		}
+		more.click();*/
+		Actions action = new Actions(driver);
+		action.moveToElement(driver.findElement(By.id("p-cactions-checkbox"))).build().perform();
+		/*try {
+			action.moveToElement(driver.findElement(By.id("p-cactions-checkbox"))).build().perform();
+		} catch(StaleElementReferenceException | NoSuchElementException e) {
+			action.moveToElement(driver.findElement(By.id("p-cactions-checkbox"))).build().perform();
+		}*/
+		/*By locator = By.linkText("Protect");
+		try {
+			Thread.sleep(1000);
+		} catch (InterruptedException e) {
+			throw new RuntimeException(e);
+		}
+		wait.waitClickability(locator);*/
+		/*try {
+			Thread.sleep(1000);
+		} catch (InterruptedException e) {
+			throw new RuntimeException(e);
+		}*/
+		wait.waitClickability(By.linkText("Protect")).click();
 		return new PageProtectPage(driver);
 	}
 	
 	public PageProtectPage changeProtectionLevel() {
-		try {
-			Thread.sleep(500);
+		/*try {
+			Thread.sleep(2000);
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		more.click();
-		By locator = By.linkText("Change protection");
-		wait.waitClickability(locator);
-		driver.findElement(locator).click();
+		wait.waitClickability(By.xpath("//*[@id=\"p-cactions-checkbox\"]")).click();*/
+		Actions action = new Actions(driver);
+		action.moveToElement(driver.findElement(By.id("p-cactions-checkbox"))).click().build().perform();
+		/*try {
+			action.moveToElement(driver.findElement(By.id("p-cactions-checkbox"))).click().build().perform();
+		} catch(WebDriverException e) {
+			System.out.println("!! WebDriver exception caught in WikiPage.changeProtectionLevel");
+			action.moveToElement(driver.findElement(By.id("p-cactions-checkbox"))).click().build().perform();
+		}*/
+		/*try {
+			Thread.sleep(2000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}*/
+		wait.waitClickability(By.xpath("//*[@id=\"ca-unprotect\"]/a")).click();
 		return new PageProtectPage(driver);
 	}
 	
@@ -120,12 +133,20 @@ public class WikiPage extends PageObject {
 	}
 	
 	public RevisionHistoryPage viewHistory() {
-		viewHistory.click();
+		wait.waitClickabilityRefreshed(By.linkText("View history")).click();
 		return new RevisionHistoryPage(driver);
 	}
 	
 	public DeletePage deletePage() {
-		more.click();
+		//wait.waitClickability(By.xpath("//*[@id=\"p-cactions-checkbox\"]")).click();
+		Actions action = new Actions(driver);
+		action.moveToElement(driver.findElement(By.id("p-cactions-checkbox"))).click().build().perform();
+		/*try {
+			action.moveToElement(driver.findElement(By.id("p-cactions-checkbox"))).click().build().perform();
+		} catch(WebDriverException e) {
+			System.out.println("!! WebDriver exception caught in WikiPage.deletePage");
+			action.moveToElement(driver.findElement(By.id("p-cactions-checkbox"))).click().build().perform();
+		}*/
 		By locator = By.linkText("Delete");
 		wait.waitClickability(locator);
 		driver.findElement(locator).click();
@@ -133,11 +154,16 @@ public class WikiPage extends PageObject {
 	}
 	
 	public String getMainRedirect() {
-		return driver.findElement(By.className("redirectText")).getText();
+		return wait.waitVisibility(By.className("redirectText")).getText();
 	}
 	
 	public String getSourceRedirect() {
 		return driver.findElement(By.className("mw-redirectedfrom")).getText();
+	}
+
+	public MainPage goHome(String appUrl) {
+		driver.get(appUrl);
+		return new MainPage(driver);
 	}
 
 }

@@ -1,5 +1,6 @@
 package po;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -78,5 +79,13 @@ public class AddCurrencyPage {
 	public String getEmptyNameAlert() {
 		wait.waitVisibility(emptyNameAlert);
 		return emptyNameAlert.getText();
+	}
+
+	public boolean waitForIsoAlertToBe(String expected) {
+		return wait.waitForTextToBe(By.xpath("//*[@id=\"currency\"]/div[1]/div/div[2]/div"), expected);
+	}
+
+	public boolean waitForEmptyNameAlertToBe(String expected) {
+		return wait.waitForTextToBe(By.xpath("//*[@id=\"currency_form\"]/div/div[2]/div/div[3]/div/div[3]/div"), expected);
 	}
 }

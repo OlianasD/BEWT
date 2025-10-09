@@ -19,15 +19,12 @@ public class AdvancedSettingsPage extends GeneralSettingsAbstractPage {
 	@FindBy(xpath = "//*[@id=\"select2-jshomepage-results\"]/li")
 	protected WebElement homeActualItem;
 	
-	@FindBy(id = "jsorderBy")
+	@FindBy(name = "orderBy")
 	protected WebElement orderSelect;
-	
-	protected Wait wait;
 	
 
 	public AdvancedSettingsPage(WebDriver driver) {
 		super(driver);
-		wait = new Wait(driver);
 	}
 	
 	public AdvancedSettingsPage setHome(String home) {
@@ -41,6 +38,7 @@ public class AdvancedSettingsPage extends GeneralSettingsAbstractPage {
 	}
 	
 	public AdvancedSettingsPage save() {
+		wait.waitClickability(saveBtn);
 		saveBtn.click();
 		return new AdvancedSettingsPage(driver);
 	}
@@ -52,25 +50,12 @@ public class AdvancedSettingsPage extends GeneralSettingsAbstractPage {
 	}
 	
 	public String getPostsOrder() {
-		try {
-			Thread.sleep(500);
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		wait.waitClickability(orderSelect);
-		return new Select(orderSelect).getFirstSelectedOption().getText();
+		WebElement orderBy = wait.waitClickability(By.name("orderBy"));
+		return new Select(orderBy).getFirstSelectedOption().getText();
 	}
 	
 	public String getSelectedHome() {
-		try {
-			Thread.sleep(500);
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		wait.waitVisibility(driver.findElement(By.id("select2-jshomepage-container")));
-		return driver.findElement(By.id("select2-jshomepage-container")).getAttribute("title");
+		return wait.waitClickabilityRefreshed(By.id("select2-jshomepage-container")).getAttribute("title");
 	}
 	
 	

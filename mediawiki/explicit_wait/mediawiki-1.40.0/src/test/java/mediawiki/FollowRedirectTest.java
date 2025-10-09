@@ -1,6 +1,7 @@
 package mediawiki;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 import org.junit.Test;
 
@@ -12,8 +13,8 @@ public class FollowRedirectTest extends BaseTest {
 	public void followRedirect() {
 		WikiPage page = loginAsAdmin()
 				.searchExisting("Testing");
-		
-		assertEquals("Software testing", page.getTitle());
+
+		assertTrue(page.waitFotTitleToBe("Software testing"));
 		assertEquals("(Redirected from Testing)", page.getSourceRedirect());
 	}
 	

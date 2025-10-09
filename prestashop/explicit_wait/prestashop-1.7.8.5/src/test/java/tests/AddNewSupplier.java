@@ -20,6 +20,6 @@ public class AddNewSupplier extends BaseTest {
 				.clickAddSupplier()
 				.addSupplier("John", "Via Fianle Ligure", "Finale Ligure");
 		
-		assertTrue(suppliers.getSuccessMessage().contains("Successful creation"));
+		assertTrue(suppliers.waitForAlertToContainText("Successful creation"));
 	}
 }

@@ -1,6 +1,7 @@
 package test;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 import org.junit.Test;
 
@@ -16,8 +17,8 @@ public class Claroline_AddWrongPasswordUserTest extends BaseTest {
 				.goToAdminPage()
 				.addUser()
 				.addNewStudent("user", "user", "user", "0v3rtlyC0mpl1c4t3dPsW", "D1ff3r3nt_0v3rtlyC0mpl1c4t3dPsW");
-		
-		assertEquals("You typed two different passwords",aanup.getMessage());
+
+		assertTrue(aanup.waitForMessageToBe("You typed two different passwords"));
 		aanup.doLogout();
 	}
 }

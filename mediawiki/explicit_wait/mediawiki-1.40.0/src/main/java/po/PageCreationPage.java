@@ -48,9 +48,7 @@ public class PageCreationPage extends PageObject {
 	}
 	
 	public PageCreationPage closeInitialPopup() {
-		By locator = By.xpath("/html/body/div[5]/div/div/div[1]/div[2]/div[3]/div/span[2]/a");
-		wait.waitClickability(locator);
-		driver.findElement(locator).click();
+		wait.waitClickability(By.xpath("/html/body/div[5]/div/div/div[1]/div[2]/div[3]/div/span[2]/a")).click();
 		return new PageCreationPage(driver);
 	}
 	
@@ -104,7 +102,8 @@ public class PageCreationPage extends PageObject {
 	}
 	
 	public PageCreationPage save() {
-		saveBtn.click();
+		wait.waitClickability(By.xpath("//*[@id=\"content\"]/div/div[1]/div/div[3]/div/div[1]/div[1]/div[4]/div/span/a/span[3]")).click();
+		//wait.waitClickability(By.xpath("//span[contains(text(), 'Save changes…')]")).click();
 		return new PageCreationPage(driver);
 	}
 	
@@ -130,16 +129,20 @@ public class PageCreationPage extends PageObject {
 	}
 	
 	public String getWarning() {
-		By locator = By.xpath("//*[@id=\"content\"]/div/div[1]/div/div[3]/div/div[2]/div[2]/div[1]/div[2]/div/div/p");
-		wait.waitVisibility(locator);
-		return driver.findElement(locator).getText();
+		//By locator = By.xpath("//*[@id=\"content\"]/div/div[1]/div/div[3]/div/div[2]/div[2]/div[1]/div[2]/div/div/p");
+		return wait.waitVisibility(By.xpath("//div[@class='ve-ui-mwNoticesPopupTool-item']/p")).getText();
 	}
 	
 	public String getPermissionErrors() {
 		return driver.findElement(By.className("permissions-errors")).getText();
 	}
+
+	public boolean waitForPermissionToBe(String expected) {
+		return wait.waitForTextToBeContained(By.className("permissions-errors"), expected);
+	}
 	
 	public String getBlankPageWarning() {
+		wait.waitVisibility(blankPageWarning);
 		return blankPageWarning.getText();
 	}
 	

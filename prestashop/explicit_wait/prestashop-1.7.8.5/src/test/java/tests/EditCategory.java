@@ -18,6 +18,6 @@ public class EditCategory extends BaseTest {
 				.editCategory()
 				.submitCategory("Fall Collection");
 		
-		assertTrue(categories.getSuccessMessage().contains("Successful update"));
+		assertTrue(categories.waitForAlertToContainText("Successful update"));
 	}	 
 }

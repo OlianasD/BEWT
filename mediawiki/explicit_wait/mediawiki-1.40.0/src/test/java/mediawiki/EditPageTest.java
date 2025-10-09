@@ -1,6 +1,7 @@
 package mediawiki;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 import org.junit.Test;
 
@@ -17,7 +18,7 @@ public class EditPageTest extends BaseTest {
 			.save()
 			.setChangeDescription("Page expanded")
 			.confirmSave();
-		assertEquals(page.getTitle(), "Software testing");
+		assertTrue(page.waitFotTitleToBe("Software testing"));
 		assertEquals(page.getBody("According to the IEEE/ANSI 1059 definition, software testing is the process of analyzing a software item to detect the differences between existing and required conditions (that is defects/errors/bugs) and to evaluate the features of the software item. Testing is performed by running test cases against the system under test (SUT) and collecting their results."), 
 				"According to the IEEE/ANSI 1059 definition, software testing is the process of analyzing a software item to detect the differences between existing and required conditions (that is defects/errors/bugs) and to evaluate the features of the software item. Testing is performed by running test cases against the system under test (SUT) and collecting their results.");
 

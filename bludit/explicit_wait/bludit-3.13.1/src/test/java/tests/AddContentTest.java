@@ -19,6 +19,6 @@ public class AddContentTest extends BaseTest {
 				.setTitle("Test Content")
 				.saveAndReturnToContentPage();
 		
-		assertEquals("Test Content", content.getFirstContentTitle());
+		assertEquals("Test Content", content.getFirstContentTitle("Test Content"));
 	}
 }

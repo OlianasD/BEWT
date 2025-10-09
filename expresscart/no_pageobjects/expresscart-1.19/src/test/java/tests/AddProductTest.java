@@ -1,7 +1,7 @@
 package tests;
 
 
-import static org.testng.AssertJUnit.assertEquals;
+import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
 import org.openqa.selenium.By;
@@ -21,7 +21,7 @@ public class AddProductTest extends BaseTest {
 		driver.findElement(By.xpath("//*[@id=\"editor-wrapper\"]/div/div[3]/div[2]")).sendKeys("Description for product 000");
 		driver.findElement(By.id("frm_edit_product_save")).click();
 		driver.findElement(By.xpath("//*[@id=\"container\"]/div/nav/div/ul[1]/li[3]/a[1]")).click();
-		
+		Thread.sleep(1000);
 		assertEquals( "NewProduct000", driver.findElement(By.xpath("//*[@id=\"container\"]/div/main/div[3]/ul/li[2]/div/a")).getText());	
 	}
 

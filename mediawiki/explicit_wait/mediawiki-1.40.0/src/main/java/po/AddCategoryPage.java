@@ -26,6 +26,7 @@ public class AddCategoryPage extends PageObject {
 	public AddCategoryPage addCategory(String cat) {
 		wait.waitClickability(addCategoryInput);
 		addCategoryInput.sendKeys(cat);
+		wait.waitAttributeToBeNotEmpty(addCategoryInput, "aria-activedescendant");
 		addCategoryInput.sendKeys(Keys.ENTER);
 		return this;
 	}

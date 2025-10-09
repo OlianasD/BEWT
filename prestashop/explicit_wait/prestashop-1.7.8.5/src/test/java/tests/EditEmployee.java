@@ -17,6 +17,6 @@ public class EditEmployee extends BaseTest {
 				.goToEmployees()
 				.editEmployee()
 				.editEmployee("Main Admin");
-		assertTrue(employees.getSuccessMessage().contains("Successful update"));
+		assertTrue(employees.waitForAlertToContainText("Successful update"));
 	}	 
 }

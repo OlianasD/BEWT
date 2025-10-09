@@ -15,6 +15,8 @@ public class ProtectPageTest extends BaseTest {
 			.protect()
 			.selectProtectionLevel()
 			.confirm()
+			.goHome(app_url)
+			.searchExisting("Selenium WebDriver")
 			.changeProtectionLevel();
 		
 		assertEquals("Allow only administrators", protection.getProtectionLevel());

@@ -17,11 +17,12 @@ public class AssignedGroupPage extends EditUserPage {
 	
 	//group id = 10
 	public AssignedGroupPage checkGroup(int id) {
-		driver.findElement(By.id("1group_"+id)).click();
+		wait.waitClickability(By.id("1group_"+id)).click();
 		return this;
 	}
 	
 	public ManageUsersPage saveAndClose() {
+		wait.waitClickability(saveAndCloseBtn);
 		saveAndCloseBtn.click();
 		return new ManageUsersPage(driver);
 	}

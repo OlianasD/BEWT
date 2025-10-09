@@ -3,6 +3,7 @@ package po;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import utils.Wait;
 
 public class CreateCategoryPage extends PageObject {
 	
@@ -14,29 +15,35 @@ public class CreateCategoryPage extends PageObject {
 	
 	@FindBy(xpath = "//*[@id=\"jform_title-lbl\"]/span[2]")
 	protected WebElement emptyTitleAlert;
+
+	protected Wait wait;
 	
 	public CreateCategoryPage(WebDriver driver) {
 		super(driver);
-		// TODO Auto-generated constructor stub
+		wait = new Wait(driver);
 	}
 	
 	public CreateCategoryPage setTitle(String ttl) {
+		wait.waitClickability(title);
 		title.clear();
 		title.sendKeys(ttl);
 		return this;
 	}
 	
 	public ManageCategoriesPage save() {
+		wait.waitClickability(saveBtn);
 		saveBtn.click();
 		return new ManageCategoriesPage(driver);
 	}
 	
 	public CreateCategoryPage saveError() {
+		wait.waitClickability(saveBtn);
 		saveBtn.click();
 		return new CreateCategoryPage(driver);
 	}
 	
 	public String getEmptyTitleAlert() {
+		wait.waitVisibility(emptyTitleAlert);
 		return emptyTitleAlert.getText();
 	}
 

@@ -12,10 +12,10 @@ public class ReviewsPage extends AdminSidebar {
 
 	public ReviewsPage(WebDriver driver) {
 		super(driver);
-		// TODO Auto-generated constructor stub
 	}
 	
 	public ReviewsPage deleteFirstReview() {
+		wait.waitClickability(firstReviewDelBtn);
 		firstReviewDelBtn.click();
 		driver.switchTo().alert().accept();
 		driver.switchTo().defaultContent();
@@ -23,7 +23,7 @@ public class ReviewsPage extends AdminSidebar {
 	}
 	
 	public boolean containsReview(String review) {
-		return driver.findElement(By.xpath("/html/body/div[2]/div/main/div[3]/ul/li[2]/div/div[1]/div")).getText().contains(review);
+		return wait.waitVisibility(By.xpath("/html/body/div[2]/div/main/div[3]/ul/li[2]/div/div[1]/div")).getText().contains(review);
 	}
 
 }

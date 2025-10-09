@@ -6,40 +6,56 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.time.Duration;
+
 public class Wait {
 	
 	protected WebDriverWait wait;
 	
 	public Wait(WebDriver driver) {
-		wait = new WebDriverWait(driver, 30);
+		wait = new WebDriverWait(driver, Duration.ofSeconds(30));
 	}
 	
 	public void waitVisibility(WebElement element) {
 		wait.until(ExpectedConditions.visibilityOf(element));
 	}
 	
-	public void waitVisibility(By locator) {
-		wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
+	public WebElement waitVisibility(By locator) {
+		return wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
 	}
 	
 	public void waitClickability(WebElement element) {
 		wait.until(ExpectedConditions.elementToBeClickable(element));
 	}
 	
-	public void waitClickability(By locator) {
-		wait.until(ExpectedConditions.elementToBeClickable(locator));
+	public WebElement waitClickability(By locator) {
+		return wait.until(ExpectedConditions.elementToBeClickable(locator));
 	}
 	
-	public void waitForTextToBe(By locator, String text) {
-		wait.until(ExpectedConditions.textToBe(locator, text));
+	public boolean waitForTextToBe(By locator, String text) {
+		return wait.until(ExpectedConditions.textToBe(locator, text));
 	}
 	
 	public boolean waitForTextToDisappear(By locator, String text) {
 		return wait.until(ExpectedConditions.invisibilityOfElementWithText(locator, text));
 	}
-	
-	public void waitVisibilityRefreshed(WebElement element) {
-		wait.until(ExpectedConditions.refreshed(ExpectedConditions.visibilityOf(element)));
+
+	public WebElement waitClickabilityRefreshed(By locator) {
+		return wait.until(ExpectedConditions.refreshed(ExpectedConditions.elementToBeClickable(locator)));
 	}
+
+	public WebElement waitVisibilityRefreshed(By locator) {
+		return wait.until(ExpectedConditions.refreshed(ExpectedConditions.visibilityOfElementLocated(locator)));
+	}
+
+	public void waitStaleness(WebElement element) {
+		wait.until(ExpectedConditions.stalenessOf(element));
+	}
+
+	public void waitStalenessRefreshed(WebElement element) {
+		wait.until(ExpectedConditions.refreshed(ExpectedConditions.stalenessOf(element)));
+	}
+
+
 	
 }

@@ -1,7 +1,7 @@
 package tests;
 
 
-import static org.testng.AssertJUnit.assertEquals;
+import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
 

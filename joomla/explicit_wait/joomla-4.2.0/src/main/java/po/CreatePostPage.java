@@ -26,6 +26,7 @@ public class CreatePostPage extends LoggedNavBar {
 	}
 	
 	public CreatePostPage setTitle(String ttl) {
+		wait.waitClickability(title);
 		title.clear();
 		title.sendKeys(ttl);
 		return this;
@@ -33,22 +34,25 @@ public class CreatePostPage extends LoggedNavBar {
 	
 	public CreatePostPage setBody(String post) {
 		driver.switchTo().frame(driver.findElement(By.id("jform_articletext_ifr")));
-		driver.findElement(By.id("tinymce")).sendKeys(post);
+		wait.waitClickability(By.id("tinymce")).sendKeys(post);
 		driver.switchTo().defaultContent();
 		return this;
 	}
 	
 	public LoggedHome save() {
+		wait.waitClickability(saveBtn);
 		saveBtn.click();
 		return new LoggedHome(driver);
 	}
 	
 	public CreatePostPage saveError() {
+		wait.waitClickability(saveBtn);
 		saveBtn.click();
 		return new CreatePostPage(driver);
 	}
 	
 	public String getEmptyTitleAlert() {
+		wait.waitVisibility(emptyTitleAlert);
 		return emptyTitleAlert.getText();
 	}
 

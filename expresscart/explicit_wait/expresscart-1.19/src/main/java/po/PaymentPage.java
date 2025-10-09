@@ -4,10 +4,8 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
-import utils.Waiter;
+import utils.Wait;
 
 public class PaymentPage extends MainNavBar {
 	
@@ -19,20 +17,19 @@ public class PaymentPage extends MainNavBar {
 	
 	@FindBy(className = "alert-danger")
 	protected WebElement alert;
-	
-	protected Waiter wait;
 
 	public PaymentPage(WebDriver driver) {
 		super(driver);
-		wait = new Waiter(driver);
 	}
 	
 	public PaymentPage setDiscountCode(String code) {
+		wait.waitClickability(discountCode);
 		discountCode.sendKeys(code);
 		return this;
 	}
 	
 	public PaymentPage addDiscountCode() {
+		wait.waitClickability(addDiscountCodeBtn);
 		addDiscountCodeBtn.click();		
 		return this;
 	}
