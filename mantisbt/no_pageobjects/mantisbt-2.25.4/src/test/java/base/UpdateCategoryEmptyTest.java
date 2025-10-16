@@ -19,7 +19,7 @@ public class UpdateCategoryEmptyTest extends BaseTest {
 		driver.findElement(By.id("proj-category-name")).clear();
 		driver.findElement(By.id("proj-category-name")).sendKeys("");
 		driver.findElement(By.xpath("//*[@id=\"manage-proj-category-update-form\"]/div/div[3]/input")).click();
-		Thread.sleep(1000);
+		Thread.sleep(2000);
 		
 		assertEquals(Strings.emptyCategoryError, driver.findElement(By.xpath("//*[@id=\"main-container\"]/div[2]/div[2]/div/div/div[2]/p[2]")).getText());
 		

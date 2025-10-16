@@ -21,17 +21,6 @@ public class Installer {
 	
 	@Test
 	public void install() throws IOException {
-		/*String cwd = new java.io.File(".").getCanonicalPath();
-		WebDriverManager.chromedriver().clearDriverCache().setup();
-		ChromeOptions chromeOptions = new ChromeOptions();
-		chromeOptions.addArguments("--no-sandbox", "--disable-gpu", "--window-size=1920x1080", "--allow-running-insecure-content", "--unsafely-treat-insecure-origin-as-secure=http://192.168.1.141", "--disable-features=InsecureDownloadWarnings");
-		Map<String, Object> prefs = new HashMap<String, Object>();
-		prefs.put("download.default_directory", cwd);
-		prefs.put("download.prompt_for_download", false);
-		prefs.put("download.directory_upgrade", true);
-		prefs.put("safebrowsing.enabled", false);
-		chromeOptions.setExperimentalOption("prefs", prefs);
-		driver = new ChromeDriver(chromeOptions);*/
 		ChromeOptions chromeOptions = new ChromeOptions();
 		chromeOptions.addArguments("--no-sandbox", /*"--headless=new",*/ "--disable-gpu", "--screen-info={1920x1080}", "--lang=en");
 		try {

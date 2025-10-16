@@ -1,5 +1,8 @@
 package mediawiki;
 
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.time.Duration;
 import java.util.concurrent.TimeUnit;
 
 import org.junit.After;
@@ -9,20 +12,37 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
+import org.openqa.selenium.remote.RemoteWebDriver;
 
 public class BaseTest {
 	
 	public static WebDriver driver;
-	
+	public static String appUrl = "http://192.168.1.141:8080";
+
 	@Before
 	public void login() {
-		WebDriverManager.chromedriver().clearDriverCache().setup();
-		ChromeOptions chromeOptions = new ChromeOptions();
-		chromeOptions.addArguments("--no-sandbox", "--headless", "--disable-gpu", "--window-size=1920x1080", "--lang=en");
-		driver = new ChromeDriver(chromeOptions);
-		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+		setupRemoteWebDriver();
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
 		driver.manage().window().maximize();
-		driver.get("http://localhost:8080");
+		driver.get(appUrl);
+	}
+
+	protected void setupNativeBrowser() {
+		ChromeOptions options = new ChromeOptions();
+		options.addArguments("--disable-search-engine-choice-screen", "--headless=new", "--disable-gpu", "--screen-info={1920x1080}", "--lang=en");
+		options.setBrowserVersion("127");
+		driver = new ChromeDriver(options);
+	}
+
+	protected void setupRemoteWebDriver() {
+		ChromeOptions options = new ChromeOptions();
+		options.addArguments("--no-sandbox", "--headless=new", "--disable-gpu", "--screen-info={1920x1080}", "--lang=en");
+		try {
+			driver = new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"), options);
+		} catch (MalformedURLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 	
 	

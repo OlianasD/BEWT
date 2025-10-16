@@ -21,6 +21,6 @@ public class AddEmptyAddress extends BaseTest {
 		
 		
 		assertTrue(driver.findElement(By.id("customer_address_customer_email"))
-				.getAttribute("validationMessage").contains("Compila questo campo."));
+				.getAttribute("validationMessage").contains("Please fill out this field."));
 	}
 }

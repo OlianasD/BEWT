@@ -21,6 +21,7 @@ public class ApplyTemplateTest extends BaseTest {
 		driver.findElement(By.id("searchInput")).sendKeys("Selenium WebDriver");
 		Thread.sleep(500);
 		driver.findElement(By.id("searchInput")).sendKeys(Keys.ENTER);
+		Thread.sleep(1000);
 		driver.findElement(By.linkText("Edit source")).click();
 		driver.findElement(By.id("wpTextbox1")).click();
 		driver.findElement(By.id("wpTextbox1")).sendKeys(Keys.chord(Keys.CONTROL, Keys.HOME));

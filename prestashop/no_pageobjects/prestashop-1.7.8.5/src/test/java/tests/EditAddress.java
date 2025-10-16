@@ -13,7 +13,7 @@ public class EditAddress extends BaseTest {
 	
 	
 	@Test()
-	public void test_edit_addressNoPO(){
+	public void test_edit_addressNoPO() throws InterruptedException {
 		driver.findElement(By.name("email")).sendKeys(adminMail);
 		driver.findElement(By.name("passwd")).sendKeys(adminPsw);
 		driver.findElement(By.name("submitLogin")).click();
@@ -23,7 +23,7 @@ public class EditAddress extends BaseTest {
 		driver.findElement(By.id("customer_address_first_name")).clear();
 		driver.findElement(By.id("customer_address_first_name")).sendKeys("Bob");
 		driver.findElement(By.id("save-button")).click();
-		
+		Thread.sleep(1000);
 		
 		assertTrue(driver.findElement(By.className("alert-text")).getText().contains("Update successful"));
 		

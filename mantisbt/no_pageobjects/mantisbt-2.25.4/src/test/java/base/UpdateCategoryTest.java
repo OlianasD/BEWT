@@ -20,7 +20,7 @@ public class UpdateCategoryTest extends BaseTest {
 		driver.findElement(By.id("proj-category-name")).clear();
 		driver.findElement(By.id("proj-category-name")).sendKeys(category);
 		driver.findElement(By.xpath("//*[@id=\"manage-proj-category-update-form\"]/div/div[3]/input")).click();
-		Thread.sleep(1000);
+		Thread.sleep(2000);
 		
 		assertEquals(category, driver.findElement(By.xpath("//*[@id=\"categories\"]/div/div[3]/div/div/table/tbody/tr[1]/td[1]")).getText());
 		

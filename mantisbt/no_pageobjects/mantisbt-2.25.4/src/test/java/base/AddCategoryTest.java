@@ -9,7 +9,7 @@ import utils.Strings;
 public class AddCategoryTest extends BaseTest {
 	
 	@Test
-	public void addCategory() {
+	public void addCategory() throws InterruptedException {
 		String projectName = "Project001";
 		String categoryName = "Category001";
 		
@@ -19,7 +19,7 @@ public class AddCategoryTest extends BaseTest {
 		driver.findElement(By.xpath("//*[@id=\"project-add-category-form\"]/fieldset/input[3]")).clear();
 		driver.findElement(By.xpath("//*[@id=\"project-add-category-form\"]/fieldset/input[3]")).sendKeys(categoryName);
 		driver.findElement(By.xpath("//*[@id=\"project-add-category-form\"]/fieldset/input[4]")).click();
-		
+		Thread.sleep(1000);
 		assertEquals(categoryName, driver.findElement(By.xpath("//*[@id=\"categories\"]/div/div[3]/div/div/table/tbody/tr[1]/td[1]")).getText());
 		
 		driver.findElement(By.className("user-info")).click();

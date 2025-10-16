@@ -9,7 +9,7 @@ import utils.Strings;
 public class DeleteProjectTest extends BaseTest {
 	
 	@Test
-	public void deleteProject() {
+	public void deleteProject() throws InterruptedException {
 		String projectName = "Project001";
 		
 		driver.findElement(By.linkText(Strings.manage)).click();
@@ -17,7 +17,7 @@ public class DeleteProjectTest extends BaseTest {
 		driver.findElement(By.linkText(projectName)).click();
 		driver.findElement(By.xpath("//*[@id=\"project-delete-form\"]/fieldset/input[3]")).click();
 		driver.findElement(By.xpath("//*[@id=\"main-container\"]/div[2]/div[2]/div/div/div[2]/form/input[4]")).click();
-		
+		Thread.sleep(1000);
 		assertFalse(driver.findElement(By.tagName("BODY")).getText().contains(projectName));
 		
 		driver.findElement(By.className("user-info")).click();

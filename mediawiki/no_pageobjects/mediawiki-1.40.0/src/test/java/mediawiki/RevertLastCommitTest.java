@@ -22,15 +22,15 @@ public class RevertLastCommitTest extends BaseTest {
 		driver.findElement(By.id("searchInput")).sendKeys("Selenium WebDriver");
 		Thread.sleep(500);
 		driver.findElement(By.id("searchInput")).sendKeys(Keys.ENTER);
-		Thread.sleep(500);
+		Thread.sleep(1000);
 		driver.findElement(By.linkText("View history")).click();
 		Thread.sleep(500);
 		driver.findElement(By.linkText("rollback 1 edit")).click();
 		
 		assertEquals("Reverted edits by User001 (talk | contribs | block); changed back to last revision by Admin (talk | contribs | block).", driver.findElement(By.xpath("//*[@id=\"mw-content-text\"]/p[1]")).getText());
-		
+		Thread.sleep(1000);
 		driver.findElement(By.linkText("Selenium WebDriver")).click();
-		
+		Thread.sleep(1000);
 		assertEquals("Selenium WebDriver", driver.findElement(By.xpath("//*[@id=\"firstHeading\"]")).getText());
 		assertEquals("Developer: Selenium Latest version: 3.141.59Selenium is an open source umbrella project for a range of tools and libraries aimed at supporting browser automation. It provides a playback tool for authoring functional tests across most modern web browsers, without the need to learn a test scripting language (Selenium IDE).",
 				driver.findElement(By.xpath("//*[@id=\"mw-content-text\"]")).getText());

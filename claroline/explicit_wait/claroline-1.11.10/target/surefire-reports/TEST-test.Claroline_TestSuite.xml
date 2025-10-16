@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="test.Claroline_TestSuite" time="41.038" tests="40" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="test.Claroline_TestSuite" time="59.236" tests="40" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.specification.version" value="21"/>
     <property name="sun.cpu.isalist" value="amd64"/>
@@ -15,7 +15,7 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="user.country" value="IT"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk-21\bin"/>
-    <property name="sun.java.command" value="C:\Users\User\AppData\Local\Temp\surefire8074102901758542839\surefirebooter-20251006202814749_3.jar C:\Users\User\AppData\Local\Temp\surefire8074102901758542839 2025-10-06T20-28-14_681-jvmRun1 surefire-20251006202814749_1tmp surefire_0-20251006202814749_2tmp"/>
+    <property name="sun.java.command" value="C:\Users\User\AppData\Local\Temp\surefire14577576047751235679\surefirebooter-20251012002250715_3.jar C:\Users\User\AppData\Local\Temp\surefire14577576047751235679 2025-10-12T00-22-50_632-jvmRun1 surefire-20251012002250715_1tmp surefire_0-20251012002250715_2tmp"/>
     <property name="jdk.debug" value="release"/>
     <property name="test" value="Claroline_TestSuite"/>
     <property name="surefire.test.class.path" value="C:\Users\User\Dropbox\Test Suites Benchmark\github\E2E Web Testing benchmark\claroline\explicit_wait\claroline-1.11.10\target\test-classes;C:\Users\User\Dropbox\Test Suites Benchmark\github\E2E Web Testing benchmark\claroline\explicit_wait\claroline-1.11.10\target\classes;C:\Users\User\.m2\repository\org\seleniumhq\selenium\selenium-java\4.35.0\selenium-java-4.35.0.jar;C:\Users\User\.m2\repository\org\seleniumhq\selenium\selenium-api\4.35.0\selenium-api-4.35.0.jar;C:\Users\User\.m2\repository\org\jspecify\jspecify\1.0.0\jspecify-1.0.0.jar;C:\Users\User\.m2\repository\org\seleniumhq\selenium\selenium-chrome-driver\4.35.0\selenium-chrome-driver-4.35.0.jar;C:\Users\User\.m2\repository\com\google\auto\service\auto-service-annotations\1.1.1\auto-service-annotations-1.1.1.jar;C:\Users\User\.m2\repository\org\seleniumhq\selenium\selenium-chromium-driver\4.35.0\selenium-chromium-driver-4.35.0.jar;C:\Users\User\.m2\repository\org\seleniumhq\selenium\selenium-json\4.35.0\selenium-json-4.35.0.jar;C:\Users\User\.m2\repository\org\seleniumhq\selenium\selenium-manager\4.35.0\selenium-manager-4.35.0.jar;C:\Users\User\.m2\repository\org\seleniumhq\selenium\selenium-devtools-v137\4.35.0\selenium-devtools-v137-4.35.0.jar;C:\Users\User\.m2\repository\org\seleniumhq\selenium\selenium-devtools-v138\4.35.0\selenium-devtools-v138-4.35.0.jar;C:\Users\User\.m2\repository\org\seleniumhq\selenium\selenium-devtools-v139\4.35.0\selenium-devtools-v139-4.35.0.jar;C:\Users\User\.m2\repository\org\seleniumhq\selenium\selenium-edge-driver\4.35.0\selenium-edge-driver-4.35.0.jar;C:\Users\User\.m2\repository\org\seleniumhq\selenium\selenium-firefox-driver\4.35.0\selenium-firefox-driver-4.35.0.jar;C:\Users\User\.m2\repository\org\seleniumhq\selenium\selenium-http\4.35.0\selenium-http-4.35.0.jar;C:\Users\User\.m2\repository\org\seleniumhq\selenium\selenium-ie-driver\4.35.0\selenium-ie-driver-4.35.0.jar;C:\Users\User\.m2\repository\org\seleniumhq\selenium\selenium-remote-driver\4.35.0\selenium-remote-driver-4.35.0.jar;C:\Users\User\.m2\repository\com\google\guava\guava\33.4.8-jre\guava-33.4.8-jre.jar;C:\Users\User\.m2\repository\com\google\guava\failureaccess\1.0.3\failureaccess-1.0.3.jar;C:\Users\User\.m2\repository\com\google\guava\listenablefuture\9999.0-empty-to-avoid-conflict-with-guava\listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar;C:\Users\User\.m2\repository\com\google\errorprone\error_prone_annotations\2.36.0\error_prone_annotations-2.36.0.jar;C:\Users\User\.m2\repository\com\google\j2objc\j2objc-annotations\3.0.0\j2objc-annotations-3.0.0.jar;C:\Users\User\.m2\repository\io\opentelemetry\opentelemetry-api\1.53.0\opentelemetry-api-1.53.0.jar;C:\Users\User\.m2\repository\io\opentelemetry\opentelemetry-context\1.53.0\opentelemetry-context-1.53.0.jar;C:\Users\User\.m2\repository\io\opentelemetry\opentelemetry-common\1.53.0\opentelemetry-common-1.53.0.jar;C:\Users\User\.m2\repository\io\opentelemetry\opentelemetry-exporter-logging\1.53.0\opentelemetry-exporter-logging-1.53.0.jar;C:\Users\User\.m2\repository\io\opentelemetry\opentelemetry-sdk-common\1.53.0\opentelemetry-sdk-common-1.53.0.jar;C:\Users\User\.m2\repository\io\opentelemetry\opentelemetry-sdk-extension-autoconfigure-spi\1.53.0\opentelemetry-sdk-extension-autoconfigure-spi-1.53.0.jar;C:\Users\User\.m2\repository\io\opentelemetry\opentelemetry-sdk-extension-autoconfigure\1.53.0\opentelemetry-sdk-extension-autoconfigure-1.53.0.jar;C:\Users\User\.m2\repository\io\opentelemetry\opentelemetry-sdk-trace\1.53.0\opentelemetry-sdk-trace-1.53.0.jar;C:\Users\User\.m2\repository\io\opentelemetry\opentelemetry-sdk\1.53.0\opentelemetry-sdk-1.53.0.jar;C:\Users\User\.m2\repository\io\opentelemetry\opentelemetry-sdk-metrics\1.53.0\opentelemetry-sdk-metrics-1.53.0.jar;C:\Users\User\.m2\repository\io\opentelemetry\opentelemetry-sdk-logs\1.53.0\opentelemetry-sdk-logs-1.53.0.jar;C:\Users\User\.m2\repository\net\bytebuddy\byte-buddy\1.17.6\byte-buddy-1.17.6.jar;C:\Users\User\.m2\repository\org\seleniumhq\selenium\selenium-os\4.35.0\selenium-os-4.35.0.jar;C:\Users\User\.m2\repository\org\apache\commons\commons-exec\1.5.0\commons-exec-1.5.0.jar;C:\Users\User\.m2\repository\org\seleniumhq\selenium\selenium-safari-driver\4.35.0\selenium-safari-driver-4.35.0.jar;C:\Users\User\.m2\repository\org\seleniumhq\selenium\selenium-support\4.35.0\selenium-support-4.35.0.jar;C:\Users\User\.m2\repository\io\github\bonigarcia\webdrivermanager\5.8.0\webdrivermanager-5.8.0.jar;C:\Users\User\.m2\repository\org\slf4j\slf4j-api\2.0.12\slf4j-api-2.0.12.jar;C:\Users\User\.m2\repository\com\google\code\gson\gson\2.10.1\gson-2.10.1.jar;C:\Users\User\.m2\repository\com\github\docker-java\docker-java\3.3.6\docker-java-3.3.6.jar;C:\Users\User\.m2\repository\com\github\docker-java\docker-java-core\3.3.6\docker-java-core-3.3.6.jar;C:\Users\User\.m2\repository\com\github\docker-java\docker-java-api\3.3.6\docker-java-api-3.3.6.jar;C:\Users\User\.m2\repository\com\fasterxml\jackson\core\jackson-annotations\2.10.3\jackson-annotations-2.10.3.jar;C:\Users\User\.m2\repository\com\fasterxml\jackson\core\jackson-databind\2.10.3\jackson-databind-2.10.3.jar;C:\Users\User\.m2\repository\com\fasterxml\jackson\core\jackson-core\2.10.3\jackson-core-2.10.3.jar;C:\Users\User\.m2\repository\org\bouncycastle\bcpkix-jdk18on\1.76\bcpkix-jdk18on-1.76.jar;C:\Users\User\.m2\repository\org\bouncycastle\bcprov-jdk18on\1.76\bcprov-jdk18on-1.76.jar;C:\Users\User\.m2\repository\org\bouncycastle\bcutil-jdk18on\1.76\bcutil-jdk18on-1.76.jar;C:\Users\User\.m2\repository\org\slf4j\jcl-over-slf4j\1.7.30\jcl-over-slf4j-1.7.30.jar;C:\Users\User\.m2\repository\com\github\docker-java\docker-java-transport-httpclient5\3.3.6\docker-java-transport-httpclient5-3.3.6.jar;C:\Users\User\.m2\repository\com\github\docker-java\docker-java-transport\3.3.6\docker-java-transport-3.3.6.jar;C:\Users\User\.m2\repository\net\java\dev\jna\jna\5.13.0\jna-5.13.0.jar;C:\Users\User\.m2\repository\org\brotli\dec\0.1.2\dec-0.1.2.jar;C:\Users\User\.m2\repository\org\apache\commons\commons-lang3\3.14.0\commons-lang3-3.14.0.jar;C:\Users\User\.m2\repository\org\apache\commons\commons-compress\1.26.1\commons-compress-1.26.1.jar;C:\Users\User\.m2\repository\commons-codec\commons-codec\1.16.1\commons-codec-1.16.1.jar;C:\Users\User\.m2\repository\commons-io\commons-io\2.15.1\commons-io-2.15.1.jar;C:\Users\User\.m2\repository\org\apache\httpcomponents\client5\httpclient5\5.2.1\httpclient5-5.2.1.jar;C:\Users\User\.m2\repository\org\apache\httpcomponents\core5\httpcore5\5.2\httpcore5-5.2.jar;C:\Users\User\.m2\repository\org\apache\httpcomponents\core5\httpcore5-h2\5.2\httpcore5-h2-5.2.jar;C:\Users\User\.m2\repository\junit\junit\4.12\junit-4.12.jar;C:\Users\User\.m2\repository\org\hamcrest\hamcrest-core\1.3\hamcrest-core-1.3.jar;"/>
@@ -31,7 +31,7 @@
     <property name="line.separator" value="&#10;"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
-    <property name="surefire.real.class.path" value="C:\Users\User\AppData\Local\Temp\surefire8074102901758542839\surefirebooter-20251006202814749_3.jar"/>
+    <property name="surefire.real.class.path" value="C:\Users\User\AppData\Local\Temp\surefire14577576047751235679\surefirebooter-20251012002250715_3.jar"/>
     <property name="user.script" value=""/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="java.runtime.version" value="21.0.2+13-LTS-58"/>
@@ -59,167 +59,364 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="65.0"/>
   </properties>
-  <testcase name="runTest" classname="test.Claroline_AddUserTest" time="2.37">
-    <system-out><![CDATA[Setting up remote web driver...
+  <testcase name="runTest" classname="test.Claroline_AddUserTest" time="2.196">
+    <system-out><![CDATA[Setting up native browser...
 ]]></system-out>
-    <system-err><![CDATA[ott 06, 2025 8:28:15 PM org.openqa.selenium.remote.tracing.opentelemetry.OpenTelemetryTracer createTracer
-INFO: Using OpenTelemetry for tracing
+    <system-err><![CDATA[ott 12, 2025 12:22:51 AM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find CDP implementation matching 127
+ott 12, 2025 12:22:51 AM org.openqa.selenium.chromium.ChromiumDriver lambda$new$4
+WARNING: Unable to find version of CDP to use for 127.0.6533.119. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.35.0` where the version ("v86") matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
 ]]></system-err>
   </testcase>
-  <testcase name="runTest" classname="test.Claroline_SearchUserTest" time="0.833">
-    <system-out><![CDATA[Setting up remote web driver...
+  <testcase name="runTest" classname="test.Claroline_SearchUserTest" time="1.08">
+    <system-out><![CDATA[Setting up native browser...
 ]]></system-out>
+    <system-err><![CDATA[ott 12, 2025 12:22:53 AM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find CDP implementation matching 127
+ott 12, 2025 12:22:53 AM org.openqa.selenium.chromium.ChromiumDriver lambda$new$4
+WARNING: Unable to find version of CDP to use for 127.0.6533.119. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.35.0` where the version ("v86") matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
+]]></system-err>
   </testcase>
-  <testcase name="runTest" classname="test.Claroline_LoginUserTest" time="0.56">
-    <system-out><![CDATA[Setting up remote web driver...
+  <testcase name="runTest" classname="test.Claroline_LoginUserTest" time="0.948">
+    <system-out><![CDATA[Setting up native browser...
 ]]></system-out>
+    <system-err><![CDATA[ott 12, 2025 12:22:54 AM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find CDP implementation matching 127
+ott 12, 2025 12:22:54 AM org.openqa.selenium.chromium.ChromiumDriver lambda$new$4
+WARNING: Unable to find version of CDP to use for 127.0.6533.119. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.35.0` where the version ("v86") matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
+]]></system-err>
   </testcase>
-  <testcase name="runTest" classname="test.Claroline_AddCourseTest" time="1.43">
-    <system-out><![CDATA[Setting up remote web driver...
+  <testcase name="runTest" classname="test.Claroline_AddCourseTest" time="1.568">
+    <system-out><![CDATA[Setting up native browser...
 ]]></system-out>
+    <system-err><![CDATA[ott 12, 2025 12:22:55 AM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find CDP implementation matching 127
+ott 12, 2025 12:22:55 AM org.openqa.selenium.chromium.ChromiumDriver lambda$new$4
+WARNING: Unable to find version of CDP to use for 127.0.6533.119. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.35.0` where the version ("v86") matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
+]]></system-err>
   </testcase>
-  <testcase name="runTest" classname="test.Claroline_SearchCourseTest" time="0.755">
-    <system-out><![CDATA[Setting up remote web driver...
+  <testcase name="runTest" classname="test.Claroline_SearchCourseTest" time="1.148">
+    <system-out><![CDATA[Setting up native browser...
 ]]></system-out>
+    <system-err><![CDATA[ott 12, 2025 12:22:57 AM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find CDP implementation matching 127
+ott 12, 2025 12:22:57 AM org.openqa.selenium.chromium.ChromiumDriver lambda$new$4
+WARNING: Unable to find version of CDP to use for 127.0.6533.119. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.35.0` where the version ("v86") matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
+]]></system-err>
   </testcase>
-  <testcase name="runTest" classname="test.Claroline_EnrolUserTest" time="0.767">
-    <system-out><![CDATA[Setting up remote web driver...
+  <testcase name="runTest" classname="test.Claroline_EnrolUserTest" time="1.145">
+    <system-out><![CDATA[Setting up native browser...
 ]]></system-out>
+    <system-err><![CDATA[ott 12, 2025 12:22:58 AM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find CDP implementation matching 127
+ott 12, 2025 12:22:58 AM org.openqa.selenium.chromium.ChromiumDriver lambda$new$4
+WARNING: Unable to find version of CDP to use for 127.0.6533.119. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.35.0` where the version ("v86") matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
+]]></system-err>
   </testcase>
-  <testcase name="runTest" classname="test.Claroline_AddCourseEventTest" time="1.257">
-    <system-out><![CDATA[Setting up remote web driver...
+  <testcase name="runTest" classname="test.Claroline_AddCourseEventTest" time="1.456">
+    <system-out><![CDATA[Setting up native browser...
 ]]></system-out>
+    <system-err><![CDATA[ott 12, 2025 12:22:59 AM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find CDP implementation matching 127
+ott 12, 2025 12:22:59 AM org.openqa.selenium.chromium.ChromiumDriver lambda$new$4
+WARNING: Unable to find version of CDP to use for 127.0.6533.119. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.35.0` where the version ("v86") matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
+]]></system-err>
   </testcase>
-  <testcase name="runTest" classname="test.Claroline_AddCourseExerciseTest" time="0.956">
-    <system-out><![CDATA[Setting up remote web driver...
+  <testcase name="runTest" classname="test.Claroline_AddCourseExerciseTest" time="1.294">
+    <system-out><![CDATA[Setting up native browser...
 ]]></system-out>
+    <system-err><![CDATA[ott 12, 2025 12:23:01 AM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find CDP implementation matching 127
+ott 12, 2025 12:23:01 AM org.openqa.selenium.chromium.ChromiumDriver lambda$new$4
+WARNING: Unable to find version of CDP to use for 127.0.6533.119. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.35.0` where the version ("v86") matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
+]]></system-err>
   </testcase>
-  <testcase name="runTest" classname="test.Claroline_MakeCourseExerciseVisibleTest" time="0.764">
-    <system-out><![CDATA[Setting up remote web driver...
+  <testcase name="runTest" classname="test.Claroline_MakeCourseExerciseVisibleTest" time="1.167">
+    <system-out><![CDATA[Setting up native browser...
 ]]></system-out>
+    <system-err><![CDATA[ott 12, 2025 12:23:02 AM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find CDP implementation matching 127
+ott 12, 2025 12:23:02 AM org.openqa.selenium.chromium.ChromiumDriver lambda$new$4
+WARNING: Unable to find version of CDP to use for 127.0.6533.119. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.35.0` where the version ("v86") matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
+]]></system-err>
   </testcase>
-  <testcase name="runTest" classname="test.Claroline_AddCourseExerciseQuestionsTest" time="2.379">
-    <system-out><![CDATA[Setting up remote web driver...
+  <testcase name="runTest" classname="test.Claroline_AddCourseExerciseQuestionsTest" time="2.586">
+    <system-out><![CDATA[Setting up native browser...
 ]]></system-out>
+    <system-err><![CDATA[ott 12, 2025 12:23:03 AM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find CDP implementation matching 127
+ott 12, 2025 12:23:03 AM org.openqa.selenium.chromium.ChromiumDriver lambda$new$4
+WARNING: Unable to find version of CDP to use for 127.0.6533.119. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.35.0` where the version ("v86") matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
+]]></system-err>
   </testcase>
-  <testcase name="runTest" classname="test.Claroline_DoCourseExerciseQuestionsTest" time="0.895">
-    <system-out><![CDATA[Setting up remote web driver...
+  <testcase name="runTest" classname="test.Claroline_DoCourseExerciseQuestionsTest" time="1.256">
+    <system-out><![CDATA[Setting up native browser...
 ]]></system-out>
+    <system-err><![CDATA[ott 12, 2025 12:23:06 AM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find CDP implementation matching 127
+ott 12, 2025 12:23:06 AM org.openqa.selenium.chromium.ChromiumDriver lambda$new$4
+WARNING: Unable to find version of CDP to use for 127.0.6533.119. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.35.0` where the version ("v86") matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
+]]></system-err>
   </testcase>
-  <testcase name="runTest" classname="test.Claroline_ViewProfileStatisticsUserTest" time="0.759">
-    <system-out><![CDATA[Setting up remote web driver...
+  <testcase name="runTest" classname="test.Claroline_ViewProfileStatisticsUserTest" time="1.151">
+    <system-out><![CDATA[Setting up native browser...
 ]]></system-out>
+    <system-err><![CDATA[ott 12, 2025 12:23:07 AM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find CDP implementation matching 127
+ott 12, 2025 12:23:07 AM org.openqa.selenium.chromium.ChromiumDriver lambda$new$4
+WARNING: Unable to find version of CDP to use for 127.0.6533.119. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.35.0` where the version ("v86") matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
+]]></system-err>
   </testcase>
-  <testcase name="runTest" classname="test.Claroline_AddMultipleUsersTest" time="1.614">
-    <system-out><![CDATA[Setting up remote web driver...
+  <testcase name="runTest" classname="test.Claroline_AddMultipleUsersTest" time="1.816">
+    <system-out><![CDATA[Setting up native browser...
 ]]></system-out>
+    <system-err><![CDATA[ott 12, 2025 12:23:08 AM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find CDP implementation matching 127
+ott 12, 2025 12:23:08 AM org.openqa.selenium.chromium.ChromiumDriver lambda$new$4
+WARNING: Unable to find version of CDP to use for 127.0.6533.119. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.35.0` where the version ("v86") matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
+]]></system-err>
   </testcase>
-  <testcase name="runTest" classname="test.Claroline_SearchMultipleUsersTest" time="0.781">
-    <system-out><![CDATA[Setting up remote web driver...
+  <testcase name="runTest" classname="test.Claroline_SearchMultipleUsersTest" time="1.201">
+    <system-out><![CDATA[Setting up native browser...
 ]]></system-out>
+    <system-err><![CDATA[ott 12, 2025 12:23:10 AM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find CDP implementation matching 127
+ott 12, 2025 12:23:10 AM org.openqa.selenium.chromium.ChromiumDriver lambda$new$4
+WARNING: Unable to find version of CDP to use for 127.0.6533.119. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.35.0` where the version ("v86") matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
+]]></system-err>
   </testcase>
-  <testcase name="runTest" classname="test.Claroline_SearchStudentTest" time="0.817">
-    <system-out><![CDATA[Setting up remote web driver...
+  <testcase name="runTest" classname="test.Claroline_SearchStudentTest" time="1.153">
+    <system-out><![CDATA[Setting up native browser...
 ]]></system-out>
+    <system-err><![CDATA[ott 12, 2025 12:23:11 AM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find CDP implementation matching 127
+ott 12, 2025 12:23:11 AM org.openqa.selenium.chromium.ChromiumDriver lambda$new$4
+WARNING: Unable to find version of CDP to use for 127.0.6533.119. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.35.0` where the version ("v86") matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
+]]></system-err>
   </testcase>
-  <testcase name="runTest" classname="test.Claroline_SearchTeacherTest" time="0.829">
-    <system-out><![CDATA[Setting up remote web driver...
+  <testcase name="runTest" classname="test.Claroline_SearchTeacherTest" time="1.165">
+    <system-out><![CDATA[Setting up native browser...
 ]]></system-out>
+    <system-err><![CDATA[ott 12, 2025 12:23:12 AM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find CDP implementation matching 127
+ott 12, 2025 12:23:12 AM org.openqa.selenium.chromium.ChromiumDriver lambda$new$4
+WARNING: Unable to find version of CDP to use for 127.0.6533.119. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.35.0` where the version ("v86") matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
+]]></system-err>
   </testcase>
-  <testcase name="runTest" classname="test.Claroline_SearchAdminTest" time="0.808">
-    <system-out><![CDATA[Setting up remote web driver...
+  <testcase name="runTest" classname="test.Claroline_SearchAdminTest" time="1.177">
+    <system-out><![CDATA[Setting up native browser...
 ]]></system-out>
+    <system-err><![CDATA[ott 12, 2025 12:23:13 AM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find CDP implementation matching 127
+ott 12, 2025 12:23:13 AM org.openqa.selenium.chromium.ChromiumDriver lambda$new$4
+WARNING: Unable to find version of CDP to use for 127.0.6533.119. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.35.0` where the version ("v86") matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
+]]></system-err>
   </testcase>
-  <testcase name="runTest" classname="test.Claroline_EnrolMultipleUsersTest" time="1.983">
-    <system-out><![CDATA[Setting up remote web driver...
+  <testcase name="runTest" classname="test.Claroline_EnrolMultipleUsersTest" time="2.103">
+    <system-out><![CDATA[Setting up native browser...
 ]]></system-out>
+    <system-err><![CDATA[ott 12, 2025 12:23:14 AM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find CDP implementation matching 127
+ott 12, 2025 12:23:14 AM org.openqa.selenium.chromium.ChromiumDriver lambda$new$4
+WARNING: Unable to find version of CDP to use for 127.0.6533.119. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.35.0` where the version ("v86") matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
+]]></system-err>
   </testcase>
-  <testcase name="runTest" classname="test.Claroline_DoCourseExerciseQuestionsMultipleUsersTest" time="2.437">
-    <system-out><![CDATA[Setting up remote web driver...
+  <testcase name="runTest" classname="test.Claroline_DoCourseExerciseQuestionsMultipleUsersTest" time="2.534">
+    <system-out><![CDATA[Setting up native browser...
 ]]></system-out>
+    <system-err><![CDATA[ott 12, 2025 12:23:17 AM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find CDP implementation matching 127
+ott 12, 2025 12:23:17 AM org.openqa.selenium.chromium.ChromiumDriver lambda$new$4
+WARNING: Unable to find version of CDP to use for 127.0.6533.119. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.35.0` where the version ("v86") matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
+]]></system-err>
   </testcase>
-  <testcase name="runTest" classname="test.Claroline_RemoveEnrolMultipleUsersTest" time="1.004">
-    <system-out><![CDATA[Setting up remote web driver...
+  <testcase name="runTest" classname="test.Claroline_RemoveEnrolMultipleUsersTest" time="1.395">
+    <system-out><![CDATA[Setting up native browser...
 ]]></system-out>
+    <system-err><![CDATA[ott 12, 2025 12:23:19 AM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find CDP implementation matching 127
+ott 12, 2025 12:23:19 AM org.openqa.selenium.chromium.ChromiumDriver lambda$new$4
+WARNING: Unable to find version of CDP to use for 127.0.6533.119. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.35.0` where the version ("v86") matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
+]]></system-err>
   </testcase>
-  <testcase name="runTest" classname="test.Claroline_RemoveMultipleUsersTest" time="0.982">
-    <system-out><![CDATA[Setting up remote web driver...
+  <testcase name="runTest" classname="test.Claroline_RemoveMultipleUsersTest" time="1.241">
+    <system-out><![CDATA[Setting up native browser...
 ]]></system-out>
+    <system-err><![CDATA[ott 12, 2025 12:23:21 AM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find CDP implementation matching 127
+ott 12, 2025 12:23:21 AM org.openqa.selenium.chromium.ChromiumDriver lambda$new$4
+WARNING: Unable to find version of CDP to use for 127.0.6533.119. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.35.0` where the version ("v86") matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
+]]></system-err>
   </testcase>
-  <testcase name="runTest" classname="test.Claroline_AddEmptyUserTest" time="0.825">
-    <system-out><![CDATA[Setting up remote web driver...
+  <testcase name="runTest" classname="test.Claroline_AddEmptyUserTest" time="1.14">
+    <system-out><![CDATA[Setting up native browser...
 ]]></system-out>
+    <system-err><![CDATA[ott 12, 2025 12:23:22 AM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find CDP implementation matching 127
+ott 12, 2025 12:23:22 AM org.openqa.selenium.chromium.ChromiumDriver lambda$new$4
+WARNING: Unable to find version of CDP to use for 127.0.6533.119. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.35.0` where the version ("v86") matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
+]]></system-err>
   </testcase>
-  <testcase name="runTest" classname="test.Claroline_AddWrongEmailUserTest" time="0.875">
-    <system-out><![CDATA[Setting up remote web driver...
+  <testcase name="runTest" classname="test.Claroline_AddWrongEmailUserTest" time="1.214">
+    <system-out><![CDATA[Setting up native browser...
 ]]></system-out>
+    <system-err><![CDATA[ott 12, 2025 12:23:23 AM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find CDP implementation matching 127
+ott 12, 2025 12:23:23 AM org.openqa.selenium.chromium.ChromiumDriver lambda$new$4
+WARNING: Unable to find version of CDP to use for 127.0.6533.119. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.35.0` where the version ("v86") matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
+]]></system-err>
   </testcase>
-  <testcase name="runTest" classname="test.Claroline_AddTwiceUserTest" time="0.857">
-    <system-out><![CDATA[Setting up remote web driver...
+  <testcase name="runTest" classname="test.Claroline_AddTwiceUserTest" time="1.739">
+    <system-out><![CDATA[Setting up native browser...
 ]]></system-out>
+    <system-err><![CDATA[ott 12, 2025 12:23:24 AM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find CDP implementation matching 127
+ott 12, 2025 12:23:24 AM org.openqa.selenium.chromium.ChromiumDriver lambda$new$4
+WARNING: Unable to find version of CDP to use for 127.0.6533.119. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.35.0` where the version ("v86") matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
+]]></system-err>
   </testcase>
-  <testcase name="runTest" classname="test.Claroline_AddWrongPasswordUserTest" time="0.864">
-    <system-out><![CDATA[Setting up remote web driver...
+  <testcase name="runTest" classname="test.Claroline_AddWrongPasswordUserTest" time="1.681">
+    <system-out><![CDATA[Setting up native browser...
 ]]></system-out>
+    <system-err><![CDATA[ott 12, 2025 12:23:26 AM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find CDP implementation matching 127
+ott 12, 2025 12:23:26 AM org.openqa.selenium.chromium.ChromiumDriver lambda$new$4
+WARNING: Unable to find version of CDP to use for 127.0.6533.119. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.35.0` where the version ("v86") matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
+]]></system-err>
   </testcase>
-  <testcase name="addEmptyCourse" classname="test.Claroline_AddEmptyCourseTest" time="0.724">
-    <system-out><![CDATA[Setting up remote web driver...
+  <testcase name="addEmptyCourse" classname="test.Claroline_AddEmptyCourseTest" time="2.725">
+    <system-out><![CDATA[Setting up native browser...
 ]]></system-out>
+    <system-err><![CDATA[ott 12, 2025 12:23:28 AM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find CDP implementation matching 127
+ott 12, 2025 12:23:28 AM org.openqa.selenium.chromium.ChromiumDriver lambda$new$4
+WARNING: Unable to find version of CDP to use for 127.0.6533.119. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.35.0` where the version ("v86") matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
+]]></system-err>
   </testcase>
-  <testcase name="addDeniedCourse" classname="test.Claroline_AddDeniedCourseTest" time="1.098">
-    <system-out><![CDATA[Setting up remote web driver...
+  <testcase name="addDeniedCourse" classname="test.Claroline_AddDeniedCourseTest" time="4.555">
+    <system-out><![CDATA[Setting up native browser...
 ]]></system-out>
+    <system-err><![CDATA[ott 12, 2025 12:23:30 AM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find CDP implementation matching 127
+ott 12, 2025 12:23:30 AM org.openqa.selenium.chromium.ChromiumDriver lambda$new$4
+WARNING: Unable to find version of CDP to use for 127.0.6533.119. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.35.0` where the version ("v86") matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
+]]></system-err>
   </testcase>
-  <testcase name="enrolDeniedCourse" classname="test.Claroline_EnrolDeniedCourseTest" time="0.717">
-    <system-out><![CDATA[Setting up remote web driver...
+  <testcase name="enrolDeniedCourse" classname="test.Claroline_EnrolDeniedCourseTest" time="1.189">
+    <system-out><![CDATA[Setting up native browser...
 ]]></system-out>
+    <system-err><![CDATA[ott 12, 2025 12:23:35 AM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find CDP implementation matching 127
+ott 12, 2025 12:23:35 AM org.openqa.selenium.chromium.ChromiumDriver lambda$new$4
+WARNING: Unable to find version of CDP to use for 127.0.6533.119. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.35.0` where the version ("v86") matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
+]]></system-err>
   </testcase>
-  <testcase name="addPasswordCourse" classname="test.Claroline_AddPasswordCourseTest" time="1.201">
-    <system-out><![CDATA[Setting up remote web driver...
+  <testcase name="addPasswordCourse" classname="test.Claroline_AddPasswordCourseTest" time="1.498">
+    <system-out><![CDATA[Setting up native browser...
 ]]></system-out>
+    <system-err><![CDATA[ott 12, 2025 12:23:36 AM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find CDP implementation matching 127
+ott 12, 2025 12:23:36 AM org.openqa.selenium.chromium.ChromiumDriver lambda$new$4
+WARNING: Unable to find version of CDP to use for 127.0.6533.119. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.35.0` where the version ("v86") matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
+]]></system-err>
   </testcase>
-  <testcase name="enrolPasswordCourseWrongPassword" classname="test.Claroline_EnrolPasswordCourseWrongPasswordUserTest" time="0.816">
-    <system-out><![CDATA[Setting up remote web driver...
+  <testcase name="enrolPasswordCourseWrongPassword" classname="test.Claroline_EnrolPasswordCourseWrongPasswordUserTest" time="1.18">
+    <system-out><![CDATA[Setting up native browser...
 ]]></system-out>
+    <system-err><![CDATA[ott 12, 2025 12:23:38 AM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find CDP implementation matching 127
+ott 12, 2025 12:23:38 AM org.openqa.selenium.chromium.ChromiumDriver lambda$new$4
+WARNING: Unable to find version of CDP to use for 127.0.6533.119. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.35.0` where the version ("v86") matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
+]]></system-err>
   </testcase>
-  <testcase name="enrolPasswordCourseGoodPassword" classname="test.Claroline_EnrolPasswordCourseGoodPasswordUserTest" time="0.812">
-    <system-out><![CDATA[Setting up remote web driver...
+  <testcase name="enrolPasswordCourseGoodPassword" classname="test.Claroline_EnrolPasswordCourseGoodPasswordUserTest" time="1.156">
+    <system-out><![CDATA[Setting up native browser...
 ]]></system-out>
+    <system-err><![CDATA[ott 12, 2025 12:23:39 AM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find CDP implementation matching 127
+ott 12, 2025 12:23:39 AM org.openqa.selenium.chromium.ChromiumDriver lambda$new$4
+WARNING: Unable to find version of CDP to use for 127.0.6533.119. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.35.0` where the version ("v86") matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
+]]></system-err>
   </testcase>
-  <testcase name="searchAllowedCourse" classname="test.Claroline_SearchAllowedCourseTest" time="0.777">
-    <system-out><![CDATA[Setting up remote web driver...
+  <testcase name="searchAllowedCourse" classname="test.Claroline_SearchAllowedCourseTest" time="1.134">
+    <system-out><![CDATA[Setting up native browser...
 ]]></system-out>
+    <system-err><![CDATA[ott 12, 2025 12:23:40 AM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find CDP implementation matching 127
+ott 12, 2025 12:23:40 AM org.openqa.selenium.chromium.ChromiumDriver lambda$new$4
+WARNING: Unable to find version of CDP to use for 127.0.6533.119. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.35.0` where the version ("v86") matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
+]]></system-err>
   </testcase>
-  <testcase name="searchAndRemovePasswordCourse" classname="test.Claroline_SearchAndRemovePasswordCourseTest" time="0.854">
-    <system-out><![CDATA[Setting up remote web driver...
+  <testcase name="searchAndRemovePasswordCourse" classname="test.Claroline_SearchAndRemovePasswordCourseTest" time="1.181">
+    <system-out><![CDATA[Setting up native browser...
 ]]></system-out>
+    <system-err><![CDATA[ott 12, 2025 12:23:41 AM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find CDP implementation matching 127
+ott 12, 2025 12:23:41 AM org.openqa.selenium.chromium.ChromiumDriver lambda$new$4
+WARNING: Unable to find version of CDP to use for 127.0.6533.119. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.35.0` where the version ("v86") matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
+]]></system-err>
   </testcase>
-  <testcase name="searchAndRemoveDeniedCourse" classname="test.Claroline_SearchAndRemoveDeniedCourseTest" time="0.857">
-    <system-out><![CDATA[Setting up remote web driver...
+  <testcase name="searchAndRemoveDeniedCourse" classname="test.Claroline_SearchAndRemoveDeniedCourseTest" time="1.201">
+    <system-out><![CDATA[Setting up native browser...
 ]]></system-out>
+    <system-err><![CDATA[ott 12, 2025 12:23:42 AM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find CDP implementation matching 127
+ott 12, 2025 12:23:42 AM org.openqa.selenium.chromium.ChromiumDriver lambda$new$4
+WARNING: Unable to find version of CDP to use for 127.0.6533.119. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.35.0` where the version ("v86") matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
+]]></system-err>
   </testcase>
-  <testcase name="removeCourseExerciseQuestions" classname="test.Claroline_RemoveCourseExerciseQuestionsTest" time="1.006">
-    <system-out><![CDATA[Setting up remote web driver...
+  <testcase name="removeCourseExerciseQuestions" classname="test.Claroline_RemoveCourseExerciseQuestionsTest" time="1.363">
+    <system-out><![CDATA[Setting up native browser...
 ]]></system-out>
+    <system-err><![CDATA[ott 12, 2025 12:23:43 AM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find CDP implementation matching 127
+ott 12, 2025 12:23:43 AM org.openqa.selenium.chromium.ChromiumDriver lambda$new$4
+WARNING: Unable to find version of CDP to use for 127.0.6533.119. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.35.0` where the version ("v86") matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
+]]></system-err>
   </testcase>
-  <testcase name="removeCourseEvent" classname="test.Claroline_RemoveCourseEventTest" time="0.724">
-    <system-out><![CDATA[Setting up remote web driver...
+  <testcase name="removeCourseEvent" classname="test.Claroline_RemoveCourseEventTest" time="1.118">
+    <system-out><![CDATA[Setting up native browser...
 ]]></system-out>
+    <system-err><![CDATA[ott 12, 2025 12:23:45 AM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find CDP implementation matching 127
+ott 12, 2025 12:23:45 AM org.openqa.selenium.chromium.ChromiumDriver lambda$new$4
+WARNING: Unable to find version of CDP to use for 127.0.6533.119. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.35.0` where the version ("v86") matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
+]]></system-err>
   </testcase>
-  <testcase name="removeCourseExerciseTest" classname="test.Claroline_RemoveCourseExerciseTest" time="0.776">
-    <system-out><![CDATA[Setting up remote web driver...
+  <testcase name="removeCourseExerciseTest" classname="test.Claroline_RemoveCourseExerciseTest" time="1.115">
+    <system-out><![CDATA[Setting up native browser...
 ]]></system-out>
+    <system-err><![CDATA[ott 12, 2025 12:23:46 AM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find CDP implementation matching 127
+ott 12, 2025 12:23:46 AM org.openqa.selenium.chromium.ChromiumDriver lambda$new$4
+WARNING: Unable to find version of CDP to use for 127.0.6533.119. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.35.0` where the version ("v86") matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
+]]></system-err>
   </testcase>
-  <testcase name="removeEnrolUser" classname="test.Claroline_RemoveEnrolUserTest" time="0.625">
-    <system-out><![CDATA[Setting up remote web driver...
+  <testcase name="removeEnrolUser" classname="test.Claroline_RemoveEnrolUserTest" time="0.995">
+    <system-out><![CDATA[Setting up native browser...
 ]]></system-out>
+    <system-err><![CDATA[ott 12, 2025 12:23:47 AM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find CDP implementation matching 127
+ott 12, 2025 12:23:47 AM org.openqa.selenium.chromium.ChromiumDriver lambda$new$4
+WARNING: Unable to find version of CDP to use for 127.0.6533.119. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.35.0` where the version ("v86") matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
+]]></system-err>
   </testcase>
-  <testcase name="removeUserTest" classname="test.Claroline_RemoveUserTest" time="0.772">
-    <system-out><![CDATA[Setting up remote web driver...
+  <testcase name="removeUserTest" classname="test.Claroline_RemoveUserTest" time="1.135">
+    <system-out><![CDATA[Setting up native browser...
 ]]></system-out>
+    <system-err><![CDATA[ott 12, 2025 12:23:48 AM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find CDP implementation matching 127
+ott 12, 2025 12:23:48 AM org.openqa.selenium.chromium.ChromiumDriver lambda$new$4
+WARNING: Unable to find version of CDP to use for 127.0.6533.119. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.35.0` where the version ("v86") matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
+]]></system-err>
   </testcase>
-  <testcase name="removeCourseTest" classname="test.Claroline_RemoveCourseTest" time="0.828">
-    <system-out><![CDATA[Setting up remote web driver...
+  <testcase name="removeCourseTest" classname="test.Claroline_RemoveCourseTest" time="1.089">
+    <system-out><![CDATA[Setting up native browser...
 ]]></system-out>
+    <system-err><![CDATA[ott 12, 2025 12:23:49 AM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find CDP implementation matching 127
+ott 12, 2025 12:23:49 AM org.openqa.selenium.chromium.ChromiumDriver lambda$new$4
+WARNING: Unable to find version of CDP to use for 127.0.6533.119. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.35.0` where the version ("v86") matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
+]]></system-err>
   </testcase>
 </testsuite>

@@ -16,12 +16,13 @@ import java.net.URL;
 public class BaseTest {
 	
 	public static WebDriver driver;
+	public static String appUrl = "http://192.168.1.141:8989";
 	
 	@Before
 	public void login() {
 		setupNativeBrowser();
 		driver.manage().window().maximize();
-		driver.get("http://192.168.1.141:8989");
+		driver.get(appUrl);
 		new LoginPage(driver).setUsername("administrator").setPassword("e2eW3Bt3s71nGB3nchM4rK").login();
 	}
 

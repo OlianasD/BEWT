@@ -22,6 +22,7 @@ public class EditPageTest extends BaseTest {
 		driver.findElement(By.id("searchInput")).sendKeys(Keys.ENTER);
 		Thread.sleep(1000);
 		driver.findElement(By.linkText("Edit")).click();
+		Thread.sleep(1000);
 		driver.findElement(By.xpath("//*[@id=\"bodyContent\"]/div[6]/div[1]/div[1]")).sendKeys(Keys.chord(Keys.CONTROL, Keys.END));
 		driver.findElement(By.xpath("//*[@id=\"bodyContent\"]/div[6]/div[1]/div[1]")).sendKeys(" Testing is performed by running test cases against the system under test (SUT) and collecting their results.");
 		Thread.sleep(500);

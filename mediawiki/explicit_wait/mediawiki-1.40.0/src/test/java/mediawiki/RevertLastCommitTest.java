@@ -17,14 +17,11 @@ public class RevertLastCommitTest extends BaseTest {
 			.viewHistory()
 			.rollbackLastEdit();
 		
-		//assertEquals("Reverted edits by User001 (talk | contribs | block); changed back to last revision by Admin (talk | contribs | block).", history.getMessage());
 		assertTrue(history.waitForMessageToBe("Reverted edits by User001 (talk | contribs | block); changed back to last revision by Admin (talk | contribs | block)."));
 		//Thread.sleep(1000);
 		WikiPage page = history.goToLink("Selenium WebDriver");
-		//WikiPage page = history.returnToRevertedPage();
-		//Thread.sleep(500);
 		assertTrue(page.waitForTitleToBe("Selenium WebDriver"));
-		assertEquals(page.getBody("Developer: Selenium Latest version: 3.141.59Selenium is an open source umbrella project for a range of tools and libraries aimed at supporting browser automation. It provides a playback tool for authoring functional tests across most modern web browsers, without the need to learn a test scripting language (Selenium IDE)."), 
+		assertEquals(page.getBody("Developer: Selenium Latest version: 3.141.59Selenium is an open source umbrella project for a range of tools and libraries aimed at supporting browser automation. It provides a playback tool for authoring functional tests across most modern web browsers, without the need to learn a test scripting language (Selenium IDE)."),
 				"Developer: Selenium Latest version: 3.141.59Selenium is an open source umbrella project for a range of tools and libraries aimed at supporting browser automation. It provides a playback tool for authoring functional tests across most modern web browsers, without the need to learn a test scripting language (Selenium IDE).");
 	}
 	

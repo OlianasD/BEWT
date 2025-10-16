@@ -22,7 +22,7 @@ public class BaseTest {
 	
 	@Before
 	public void setUp() {
-		setupRemoteWebdriver();
+		setupNativeBrowser();
 		driver.manage().window().maximize();
 		driver.get("http://192.168.1.141:8080/admin");
 	}

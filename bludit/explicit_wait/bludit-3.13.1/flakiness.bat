@@ -1,33 +1,31 @@
 @echo off
 setlocal enabledelayedexpansion
 
-REM ======= CONFIGURA QUI IL NUMERO DI ESECUZIONI ==========
+REM ======= NUMBER OF EXECUTIONS ==========
 set n=50
-
-REM ======= PERCORSO BASE PER I RISULTATI ===================
 
 for /L %%i in (1,1,%n%) do (
     echo.
     echo [ESECUZIONE %%i DI %n%]
 
-    echo Avvio container browser...
+    echo STarting browser container...
     docker run -d -p 4444:4444 -p 7900:7900 --shm-size="2g" --name=browser selenium/standalone-chrome:127.0-chromedriver-127.0
 
     timeout /t 5 /nobreak >nul
 
-    echo Avvio container Bludit...
+    echo Starting Bludit container...
     docker run --name bludit -p 8080:80 -d bludit/docker:3.13.1
 
     timeout /t 10 /nobreak >nul
 
-    echo Esecuzione test con Maven...
+    echo Running tests with Maven...
     mvn -Dtest=TestSuite test
 
-    echo Salvataggio risultati...
-    mkdir "..\..\..\..\flakycheck\bludit-3.13.1\java21-selenium435-chrome127docker-2\%%i"
-    xcopy /E /Y "target\surefire-reports\*" "..\..\..\..\flakycheck\bludit-3.13.1\java21-selenium435-chrome127docker-2\%%i\"
+    echo Saving results...
+    mkdir "..\..\..\..\flakycheck\bludit-3.13.1\java21-selenium435-chrome127native-2\%%i"
+    xcopy /E /Y "target\surefire-reports\*" "..\..\..\..\flakycheck\bludit-3.13.1\java21-selenium435-chrome127native-2\%%i\"
 
-    echo Arresto e rimozione container Docker...
+    echo Stopping and removing Docker containers...
     docker stop browser >nul
     docker rm browser >nul
     docker stop bludit >nul
@@ -37,5 +35,5 @@ for /L %%i in (1,1,%n%) do (
 )
 
 echo.
-echo ======= COMPLETATO =======
+echo ======= COMPLETED =======
 pause

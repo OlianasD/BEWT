@@ -26,6 +26,11 @@ public class CreateProjectPage extends ManageNavBar {
 	}
 	
 	public CreateProjectPage setName(String nameStr) {
+		try {
+			Thread.sleep(500);
+		} catch (InterruptedException e) {
+			throw new RuntimeException(e);
+		}
 		name.clear();
 		name.sendKeys(nameStr);
 		return this;
@@ -54,6 +59,11 @@ public class CreateProjectPage extends ManageNavBar {
 			e.printStackTrace();
 		}
 		driver.findElement(By.xpath("//*[@id=\"manage-project-create-form\"]/div/div[3]/input")).click();
+		try {
+			Thread.sleep(1000);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
 		return new BaseNavBar(driver);
 	}
 	

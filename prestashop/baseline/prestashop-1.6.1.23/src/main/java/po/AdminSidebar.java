@@ -41,7 +41,7 @@ public class AdminSidebar extends PageObject {
     protected WebElement supplier;
     
     @FindBy(id = "maintab-AdminAdmin")
-    protected WebElement administaration;
+    protected WebElement administration;
     
     @FindBy(id = "subtab-AdminEmployees")
     protected WebElement employees;
@@ -63,7 +63,12 @@ public class AdminSidebar extends PageObject {
 	}
 	
 	public ProductsPage goToProducts() {
-   	    Actions action = new Actions(driver);
+		try {
+			Thread.sleep(500);
+		} catch (InterruptedException e) {
+			throw new RuntimeException(e);
+		}
+		Actions action = new Actions(driver);
    	    action.moveToElement(catalog).moveToElement(product).click().build().perform();
    	    return new ProductsPage(driver);
     }
@@ -112,7 +117,7 @@ public class AdminSidebar extends PageObject {
 	
 	public EmployeesPage goToEmployees() {
     	Actions action = new Actions(driver);
-    	action.moveToElement(administaration).moveToElement(employees).click().build().perform();
+    	action.moveToElement(administration).moveToElement(employees).click().build().perform();
     	return new EmployeesPage(driver);
     }
 	

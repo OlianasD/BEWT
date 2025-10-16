@@ -8,7 +8,7 @@ import org.openqa.selenium.By;
 public class AddEmptyAttribute extends BaseTest {
 	
 	@Test
-	public void test_add_empty_attributes(){
+	public void test_add_empty_attributes() throws InterruptedException {
 		driver.findElement(By.name("email")).sendKeys(adminMail);
 		driver.findElement(By.name("passwd")).sendKeys(adminPsw);
 		driver.findElement(By.name("submitLogin")).click();
@@ -16,7 +16,7 @@ public class AddEmptyAttribute extends BaseTest {
 		driver.findElement(By.id("subtab-AdminParentAttributesGroups")).click();
 		driver.findElement(By.id("page-header-desc-attribute_group-new_attribute_group")).click();
 		driver.findElement(By.id("attribute_group_form_submit_btn")).click();
-		
+		Thread.sleep(500);
 		
 		assertEquals("×\n"
 				+ "There are 2 errors.\n"

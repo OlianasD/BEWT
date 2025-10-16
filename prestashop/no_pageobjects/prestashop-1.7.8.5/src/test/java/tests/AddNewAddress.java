@@ -10,7 +10,7 @@ import org.openqa.selenium.By;
 public class AddNewAddress extends BaseTest {
 	
 	@Test
-	public void test_add_address(){
+	public void test_add_address() throws InterruptedException {
 		driver.findElement(By.name("email")).sendKeys(adminMail);
 		driver.findElement(By.name("passwd")).sendKeys(adminPsw);
 		driver.findElement(By.name("submitLogin")).click();
@@ -29,7 +29,7 @@ public class AddNewAddress extends BaseTest {
 		driver.findElement(By.id("customer_address_phone_mobile")).sendKeys("987654321");
 		driver.findElement(By.id("customer_address_city")).sendKeys("Bologna");
 		driver.findElement(By.id("save-button")).click();
-		
+		Thread.sleep(1000);
 		
 		assertTrue(driver.findElement(By.className("alert-text")).getText().contains("Successful creation"));
 	}

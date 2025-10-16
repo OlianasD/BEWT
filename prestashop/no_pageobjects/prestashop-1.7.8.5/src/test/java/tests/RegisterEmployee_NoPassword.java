@@ -24,6 +24,6 @@ public class RegisterEmployee_NoPassword extends BaseTest {
 		driver.findElement(By.id("save-button")).click();
 		
 		assertTrue(driver.findElement(By.id("employee_password"))
-				.getAttribute("validationMessage").contains("Compila questo campo."));
+				.getAttribute("validationMessage").contains("Please fill out this field."));
 	 }
 }

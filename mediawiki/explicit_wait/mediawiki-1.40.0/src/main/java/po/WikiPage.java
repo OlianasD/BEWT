@@ -41,7 +41,7 @@ public class WikiPage extends PageObject {
 	
 	public String getBody(String expected) {
 		wait.waitForTextToBeContained(By.xpath("//*[@id=\"mw-content-text\"]"), expected);
-		return body.getText();
+		return driver.findElement(By.xpath("//*[@id=\"mw-content-text\"]")).getText();
 	}
 	
 	public PageCreationPage edit() {

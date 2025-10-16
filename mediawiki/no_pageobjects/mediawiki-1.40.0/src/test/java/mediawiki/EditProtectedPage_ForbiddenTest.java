@@ -21,7 +21,7 @@ public class EditProtectedPage_ForbiddenTest extends BaseTest {
 		driver.findElement(By.id("searchInput")).sendKeys("Selenium WebDriver");
 		Thread.sleep(500);
 		driver.findElement(By.id("searchInput")).sendKeys(Keys.ENTER);
-		Thread.sleep(500);
+		Thread.sleep(1000);
 		driver.get(driver.getCurrentUrl()+"?veaction=edit");
 		Thread.sleep(2000);
 		driver.findElement(By.xpath("/html/body/div[5]/div/div/div[1]/div[2]/div[3]/div/span[2]/a")).click();

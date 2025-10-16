@@ -1,41 +1,40 @@
 @echo off
 setlocal enabledelayedexpansion
 
-REM ======= CONFIGURA QUI IL NUMERO DI ESECUZIONI ==========
-set n=24
-
-REM ======= PERCORSO BASE PER I RISULTATI ===================
+REM ======= NUMBER OF RUNS ==========
+set n=50
 
 for /L %%i in (1,1,%n%) do (
     echo.
-    echo [ESECUZIONE %%i DI %n%]
+    echo [RUN %%i OF %n%]
 
-    echo Avvio container browser...
+    echo Starting browser container...
     docker run -d -p 4444:4444 -p 7900:7900 --shm-size="2g" --name=browser selenium/standalone-chrome:127.0-chromedriver-127.0
 
     timeout /t 5 /nobreak >nul
 
-    echo Avvio containers Mediawiki...
+    echo Starting Mediawiki containers...
     docker compose up -d
 
     timeout /t 15 /nobreak >nul
 
-    echo Installazione Mediawiki...
+    echo Installing Mediawiki...
     mvn -Dtest=Installer test
 
-    echo Copio LocalSettings.php...
+    echo Copying LocalSettings.php...
     docker cp LocalSettings.php mediawiki-1400-mediawiki-1:/var/www/html
 
     timeout /t 5 /nobreak >nul
 
-    echo Esecuzione test con Maven...
+    echo Running tests with Maven...
     mvn -Dtest=TestSuite test
     timeout /t 5 /nobreak >nul
-    echo Salvataggio risultati...
-    mkdir "..\..\..\..\flakycheck\mediawiki\selenium4-chrome127native-2\%%i"
-    xcopy /E /Y "target\surefire-reports\*" "..\..\..\..\flakycheck\mediawiki\selenium4-chrome127native-2\%%i\"
 
-    echo Arresto e rimozione container Docker...
+    echo Saving results...
+    mkdir "..\..\..\..\flakycheck\mediawiki\revertlastcommit-nopfp-texttobe\%%i"
+    xcopy /E /Y "target\surefire-reports\*" "..\..\..\..\flakycheck\mediawiki\revertlastcommit-nopfp-texttobe\%%i\"
+
+    echo Stopping and removing Docker containers...
     docker stop browser >nul
     docker rm browser >nul
     docker stop mediawiki-1400-mediawiki-1 >nul
@@ -49,5 +48,5 @@ for /L %%i in (1,1,%n%) do (
 )
 
 echo.
-echo ======= COMPLETATO =======
+echo ======= DONE =======
 pause

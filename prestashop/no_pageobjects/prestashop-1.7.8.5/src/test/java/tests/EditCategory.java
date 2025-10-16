@@ -10,7 +10,7 @@ import org.openqa.selenium.By;
 public class EditCategory extends BaseTest {
 	
 	@Test
-	public void test_edit_category(){
+	public void test_edit_category() throws InterruptedException {
 		driver.findElement(By.name("email")).sendKeys(adminMail);
 		driver.findElement(By.name("passwd")).sendKeys(adminPsw);
 		driver.findElement(By.name("submitLogin")).click();
@@ -20,7 +20,7 @@ public class EditCategory extends BaseTest {
 		driver.findElement(By.id("category_name_1")).clear();
 		driver.findElement(By.id("category_name_1")).sendKeys("Fall Collection");
 		driver.findElement(By.id("save-button")).click();
-		
+		Thread.sleep(1000);
 		
 		assertTrue(driver.findElement(By.className("alert-text")).getText().contains("Successful update"));
 	}	 

@@ -21,6 +21,7 @@ public class EditProtectedPage_NewAdmin_SuccessTest extends BaseTest {
 		driver.findElement(By.id("searchInput")).sendKeys("Selenium WebDriver");
 		Thread.sleep(500);
 		driver.findElement(By.id("searchInput")).sendKeys(Keys.ENTER);
+		Thread.sleep(1000);
 		driver.findElement(By.linkText("Edit")).click();
 		Thread.sleep(1000);
 		driver.findElement(By.xpath("//*[@id=\"bodyContent\"]/div[6]/div[1]/div[1]")).sendKeys(Keys.chord(Keys.CONTROL, Keys.END));

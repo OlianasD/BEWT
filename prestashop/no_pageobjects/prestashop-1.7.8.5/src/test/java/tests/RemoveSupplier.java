@@ -10,7 +10,7 @@ import org.openqa.selenium.By;
 public class RemoveSupplier extends BaseTest {
 	
 	@Test
-	public void test_remove_supplier(){
+	public void test_remove_supplier() throws InterruptedException {
 		driver.findElement(By.name("email")).sendKeys(adminMail);
 		driver.findElement(By.name("passwd")).sendKeys(adminPsw);
 		driver.findElement(By.name("submitLogin")).click();
@@ -20,7 +20,7 @@ public class RemoveSupplier extends BaseTest {
 		driver.findElement(By.xpath("//*[@id=\"supplier_grid_table\"]/tbody/tr[1]/td[7]/div/div/a[2]")).click();
 		driver.findElement(By.xpath("//*[@id=\"supplier_grid_table\"]/tbody/tr[1]/td[7]/div/div/div/a[2]")).click();
 		driver.findElement(By.xpath("//*[@id=\"supplier-grid-confirm-modal\"]/div/div/div[3]/button[2]")).click();
-		
+		Thread.sleep(1000);
 		
 		assertTrue(driver.findElement(By.className("alert-text")).getText().contains("Successful deletion"));
 	}

@@ -22,12 +22,14 @@ public class ProtectPageTest extends BaseTest {
 		driver.findElement(By.id("searchInput")).sendKeys(Keys.ENTER);
 		Thread.sleep(1000);
 		driver.findElement(By.id("p-cactions-checkbox")).click();
+		Thread.sleep(1000);
 		driver.findElement(By.linkText("Protect")).click();
 		driver.findElement(By.xpath("//*[@id=\"mwProtect-level-edit\"]/div/span")).click();
 		driver.findElement(By.xpath("/html/body/div[5]/div[1]/div[3]/span[3]")).click();
 		driver.findElement(By.xpath("//*[@id=\"mw-Protect-submit\"]/button")).click();
 		Thread.sleep(1000);
 		driver.findElement(By.id("p-cactions-checkbox")).click();
+		Thread.sleep(1000);
 		driver.findElement(By.linkText("Change protection")).click();
 		
 		assertEquals("Allow only administrators", driver.findElement(By.xpath("//*[@id=\"ooui-1\"]")).getText());

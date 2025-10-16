@@ -21,8 +21,11 @@ public class DeletePageTest extends BaseTest {
 		driver.findElement(By.id("searchInput")).sendKeys("E2E Web Testing");
 		Thread.sleep(500);
 		driver.findElement(By.id("searchInput")).sendKeys(Keys.ENTER);
+		Thread.sleep(1000);
 		driver.findElement(By.id("p-cactions-checkbox")).click();
+		Thread.sleep(1000);
 		driver.findElement(By.linkText("Delete")).click();
+		Thread.sleep(1000);
 		driver.findElement(By.id("wpConfirmB")).click();
 		Thread.sleep(1000);
 		assertEquals("\"E2E Web Testing\" has been deleted. See deletion log for a record of recent deletions.", 

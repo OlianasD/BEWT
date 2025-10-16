@@ -18,7 +18,7 @@ public class DeleteMultipleProjectsTest extends BaseTest {
 			driver.findElement(By.linkText(projects[i])).click();
 			driver.findElement(By.xpath("//*[@id=\"project-delete-form\"]/fieldset/input[3]")).click();
 			driver.findElement(By.xpath("//*[@id=\"main-container\"]/div[2]/div[2]/div/div/div[2]/form/input[4]")).click();
-			Thread.sleep(500);
+			Thread.sleep(1000);
 			assertFalse(driver.findElement(By.tagName("BODY")).getText().contains(projects[i]));
 		}
 	}

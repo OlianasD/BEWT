@@ -1,5 +1,6 @@
 package po;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -17,12 +18,6 @@ public class AddToCartPage {
 	WebElement submitaddToProduct;
 	@FindBy(id = "qty")
 	WebElement qty;
-	@FindBy(id = "products_err")
-	WebElement tagMessage;
-	@FindBy(xpath = "//*[@id=\"form-supplier\"]/div/div[2]/table/tbody/tr/td[6]/div/div/button")
-	WebElement dropDownMeny;
-	@FindBy(xpath = "//*[@id=\"form-supplier\"]/div/div[2]/table/tbody/tr/td[6]/div/div/ul/li[3]/a")
-	WebElement remove;
 
 	public AddToCartPage(WebDriver driver) {
 		this.driver = driver;
@@ -61,6 +56,11 @@ public class AddToCartPage {
 	}
 
 	public String getErrorMessage() {
-		return tagMessage.getText();
+		try {
+			Thread.sleep(1000);
+		} catch (InterruptedException e) {
+			throw new RuntimeException(e);
+		}
+		return driver.findElement(By.id("products_err")).getText();
 	}
 }

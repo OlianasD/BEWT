@@ -12,7 +12,7 @@ import org.openqa.selenium.By;
 public class AddNewSupplier extends BaseTest {
 	
 	@Test
-	public void test_add_supplier(){
+	public void test_add_supplier() throws InterruptedException {
 		driver.findElement(By.name("email")).sendKeys(adminMail);
 		driver.findElement(By.name("passwd")).sendKeys(adminPsw);
 		driver.findElement(By.name("submitLogin")).click();
@@ -24,7 +24,7 @@ public class AddNewSupplier extends BaseTest {
 		driver.findElement(By.id("supplier_address")).sendKeys("Via Fianle Ligure");
 		driver.findElement(By.id("supplier_city")).sendKeys("Finale Ligure");
 		driver.findElement(By.xpath("//*[@id=\"main-div\"]/div/div/div/div[2]/div/form/div/div[2]/button")).click();
-		
+		Thread.sleep(1000);
 		
 		assertTrue(driver.findElement(By.className("alert-text")).getText().contains("Successful creation"));
 	}

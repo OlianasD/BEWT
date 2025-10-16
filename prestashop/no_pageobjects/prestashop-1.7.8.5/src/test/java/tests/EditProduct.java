@@ -21,6 +21,7 @@ public class EditProduct extends BaseTest {
 		driver.findElement(By.id("submit")).click();
 		Thread.sleep(1000);
 		driver.findElement(By.id("product_form_save_go_to_catalog_btn")).click();
+		Thread.sleep(2000);
 
 		assertEquals("Deep Blue Jacket",
 				driver.findElement(By.xpath("//*[@id=\"product_catalog_list\"]/div[2]/div/div/table/tbody/tr/td[4]/a"))

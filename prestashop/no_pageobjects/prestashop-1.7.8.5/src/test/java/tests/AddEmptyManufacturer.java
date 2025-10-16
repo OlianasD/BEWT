@@ -21,6 +21,6 @@ public class AddEmptyManufacturer extends BaseTest {
 		driver.findElement(By.xpath("//*[@id=\"main-div\"]/div/div[1]/div/div[2]/div/form/div/div[2]/button")).click();
 		
 		assertTrue(driver.findElement(By.id("manufacturer_name"))
-				.getAttribute("validationMessage").contains("Compila questo campo."));
+				.getAttribute("validationMessage").contains("Please fill out this field."));
 	}
 }

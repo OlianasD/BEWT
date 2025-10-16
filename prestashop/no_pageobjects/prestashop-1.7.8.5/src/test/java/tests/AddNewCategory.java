@@ -10,7 +10,7 @@ public class AddNewCategory extends BaseTest {
 
 	
 	@Test
-	public void test_add_category(){
+	public void test_add_category() throws InterruptedException {
 		driver.findElement(By.name("email")).sendKeys(adminMail);
 		driver.findElement(By.name("passwd")).sendKeys(adminPsw);
 		driver.findElement(By.name("submitLogin")).click();
@@ -20,7 +20,7 @@ public class AddNewCategory extends BaseTest {
 		driver.findElement(By.id("category_name_1")).clear();
 		driver.findElement(By.id("category_name_1")).sendKeys("Winters Collection");
 		driver.findElement(By.id("save-button")).click();
-		
+		Thread.sleep(1000);
 		
 		assertTrue(driver.findElement(By.className("alert-text")).getText().contains("Successful creation"));
 	}

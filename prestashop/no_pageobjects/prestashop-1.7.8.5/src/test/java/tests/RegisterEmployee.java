@@ -11,7 +11,7 @@ import org.openqa.selenium.By;
 public class RegisterEmployee extends BaseTest {
 	
 	@Test
-	public void test_register_employee(){
+	public void test_register_employee() throws InterruptedException {
 		driver.findElement(By.name("email")).sendKeys(adminMail);
 		driver.findElement(By.name("passwd")).sendKeys(adminPsw);
 		driver.findElement(By.name("submitLogin")).click();
@@ -23,7 +23,7 @@ public class RegisterEmployee extends BaseTest {
 		driver.findElement(By.id("employee_email")).sendKeys("smith@gmail.com");
 		driver.findElement(By.id("employee_password")).sendKeys("abcd!@#$23");
 		driver.findElement(By.id("save-button")).click();
-		
+		Thread.sleep(1000);
 		assertTrue(driver.findElement(By.className("alert-text")).getText().contains("Successful creation"));
 	 }
 }

@@ -21,7 +21,7 @@ public class AdminEditProtectedPage_GetsWarningTest extends BaseTest {
 		driver.findElement(By.id("searchInput")).sendKeys("Selenium WebDriver");
 		Thread.sleep(500);
 		driver.findElement(By.id("searchInput")).sendKeys(Keys.ENTER);
-		Thread.sleep(500);
+		Thread.sleep(1000);
 		driver.findElement(By.linkText("Edit")).click();
 		Thread.sleep(500);
 		

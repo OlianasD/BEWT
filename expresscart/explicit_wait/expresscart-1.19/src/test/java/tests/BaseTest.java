@@ -37,7 +37,7 @@ public class BaseTest {
 	}
 	public void setupNativeBrowser() {
 		ChromeOptions options = new ChromeOptions();
-		options.addArguments("--disable-search-engine-choice-screen", "--headless=new", "--disable-gpu", "--screen-info={1920x1080}");
+		options.addArguments("--disable-search-engine-choice-screen", /*"--headless=new",*/ "--disable-gpu", "--screen-info={1920x1080}");
 		options.setBrowserVersion("127");
 		driver = new ChromeDriver(options);
 	}

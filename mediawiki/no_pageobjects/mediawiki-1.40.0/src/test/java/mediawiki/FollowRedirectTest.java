@@ -22,7 +22,7 @@ public class FollowRedirectTest extends BaseTest {
 		driver.findElement(By.id("searchInput")).sendKeys("Testing");
 		Thread.sleep(500);
 		driver.findElement(By.id("searchInput")).sendKeys(Keys.ENTER);
-		
+		Thread.sleep(1000);
 		assertEquals("Software testing", driver.findElement(By.xpath("//*[@id=\"firstHeading\"]")).getText());
 		assertEquals("(Redirected from Testing)", driver.findElement(By.className("mw-redirectedfrom")).getText());
 	}
