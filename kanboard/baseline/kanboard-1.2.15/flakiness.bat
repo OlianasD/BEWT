@@ -16,7 +16,7 @@ for /L %%i in (1,1,%n%) do (
     timeout /t 5 /nobreak >nul
 
     echo Avvio container Kanboard...
-    docker run -d --name kanboard -p 8080:80 -t kanboard-strongpsw
+    docker run -d --name kanboard -p 8080:80 -t kanboard/kanboard:v1.2.15
 
     timeout /t 10 /nobreak >nul
 

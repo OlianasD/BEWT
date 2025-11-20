@@ -21,18 +21,29 @@ public class BaseTest {
 	public static final String app_url = "http://192.168.1.141:3000/mantisbt";
 	@Before
 	public void login() {
+		setupNativeBrowser();
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
+		driver.manage().window().maximize();
+		driver.get(app_url);
+		new LoginPage(driver).setUsername("administrator").setPassword("e2eW3Bt3s71nGB3nchM4rK").login();
+	}
+
+	public void setupNativeBrowser() {
+		ChromeOptions options = new ChromeOptions();
+		options.addArguments("--disable-search-engine-choice-screen", "--disable-gpu", "--lang=en", "--headless=new", "--screen-info={1920x1080}");
+		options.setBrowserVersion("127");
+		driver = new ChromeDriver(options);
+	}
+
+	public void setupRemoteWebdriver() {
 		ChromeOptions chromeOptions = new ChromeOptions();
-		chromeOptions.addArguments("--no-sandbox", "--headless=new", "--lang=en", "--disable-gpu", "--screen-info={1920x1080}");
+		chromeOptions.addArguments("--no-sandbox", "--headless=new", "--lang=en", "--disable-gpu", "--lang=en", "--screen-info={1920x1080}");
 		try {
 			driver = new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"), chromeOptions);
 		} catch (MalformedURLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
-		driver.manage().window().maximize();
-		driver.get(app_url);
-		new LoginPage(driver).setUsername("administrator").setPassword("e2eW3Bt3s71nGB3nchM4rK").login();
 	}
 	
 	@After

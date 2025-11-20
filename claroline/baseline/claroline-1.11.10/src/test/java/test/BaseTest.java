@@ -8,6 +8,7 @@ import java.util.concurrent.TimeUnit;
 import org.junit.After;
 import org.junit.Before;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.remote.RemoteWebDriver;
 
@@ -18,6 +19,21 @@ public class BaseTest {
 
 	@Before
 	public void setUp(){
+		setupNativeBrowser();
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
+		driver.get(app_url);
+	}
+
+	public void setupNativeBrowser() {
+		System.out.println("Setting up native browser...");
+		ChromeOptions options = new ChromeOptions();
+		options.addArguments("--disable-search-engine-choice-screen", "--disable-gpu", "--headless=new", "--screen-info={1920x1080}");
+		options.setBrowserVersion("127");
+		driver = new ChromeDriver(options);
+	}
+
+	public void setupRemoteWebdriver() {
+		System.out.println("Setting up remote web driver...");
 		ChromeOptions chromeOptions = new ChromeOptions();
 		chromeOptions.addArguments("--no-sandbox", "--headless=new", "--disable-gpu", "--screen-info={1920x1080}");
 		try {
@@ -26,10 +42,7 @@ public class BaseTest {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
-		driver.get(app_url);
 	}
-
 
 	@After
 	public void tearDown(){

@@ -22,17 +22,28 @@ public class BaseTest {
 	
 	@Before
 	public void setup() {
-		ChromeOptions chromeOptions = new ChromeOptions();
-		chromeOptions.addArguments("--no-sandbox", "--headless=new", "--disable-gpu", "--screen-info={1920x1080}", "--lang=en");
+		setupNativeBrowser();
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
+		driver.manage().window().maximize();
+		driver.get(app_url);
+	}
+
+	protected void setupNativeBrowser() {
+		ChromeOptions options = new ChromeOptions();
+		options.addArguments("--disable-search-engine-choice-screen", "--headless=new", "--disable-gpu", "--screen-info={1920x1080}", "--lang=en");
+		options.setBrowserVersion("127");
+		driver = new ChromeDriver(options);
+	}
+
+	protected void setupRemoteWebDriver() {
+		ChromeOptions options = new ChromeOptions();
+		options.addArguments("--no-sandbox", "--headless=new", "--disable-gpu", "--screen-info={1920x1080}", "--lang=en");
 		try {
-			driver = new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"), chromeOptions);
+			driver = new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"), options);
 		} catch (MalformedURLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
-		driver.manage().window().maximize();
-		driver.get(app_url);
 	}
 	
 	protected MainPage loginAsAdmin() {

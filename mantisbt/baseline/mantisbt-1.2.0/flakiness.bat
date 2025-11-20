@@ -16,7 +16,7 @@ for /L %%i in (1,1,%n%) do (
     timeout /t 5 /nobreak >nul
 
     echo Avvio container MantisBT...
-    docker run -it --workdir=/home --name=mantisbt --expose 80 --expose 3306 -p 3000:80 -p 3306:3306 -d --entrypoint ./run-services-docker.sh mantisbt-strongpsw bash
+    docker run -it --workdir=/home --name=mantisbt --expose 80 --expose 3306 -p 3000:80 -p 3306:3306 -d --entrypoint ./run-services-docker.sh olianasd/mantisbt-strongpsw:1.2.0 bash
 
     timeout /t 10 /nobreak >nul
 

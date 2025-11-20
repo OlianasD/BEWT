@@ -22,32 +22,30 @@ public class BaseTest {
 	
 	@Before
 	public void login() {
-		//WebDriverManager.chromedriver().clearDriverCache().setup();
-		ChromeOptions chromeOptions = new ChromeOptions();
-		chromeOptions.addArguments("--no-sandbox", /*"--headless=new",*/ "--lang=en", "--disable-gpu", "--screen-info={1920x1080}", "--guest");
-		try {
-			driver = new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"), chromeOptions);
-		} catch (MalformedURLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		setupNativeBrowser();
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
 		driver.manage().window().maximize();
 		driver.get(app_url);
 		new LoginPage(driver).setUsername("administrator").setPassword("e2eW3Bt3s71nGB3nchM4rK").login();
 	}
 
-	/*@Before
-	public void login() {
-		//WebDriverManager.chromedriver().clearDriverCache().setup();
+	public void setupNativeBrowser() {
+		ChromeOptions options = new ChromeOptions();
+		options.addArguments("--disable-search-engine-choice-screen", "--lang=en", "--disable-gpu", "--headless=new", "--screen-info={1920x1080}");
+		options.setBrowserVersion("127");
+		driver = new ChromeDriver(options);
+	}
+
+	public void setupRemoteWebdriver() {
 		ChromeOptions chromeOptions = new ChromeOptions();
-		chromeOptions.addArguments("--no-sandbox", "--headless=new", "--lang=en", "--disable-gpu", "--screen-info={1920x1080}", "--guest");
-		driver = new ChromeDriver(chromeOptions);
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
-		driver.manage().window().maximize();
-		driver.get("http://localhost:8989");
-		new LoginPage(driver).setUsername("administrator").setPassword("e2eW3Bt3s71nGB3nchM4rK").login();
-	}*/
+		chromeOptions.addArguments("--no-sandbox", "--headless=new", "--lang=en", "--disable-gpu", "--screen-info={1920x1080}");
+		try {
+			driver = new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"), chromeOptions);
+		} catch (MalformedURLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
 
 	
 	@After

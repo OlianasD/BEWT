@@ -21,6 +21,12 @@ public class BaseTest {
 	
 	@Before
 	public void setUp() {
+		setupRemoteWebdriver();
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
+        driver.manage().window().maximize();
+	}
+
+	public void setupRemoteWebdriver() {
 		ChromeOptions chromeOptions = new ChromeOptions();
 		chromeOptions.addArguments("--no-sandbox", "--headless=new", "--disable-gpu", "--screen-info={1920x1080}");
 		try {
@@ -29,8 +35,12 @@ public class BaseTest {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
-        driver.manage().window().maximize();
+	}
+	public void setupNativeBrowser() {
+		ChromeOptions options = new ChromeOptions();
+		options.addArguments("--disable-search-engine-choice-screen", "--headless=new", "--disable-gpu", "--screen-info={1920x1080}");
+		options.setBrowserVersion("127");
+		driver = new ChromeDriver(options);
 	}
 	
 	public void goToHome() {

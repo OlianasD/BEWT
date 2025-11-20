@@ -4,6 +4,7 @@ import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.remote.RemoteWebDriver;
 
@@ -18,8 +19,14 @@ public class Installer {
 	protected WebDriver driver;
 	protected final static String app_url = "http://192.168.1.141:8080";
 
-	@Test
-	public void install() throws InterruptedException {
+	public void setupNativeBrowser() {
+		ChromeOptions options = new ChromeOptions();
+		options.addArguments("--disable-search-engine-choice-screen", "--headless=new", "--disable-gpu", "--screen-info={1920x1080}", "--lang=en");
+		options.setBrowserVersion("127");
+		driver = new ChromeDriver(options);
+	}
+
+	public void setupRemoteWebdriver() {
 		ChromeOptions chromeOptions = new ChromeOptions();
 		chromeOptions.addArguments("--no-sandbox", "--headless=new", "--disable-gpu", "--screen-info={1920x1080}", "--lang=en");
 		try {
@@ -28,6 +35,11 @@ public class Installer {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+	}
+
+	@Test
+	public void install() throws InterruptedException {
+		setupNativeBrowser();
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(60));
 		driver.manage().window().maximize();
 		driver.get(app_url);

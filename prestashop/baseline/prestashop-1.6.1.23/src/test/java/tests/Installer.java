@@ -4,6 +4,7 @@ import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -17,17 +18,28 @@ import java.time.Duration;
 public class Installer {
 	
 	protected WebDriver driver;
-	protected static final String install_url = "http://192.168.1.141:8080/install/";
-	@Test
-	public void install() throws InterruptedException {
+
+	public void getRemoteWebdriver() {
 		ChromeOptions chromeOptions = new ChromeOptions();
-		chromeOptions.addArguments("--no-sandbox", "--headless=new", "--lang=it", "--disable-gpu", "--screen-info={1920x1080}");
+		chromeOptions.addArguments("--no-sandbox", "--headless=new", "--disable-gpu","--lang=it", "--screen-info={1920x1080}");
 		try {
 			driver = new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"), chromeOptions);
 		} catch (MalformedURLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+	}
+
+	public void getNativeBrowser() {
+		ChromeOptions options = new ChromeOptions();
+		options.addArguments("--disable-search-engine-choice-screen", "--disable-gpu", "--headless=new", "--lang=it", "--screen-info={1920x1080}");
+		options.setBrowserVersion("127");
+		driver = new ChromeDriver(options);
+	}
+	protected static final String install_url = "http://192.168.1.141:8080/install/";
+	@Test
+	public void install() throws InterruptedException {
+		getNativeBrowser();
 		driver.manage().window().maximize();
 		driver.get(install_url);
 		new Select(driver.findElement(By.id("langList"))).selectByVisibleText("English (English)");
