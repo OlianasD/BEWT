@@ -19,18 +19,18 @@ public class BaseTest {
 
 	@Before
 	public void setUp(){
-		setupNativeBrowser();
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
+		setupRemoteWebdriver();
+		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		driver.get(app_url);
 	}
 
-	public void setupNativeBrowser() {
+	/*public void setupNativeBrowser() {
 		System.out.println("Setting up native browser...");
 		ChromeOptions options = new ChromeOptions();
 		options.addArguments("--disable-search-engine-choice-screen", "--disable-gpu", "--headless=new", "--screen-info={1920x1080}");
 		options.setBrowserVersion("127");
 		driver = new ChromeDriver(options);
-	}
+	}*/
 
 	public void setupRemoteWebdriver() {
 		System.out.println("Setting up remote web driver...");

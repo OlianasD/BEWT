@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="test.ChangeUrl_Test" tests="1" skipped="0" failures="0" errors="0" timestamp="2025-03-29T10:43:00.532Z" hostname="DESKTOP-RDTMBQJ" time="2.816">
+  <properties/>
+  <testcase name="changeUrl_Test" classname="test.ChangeUrl_Test" time="2.816"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[mar 29, 2025 11:43:01 AM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+AVVERTENZA: Unable to find CDP implementation matching 134
+mar 29, 2025 11:43:01 AM org.openqa.selenium.chromium.ChromiumDriver lambda$new$5
+AVVERTENZA: Unable to find version of CDP to use for 134.0.6998.178. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.15.0` where the version ("v86") matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
+mar 29, 2025 11:43:03 AM com.github.paolobd.gamegui.GamifiedListener beforeQuit
+INFORMAZIONI: Data successfully sent to the GameGUI plugin!
+]]></system-err>
+</testsuite>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="tests.AddNewManufacturerTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2025-07-09T09:14:50.324Z" hostname="DESKTOP-RDTMBQJ" time="3.556">
+  <properties/>
+  <testcase name="test_add_manufacturer" classname="tests.AddNewManufacturerTest" time="3.556"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[Starting ChromeDriver 138.0.7204.94 (5450257488848fa5bab09dea663ce77edfb17672-refs/branch-heads/7204_50@{#10}) on port 36410
+Only local connections are allowed.
+Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
+ChromeDriver was started successfully on port 36410.
+lug 09, 2025 11:14:50 AM org.openqa.selenium.remote.ProtocolHandshake createSession
+INFORMAZIONI: Detected dialect: W3C
+]]></system-err>
+</testsuite>

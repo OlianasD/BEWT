@@ -22,7 +22,7 @@ public class BaseTest {
 
 	@Before
 	public void setUp() {
-		setupNativeBrowser();
+		setupRemoteWebdriver();
 		driver.get(app_url);
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
 		driver.manage().window().maximize();

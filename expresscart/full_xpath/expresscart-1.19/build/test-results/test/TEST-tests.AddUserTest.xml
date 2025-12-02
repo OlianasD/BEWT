@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="tests.AddUserTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2025-05-16T10:27:50.110Z" hostname="DESKTOP-RDTMBQJ" time="5.624">
+  <properties/>
+  <testcase name="testExpressCartNewUser" classname="tests.AddUserTest" time="5.624"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[SLF4J(W): No SLF4J providers were found.
+SLF4J(W): Defaulting to no-operation (NOP) logger implementation
+SLF4J(W): See https://www.slf4j.org/codes.html#noProviders for further details.
+Starting ChromeDriver 136.0.7103.94 (fa0be0b33debeb378a8e6ad9c599be34e2dc3b37-refs/branch-heads/7103@{#1842}) on port 29679
+Only local connections are allowed.
+Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
+ChromeDriver was started successfully on port 29679.
+mag 16, 2025 12:27:51 PM org.openqa.selenium.remote.ProtocolHandshake createSession
+INFO: Detected dialect: W3C
+]]></system-err>
+</testsuite>

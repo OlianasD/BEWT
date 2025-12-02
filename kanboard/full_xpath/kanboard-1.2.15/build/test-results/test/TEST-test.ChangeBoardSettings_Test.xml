@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="test.ChangeBoardSettings_Test" tests="1" skipped="0" failures="0" errors="0" timestamp="2025-04-08T09:06:45.779Z" hostname="DESKTOP-RDTMBQJ" time="2.882">
+  <properties/>
+  <testcase name="changeBoardSettings" classname="test.ChangeBoardSettings_Test" time="2.882"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[apr 08, 2025 11:06:46 AM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+AVVERTENZA: Unable to find CDP implementation matching 135
+apr 08, 2025 11:06:46 AM org.openqa.selenium.chromium.ChromiumDriver lambda$new$5
+AVVERTENZA: Unable to find version of CDP to use for 135.0.7049.42. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.15.0` where the version ("v86") matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
+apr 08, 2025 11:06:48 AM com.github.paolobd.gamegui.GamifiedListener beforeQuit
+AVVERTENZA: Communication with GameGUI plugin failed. Check that the plugin is installed and running!
+]]></system-err>
+</testsuite>

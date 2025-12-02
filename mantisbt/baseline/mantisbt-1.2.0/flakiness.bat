@@ -10,10 +10,10 @@ for /L %%i in (1,1,%n%) do (
     echo.
     echo [ESECUZIONE %%i DI %n%]
 
-    echo Avvio container browser...
-    docker run -d -p 4444:4444 -p 7900:7900 --shm-size="2g" --name=browser selenium/standalone-chrome:138.0-chromedriver-138.0
+    REM echo Avvio container browser...
+    REM docker run -d -p 4444:4444 -p 7900:7900 --shm-size="2g" --name=browser selenium/standalone-chrome:138.0-chromedriver-138.0
 
-    timeout /t 5 /nobreak >nul
+    REM timeout /t 5 /nobreak >nul
 
     echo Avvio container MantisBT...
     docker run -it --workdir=/home --name=mantisbt --expose 80 --expose 3306 -p 3000:80 -p 3306:3306 -d --entrypoint ./run-services-docker.sh olianasd/mantisbt-strongpsw:1.2.0 bash
@@ -24,12 +24,12 @@ for /L %%i in (1,1,%n%) do (
     mvn -Dtest=TestSuite test
 
     echo Salvataggio risultati...
-    mkdir "..\..\..\..\flakycheck\mantisbt\java21-selenium434-chrome138-headlessnew\%%i"
-    xcopy /E /Y "target\surefire-reports\*" "..\..\..\..\flakycheck\mantisbt\java21-selenium434-chrome138-headlessnew\%%i\"
+    mkdir "..\..\..\..\flakycheck\mantisbt-1.2.0\conf1\%%i"
+    xcopy /E /Y "target\surefire-reports\*" "..\..\..\..\flakycheck\mantisbt-1.2.0\conf1\%%i\"
 
     echo Arresto e rimozione container Docker...
-    docker stop browser >nul
-    docker rm browser >nul
+    REM docker stop browser >nul
+    REM docker rm browser >nul
     docker stop mantisbt >nul
     docker rm mantisbt >nul
 

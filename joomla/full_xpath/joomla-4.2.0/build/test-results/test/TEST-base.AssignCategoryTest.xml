@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="base.AssignCategoryTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2025-04-28T16:36:28.564Z" hostname="DESKTOP-RDTMBQJ" time="2.793">
+  <properties/>
+  <testcase name="assignCategory" classname="base.AssignCategoryTest" time="2.793"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[Starting ChromeDriver 135.0.7049.114 (63fd8a7d9d09e41ba37b84386c85d5f249f848f7-refs/branch-heads/7049@{#2175}) on port 61868
+Only local connections are allowed.
+Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
+ChromeDriver was started successfully on port 61868.
+apr 28, 2025 6:36:29 PM org.openqa.selenium.remote.ProtocolHandshake createSession
+INFORMAZIONI: Detected dialect: W3C
+]]></system-err>
+</testsuite>

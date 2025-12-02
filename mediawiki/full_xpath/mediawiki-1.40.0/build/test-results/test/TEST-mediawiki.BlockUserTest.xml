@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="mediawiki.BlockUserTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2025-06-18T14:06:01.162Z" hostname="DESKTOP-RDTMBQJ" time="4.189">
+  <properties/>
+  <testcase name="blockUser" classname="mediawiki.BlockUserTest" time="4.189"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[Starting ChromeDriver 137.0.7151.119 (e0ac9d12dff5f2d33c935958b06bf1ded7f1c08c-refs/branch-heads/7151@{#2356}) on port 27331
+Only local connections are allowed.
+Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
+ChromeDriver was started successfully on port 27331.
+giu 18, 2025 4:06:01 PM org.openqa.selenium.remote.ProtocolHandshake createSession
+INFORMAZIONI: Detected dialect: W3C
+]]></system-err>
+</testsuite>

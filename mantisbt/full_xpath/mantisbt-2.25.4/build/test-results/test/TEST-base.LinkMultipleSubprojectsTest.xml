@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="base.LinkMultipleSubprojectsTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2025-06-16T14:57:07.412Z" hostname="DESKTOP-RDTMBQJ" time="7.362">
+  <properties/>
+  <testcase name="linkMultipleSubprojects" classname="base.LinkMultipleSubprojectsTest" time="7.362"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[Starting ChromeDriver 137.0.7151.70 (dfa4dc56b2abb56eb2a14cad006ea5e68c60d5de-refs/branch-heads/7151@{#1875}) on port 21854
+Only local connections are allowed.
+Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
+ChromeDriver was started successfully on port 21854.
+giu 16, 2025 4:57:08 PM org.openqa.selenium.remote.ProtocolHandshake createSession
+INFORMAZIONI: Detected dialect: W3C
+]]></system-err>
+</testsuite>

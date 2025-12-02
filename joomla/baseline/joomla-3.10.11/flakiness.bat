@@ -10,10 +10,10 @@ for /L %%i in (1,1,%n%) do (
     echo.
     echo [ESECUZIONE %%i DI %n%]
 
-    echo Avvio container browser...
-    docker run -d -p 4444:4444 -p 7900:7900 --shm-size="2g" --name=browser selenium/standalone-chrome:138.0-chromedriver-138.0
+    REM echo Avvio container browser...
+    REM docker run -d -p 4444:4444 -p 7900:7900 --shm-size="2g" --name=browser selenium/standalone-chrome:138.0-chromedriver-138.0
 
-    timeout /t 5 /nobreak >nul
+    REM timeout /t 5 /nobreak >nul
 
     echo Avvio containers Joomla...
     docker compose up -d
@@ -32,12 +32,12 @@ for /L %%i in (1,1,%n%) do (
     mvn -Dtest=TestSuite test
     timeout /t 5 /nobreak >nul
     echo Salvataggio risultati...
-    mkdir "..\..\..\..\flakycheck\joomla-3.10.11\java21-selenium434-chrome138-headlessnew\%%i"
-    xcopy /E /Y "target\surefire-reports\*" "..\..\..\..\flakycheck\joomla-3.10.11\java21-selenium434-chrome138-headlessnew\%%i\"
+    mkdir "..\..\..\..\flakycheck\joomla-3.10.11\conf1\%%i"
+    xcopy /E /Y "target\surefire-reports\*" "..\..\..\..\flakycheck\joomla-3.10.11\conf1\%%i\"
 
     echo Arresto e rimozione container Docker...
-    docker stop browser >nul
-    docker rm browser >nul
+    REM docker stop browser >nul
+    REM docker rm browser >nul
     docker stop joomla-31011-joomla-1 >nul
     docker rm joomla-31011-joomla-1 >nul
     docker stop joomla-31011-joomladb-1 >nul

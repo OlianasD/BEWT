@@ -42,7 +42,7 @@ public class Installer {
 
 	@Test
 	public void install() {
-		setupNativeBrowser();
+		setupRemoteWebDriver();
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
 		driver.manage().window().maximize();
 		driver.get(app_url);

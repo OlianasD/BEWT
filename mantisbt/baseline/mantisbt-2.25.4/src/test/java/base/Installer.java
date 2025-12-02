@@ -39,7 +39,7 @@ public class Installer {
 
     @Test
     public void install() throws InterruptedException {
-        setupNativeBrowser();
+        setupRemoteWebdriver();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
         driver.manage().window().maximize();
         driver.get(install_url);
