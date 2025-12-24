@@ -1,4 +1,0 @@
--------------------------------------------------------------------------------
-Test set: test.Claroline_TestSuite
--------------------------------------------------------------------------------
-Tests run: 40, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 59.24 s -- in test.Claroline_TestSuite
