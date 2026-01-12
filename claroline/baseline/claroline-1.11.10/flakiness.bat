@@ -10,10 +10,10 @@ for /L %%i in (1,1,%n%) do (
     echo.
     echo [ESECUZIONE %%i DI %n%]
 
-    echo Avvio container browser...
-    docker run -d -p 4444:4444 -p 7900:7900 --shm-size="2g" --name=browser selenium/standalone-chrome:127.0-chromedriver-127.0
+    REM echo Avvio container browser...
+    REM docker run -d -p 4444:4444 -p 7900:7900 --shm-size="2g" --name=browser selenium/standalone-chrome:127.0-chromedriver-127.0
 
-    timeout /t 5 /nobreak >nul
+    REM timeout /t 5 /nobreak >nul
 
     echo Avvio container Claroline...
     docker run -it --workdir=/home/claroline --name=claroline --expose 80 --expose 3306 -p 3000:80 -p 3306:3306 -d --entrypoint ./run-services-docker.sh olianasd/claroline-strongpsw bash
@@ -24,12 +24,12 @@ for /L %%i in (1,1,%n%) do (
     mvn -Dtest=Claroline_TestSuite test
 
     echo Salvataggio risultati...
-    mkdir "..\..\..\..\..\..\ASE SI flakiness\executions\7\claroline\conf7\%%i"
-    xcopy /E /Y "target\surefire-reports\*" "..\..\..\..\..\..\ASE SI flakiness\executions\7\claroline\conf7\%%i\"
+    mkdir "..\..\..\..\..\..\ASE SI flakiness\executions\per_app\claroline-1.11.10\conf3\%%i"
+    xcopy /E /Y "target\surefire-reports\*" "..\..\..\..\..\..\ASE SI flakiness\executions\per_app\claroline-1.11.10\conf3\%%i\"
 
     echo Arresto e rimozione container Docker...
-    docker stop browser >nul
-    docker rm browser >nul
+    REM docker stop browser >nul
+    REM docker rm browser >nul
     docker stop claroline >nul
     docker rm claroline >nul
 

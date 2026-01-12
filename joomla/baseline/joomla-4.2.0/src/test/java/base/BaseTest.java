@@ -24,7 +24,7 @@ public class BaseTest {
 	
 	@Before
 	public void goToHome() {
-		setupRemoteWebdriver();
+		setupNativeBrowserNoSeleniumManager();
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		driver.manage().window().maximize();
 		driver.get(app_url);
@@ -36,6 +36,14 @@ public class BaseTest {
 		options.setBrowserVersion("127");
 		driver = new ChromeDriver(options);
 	}*/
+
+	public void setupNativeBrowserNoSeleniumManager() {
+		System.setProperty("webdriver.chrome.driver", "C:/Users/User/Downloads/chromedriver-win64-chrome127/chromedriver-win64/chromedriver.exe");
+		ChromeOptions options = new ChromeOptions();
+		options.addArguments("--disable-search-engine-choice-screen", "--headless=new", "--disable-gpu", "--screen-info={1920x1080}", "--lang=en");
+		options.setBinary("C:\\Users\\User\\chrome\\win64-127.0.6533.119\\chrome-win64\\chrome.exe");
+		driver = new ChromeDriver(options);
+	}
 
 	public void setupRemoteWebdriver() {
 		ChromeOptions chromeOptions = new ChromeOptions();

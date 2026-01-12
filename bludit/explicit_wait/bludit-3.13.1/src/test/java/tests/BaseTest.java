@@ -22,17 +22,17 @@ public class BaseTest {
 	
 	@Before
 	public void setUp() {
-		setupNativeBrowser();
+		setupRemoteWebdriver();
 		driver.manage().window().maximize();
 		driver.get("http://192.168.1.141:8080/admin");
 	}
 
-	public void setupNativeBrowser() {
+	/*public void setupNativeBrowser() {
 		ChromeOptions options = new ChromeOptions();
 		options.addArguments("--disable-search-engine-choice-screen", "--headless=new", "--disable-gpu", "--screen-info={1920x1080}", "--lang=en");
 		options.setBrowserVersion("127");
 		driver = new ChromeDriver(options);
-	}
+	}*/
 
 	public void setupRemoteWebdriver() {
 		ChromeOptions chromeOptions = new ChromeOptions();

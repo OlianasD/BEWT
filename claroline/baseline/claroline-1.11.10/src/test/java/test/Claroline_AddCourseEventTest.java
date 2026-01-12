@@ -15,7 +15,7 @@ public class Claroline_AddCourseEventTest extends BaseTest {
 				.login("admin", "n0tl34k3dy3t")
 				.goInsideCourse()
 				.goToCalendarAgendaPage()
-				.addEvent("Exam 001", "31", "May", "2023", "Genoa");
+				.addEvent("Exam 001", "31", "May", "2026", "Genoa");
 		
 		assertEquals("Event added to the agenda.", cap.getCourseMessage());
 		cap.doLogout();

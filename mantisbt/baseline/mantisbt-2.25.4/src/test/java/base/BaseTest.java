@@ -23,18 +23,18 @@ public class BaseTest {
 	@Before
 	public void login() {
 		setupRemoteWebdriver();
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
+		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		driver.manage().window().maximize();
 		driver.get(app_url);
 		new LoginPage(driver).setUsername("administrator").setPassword("e2eW3Bt3s71nGB3nchM4rK").login();
 	}
 
-	public void setupNativeBrowser() {
+	/*public void setupNativeBrowser() {
 		ChromeOptions options = new ChromeOptions();
 		options.addArguments("--disable-search-engine-choice-screen", "--lang=en", "--disable-gpu", "--headless=new", "--screen-info={1920x1080}");
 		options.setBrowserVersion("127");
 		driver = new ChromeDriver(options);
-	}
+	}*/
 
 	public void setupRemoteWebdriver() {
 		ChromeOptions chromeOptions = new ChromeOptions();

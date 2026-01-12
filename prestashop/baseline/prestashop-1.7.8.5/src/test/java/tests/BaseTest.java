@@ -23,16 +23,24 @@ public class BaseTest {
 
 	@Before
 	public void setUp() {
-		setupRemoteWebdriver();
+		setupNativeBrowserNoSeleniumManager();
 		driver.get(app_url);
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
+		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		driver.manage().window().maximize();
 	}
 
-	public void setupNativeBrowser() {
+	/*public void setupNativeBrowser() {
 		ChromeOptions options = new ChromeOptions();
 		options.addArguments("--disable-search-engine-choice-screen", "--disable-gpu", "--headless=new", "--lang=en", "--screen-info={1920x1080}");
 		options.setBrowserVersion("127");
+		driver = new ChromeDriver(options);
+	}*/
+
+	public void setupNativeBrowserNoSeleniumManager() {
+		System.setProperty("webdriver.chrome.driver", "C:/Users/User/Downloads/chromedriver-win64-chrome127/chromedriver-win64/chromedriver.exe");
+		ChromeOptions options = new ChromeOptions();
+		options.addArguments("--disable-search-engine-choice-screen", "--headless=new", "--disable-gpu", "--screen-info={1920x1080}", "--lang=en");
+		options.setBinary("C:\\Users\\User\\chrome\\win64-127.0.6533.119\\chrome-win64\\chrome.exe");
 		driver = new ChromeDriver(options);
 	}
 
