@@ -8,10 +8,10 @@ for /L %%i in (1,1,%n%) do (
     echo.
     echo [RUN %%i OF %n%]
 
-    echo Starting browser container...
-    docker run -d -p 4444:4444 -p 7900:7900 --shm-size="2g" --name=browser selenium/standalone-chrome:127.0-chromedriver-127.0
+    REM echo Starting browser container...
+    REM docker run -d -p 4444:4444 -p 7900:7900 --shm-size="2g" --name=browser selenium/standalone-chrome:127.0-chromedriver-127.0
 
-    timeout /t 5 /nobreak >nul
+    REM timeout /t 5 /nobreak >nul
 
     echo Starting Prestashop containers...
     docker run -ti --name some-mysql --network prestashop-net -e MYSQL_ROOT_PASSWORD=admin -p 3307:3306 -d mysql:5.7
@@ -37,12 +37,12 @@ for /L %%i in (1,1,%n%) do (
     timeout /t 5 /nobreak >nul
 
     echo Saving results...
-    mkdir "..\..\..\..\flakycheck\prestashop-1.7.8.5\java21-selenium4-chrome127docker-2\%%i"
-    xcopy /E /Y "target\surefire-reports\*" "..\..\..\..\flakycheck\prestashop-1.7.8.5\java21-selenium4-chrome127docker-2\%%i\"
+    mkdir "..\..\..\..\..\..\ASE SI flakiness\executions\per_app\prestashop-1.7.8.5\conf11\%%i"
+    xcopy /E /Y "target\surefire-reports\*" "..\..\..\..\..\..\ASE SI flakiness\executions\per_app\prestashop-1.7.8.5\conf11\%%i\"
 
     echo Stopping and removing Docker containers...
-    docker stop browser >nul
-    docker rm browser >nul
+    REM docker stop browser >nul
+    REM docker rm browser >nul
     docker stop some-prestashop >nul
     docker rm some-prestashop >nul
     docker stop some-mysql >nul

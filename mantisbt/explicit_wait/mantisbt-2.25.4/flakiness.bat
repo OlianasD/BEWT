@@ -29,8 +29,8 @@ for /L %%i in (1,1,%n%) do (
     mvn -Dtest=TestSuite test
     timeout /t 5 /nobreak >nul
     echo Salvataggio risultati...
-    mkdir "..\..\..\..\flakycheck\mantisbt-2.25.4\selenium4-chrome127native-2\%%i"
-    xcopy /E /Y "target\surefire-reports\*" "..\..\..\..\flakycheck\mantisbt-2.25.4\selenium4-chrome127native-2\%%i\"
+    mkdir "..\..\..\..\..\..\ASE SI flakiness\executions\per_app\mantisbt-2.25.4\conf11\%%i"
+    xcopy /E /Y "target\surefire-reports\*" "..\..\..\..\..\..\ASE SI flakiness\executions\per_app\mantisbt-2.25.4\conf11\%%i\"
 
     echo Arresto e rimozione container Docker...
     REM docker stop browser >nul

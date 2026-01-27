@@ -19,20 +19,12 @@ public class Installer {
 
     @Test
     public void install() throws InterruptedException {
-        /*WebDriver driver = null;
-        ChromeOptions chromeOptions = new ChromeOptions();
-        chromeOptions.addArguments("--no-sandbox", "--headless=new", "--lang=en", "--disable-gpu", "--screen-info={1920x1080}", "--guest");
-        try {
-            driver = new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"), chromeOptions);
-        } catch (MalformedURLException e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
-        }*/
+        System.setProperty("webdriver.chrome.driver", "C:/Users/User/Downloads/chromedriver-win64-chrome127/chromedriver-win64/chromedriver.exe");
         ChromeOptions options = new ChromeOptions();
-        options.addArguments("--disable-search-engine-choice-screen", "--disable-gpu", "--headless=new", "--screen-info={1920x1080}");
-        options.setBrowserVersion("127");
-        ChromeDriver driver = new ChromeDriver(options);
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
+        options.addArguments("--disable-search-engine-choice-screen", "--headless=new", "--disable-gpu", "--screen-info={1920x1080}", "--lang=en");
+        options.setBinary("C:\\Users\\User\\chrome\\win64-127.0.6533.119\\chrome-win64\\chrome.exe");
+        WebDriver driver = new ChromeDriver(options);
+        driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
         driver.manage().window().maximize();
         driver.get(install_url);
         driver.findElement(By.id("hostname")).clear();
@@ -65,37 +57,5 @@ public class Installer {
         driver.findElement(By.xpath("//*[@id=\"account-update-form\"]/div/div[2]/div[2]/input")).click();
         driver.quit();
         System.out.println("Installation completed.");
-       /* WebDriver driver = null;
-        ChromeOptions chromeOptions = new ChromeOptions();
-        chromeOptions.addArguments("--no-sandbox", "--headless=new", "--lang=en", "--disable-gpu", "--screen-info={1920x1080}");
-        try {
-            driver = new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"), chromeOptions);
-        } catch (MalformedURLException e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
-        }
-        driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-        driver.manage().window().maximize();
-        driver.get("http://192.168.1.141:8989/admin/install.php");
-        driver.findElement(By.id("hostname")).clear();
-        driver.findElement(By.id("hostname")).sendKeys("mysql");
-        driver.findElement(By.id("db_username")).clear();
-        driver.findElement(By.id("db_username")).sendKeys("mantisbt");
-        driver.findElement(By.id("db_password")).clear();
-        driver.findElement(By.id("db_password")).sendKeys("mantisbt");
-        driver.findElement(By.id("admin_username")).clear();
-        driver.findElement(By.id("admin_username")).sendKeys("root");
-        driver.findElement(By.id("admin_password")).clear();
-        driver.findElement(By.id("admin_password")).sendKeys("e2eW3Bt3s71nGB3nchM4rK");
-        driver.findElement(By.name("go")).click();
-        Thread.sleep(500);
-        driver.findElement(By.linkText("Continue")).click();
-        new LoginPage(driver).setUsername("administrator").setPassword("root").login();
-        driver.findElement(By.id("password-current")).sendKeys("root");
-        driver.findElement(By.id("password")).sendKeys("e2eW3Bt3s71nGB3nchM4rK");
-        driver.findElement(By.id("password-confirm")).sendKeys("e2eW3Bt3s71nGB3nchM4rK");
-        driver.findElement(By.xpath("//*[@id=\"account-update-form\"]/div/div[2]/div[2]/input")).click();
-        driver.quit();*/
-
     }
 }

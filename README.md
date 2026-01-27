@@ -19,6 +19,9 @@ For each web application, at least three test suites are available:
  
 3. a version of the test suite that does not employ the Page Object pattern
 
+4. a version of the test suite that uses only absolute XPaths as locators and does not employ the page object pattern
+
+
 Moreover, for 4 applications out of 8 (namely Bludit, Joomla, MantisBT and Prestashop) we included another test suite for a further version of the application, in order to support studies about evolution of the test suites. 
 
 This repository is organized as follows: at the top level there is a directory for each application. The directory of each application contains 4 subdirectories:
@@ -30,4 +33,13 @@ This repository is organized as follows: at the top level there is a directory f
 
 3. `no_pageobjects/`: contains a version of the test suite that does not employ the Page Object design pattern. For the applications with two baseline test suites for two different versions of the application, the most recent version of the application has been used.
 
-4. `gherkin/`: contains the Gherkin specification for each test case of the test suite. For the applications with two baseline test suites for two different versions of the application, the older version has been used.
+3. `full_xpath/`: contains a version of the test suite that uses only absolute XPaths as locators and does not employ the Page Object design pattern.
+
+5. `gherkin/`: contains the Gherkin specification for each test case of the test suite. For the applications with two baseline test suites for two different versions of the application, the older version has been used.
+
+
+If you use this repository in your research work, please cite the following paper:
+
+Dario Olianas, Maurizio Leotta, Filippo Ricca.
+**BEWT: A Benchmark for End-to-End Web Testing.**
+*Proceedings of 51st Euromicro Conference Series on Software Engineering and Advanced Applications* (**SEAA 2025**), 10-12 September 2025, Salerno, Italy, LNCS, Springer, 2025.

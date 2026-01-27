@@ -8,10 +8,10 @@ for /L %%i in (1,1,%n%) do (
     echo.
     echo [ESECUZIONE %%i DI %n%]
 
-    echo STarting browser container...
-    docker run -d -p 4444:4444 -p 7900:7900 --shm-size="2g" --name=browser selenium/standalone-chrome:127.0-chromedriver-127.0
+    REM echo STarting browser container...
+    REM docker run -d -p 4444:4444 -p 7900:7900 --shm-size="2g" --name=browser selenium/standalone-chrome:127.0-chromedriver-127.0
 
-    timeout /t 5 /nobreak >nul
+    REM timeout /t 5 /nobreak >nul
 
     echo Starting Bludit container...
     docker run --name bludit -p 8080:80 -d bludit/docker:3.13.1
@@ -22,12 +22,12 @@ for /L %%i in (1,1,%n%) do (
     mvn -Dtest=TestSuite test
 
     echo Saving results...
-    mkdir "..\..\..\..\flakycheck\bludit-3.13.1\conf15-pfp\%%i"
-    xcopy /E /Y "target\surefire-reports\*" "..\..\..\..\flakycheck\bludit-3.13.1\conf15-pfp\%%i\"
+    mkdir "..\..\..\..\..\..\ASE SI flakiness\executions\per_app\bludit-3.13.1\conf11\%%i"
+    xcopy /E /Y "target\surefire-reports\*" "..\..\..\..\..\..\ASE SI flakiness\executions\per_app\bludit-3.13.1\conf11\%%i\"
 
     echo Stopping and removing Docker containers...
-    docker stop browser >nul
-    docker rm browser >nul
+    REM docker stop browser >nul
+    REM docker rm browser >nul
     docker stop bludit >nul
     docker rm bludit >nul
 

@@ -18,17 +18,25 @@ public class BaseTest {
 	public static final String app_url = "http://192.168.1.141:8080";
 	@Before
 	public void setUp() {
-		setupNativeBrowser();
+		setupNativeBrowserNoSeleniumManager();
 		driver.manage().window().maximize();
 		driver.get(app_url);
 	}
 
-	protected void setupNativeBrowser() {
+	public void setupNativeBrowserNoSeleniumManager() {
+		System.setProperty("webdriver.chrome.driver", "C:/Users/User/Downloads/chromedriver-win64-chrome127/chromedriver-win64/chromedriver.exe");
+		ChromeOptions options = new ChromeOptions();
+		options.addArguments("--disable-search-engine-choice-screen", "--headless=new", "--disable-gpu", "--screen-info={1920x1080}", "--lang=en");
+		options.setBinary("C:\\Users\\User\\chrome\\win64-127.0.6533.119\\chrome-win64\\chrome.exe");
+		driver = new ChromeDriver(options);
+	}
+
+	/*protected void setupNativeBrowser() {
 		ChromeOptions options = new ChromeOptions();
 		options.addArguments("--disable-search-engine-choice-screen", "--headless=new", "--disable-gpu", "--screen-info={1920x1080}", "--lang=en");
 		options.setBrowserVersion("127");
 		driver = new ChromeDriver(options);
-	}
+	}*/
 
 	protected void setupRemoteWebDriver() {
 		ChromeOptions options = new ChromeOptions();
