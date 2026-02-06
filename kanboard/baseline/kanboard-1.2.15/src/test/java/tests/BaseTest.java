@@ -17,14 +17,14 @@ import org.openqa.selenium.remote.RemoteWebDriver;
 public class BaseTest {
 
 	public static final String password = "admin";
-	public static final String app_url = "http://192.168.1.141:8080";
+	public static final String app_url = "http://localhost:8080";
 	public WebDriver driver;
 
 	@Before
 	public void setUp() {
-		setupNativeBrowserNoSeleniumManager();
+		setupNativeBrowser();
 		driver.get(app_url);
-		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
 		driver.manage().window().maximize();
 	}
 
@@ -39,12 +39,12 @@ public class BaseTest {
 		}
 	}
 
-	/*public void setupNativeBrowser() {
+	public void setupNativeBrowser() {
 		ChromeOptions options = new ChromeOptions();
 		options.addArguments("--disable-search-engine-choice-screen", "--disable-gpu", "--headless=new", "--screen-info={1920x1080}");
 		options.setBrowserVersion("127");
 		driver = new ChromeDriver(options);
-	}*/
+	}
 
 	public void setupNativeBrowserNoSeleniumManager() {
 		System.setProperty("webdriver.chrome.driver", "C:/Users/User/Downloads/chromedriver-win64-chrome127/chromedriver-win64/chromedriver.exe");

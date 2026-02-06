@@ -32,9 +32,11 @@ public class ChangeLanguage_Test extends BaseTest {
 		WebElement langLabel = driver.findElement(By.xpath("/html/body/section/section/section/div[2]/form/fieldset[1]/label[2]"));
 		assertEquals("Italiano", new Select(secondLangSelect).getFirstSelectedOption().getText());
 		assertEquals("Lingua", langLabel.getText());
-		
+		Thread.sleep(500);
 		new Select(secondLangSelect).selectByVisibleText("English (US)");
+		Thread.sleep(500);
 		WebElement secondSaveBtn = driver.findElement(By.xpath("/html/body/section/section/section/div[2]/form/div/button"));
+		Thread.sleep(500);
 		secondSaveBtn.click();
 		Thread.sleep(1000);
 

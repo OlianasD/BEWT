@@ -8,11 +8,6 @@ for /L %%i in (1,1,%n%) do (
     echo.
     echo [RUN %%i OF %n%]
 
-    REM echo Starting browser container...
-    REM docker run -d -p 4444:4444 -p 7900:7900 --shm-size="2g" --name=browser selenium/standalone-chrome:127.0-chromedriver-127.0
-
-    REM timeout /t 5 /nobreak >nul
-
     echo Starting Mediawiki containers...
     docker compose up -d
 
@@ -35,8 +30,6 @@ for /L %%i in (1,1,%n%) do (
     xcopy /E /Y "target\surefire-reports\*" "..\..\..\..\..\..\ASE SI flakiness\executions\per_app\mediawiki-1.40.0\conf11\%%i\"
 
     echo Stopping and removing Docker containers...
-    REM docker stop browser >nul
-    REM docker rm browser >nul
     docker stop mediawiki-1400-mediawiki-1 >nul
     docker rm mediawiki-1400-mediawiki-1 >nul
     docker stop mediawiki-1400-database-1 >nul

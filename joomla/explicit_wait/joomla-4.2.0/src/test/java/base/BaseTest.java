@@ -20,9 +20,9 @@ public class BaseTest {
 	
 	@Before
 	public void setUp() {
-		setupNativeBrowserNoSeleniumManager();
+		setupNativeBrowser();
 		driver.manage().window().maximize();
-		driver.get("http://192.168.1.141:3000/");
+		driver.get("http://localhost:3000/");
 	}
 
 	public void setupNativeBrowserNoSeleniumManager() {
@@ -33,12 +33,12 @@ public class BaseTest {
 		driver = new ChromeDriver(options);
 	}
 
-	/*public void setupNativeBrowser() {
+	public void setupNativeBrowser() {
 		ChromeOptions options = new ChromeOptions();
 		options.addArguments("--disable-search-engine-choice-screen", "--headless=new", "--disable-gpu", "--screen-info={1920x1080}");
 		options.setBrowserVersion("127");
 		driver = new ChromeDriver(options);
-	}*/
+	}
 
 	public void setupRemoteWebdriver() {
 		ChromeOptions chromeOptions = new ChromeOptions();

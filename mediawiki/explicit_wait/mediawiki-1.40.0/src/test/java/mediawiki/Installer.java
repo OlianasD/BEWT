@@ -20,18 +20,17 @@ public class Installer {
 	
 	protected WebDriver driver;
 
-	public void setupNativeBrowserNoSeleniumManager() {
-		System.setProperty("webdriver.chrome.driver", "C:/Users/User/Downloads/chromedriver-win64-chrome127/chromedriver-win64/chromedriver.exe");
+	protected void setupNativeBrowser() {
 		ChromeOptions options = new ChromeOptions();
 		options.addArguments("--disable-search-engine-choice-screen", "--headless=new", "--disable-gpu", "--screen-info={1920x1080}", "--lang=en");
-		options.setBinary("C:\\Users\\User\\chrome\\win64-127.0.6533.119\\chrome-win64\\chrome.exe");
+		options.setBrowserVersion("127");
 		driver = new ChromeDriver(options);
 	}
 	
 	@Test
 	public void install() throws IOException {
-		setupNativeBrowserNoSeleniumManager();
-		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+		setupNativeBrowser();
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
 		driver.manage().window().maximize();
 		driver.get("http://192.168.1.141:8080");
 		driver.findElement(By.linkText("set up the wiki")).click();

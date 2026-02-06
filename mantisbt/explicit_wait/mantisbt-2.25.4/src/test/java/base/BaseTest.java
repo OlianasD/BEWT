@@ -16,11 +16,11 @@ import java.net.URL;
 public class BaseTest {
 	
 	public static WebDriver driver;
-	public static String appUrl = "http://192.168.1.141:8989";
+	public static String appUrl = "http://localhost:8989";
 	
 	@Before
 	public void login() {
-		setupNativeBrowserNoSeleniumManager();
+		setupNativeBrowser();
 		driver.manage().window().maximize();
 		driver.get(appUrl);
 		new LoginPage(driver).setUsername("administrator").setPassword("e2eW3Bt3s71nGB3nchM4rK").login();
@@ -34,12 +34,12 @@ public class BaseTest {
 		driver = new ChromeDriver(options);
 	}
 
-	/*public void setupNativeBrowser() {
+	public void setupNativeBrowser() {
 		ChromeOptions options = new ChromeOptions();
 		options.addArguments("--disable-search-engine-choice-screen", "--disable-gpu", "--headless=new", "--screen-info={1920x1080}");
 		options.setBrowserVersion("127");
 		driver = new ChromeDriver(options);
-	}*/
+	}
 
 	public void setupRemoteWebdriver() {
 		ChromeOptions chromeOptions = new ChromeOptions();

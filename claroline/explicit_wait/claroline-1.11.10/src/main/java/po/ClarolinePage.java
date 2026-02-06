@@ -30,7 +30,7 @@ public class ClarolinePage {
 			wait.waitClickability(By.linkText("Logout")).click();
 		}*/
 		wait.waitClickabilityRefreshed(By.linkText("Logout")).click();
-		driver.get("http://192.168.1.141:3000/claroline11110/claroline/index.php");
+		driver.get("http://localhost:3000/claroline11110/claroline/index.php");
 		return new IndexPage(driver);
 	}
 	

@@ -18,23 +18,23 @@ public class BaseTest {
 
 	protected static final String adminPsw = "e2eW3Bt3s71nGB3nchM4rK";
 	protected static final String adminMail = "admin@prestashop.com";
-	protected static final String app_url = "http://192.168.1.141:8080/administrator/";
+	protected static final String app_url = "http://localhost:8080/administrator/";
 	protected WebDriver driver;
 
 	@Before
 	public void setUp() {
-		setupNativeBrowserNoSeleniumManager();
+		setupNativeBrowser();
 		driver.get(app_url);
-		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
 		driver.manage().window().maximize();
 	}
 
-	/*public void setupNativeBrowser() {
+	public void setupNativeBrowser() {
 		ChromeOptions options = new ChromeOptions();
 		options.addArguments("--disable-search-engine-choice-screen", "--disable-gpu", "--headless=new", "--lang=en", "--screen-info={1920x1080}");
 		options.setBrowserVersion("127");
 		driver = new ChromeDriver(options);
-	}*/
+	}
 
 	public void setupNativeBrowserNoSeleniumManager() {
 		System.setProperty("webdriver.chrome.driver", "C:/Users/User/Downloads/chromedriver-win64-chrome127/chromedriver-win64/chromedriver.exe");

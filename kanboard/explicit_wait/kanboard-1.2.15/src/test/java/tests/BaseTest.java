@@ -18,9 +18,9 @@ public class BaseTest {
 	public static final String password = "admin";
 	@Before
 	public void setUp() {
-		setupNativeBrowserNoSeleniumManager();
+		setupNativeBrowser();
 		driver.manage().window().maximize();
-		driver.get("http://192.168.1.141:8080");
+		driver.get("http://localhost:8080");
 	}
 
 	public void setupNativeBrowserNoSeleniumManager() {
@@ -42,12 +42,12 @@ public class BaseTest {
 		}
 	}
 
-	/*public void setupNativeBrowser() {
+	public void setupNativeBrowser() {
 		ChromeOptions options = new ChromeOptions();
 		options.addArguments("--disable-search-engine-choice-screen", "--disable-gpu", "--headless=new", "--screen-info={1920x1080}");
 		options.setBrowserVersion("127");
 		driver = new ChromeDriver(options);
-	}*/
+	}
 
 	@After
 	public void quit() {

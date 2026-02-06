@@ -15,16 +15,15 @@ import java.util.concurrent.TimeUnit;
 
 public class Installer {
 
-    protected final static String install_url = "http://192.168.1.141:8989/admin/install.php";
+    protected final static String install_url = "http://localhost:8989/admin/install.php";
 
     @Test
     public void install() throws InterruptedException {
-        System.setProperty("webdriver.chrome.driver", "C:/Users/User/Downloads/chromedriver-win64-chrome127/chromedriver-win64/chromedriver.exe");
         ChromeOptions options = new ChromeOptions();
-        options.addArguments("--disable-search-engine-choice-screen", "--headless=new", "--disable-gpu", "--screen-info={1920x1080}", "--lang=en");
-        options.setBinary("C:\\Users\\User\\chrome\\win64-127.0.6533.119\\chrome-win64\\chrome.exe");
+        options.addArguments("--disable-search-engine-choice-screen", "--disable-gpu", "--headless=new", "--screen-info={1920x1080}");
+        options.setBrowserVersion("127");
         WebDriver driver = new ChromeDriver(options);
-        driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
         driver.manage().window().maximize();
         driver.get(install_url);
         driver.findElement(By.id("hostname")).clear();

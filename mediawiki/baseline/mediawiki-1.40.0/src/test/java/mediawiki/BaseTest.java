@@ -18,12 +18,12 @@ import po.MainPage;
 public class BaseTest {
 	
 	public static WebDriver driver;
-	public static final String app_url = "http://192.168.1.141:8080";
+	public static final String app_url = "http://localhost:8080";
 	
 	@Before
 	public void setup() {
-		setupNativeBrowserNoSeleniumManager();
-		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+		setupNativeBrowser();
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
 		driver.manage().window().maximize();
 		driver.get(app_url);
 	}
@@ -36,12 +36,12 @@ public class BaseTest {
 		driver = new ChromeDriver(options);
 	}
 
-	/*protected void setupNativeBrowser() {
+	protected void setupNativeBrowser() {
 		ChromeOptions options = new ChromeOptions();
 		options.addArguments("--disable-search-engine-choice-screen", "--headless=new", "--disable-gpu", "--screen-info={1920x1080}", "--lang=en");
 		options.setBrowserVersion("127");
 		driver = new ChromeDriver(options);
-	}*/
+	}
 
 	protected void setupRemoteWebDriver() {
 		ChromeOptions options = new ChromeOptions();

@@ -13,11 +13,11 @@ public class Wait {
 	protected WebDriverWait wait;
 	
 	public Wait(WebDriver driver) {
-		wait = new WebDriverWait(driver, 30);
+		wait = new WebDriverWait(driver, Duration.ofSeconds(30));
 	}
 
 	public Wait(WebDriver driver, long seconds) {
-		wait = new WebDriverWait(driver, seconds);
+		wait = new WebDriverWait(driver, Duration.ofSeconds(seconds));
 	}
 	
 	public void waitVisibility(WebElement element) {

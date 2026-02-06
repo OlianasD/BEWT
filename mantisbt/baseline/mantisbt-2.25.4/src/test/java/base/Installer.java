@@ -17,14 +17,14 @@ import java.util.concurrent.TimeUnit;
 public class Installer {
 
     public static WebDriver driver;
-    protected final static String install_url = "http://192.168.1.141:8989/admin/install.php";
+    protected final static String install_url = "http://localhost:8989/admin/install.php";
 
-    /*public void setupNativeBrowser() {
+    public void setupNativeBrowser() {
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--disable-search-engine-choice-screen", "--lang=en", "--disable-gpu", "--headless=new", "--screen-info={1920x1080}");
         options.setBrowserVersion("127");
         driver = new ChromeDriver(options);
-    }*/
+    }
 
     public void setupRemoteWebdriver() {
         ChromeOptions chromeOptions = new ChromeOptions();
@@ -47,8 +47,8 @@ public class Installer {
 
     @Test
     public void install() throws InterruptedException {
-        setupNativeBrowserNoSeleniumManager();
-        driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+        setupNativeBrowser();
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
         driver.manage().window().maximize();
         driver.get(install_url);
         driver.findElement(By.id("hostname")).clear();

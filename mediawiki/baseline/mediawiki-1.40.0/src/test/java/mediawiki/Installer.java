@@ -20,14 +20,14 @@ import java.util.concurrent.TimeUnit;
 public class Installer {
 	
 	protected WebDriver driver;
-	protected final static String app_url = "http://192.168.1.141:8080";
+	protected final static String app_url = "http://localhost:8080";
 
-	/*protected void setupNativeBrowser() {
+	protected void setupNativeBrowser() {
 		ChromeOptions options = new ChromeOptions();
 		options.addArguments("--disable-search-engine-choice-screen", "--headless=new", "--disable-gpu", "--screen-info={1920x1080}", "--lang=en");
 		options.setBrowserVersion("127");
 		driver = new ChromeDriver(options);
-	}*/
+	}
 
 	protected void setupRemoteWebDriver() {
 		ChromeOptions options = new ChromeOptions();
@@ -50,8 +50,8 @@ public class Installer {
 
 	@Test
 	public void install() {
-		setupNativeBrowserNoSeleniumManager();
-		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+		setupNativeBrowser();
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
 		driver.manage().window().maximize();
 		driver.get(app_url);
 		driver.findElement(By.linkText("set up the wiki")).click();

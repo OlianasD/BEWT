@@ -18,9 +18,9 @@ public class BaseTest {
 	
 	@Before
 	public void setUp(){
-		setupNativeBrowserNoSeleniumManager();
+		setupNativeBrowser();
 		driver.manage().window().maximize();
-		driver.get("http://192.168.1.141:3000/claroline11110/claroline/index.php");
+		driver.get("http://localhost:3000/claroline11110/claroline/index.php");
 	}
 
 	public void setupNativeBrowserNoSeleniumManager() {
@@ -31,13 +31,13 @@ public class BaseTest {
 		driver = new ChromeDriver(options);
 	}
 
-	/*public void setupNativeBrowser() {
+	public void setupNativeBrowser() {
 		System.out.println("Setting up native browser...");
 		ChromeOptions options = new ChromeOptions();
 		options.addArguments("--disable-search-engine-choice-screen", "--disable-gpu", "--headless=new", "--screen-info={1920x1080}");
 		options.setBrowserVersion("127");
 		driver = new ChromeDriver(options);
-	}*/
+	}
 
 	public void setupRemoteWebdriver() {
 		System.out.println("Setting up remote web driver...");

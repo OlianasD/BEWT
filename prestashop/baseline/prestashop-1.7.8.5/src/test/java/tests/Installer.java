@@ -33,12 +33,12 @@ public class Installer {
 		}
 	}
 
-	/*public void getNativeBrowser() {
+	public void getNativeBrowser() {
 		ChromeOptions options = new ChromeOptions();
 		options.addArguments("--disable-search-engine-choice-screen", "--disable-gpu", "--headless=new", "--lang=it", "--screen-info={1920x1080}");
 		options.setBrowserVersion("127");
 		driver = new ChromeDriver(options);
-	}*/
+	}
 
 	public void setupNativeBrowserNoSeleniumManager() {
 		System.setProperty("webdriver.chrome.driver", "C:/Users/User/Downloads/chromedriver-win64-chrome127/chromedriver-win64/chromedriver.exe");
@@ -50,10 +50,10 @@ public class Installer {
 
 	@Test
 	public void install() throws InterruptedException {
-		setupNativeBrowserNoSeleniumManager();
-		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+		getNativeBrowser();
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
 		driver.manage().window().maximize();
-		driver.get("http://192.168.1.141:8080/install/");
+		driver.get("http://localhost:8080/install/");
 		new Select(driver.findElement(By.id("langList"))).selectByVisibleText("English (English)");
 		driver.findElement(By.id("btNext")).click();
 		driver.findElement(By.id("set_license")).click();
@@ -77,7 +77,7 @@ public class Installer {
 		Thread.sleep(5000);
 		driver.findElement(By.id("btNext")).click();
 
-		boolean success = new WebDriverWait(driver, 180).until(ExpectedConditions.textToBe(By.xpath("//*[@id=\"install_process_success\"]/div/h2"), "Your installation is finished!"));
+		boolean success = new WebDriverWait(driver, Duration.ofSeconds(180)).until(ExpectedConditions.textToBe(By.xpath("//*[@id=\"install_process_success\"]/div/h2"), "Your installation is finished!"));
 		if(success) {
 			System.out.println("Setup complete. Now: \n1) access the container using docker exec -it some-prestashop bash\n 2) remove directory \"install\"\n 3) rename \"admin\" directory to \"administrator\" ");
 		}

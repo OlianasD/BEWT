@@ -10,7 +10,7 @@ services:
     restart: always
 
   mysql:
-    image: mariadb:latest
+    image: mariadb:11.3.2
     environment:
       - MYSQL_ROOT_PASSWORD=e2eW3Bt3s71nGB3nchM4rK
       - MYSQL_DATABASE=bugtracker

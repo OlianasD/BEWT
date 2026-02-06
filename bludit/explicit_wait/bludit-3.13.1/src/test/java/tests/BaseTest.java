@@ -22,9 +22,9 @@ public class BaseTest {
 	
 	@Before
 	public void setUp() {
-		setupNativeBrowserNoSeleniumManager();
+		setupNativeBrowser();
 		driver.manage().window().maximize();
-		driver.get("http://192.168.1.141:8080/admin");
+		driver.get("http://localhost:8080/admin");
 	}
 
 	public void setupNativeBrowserNoSeleniumManager() {

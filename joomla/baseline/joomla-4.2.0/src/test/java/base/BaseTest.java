@@ -19,23 +19,23 @@ import po.ProfilePageInfo;
 public class BaseTest {
 	
 	protected static final String rootPassword = "dodicicaratteri";
-	protected static final String app_url = "http://192.168.1.141:3000/";
+	protected static final String app_url = "http://localhost:3000/";
 	public static WebDriver driver;
 	
 	@Before
 	public void goToHome() {
-		setupNativeBrowserNoSeleniumManager();
-		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+		setupNativeBrowser();
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
 		driver.manage().window().maximize();
 		driver.get(app_url);
 	}
 
-	/*public void setupNativeBrowser() {
+	public void setupNativeBrowser() {
 		ChromeOptions options = new ChromeOptions();
 		options.addArguments("--disable-search-engine-choice-screen", "--headless=new", "--disable-gpu", "--screen-info={1920x1080}");
 		options.setBrowserVersion("127");
 		driver = new ChromeDriver(options);
-	}*/
+	}
 
 	public void setupNativeBrowserNoSeleniumManager() {
 		System.setProperty("webdriver.chrome.driver", "C:/Users/User/Downloads/chromedriver-win64-chrome127/chromedriver-win64/chromedriver.exe");
