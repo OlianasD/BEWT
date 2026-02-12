@@ -8,11 +8,6 @@ for /L %%i in (1,1,%n%) do (
     echo.
     echo [RUN %%i OF %n%]
 
-    REM echo Starting browser container...
-    REM docker run -d -p 4444:4444 -p 7900:7900 --shm-size="2g" --name=browser selenium/standalone-chrome:127.0-chromedriver-127.0
-
-    REM timeout /t 5 /nobreak >nul
-
     echo Starting Expresscart container...
     docker run -i -t  --name=expresscart -p "3000:1111" -d olianasd/expresscart-strongpsw
 
@@ -22,12 +17,10 @@ for /L %%i in (1,1,%n%) do (
     mvn -Dtest=TestSuite test
 
     echo Saving results...
-    mkdir "..\..\..\..\..\..\ASE SI flakiness\executions\per_app\expresscart-1.19\conf11\%%i"
-    xcopy /E /Y "target\surefire-reports\*" "..\..\..\..\..\..\ASE SI flakiness\executions\per_app\expresscart-1.19\conf11\%%i\"
+    mkdir "..\flakycheck\expresscart-1.19\%%i"
+    xcopy /E /Y "target\surefire-reports\*" "..\flakycheck\expresscart-1.19\%%i\"
 
     echo Stopping and removing Docker containers...
-    REM docker stop browser >nul
-    REM docker rm browser >nul
     docker stop expresscart >nul
     docker rm expresscart >nul
 

@@ -22,3 +22,14 @@ The web application will be exposed on `localhost:8080`.
 
 Once the container is deployed, the user must connect to `/install.php` and follow the installation wizard. The required language is English, the required password is `e2eW3Bt3s71nGB3nchM4rK`.
 
+# Running instructions
+
+Compile the test suite with 
+
+```bash
+mvn clean compile test-compile
+```
+and run with
+```bash
+mvn -Dtest=TestSuite test
+```

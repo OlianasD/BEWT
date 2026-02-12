@@ -16,3 +16,14 @@ docker run -d --name kanboard -p 8080:80 -t kanboard/kanboard:v1.2.15
 
 The web application will be exposed on `localhost:8080`. The application is ready to use when the container is started, no post-installation steps are required.
 
+# Running instructions
+
+Compile the test suite with 
+
+```bash
+mvn clean compile test-compile
+```
+and run with
+```bash
+mvn -Dtest=TestSuite test
+```

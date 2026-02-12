@@ -1,35 +1,26 @@
 @echo off
 setlocal enabledelayedexpansion
 
-REM ======= CONFIGURA QUI IL NUMERO DI ESECUZIONI ==========
+REM ======= Number of runs ==========
 set n=50
-
-REM ======= PERCORSO BASE PER I RISULTATI ===================
 
 for /L %%i in (1,1,%n%) do (
     echo.
-    echo [ESECUZIONE %%i DI %n%]
+    echo [RUN %%i OF %n%]
 
-    echo Avvio container browser...
-    docker run -d -p 4444:4444 -p 7900:7900 --shm-size="2g" --name=browser selenium/standalone-chrome:140.0-chromedriver-140.0
-
-    timeout /t 5 /nobreak >nul
-
-    echo Avvio container Claroline...
+    echo Starting Claroline container...
     docker run -it --workdir=/home/claroline --name=claroline --expose 80 --expose 3306 -p 3000:80 -p 3306:3306 -d --entrypoint ./run-services-docker.sh olianasd/claroline-strongpsw bash
 
     timeout /t 5 /nobreak >nul
 
-    echo Esecuzione test con Maven...
+    echo Running tests with Maven...
     mvn -Dtest=TestSuite test
 
-    echo Salvataggio risultati...
-    mkdir "..\..\..\..\flakycheck\claroline\java21-selenium435-chrome140-headlessnew\%%i"
-    xcopy /E /Y "target\surefire-reports\*" "..\..\..\..\flakycheck\claroline\java21-selenium435-chrome140-headlessnew\%%i\"
+    echo Saving results...
+    mkdir "..\flakycheck\claroline-1.11.10\%%i"
+    xcopy /E /Y "target\surefire-reports\*" "..\flakycheck\claroline-1.11.10\%%i\"
 
-    echo Arresto e rimozione container Docker...
-    docker stop browser >nul
-    docker rm browser >nul
+    echo Stopping and removing Docker containers...
     docker stop claroline >nul
     docker rm claroline >nul
 

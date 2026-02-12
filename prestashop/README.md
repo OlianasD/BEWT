@@ -22,11 +22,13 @@ docker run -ti --name some-mysql --network prestashop-net -e MYSQL_ROOT_PASSWORD
 docker run -ti --name some-prestashop --network prestashop-net -e DB_SERVER=some-mysql -p 8080:80 -d prestashop/prestashop:1.7.8.5
 ```
 
-
 The web application will be exposed on `localhost:8080`. After the containers are deployed, an installation wizard must be followed
 
+### Container removal
+At the end of test suite execution, you must remove the application container (`some-prestashop`) and the database container (`some-mysql`). There is no need to remove the network `prestashop-net`.
+
 # Installation instructions (for both versions)
-The installation wizard can be executed automatically by running `utils.Installer` as a JUnit test. If, for any reason, the automatic installation fails, these are the parameters that you should set in the installation wizard:
+The installation wizard can be executed automatically by running `tests.Installer` as a JUnit test. If, for any reason, the automatic installation fails, these are the parameters that you should set in the installation wizard:
 
 * Language: English (English)
 * Shop name: E2E Web Testing store
@@ -54,10 +56,21 @@ mv admin administrator
 ```
 
 ## Post-installation instructions (Prestashop 1.7.8.5 only)
-After completing the installation wizard (either manually or automatically), you need to access to the administration area of the application (http://localhost:8080/administrator), login and close the onboarding tutorial, that otherwise would change the expected layout of the page and make test scripts fail. In detail, you have to follow the steps illustrated in the following screenshots.
+After completing the installation wizard (either manually or automatically), some post-installation steps must be performed for Prestashop 1.7.8.5. You can execute them automatically by running `tests.StopOnboarding` as a JUnit test. If, for any reason, the script fails, you need to access to the administration area of the application (http://localhost:8080/administrator), login and close the onboarding tutorial, that otherwise would change the expected layout of the page and make test scripts fail. In detail, you have to follow the steps illustrated in the following screenshots.
 
 ![First step](https://i.imgur.com/Y6pWNCD.png "Click START")
 
 ![Second step](https://i.imgur.com/brMQLSo.png "Click Skip this tutorial")
 
 ![Third step](https://i.imgur.com/niqIwQA.png "Click Stop the onboarding")
+
+# Running instructions (both versions)
+
+Compile the test suite with 
+
+```bash
+mvn clean compile test-compile
+```
+and run with
+```bash
+mvn -Dtest=TestSuite test

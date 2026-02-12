@@ -26,8 +26,8 @@ for /L %%i in (1,1,%n%) do (
     timeout /t 5 /nobreak >nul
 
     echo Saving results...
-    mkdir "..\..\..\..\..\..\ASE SI flakiness\executions\per_app\mediawiki-1.40.0\conf11\%%i"
-    xcopy /E /Y "target\surefire-reports\*" "..\..\..\..\..\..\ASE SI flakiness\executions\per_app\mediawiki-1.40.0\conf11\%%i\"
+    mkdir "..\flakycheck\mediawiki-1.40.0\%%i"
+    xcopy /E /Y "target\surefire-reports\*" "..\flakycheck\mediawiki-1.40.0\%%i\"
 
     echo Stopping and removing Docker containers...
     docker stop mediawiki-1400-mediawiki-1 >nul

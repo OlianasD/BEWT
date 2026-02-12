@@ -19,7 +19,7 @@ The web application will be exposed on `localhost:3000`. The application is read
 
 
 ## Deployment instructions for MantisBT 2.25.4
-The Docker containers for Joomla 3.10.11 can be created using the `docker-compose.yml` file contained in `mantisbt/baseline/mantisbt-2.25.4/docker-compose.yml`. Just move into the directory using a terminal and type:
+The Docker containers for Joomla 3.10.11 can be created using the `docker-compose.yml` file contained in `mantisbt-2.25.4/docker-compose.yml`. Just move into the directory using a terminal and type:
 
 ```bash
 docker compose up
@@ -27,9 +27,15 @@ docker compose up
 
 The web application will be exposed on `localhost:8989`. After the containers are deployed, an installation wizard must be followed. Please refer to the further section **Installation instructions (only for MantisBT 2.25.4)**
 
+### Container removal
+At the end of test suite execution, you must remove the application container (`mantisbt-2254-mantisbt-1`) and the database container (`mantisbt-2254-mantisbt-1`).
+
+> **Note:** For containers created with Docker Compose, the name of the containers depends on the name of the directory.  
+> If you rename the directory, you must also rename the containers in flakiness.bat, otherwitse the script will not work.
+
 # Installation instructions (only for MantisBT 2.25.4)
 
-To finalize the installation of MantisBT 2.25.4, go to http://localhost:8989/admin/install.php and perform the following steps:
+To finalize the installation of MantisBT 2.25.4, you can run the script `base.Installer` as a JUnit test. If, for any reason, the autometed installer fails, go to http://localhost:8989/admin/install.php and perform the following steps:
 
 1. Fill the form **Installation options** with the following values:
 
@@ -38,12 +44,24 @@ To finalize the installation of MantisBT 2.25.4, go to http://localhost:8989/adm
     * Password (for Database): `mantisbt`
     * Database name (for Database): `bugtracker`
     * Admin Username (to create Database if required): `root`
-    * Admin Password (to create Database if required): `root`
+    * Admin Password (to create Database if required): `e2eW3Bt3s71nGB3nchM4rK`
 
 2. If the checklist shows that everything is ok, the application is ready. Otherwise, if an error about the impossibility to write the configuration is displayed, you need to copy the PHP code contained in the **Write configuration files** section and save it in a file named `config_inc.php`
     * Copy the file into the container under `/var/www/html/config` with the command `docker cp config_inc.php mantisbt-2254-mantisbt-1:/var/www/html/config`
 
 3.  After the installation, change the administrator password to `e2eW3Bt3s71nGB3nchM4rK`
+
+# Running instructions
+
+Compile the test suite with 
+
+```bash
+mvn clean compile test-compile
+```
+and run with
+```bash
+mvn -Dtest=TestSuite test
+```
 
     
 

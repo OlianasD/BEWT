@@ -17,8 +17,8 @@ for /L %%i in (1,1,%n%) do (
     mvn -Dtest=TestSuite test
 
     echo Saving results...
-    mkdir "..\..\..\..\..\..\ASE SI flakiness\executions\per_app\kanboard-1.2.15\conf11\%%i"
-    xcopy /E /Y "target\surefire-reports\*" "..\..\..\..\..\..\ASE SI flakiness\executions\per_app\kanboard-1.2.15\conf11\%%i\"
+    mkdir "..\flakycheck\kanboard-1.2.15\%%i"
+    xcopy /E /Y "target\surefire-reports\*" "..\flakycheck\kanboard-1.2.15\%%i\"
 
     echo Stopping and removing Docker containers...
     docker stop kanboard >nul
