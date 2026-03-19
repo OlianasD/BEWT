@@ -61,7 +61,7 @@ docker run -d -p 4444:4444 -p 7900:7900 --shm-size="2g" --name=browser selenium/
 If you use this repository in your research work, please cite the following paper:
 
 Dario Olianas, Maurizio Leotta, Filippo Ricca.
-**BEWT: A Benchmark for End-to-End Web Testing.**
-*Proceedings of 51st Euromicro Conference Series on Software Engineering and Advanced Applications* (**SEAA 2025**), 10-12 September 2025, Salerno, Italy, LNCS, Springer, 2025.
+**BEWT: Extended Benchmarking for End-to-End Web Testing.**
+Journal of Systems and Software, 2026, ISSN 0164-1212.
 
-https://doi.org/10.1007/978-3-032-04207-1_20
+https://doi.org/10.1016/j.jss.2026.112849
