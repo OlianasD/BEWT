@@ -1,5 +1,14 @@
 E2E Web Testing benchmark
 =========================
+------------------------
+If you use this repository in your research work, please cite the following paper:
+
+Dario Olianas, Maurizio Leotta, Filippo Ricca.
+**BEWT: Extended Benchmarking for End-to-End Web Testing.**
+Journal of Systems and Software, 2026, ISSN 0164-1212.
+
+https://doi.org/10.1016/j.jss.2026.112849
+------------------------
 
 This repository contains a collection of 36 end-to-end (E2E) test suites for Web applications. All the test suites:
 
@@ -56,12 +65,3 @@ If you want to run the test suites on a containerized browser, you can use the `
 ```bash
 docker run -d -p 4444:4444 -p 7900:7900 --shm-size="2g" --name=browser selenium/standalone-chrome:127.0-chromedriver-127.0
 ```
-
-
-If you use this repository in your research work, please cite the following paper:
-
-Dario Olianas, Maurizio Leotta, Filippo Ricca.
-**BEWT: Extended Benchmarking for End-to-End Web Testing.**
-Journal of Systems and Software, 2026, ISSN 0164-1212.
-
-https://doi.org/10.1016/j.jss.2026.112849
